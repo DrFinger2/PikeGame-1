@@ -17,6 +17,6 @@ MonoBehaviour:
   isInvasive: 0
   organismEnvironment: 0
   organismPrefab: {fileID: 4000947656633429677, guid: b839e592297d2314a8cd5edbb362531f, type: 3}
-  plantGrowStage: 0
+  plantGrowStage: 3
   plantGrowStagePrefab2: {fileID: 2336514589101566760, guid: f01a2f6ed97fcdb4ea99536e97241806, type: 3}
   plantGrowStagePrefab3: {fileID: 6184625707519463242, guid: 60b1f642ea668d740b0d35feca683a3b, type: 3}
