@@ -44,7 +44,7 @@ public class EnvironmentSystem : MonoBehaviour
 
     public bool SetPollutionLevel(float level)
     {
-        if (this.pollutionLevel != level)
+        if (this.pollutionLevel == level)
             return false;
 
         this.pollutionLevel = level;
@@ -53,7 +53,7 @@ public class EnvironmentSystem : MonoBehaviour
 
     public bool SetWaterQualityLevel(float level)
     {
-        if (this.waterQualityLevel != level)
+        if (this.waterQualityLevel == level)
             return false;
 
         this.waterQualityLevel = level;
@@ -62,7 +62,7 @@ public class EnvironmentSystem : MonoBehaviour
 
     public bool SetBiodiversityLevel(float level)
     {
-        if (this.bioDiversityLevel != level)
+        if (this.bioDiversityLevel == level)
             return false;
 
         this.bioDiversityLevel = level;
