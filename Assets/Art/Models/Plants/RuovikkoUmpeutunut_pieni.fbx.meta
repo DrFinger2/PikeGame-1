@@ -9,6 +9,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: M_Vegetation
     second: {fileID: 2100000, guid: ba47ee8d3a56f8e47a10ff9adf8caba6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Vegetation.003
+    second: {fileID: 2100000, guid: ba47ee8d3a56f8e47a10ff9adf8caba6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
