@@ -54,7 +54,7 @@ Material:
     - _Amount: 0.687
     - _BaseSmoothness: 1
     - _IOR: 1.33
-    - _MudAmount: 0.5
+    - _MudAmount: 0
     - _MudSmoothness: 0.5
     - _MurkySmoothness: 0.75
     - _PollutionAmount: 1
@@ -67,6 +67,6 @@ Material:
     - _ColorClean: {r: 0.03137255, g: 0.36862746, b: 0.078431375, a: 0}
     - _ColorDirty: {r: 0.22488202, g: 0.24528301, b: 0.15619437, a: 0}
     - _MudColor: {r: 0.2264151, g: 0.17194732, b: 0.17194732, a: 0}
-    - _MurkyColor: {r: 0.5566038, g: 0.4632863, b: 0.35969207, a: 0}
+    - _MurkyColor: {r: 0.5253851, g: 0.5568628, b: 0.36078432, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

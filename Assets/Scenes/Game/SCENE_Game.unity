@@ -1440,6 +1440,53 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2456e55ee59c4d4ea5b82a6c4ba0487, type: 3}
+--- !u!1 &203400823
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 203400825}
+  - component: {fileID: 203400824}
+  m_Layer: 0
+  m_Name: EnvironmentSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &203400824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203400823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 712ba531c1fb2534485a1f4a5860254f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnManager: {fileID: 2032861148}
+  environmentView: {fileID: 296033556}
+--- !u!4 &203400825
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203400823}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.9863214, y: -5.7141585, z: 7.806257}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 296033555}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &205487028
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1676,6 +1723,52 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2456e55ee59c4d4ea5b82a6c4ba0487, type: 3}
+--- !u!1 &296033554
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 296033555}
+  - component: {fileID: 296033556}
+  m_Layer: 0
+  m_Name: EnvironmentView
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &296033555
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 296033554}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 203400825}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &296033556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 296033554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac727f9cbdd9cbc4a8085a45e7a518c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterMaterial: {fileID: 2100000, guid: 7ec2a4a7599436a4c8cba18227a46f34, type: 2}
+  underWaterMaterial: {fileID: 2100000, guid: 3263997ffb15f0f449142d448f0afa6e, type: 2}
 --- !u!1001 &313112159
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7798,6 +7891,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.24
       objectReference: {fileID: 0}
+    - target: {fileID: 8859609105497929020, guid: fcd9b14280ad7ea48aa5486e5322a374, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8859609105497929020, guid: fcd9b14280ad7ea48aa5486e5322a374, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7ec2a4a7599436a4c8cba18227a46f34, type: 2}
     - target: {fileID: 8897308370526782526, guid: fcd9b14280ad7ea48aa5486e5322a374, type: 3}
       propertyPath: m_Name
       value: Pelialue
@@ -12376,3 +12477,4 @@ SceneRoots:
   - {fileID: 1627724967}
   - {fileID: 65410225}
   - {fileID: 1449190335}
+  - {fileID: 203400825}
