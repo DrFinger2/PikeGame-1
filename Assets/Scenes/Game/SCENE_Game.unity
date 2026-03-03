@@ -1240,11 +1240,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a2456e55ee59c4d4ea5b82a6c4ba0487, type: 3}
   m_PrefabInstance: {fileID: 1028184982}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &176099398 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 542812777024159032, guid: fcd9b14280ad7ea48aa5486e5322a374, type: 3}
-  m_PrefabInstance: {fileID: 1449190335}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &186517119
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5676,6 +5671,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1206503449}
+    - target: {fileID: 3050897033742178904, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -13.040039
+      objectReference: {fileID: 0}
     - target: {fileID: 4283304965222875394, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -6227,7 +6226,7 @@ PrefabInstance:
     - target: {fileID: 2143141251308145067, guid: e0f1964e9d6f2964998b9e2b73b9fe12, type: 3}
       propertyPath: cowCollection
       value: 
-      objectReference: {fileID: 176099398}
+      objectReference: {fileID: 0}
     - target: {fileID: 2143141251308145067, guid: e0f1964e9d6f2964998b9e2b73b9fe12, type: 3}
       propertyPath: milestoneSlider
       value: 
@@ -7717,6 +7716,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 542812777024159032, guid: fcd9b14280ad7ea48aa5486e5322a374, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735761086581737791, guid: fcd9b14280ad7ea48aa5486e5322a374, type: 3}
+      propertyPath: releaseCows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1018686444753887763, guid: fcd9b14280ad7ea48aa5486e5322a374, type: 3}
