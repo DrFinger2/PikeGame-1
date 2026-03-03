@@ -8,6 +8,10 @@ using System.Collections;
 
 public class EventPanelUI : MonoBehaviour
 {
+    // What is this codebase.. everything is coupled and hard to test
+    // try to seperate the state, logic, and view clearely
+    // google MVC Pattern, Functional core imperative shell
+
     [Header("Panels")]
     [SerializeField] private GameObject eventPopupPanel;
     [SerializeField] private GameObject outcomePopupPanel;
