@@ -1,24 +1,9 @@
 fileFormatVersion: 2
-guid: ae590a4f74e38424b8d683f82ae44ba2
+guid: 5173a58b65095644394e2ac8dd9c72a4
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: M_Gradient
-    second: {fileID: 2100000, guid: c2c7734397ffdd7468311386ccb9a0ca, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: M_Vegetation
-    second: {fileID: 2100000, guid: ba47ee8d3a56f8e47a10ff9adf8caba6, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: M_Vegetation.002
-    second: {fileID: 2100000, guid: ba47ee8d3a56f8e47a10ff9adf8caba6, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -12,7 +12,27 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_Gradient.002
+    second: {fileID: 2100000, guid: c2c7734397ffdd7468311386ccb9a0ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Gradient.003
+    second: {fileID: 2100000, guid: c2c7734397ffdd7468311386ccb9a0ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: purple
+    second: {fileID: 2100000, guid: 3827cae37edae8b4d8960c41a5b0ab10, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: purple.002
+    second: {fileID: 2100000, guid: 3827cae37edae8b4d8960c41a5b0ab10, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: purple.003
     second: {fileID: 2100000, guid: 3827cae37edae8b4d8960c41a5b0ab10, type: 2}
   materials:
     materialImportMode: 2
