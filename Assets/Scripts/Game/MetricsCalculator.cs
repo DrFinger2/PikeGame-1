@@ -10,7 +10,10 @@ public class MetricsCalculator : MonoBehaviour
     public int tileBiodiversity;
     void Start()
     {   
-        TurnManager.Instance.onTurnChanged.AddListener(DelayedCalculateBiodiversity);
+        if (TurnManager.Instance != null)
+        {
+            TurnManager.Instance.onTurnChanged.AddListener(DelayedCalculateBiodiversity);
+        }
         tile = GetComponent<gameTile>();
         tileWeeds = GetComponent<tileWeedsGrowth>();
     }
@@ -22,6 +25,20 @@ public class MetricsCalculator : MonoBehaviour
     
     public void CalculateBiodiversity()
     {
+        if (tile == null)
+        {
+            tile = GetComponent<gameTile>();
+            if (tile == null)
+            {
+                return;
+            }
+        }
+
+        if (tileWeeds == null)
+        {
+            tileWeeds = GetComponent<tileWeedsGrowth>();
+        }
+
         int diversity = 1;
 
         if (tile.grownPlant != null)
@@ -46,23 +63,37 @@ public class MetricsCalculator : MonoBehaviour
             }
             
         }
-        switch (tileWeeds.growStage)
+        if (tileWeeds != null)
         {
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                diversity -= 1;
-                break;
-            default:
-                break;
+            switch (tileWeeds.growStage)
+            {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    diversity -= 1;
+                    break;
+                default:
+                    break;
+            }
         }
 
         tileBiodiversity = diversity;
-        TurnManager.Instance.milestoneHandler.IncrementBiodiversity(diversity);
+        if (TurnManager.Instance != null && TurnManager.Instance.milestoneHandler != null)
+        {
+            TurnManager.Instance.milestoneHandler.IncrementBiodiversity(diversity);
+        }
 
 
+    }
+
+    private void OnDestroy()
+    {
+        if (TurnManager.Instance != null)
+        {
+            TurnManager.Instance.onTurnChanged.RemoveListener(DelayedCalculateBiodiversity);
+        }
     }
 }
 

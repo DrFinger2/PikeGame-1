@@ -18,3 +18,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ff114bc2f6f49da409f1a8cbea6a250c, type: 2}
   - {fileID: 11400000, guid: 2f9474f7cde228d40ac1a7d976c58b65, type: 2}
   - {fileID: 11400000, guid: 5ef121772f94b224fabd3e1a0aaba976, type: 2}
+  plantedType: 0
+  autoDetectTypeFromPlantName: 1

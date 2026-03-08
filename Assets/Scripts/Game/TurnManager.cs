@@ -17,6 +17,7 @@ public class TurnManager : MonoBehaviour
     public UnityEvent<int> onActionPointsChanged;
     public UnityEvent<Dictionary<MetricType, float>> onMetricsUpdated;
     [SerializeField] private Button endTurnButton;
+    [SerializeField] private bool enableSimulationIntegration = false;
     //and more...
 
 
@@ -29,6 +30,18 @@ public class TurnManager : MonoBehaviour
         {
             Instance = this;
             gameState = GetComponent<GameState>();
+
+            WetlandProgressionManager progressionManager = GetComponent<WetlandProgressionManager>();
+
+            if (enableSimulationIntegration && progressionManager == null)
+            {
+                progressionManager = gameObject.AddComponent<WetlandProgressionManager>();
+            }
+
+            if (progressionManager != null)
+            {
+                progressionManager.EnableSimulation(enableSimulationIntegration);
+            }
         }
         else
         {
