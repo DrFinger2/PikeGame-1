@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-716988964744202970
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 9
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: M_UnderWater
+  m_Shader: {fileID: -6465566751694194690, guid: 28a5ee6a23d0464438c44a40e75bc111, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses:
+  - MOTIONVECTORS
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Amount: 0.687
+    - _BaseSmoothness: 1
+    - _IOR: 1.33
+    - _MudAmount: 0.5
+    - _MudSmoothness: 0.5
+    - _MurkySmoothness: 0.75
+    - _PollutionAmount: 1
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _SmoothnessClean: 1
+    - _SmoothnessDirty: 0.9
+    m_Colors:
+    - _BaseColor: {r: 0.13616937, g: 0.33962256, b: 0.21162742, a: 0}
+    - _ColorClean: {r: 0.03137255, g: 0.36862746, b: 0.078431375, a: 0}
+    - _ColorDirty: {r: 0.22488202, g: 0.24528301, b: 0.15619437, a: 0}
+    - _MudColor: {r: 0.2264151, g: 0.17194732, b: 0.17194732, a: 0}
+    - _MurkyColor: {r: 0.5253851, g: 0.5568628, b: 0.36078432, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
