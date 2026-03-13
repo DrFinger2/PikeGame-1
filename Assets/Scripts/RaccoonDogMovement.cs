@@ -1,27 +1,44 @@
 using UnityEngine;
-
 public class RaccoonDogMovement : MonoBehaviour
 {
     Rigidbody rb;
+    Animator anim;
+
+
     float speed = 3;
     Vector3 targetPos;
     Vector3 dir;
+    Quaternion rot;
+    Vector3 roteuler;
 
-    float eatCooldown = 10; 
+    float eatCooldown = 10;
+    float hitCooldown = 1;
 
     bool eating = false;
+    bool scared = false;
 
-    bool touched = false;
+    public bool touched = false;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
         rb = transform.GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
         targetPos = new Vector3(-5.5f, transform.position.y, 3.5f);
         dir = (targetPos - transform.position).normalized;
         rb.linearVelocity = dir * speed;
+        rot = Quaternion.FromToRotation(transform.forward, dir);
+        roteuler = rot.eulerAngles;
+        Debug.Log(roteuler);
+        transform.rotation = rot;
     }
+
+
+    
+
 
     // Update is called once per frame
     void Update()
@@ -36,16 +53,21 @@ public class RaccoonDogMovement : MonoBehaviour
             EatPlants();
         }
 
+        if (touched == true)
+        {
+            RaccoonTouched();
+        }
+
     }
 
 
     void MoveTowardsCenter()
     {
-        Debug.Log((targetPos - transform.position).magnitude);
 
         if((targetPos-transform.position).magnitude < 11)
         {
             rb.linearVelocity = Vector3.zero;
+            anim.SetInteger("DogState", 1);
             eating = true;
         }
         
@@ -62,48 +84,31 @@ public class RaccoonDogMovement : MonoBehaviour
         }
         else
         {
-            //"Eat" a plant = remove a point from the biodiversity score
+            //"Eat" a bird/egg = remove a point from the biodiversity score
             eatCooldown = 10;
         }
     }
 
 
-    /*
+    
     void RaccoonTouched()
     {
-        if(Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+        Debug.Log("GOT HIS ASS");
+        anim.SetInteger("DogState", 2);
+
+        if (hitCooldown > 0)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.touches[0].position);
-            RaycastHit hit;
-
-            if(Physics.Raycast (ray, out hit))
-            {
-                if(hit.collider != null)
-                {
-                    Debug.Log("GOT HIS ASS");
-                    touched = true;
-                    rb.linearVelocity = -dir * speed;
-                }
-            }
+            hitCooldown -= Time.deltaTime;
         }
-
-        if (Input.GetMouseButtonDown(0))
+        else if (!scared)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.touches[0].position);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit))
-            {
-                if (hit.collider != null)
-                {
-                    Debug.Log("GOT HIS ASS");
-                    touched = true;
-                    rb.linearVelocity = -dir * speed;
-                }
-            }
+            scared = true;
+            transform.rotation = Quaternion.Euler(roteuler.x, roteuler.y+180, roteuler.z);
+            Debug.Log(Quaternion.Euler(roteuler.x, roteuler.y + 180, roteuler.z));
+            rb.linearVelocity = -dir * speed;
         }
-
-    }*/
+            
+    }
 
 
 }
