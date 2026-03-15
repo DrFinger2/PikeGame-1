@@ -4292,57 +4292,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a2456e55ee59c4d4ea5b82a6c4ba0487, type: 3}
   m_PrefabInstance: {fileID: 481790815}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &795178697
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 795178698}
-  - component: {fileID: 795178699}
-  m_Layer: 0
-  m_Name: RaccoonManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &795178698
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 795178697}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3529387, y: -5.718422, z: -1.3138549}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &795178699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 795178697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00e45b686705479499faeee82a000ea0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  raccoonDog: {fileID: 3667192067736681355, guid: 4faf28b9be6e21042acd30c6756eb896, type: 3}
-  spawnPositions:
-  - {x: -8, y: 0.5, z: -18}
-  - {x: 4, y: 0.5, z: -12}
-  - {x: 7, y: 0.5, z: -5}
-  - {x: 10, y: 0.5, z: 14}
-  spawn: 0
 --- !u!4 &795660430 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a2456e55ee59c4d4ea5b82a6c4ba0487, type: 3}
@@ -12441,4 +12390,3 @@ SceneRoots:
   - {fileID: 65410225}
   - {fileID: 1449190335}
   - {fileID: 203400825}
-  - {fileID: 795178698}
