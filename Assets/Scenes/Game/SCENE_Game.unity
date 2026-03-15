@@ -4336,9 +4336,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e45b686705479499faeee82a000ea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raccoonDog: {fileID: 4709304655997516506, guid: d8e84756f73bcb34abba098c294dcb66, type: 3}
+  raccoonDog: {fileID: 3667192067736681355, guid: 4faf28b9be6e21042acd30c6756eb896, type: 3}
   spawnPositions:
-  - {x: -6, y: 0.5, z: -18}
+  - {x: -8, y: 0.5, z: -18}
   - {x: 4, y: 0.5, z: -12}
   - {x: 7, y: 0.5, z: -5}
   - {x: 10, y: 0.5, z: 14}
