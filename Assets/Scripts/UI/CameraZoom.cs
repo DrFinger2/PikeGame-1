@@ -1,14 +1,23 @@
 using UnityEngine;
 using UnityEngine.InputSystem.EnhancedTouch;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
+
+/// <summary>
+/// WARNING: Terrible code ahead. This class is doing way too much.
+/// Fix this before it breeds. 
+/// - Math -> CameraZoomMath
+/// - Raycasting -> CameraZoomRaycaster
+/// - Touch logic -> CameraZoomInput
+/// </summary>
 public class CameraZoom : MonoBehaviour
 {
     private Camera cam;
-    
+
     [Header("Touch Sensitivities")]
     [Tooltip("1 = Pure 1:1 proportional zoom. Lower values (e.g., 0.5) make the zoom feel heavier.")]
-    public float zoomSpeedMultiplier = 0.74f; 
+    public float zoomSpeedMultiplier = 0.74f;
     [Tooltip("How many FOV units from the min/max limits should the zoom start slowing down?")]
     public float zoomEdgeZone = 2.5f;
 
@@ -17,12 +26,12 @@ public class CameraZoom : MonoBehaviour
     public float zoomSmoothTime = 0.0315f;
 
     [Header("Game Feel (Flick Momentum)")]
-    public float panFriction = 14f; 
+    public float panFriction = 14f;
     public float zoomFriction = 9.3f;
-    
+
     [Header("Relative Zoom Constraints")]
-    public float maxZoomInAmount = 13f; 
-    
+    public float maxZoomInAmount = 13f;
+
     [Header("Pan Limits (At Max Zoom Out)")]
     public float minPanX = 0.88f;
     public float maxPanX = 3;
@@ -35,7 +44,7 @@ public class CameraZoom : MonoBehaviour
 
     private float prevDistance;
     private Vector3 initialPosition;
-    
+
     private Vector3 targetPosition;
     private float targetFOV;
 
@@ -48,25 +57,26 @@ public class CameraZoom : MonoBehaviour
     private Vector3 flatForward, flatRight;
     private float initialFOV, minFOV;
     private Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
-    
+
     private float worldMinX, worldMaxX, worldMinZ, worldMaxZ;
 
     private bool isActivelyPanning;
     private bool isActivelyZooming;
+    private bool isTouchOverUI;
 
     private void Awake() => EnhancedTouchSupport.Enable();
     private void OnDisable() => EnhancedTouchSupport.Disable();
 
     void Start()
-    {   
+    {
         cam = GetComponent<Camera>();
-        
+
         initialPosition = cam.transform.position;
         targetPosition = initialPosition;
-        
+
         initialFOV = cam.fieldOfView;
         targetFOV = initialFOV;
-        minFOV = initialFOV - maxZoomInAmount; 
+        minFOV = initialFOV - maxZoomInAmount;
 
         CalculateAbsoluteWorldBounds();
     }
@@ -76,14 +86,14 @@ public class CameraZoom : MonoBehaviour
         flatForward = Vector3.ProjectOnPlane(cam.transform.forward, Vector3.up).normalized;
         flatRight = Vector3.ProjectOnPlane(cam.transform.right, Vector3.up).normalized;
 
-        isActivelyPanning = false; 
+        isActivelyPanning = false;
         isActivelyZooming = false;
 
         HandleTouchInput();
-        
-        #if UNITY_EDITOR || UNITY_STANDALONE
+
+#if UNITY_EDITOR || UNITY_STANDALONE
         HandleDebugInput();
-        #endif
+#endif
     }
 
     void LateUpdate() => ClampAndSmoothCamera();
@@ -95,9 +105,35 @@ public class CameraZoom : MonoBehaviour
         int touchCount = UnityEngine.InputSystem.EnhancedTouch.Touch.activeTouches.Count;
         var touches = Touchscreen.current.touches;
 
+
+        if (touchCount == 0)
+        {
+            isTouchOverUI = false;
+        }
+        else
+        {
+            // Just check the active fingers. If any of them just tapped a UI element, lock the camera.
+            for (int i = 0; i < Mathf.Min(touchCount, 2); i++)
+            {
+                if (touches[i].phase.ReadValue() == UnityEngine.InputSystem.TouchPhase.Began)
+                {
+                    if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject(touches[i].touchId.ReadValue()))
+                        isTouchOverUI = true;
+                }
+            }
+        }
+
+        if (isTouchOverUI)
+        {
+            activePanMomentum = Vector3.zero;
+            activeZoomMomentum = 0f;
+            return;
+        }
+        // --------------------------------
+
         if (touchCount == 2)
         {
-            isActivelyZooming = true; 
+            isActivelyZooming = true;
 
             Vector2 t1 = touches[0].position.ReadValue();
             Vector2 t2 = touches[1].position.ReadValue();
@@ -106,38 +142,34 @@ public class CameraZoom : MonoBehaviour
             if (touches[1].phase.ReadValue() == UnityEngine.InputSystem.TouchPhase.Began)
                 prevDistance = currentDist;
 
-            if (currentDist > 1f && prevDistance > 1f) 
+            if (currentDist > 1f && prevDistance > 1f)
             {
                 float previousTargetFOV = targetFOV;
-                
+
                 float rawPinchRatio = prevDistance / currentDist;
                 float adjustedPinchRatio = Mathf.Lerp(1f, rawPinchRatio, zoomSpeedMultiplier);
-                
+
                 float proposedFOV = targetFOV * adjustedPinchRatio;
                 float rawDelta = proposedFOV - targetFOV;
 
-                // --- NEW: Soft Edge Zoom Dampening ---
-                // Calculate how close we are to the limit we are currently moving towards
                 float distanceToEdge = (rawDelta < 0) ? (targetFOV - minFOV) : (initialFOV - targetFOV);
-                
-                // If we enter the "soft zone", squeeze the delta to slow it down organically
+
                 if (distanceToEdge < zoomEdgeZone && distanceToEdge > 0)
                 {
                     float dampFactor = distanceToEdge / zoomEdgeZone;
-                    // SmoothStep creates a beautiful ease-out curve rather than a harsh mathematical stop
                     rawDelta *= Mathf.SmoothStep(0f, 1f, dampFactor);
                 }
 
                 targetFOV += rawDelta;
-                activeZoomMomentum = (targetFOV - previousTargetFOV) / Time.deltaTime; 
+                activeZoomMomentum = (targetFOV - previousTargetFOV) / Time.deltaTime;
             }
-            
-            activePanMomentum = Vector3.zero; 
+
+            activePanMomentum = Vector3.zero;
             prevDistance = currentDist;
         }
         else if (touchCount == 1 && tileManager.Instance.toolBeingUsed == false)
         {
-            isActivelyPanning = true; 
+            isActivelyPanning = true;
 
             Vector2 touchPos = touches[0].position.ReadValue();
             Vector2 touchDelta = touches[0].delta.ReadValue();
@@ -151,9 +183,9 @@ public class CameraZoom : MonoBehaviour
                 Vector3 worldPrev = rayPrev.GetPoint(enterPrev);
 
                 Vector3 worldDelta = worldPrev - worldNow;
-                
+
                 targetPosition += worldDelta;
-                activePanMomentum = worldDelta / Time.deltaTime; 
+                activePanMomentum = worldDelta / Time.deltaTime;
                 activeZoomMomentum = 0f;
             }
         }
@@ -164,7 +196,7 @@ public class CameraZoom : MonoBehaviour
                 targetPosition += activePanMomentum * Time.deltaTime;
                 activePanMomentum = Vector3.Lerp(activePanMomentum, Vector3.zero, panFriction * Time.deltaTime);
             }
-            
+
             if (Mathf.Abs(activeZoomMomentum) > 0.001f)
             {
                 targetFOV += activeZoomMomentum * Time.deltaTime;
@@ -184,8 +216,8 @@ public class CameraZoom : MonoBehaviour
 
             if (x != 0 || z != 0)
             {
-                isActivelyPanning = true; 
-                
+                isActivelyPanning = true;
+
                 float currentZoomRatio = targetFOV / initialFOV;
                 Vector3 moveDelta = (flatRight * x + flatForward * z).normalized * (debugPanSpeed * currentZoomRatio) * Time.deltaTime;
                 targetPosition += moveDelta;
@@ -197,7 +229,7 @@ public class CameraZoom : MonoBehaviour
         {
             isActivelyZooming = true;
             float previousTargetFOV = targetFOV;
-            
+
             float dir = Keyboard.current.eKey.isPressed ? -1f : 1f;
             float rawDelta = dir * debugKeyZoomSpeed * Time.deltaTime;
             float distanceToEdge = (rawDelta < 0) ? (targetFOV - minFOV) : (initialFOV - targetFOV);
@@ -220,7 +252,7 @@ public class CameraZoom : MonoBehaviour
         if (targetFOV <= minFOV || targetFOV >= initialFOV)
         {
             targetFOV = Mathf.Clamp(targetFOV, minFOV, initialFOV);
-            activeZoomMomentum = 0f; 
+            activeZoomMomentum = 0f;
         }
 
         cam.transform.position = targetPosition;
@@ -239,12 +271,12 @@ public class CameraZoom : MonoBehaviour
         if (shiftX != 0f)
         {
             targetPosition.x += shiftX;
-            activePanMomentum.x = 0f; 
+            activePanMomentum.x = 0f;
         }
         if (shiftZ != 0f)
         {
             targetPosition.z += shiftZ;
-            activePanMomentum.z = 0f; 
+            activePanMomentum.z = 0f;
         }
 
         if (isActivelyZooming)
@@ -260,8 +292,8 @@ public class CameraZoom : MonoBehaviour
 
         if (isActivelyPanning)
         {
-            cam.transform.position = targetPosition; 
-            panVelocity = activePanMomentum; 
+            cam.transform.position = targetPosition;
+            panVelocity = activePanMomentum;
         }
         else
         {
@@ -286,7 +318,7 @@ public class CameraZoom : MonoBehaviour
         {
             cam.transform.position = pos;
             GetGroundFootprint(out float minX, out float maxX, out float minZ, out float maxZ);
-            
+
             if (minX < worldMinX) worldMinX = minX;
             if (maxX > worldMaxX) worldMaxX = maxX;
             if (minZ < worldMinZ) worldMinZ = minZ;
@@ -301,14 +333,14 @@ public class CameraZoom : MonoBehaviour
         Vector3[] corners = new Vector3[] {
             new Vector3(0,0,0), new Vector3(0,1,0), new Vector3(1,0,0), new Vector3(1,1,0)
         };
-        
+
         minX = float.MaxValue; maxX = float.MinValue;
         minZ = float.MaxValue; maxZ = float.MinValue;
 
-        foreach(var c in corners) 
+        foreach (var c in corners)
         {
             Ray r = cam.ViewportPointToRay(c);
-            if (groundPlane.Raycast(r, out float distance)) 
+            if (groundPlane.Raycast(r, out float distance))
             {
                 Vector3 point = r.GetPoint(distance);
                 if (point.x < minX) minX = point.x;
@@ -327,7 +359,7 @@ public class CameraZoom : MonoBehaviour
         float width = worldMaxX - worldMinX;
         float depth = worldMaxZ - worldMinZ;
         Vector3 center = new Vector3(worldMinX + (width / 2f), 0f, worldMinZ + (depth / 2f));
-        
+
         Gizmos.DrawWireCube(center, new Vector3(width, 0.1f, depth));
     }
 }
