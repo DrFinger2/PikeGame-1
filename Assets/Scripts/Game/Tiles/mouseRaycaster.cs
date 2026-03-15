@@ -90,7 +90,13 @@ public class mouseRaycaster : MonoBehaviour
             {
                 DialogueManager.instance.InteractWithNPC();
             }
+
+            if (hit.collider != null && hit.collider.CompareTag("RaccoonDog"))
+            {
+                hit.transform.GetComponent<RaccoonDogMovement>().touched = true;
+            }
         }
+        
     }
 
 
