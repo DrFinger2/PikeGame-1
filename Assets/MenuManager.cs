@@ -13,16 +13,22 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private TMP_Text startGame;
     [SerializeField] private TMP_Text quitGame;
     [SerializeField] private TMP_Text credits;
+    [SerializeField] private TMP_Text language;
+    [SerializeField] private TMP_Text back;
     [SerializeField] private LocalizedText startGameText;
     [SerializeField] private LocalizedText quitGameText;
     [SerializeField] private LocalizedText creditsText;
+    [SerializeField] private LocalizedText languageText;
+    [SerializeField] private LocalizedText backText;
     [SerializeField] private GameObject mainPanel;
     [SerializeField] private GameObject creditsPanel;
     [SerializeField] private RectTransform creditsScroll;
     [SerializeField] private float creditsTopPos;
     [SerializeField] private float scrollSpeed;
+
     private Vector3 creditsStartPos;
     private Coroutine creditsCoroutine;
+
     private void Start()
     {
         if (fadeCG != null)
@@ -75,6 +81,8 @@ public class MenuManager : MonoBehaviour
         startGame.text = startGameText.GetText();
         quitGame.text = quitGameText.GetText();
         credits.text = creditsText.GetText();
+        language.text = languageText.GetText();
+        back.text = backText.GetText();
     }
     public void StartGame(int sceneNumber)
     {

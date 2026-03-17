@@ -5,9 +5,9 @@ using UnityEngine.UI;
 public class ShowButtons : MonoBehaviour
 {
     [Header("Buttons")]
-    [SerializeField] Button button1;
-    [SerializeField] Button button2;
-    [SerializeField] Button button3;
+    [SerializeField] GameObject button1;
+    [SerializeField] GameObject button2;
+    [SerializeField] GameObject button3;
 
     private bool isOpen = false;
 
@@ -15,8 +15,8 @@ public class ShowButtons : MonoBehaviour
     public void ToggleButtons()
     {
         isOpen = !isOpen;
-        button1.gameObject.SetActive(isOpen);
-        button2.gameObject.SetActive(isOpen);
-        button3.gameObject.SetActive(isOpen);
+        button1.SetActive(isOpen);
+        button2.SetActive(isOpen);
+        button3.SetActive(isOpen);
     }
 }
