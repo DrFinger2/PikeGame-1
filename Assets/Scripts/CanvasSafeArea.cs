@@ -1,23 +1,46 @@
 using UnityEngine;
+using UnityEngine.EventSystems; // Required for UIBehaviour
 
 [RequireComponent(typeof(RectTransform))]
-public class SafeArea : MonoBehaviour
+[ExecuteAlways]
+public class EventDrivenSafeArea : UIBehaviour // Inherit from UIBehaviour
 {
     private RectTransform panel;
+    private Rect lastSafeArea = new Rect(0, 0, 0, 0);
 
-    void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         panel = GetComponent<RectTransform>();
+    }
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();
         ApplySafeArea();
     }
 
-    void ApplySafeArea()
+    protected override void OnRectTransformDimensionsChange()
     {
-        Rect safeArea = Screen.safeArea;
+        base.OnRectTransformDimensionsChange();
+        ApplySafeArea();
+    }
 
-        // Convert safe area from pixels to normalized anchor coordinates (0 to 1)
-        Vector2 anchorMin = safeArea.position;
-        Vector2 anchorMax = safeArea.position + safeArea.size;
+    private void ApplySafeArea()
+    {
+        if (panel == null) return;
+
+        Rect currentSafeArea = Screen.safeArea;
+
+        // Exit early if the safe area hasn't actually changed
+        if (currentSafeArea == lastSafeArea) return;
+        lastSafeArea = currentSafeArea;
+
+        // Prevent division by zero during Editor initialization
+        if (Screen.width == 0 || Screen.height == 0) return;
+
+        Vector2 anchorMin = currentSafeArea.position;
+        Vector2 anchorMax = currentSafeArea.position + currentSafeArea.size;
 
         anchorMin.x /= Screen.width;
         anchorMin.y /= Screen.height;
@@ -28,3 +51,4 @@ public class SafeArea : MonoBehaviour
         panel.anchorMax = anchorMax;
     }
 }
+
