@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a8d7fc9a8b99e4197ad30bd7608395, type: 3}
+  m_Name: EVENT_fi_supikoira_nahty
+  m_EditorClassIdentifier: 
+  eventId: supikoira_nahty
+  eventName: Supikoira nahty liikkuvan kosteikolla
+  eventDescription: "Supikoira on n\xE4hty liikkuvan \xF6isin kosteikon l\xE4hell\xE4.
+    Se etsii ruokaa ja saattaa sy\xF6d\xE4 linnunmunia. Miten aiot toimia?"
+  eventNameLocalized:
+    fi: "Supikoira n\xE4hty liikkuvan kosteikolla"
+    sw: "En m\xE5rdhund har setts i ett v\xE5tmarksomr\xE5de"
+    en: Raccoo dog has been seen in the wetlands
+  eventDescriptionLocalized:
+    fi: "Supikoira on n\xE4hty liikkuvan \xF6isin kosteikon l\xE4hell\xE4. Se etsii
+      ruokaa ja saattaa sy\xF6d\xE4 linnunmunia. Miten aiot toimia?"
+    sw: "M\xE5rdhunden har setts r\xF6ra sig p\xE5 n\xE4tterna n\xE4ra v\xE5tmarken.
+      Den letar efter f\xF6da och kan \xE4ta f\xE5gel\xE4gg. Hur t\xE4nker du agera?"
+    en: The raccoon dog has been seen moving around at night near the wetland. It
+      is searching for food and may eat bird eggs. How do you intend to act?
+  eventIcon: {fileID: 0}
+  eventCategory: 1
+  goodResponse: {fileID: 11400000, guid: 9d510ec1522682e4e8455ea1e2f21cc9, type: 2}
+  neutralResponse: {fileID: 11400000, guid: d27b38fb0105dec4f946304392704d7e, type: 2}
+  badResponse: {fileID: 11400000, guid: 33aa6d17788ee2c489c015ff3f861602, type: 2}
