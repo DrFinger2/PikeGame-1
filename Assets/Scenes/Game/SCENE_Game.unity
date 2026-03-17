@@ -11687,12 +11687,16 @@ PrefabInstance:
       value: 26.725992
       objectReference: {fileID: 0}
     - target: {fileID: 6338678638077168519, guid: 7f098ee1670cafd4b8cf47e73e112545, type: 3}
+      propertyPath: m_FOVAxisMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6338678638077168519, guid: 7f098ee1670cafd4b8cf47e73e112545, type: 3}
       propertyPath: far clip plane
       value: 66
       objectReference: {fileID: 0}
     - target: {fileID: 6338678638077168519, guid: 7f098ee1670cafd4b8cf47e73e112545, type: 3}
       propertyPath: near clip plane
-      value: 25.9
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8028407186242818709, guid: 7f098ee1670cafd4b8cf47e73e112545, type: 3}
       propertyPath: maxX
