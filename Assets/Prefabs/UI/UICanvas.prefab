@@ -9780,6 +9780,9 @@ MonoBehaviour:
   waterQualitySlider: {fileID: 1192676120639156774}
   pollutionLevelSlider: {fileID: 4272156403131327136}
   biodiversityLevelSlider: {fileID: 1703264212651638890}
+  useMilestoneDerivedValues: 1
+  useAnimalBalanceForFirstSlider: 1
+  preferSimulationValues: 0
 --- !u!1 &5505319655047043666
 GameObject:
   m_ObjectHideFlags: 0
@@ -15018,8 +15021,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 67f3477ff4fd97e4cae255ab981a06a6, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: -1402276272, guid: 67f3477ff4fd97e4cae255ab981a06a6, type: 3}
+  m_Type: 1
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4

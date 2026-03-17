@@ -54,7 +54,7 @@ Material:
     - _Amount: 0.687
     - _BaseSmoothness: 1
     - _IOR: 1.33
-    - _MudAmount: 0.5
+    - _MudAmount: 1
     - _MudSmoothness: 0.5
     - _MurkySmoothness: 0.75
     - _PollutionAmount: 1
