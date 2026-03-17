@@ -5399,7 +5399,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4620988514180195633, guid: 58b782aec42cd2941af5d8dc80511bd0, type: 3}
       propertyPath: menuButtons.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4620988514180195633, guid: 58b782aec42cd2941af5d8dc80511bd0, type: 3}
       propertyPath: 'menuButtons.Array.data[0]'
@@ -5416,7 +5416,7 @@ PrefabInstance:
     - target: {fileID: 4620988514180195633, guid: 58b782aec42cd2941af5d8dc80511bd0, type: 3}
       propertyPath: 'menuButtons.Array.data[3]'
       value: 
-      objectReference: {fileID: 1299813577}
+      objectReference: {fileID: 2114400758}
     - target: {fileID: 4620988514180195633, guid: 58b782aec42cd2941af5d8dc80511bd0, type: 3}
       propertyPath: 'menuButtons.Array.data[4]'
       value: 

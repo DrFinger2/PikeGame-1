@@ -6,7 +6,7 @@ public class RaccoonDogManager : MonoBehaviour
     [SerializeField] GameObject raccoonDog;
     [SerializeField] Vector3[] spawnPositions = new Vector3[4];
     public bool spawn;
-
+    [SerializeField] float spawnCooldown = 20;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,6 +22,8 @@ public class RaccoonDogManager : MonoBehaviour
             spawn = false;
             SpawnCoons();
         }
+
+        CoonCooldown();
     }
 
 
@@ -41,7 +43,20 @@ public class RaccoonDogManager : MonoBehaviour
         Instantiate(raccoonDog, spawnPos, raccoonDog.transform.rotation);
     }
 
+    public void CoonCooldown()
+    {
+        if(spawnCooldown > 0)
+        {
+            spawnCooldown -= Time.deltaTime;
+        }
+        else
+        {
+            spawnCooldown = 20;
+            SpawnCoons();
+        }
 
+
+    }
 
 
 }

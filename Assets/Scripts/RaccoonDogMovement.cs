@@ -96,7 +96,7 @@ public class RaccoonDogMovement : MonoBehaviour
         Debug.Log("GOT HIS ASS");
         anim.SetInteger("DogState", 2);
 
-        if (hitCooldown > 0)
+        if (hitCooldown > 0 && !scared)
         {
             hitCooldown -= Time.deltaTime;
         }
@@ -106,6 +106,15 @@ public class RaccoonDogMovement : MonoBehaviour
             transform.rotation = Quaternion.Euler(roteuler.x, roteuler.y+180, roteuler.z);
             Debug.Log(Quaternion.Euler(roteuler.x, roteuler.y + 180, roteuler.z));
             rb.linearVelocity = -dir * speed;
+            hitCooldown = 7;
+        }
+        else if (scared)
+        {
+            hitCooldown -= Time.deltaTime;
+            if(hitCooldown <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
             
     }

@@ -46,8 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   raccoonDog: {fileID: 3667192067736681355, guid: 4faf28b9be6e21042acd30c6756eb896, type: 3}
   spawnPositions:
-  - {x: -8, y: 0.5, z: -18}
-  - {x: 4, y: 0.5, z: -12}
+  - {x: 8, y: 0.5, z: 18}
+  - {x: -1, y: 0.5, z: -14}
   - {x: 7, y: 0.5, z: -5}
   - {x: 10, y: 0.5, z: 14}
   spawn: 0
+  spawnCooldown: 20
