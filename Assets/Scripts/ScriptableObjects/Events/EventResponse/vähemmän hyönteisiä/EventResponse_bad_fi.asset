@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6be4bec5bdfc5458332aaa9dcddb06, type: 3}
+  m_Name: EventResponse_bad_fi
+  m_EditorClassIdentifier: 
+  linkedEventId: vahemman_hyonteisia
+  answerCategory: 2
+  responseText: "Poistat kasvillisuutta, jotta alue n\xE4ytt\xE4\xE4 siistimm\xE4lt\xE4."
+  responseTextLocalized:
+    fi: "Poistat kasvillisuutta, jotta alue n\xE4ytt\xE4\xE4 siistimm\xE4lt\xE4."
+    sw: "Du tar bort v\xE4xtlighet f\xF6r att omr\xE5det ska se prydligare ut."
+    en: You remove vegetation to make the area look tidier.
+  outcomeText: "Hy\xF6nteiset v\xE4henev\xE4t entisest\xE4\xE4n ja monet el\xE4imet
+    k\xE4rsiv\xE4t ravinnon puutteesta."
+  outcomeTextLocalized:
+    fi: "Hy\xF6nteiset v\xE4henev\xE4t entisest\xE4\xE4n ja monet el\xE4imet k\xE4rsiv\xE4t
+      ravinnon puutteesta."
+    sw: "Insekterna minskar ytterligare och m\xE5nga djur lider av brist p\xE5 f\xF6da."
+    en: Insects decrease even further and many animals suffer from lack of food.
+  effects: []

@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a8d7fc9a8b99e4197ad30bd7608395, type: 3}
+  m_Name: EVENT_fi_vahemman_hyonteisia
+  m_EditorClassIdentifier: 
+  eventId: vahemman_hyonteisia
+  eventName: "v\xE4hemm\xE4n hy\xF6nteisi\xE4"
+  eventDescription: "Kosteikolla n\xE4kyy tavallista v\xE4hemm\xE4n hy\xF6nteisi\xE4.
+    T\xE4m\xE4 vaikuttaa my\xF6s lintuihin ja sammakoihin. Mit\xE4 teet?"
+  eventNameLocalized:
+    fi: "V\xE4hemm\xE4n hy\xF6nteisi\xE4"
+    sw: "F\xE4rre insekter"
+    en: Less insects
+  eventDescriptionLocalized:
+    fi: "Kosteikolla n\xE4kyy tavallista v\xE4hemm\xE4n hy\xF6nteisi\xE4. T\xE4m\xE4
+      vaikuttaa my\xF6s lintuihin ja sammakoihin. Mit\xE4 teet?"
+    sw: "Det syns f\xE4rre insekter \xE4n vanligt i v\xE5tmarken. Detta p\xE5verkar
+      \xE4ven f\xE5glar och grodor. Vad g\xF6r du?"
+    en: There are fewer insects than usual visible in the wetland. This also affects
+      birds and frogs. What do you do?
+  eventIcon: {fileID: 0}
+  eventCategory: 2
+  goodResponse: {fileID: 11400000, guid: c7d5a6726071ab5469eed6ac9c198e8b, type: 2}
+  neutralResponse: {fileID: 11400000, guid: b7a12b83df7f2804e8ee7f9c38c1cf06, type: 2}
+  badResponse: {fileID: 11400000, guid: 6bc525c86b2a00e47b3cd18b8e5ff7d5, type: 2}
