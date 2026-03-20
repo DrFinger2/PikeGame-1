@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using Utils;
 
@@ -21,19 +22,26 @@ public class PlantPanel : SingletonMonoBehaviour<PlantPanel>
     {
         ActionButton.OnActiveToolChanged -= HandleActiveToolChanged;
     }
-    
-    private void HandleActiveToolChanged(string toolName)
+
+    private void HandleActiveToolChanged(LocalizedText toolName)
     {
-        if (string.IsNullOrEmpty(toolName))
+        if (toolName == null)
+        {
+            Hide();
+        }
+
+        string name = toolName?.GetText();
+        if (string.IsNullOrEmpty(name))
         {
             Hide();
         }
         else
         {
-            SetText(toolName);
+            SetText(toolName.GetText());
             Show();
         }
     }
+    
 
     public void Show()
     {
