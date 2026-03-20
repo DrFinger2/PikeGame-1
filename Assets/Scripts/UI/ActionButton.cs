@@ -7,6 +7,9 @@ using UnityEngine.InputSystem;
 
 public class ActionButton : MonoBehaviour,IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler
 {
+    // Temporary fix for larger architectural problem
+    public static event Action<string> OnActiveToolChanged;
+
     public tileAction action;
     private TurnManager turnManager;
     private tileManager tm;
@@ -88,6 +91,11 @@ public class ActionButton : MonoBehaviour,IPointerEnterHandler, IPointerExitHand
     {
         selected = true;
         tm.toolBeingUsed = true;
+
+        if (action != null)
+        {
+            OnActiveToolChanged?.Invoke(action.actionName);
+        }
     }
 
     public void OnPointerUp(PointerEventData pointerEventData)
@@ -103,6 +111,7 @@ public class ActionButton : MonoBehaviour,IPointerEnterHandler, IPointerExitHand
         tm.selectedTile = null;
         rect.anchoredPosition = originalPosition;
         
+        OnActiveToolChanged?.Invoke(string.Empty);
     }
     
     /*
