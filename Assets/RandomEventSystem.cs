@@ -1,8 +1,9 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.InputSystem;
+
 public class RandomEventSystem : MonoBehaviour
 {
     public static RandomEventSystem instance;
@@ -27,13 +28,16 @@ public class RandomEventSystem : MonoBehaviour
     [SerializeField] private List<WetlandEvent> goodEvents = new List<WetlandEvent>();
 
     [Header("Other")]
-    [SerializeField] private int eventQueLength; //how many events to pregenerate
-    public Queue<WetlandEvent> eventQue = new Queue<WetlandEvent>(); //que so we can pregenerate events incase we want to inform player earlier
-    private Dictionary<EventCategory, int> categoryCooldowns = new Dictionary<EventCategory, int>();
-    private Dictionary<EventCategory, float> currentWeights = new Dictionary<EventCategory, float>(); //weights that have been adjusted based on other factors
-    private Dictionary<EventCategory, float> baseWeights = new Dictionary<EventCategory, float>(); //base starting weights
-    //ui good, neutral, bad response buttons? send event from button to get event answercategory effects?
+    [SerializeField] private int eventQueLength;
 
+    public Queue<WetlandEvent> eventQue = new Queue<WetlandEvent>();
+
+    private Dictionary<EventCategory, int> categoryCooldowns = new Dictionary<EventCategory, int>();
+    private Dictionary<EventCategory, float> currentWeights = new Dictionary<EventCategory, float>();
+    private Dictionary<EventCategory, float> baseWeights = new Dictionary<EventCategory, float>();
+
+    // ✅ NEW: tracks unused events per category
+    private Dictionary<EventCategory, List<WetlandEvent>> unusedEvents = new Dictionary<EventCategory, List<WetlandEvent>>();
 
     private void Awake()
     {
@@ -42,24 +46,23 @@ public class RandomEventSystem : MonoBehaviour
 
         InitializeWeights();
         InitializeCooldowns();
-        for(int i = 0; i < eventQueLength; i++)
+        InitializeUnusedEvents(); // ✅ NEW
+
+        for (int i = 0; i < eventQueLength; i++)
         {
             GenerateNewEvent();
         }
     }
+
     private void Update()
-    {   
-        if(Keyboard.current.spaceKey.wasPressedThisFrame)
+    {
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
-            for(int i = 0; i < 100f;  i++)
+            for (int i = 0; i < 100f; i++)
                 GenerateNewEvent();
         }
-        /*if(Input.GetKeyDown(KeyCode.Space))
-        {
-            //ForceNextEvent("kosteikolle_saapuu");
-            GenerateNewEvent();
-        }*/
     }
+
     private void InitializeWeights()
     {
         baseWeights[EventCategory.Catastrophic] = catastrophicWeight;
@@ -67,6 +70,7 @@ public class RandomEventSystem : MonoBehaviour
         baseWeights[EventCategory.Neutral] = neutralWeight;
         baseWeights[EventCategory.Good] = goodWeight;
     }
+
     private void InitializeCooldowns()
     {
         categoryCooldowns[EventCategory.Catastrophic] = 0;
@@ -74,89 +78,136 @@ public class RandomEventSystem : MonoBehaviour
         categoryCooldowns[EventCategory.Neutral] = 0;
         categoryCooldowns[EventCategory.Good] = 0;
     }
+
+    // ✅ NEW
+    private void InitializeUnusedEvents()
+    {
+        unusedEvents[EventCategory.Catastrophic] = new List<WetlandEvent>(catastrophicEvents);
+        unusedEvents[EventCategory.Bad] = new List<WetlandEvent>(badEvents);
+        unusedEvents[EventCategory.Neutral] = new List<WetlandEvent>(neutralEvents);
+        unusedEvents[EventCategory.Good] = new List<WetlandEvent>(goodEvents);
+    }
+
     public void ForceNextEvent(string forcedEventId)
     {
         WetlandEvent nextEvent = null;
-        foreach(WetlandEvent evt in forcedEvents)
+
+        foreach (WetlandEvent evt in forcedEvents)
         {
-            if(evt.eventId == forcedEventId)
+            if (evt.eventId == forcedEventId)
             {
                 nextEvent = evt;
                 break;
             }
         }
+
         WetlandEvent[] events = eventQue.ToArray();
         eventQue.Clear();
+
         eventQue.Enqueue(nextEvent);
-        foreach(WetlandEvent evt in events) eventQue.Enqueue(evt);
+
+        foreach (WetlandEvent evt in events)
+            eventQue.Enqueue(evt);
     }
+
     public WetlandEvent GetNextEvent()
     {
-        if(eventQue.Count == 0)
+        if (eventQue.Count == 0)
         {
             GenerateNewEvent();
         }
+
         WetlandEvent nextEvent = eventQue.Dequeue();
         GenerateNewEvent();
+
         return nextEvent;
     }
+
     private void GenerateNewEvent()
     {
         AdjustWeights();
         EventCategory category = SelectCategory();
         WetlandEvent newEvent = SelectRandomEvent(category);
-        eventQue.Enqueue(newEvent); //select event from random category and add to que
-        UpdateEventsCooldowns(category); //set cooldown for category and reduce others
-        Debug.Log($"Generated event type: {category} with name: {newEvent.name}");
+
+        if (newEvent != null)
+        {
+            eventQue.Enqueue(newEvent);
+            UpdateEventsCooldowns(category);
+            Debug.Log($"Generated event type: {category} with name: {newEvent.name}");
+        }
     }
+
     private EventCategory SelectCategory()
     {
         float totalWeight = 0;
-        foreach(var weight in currentWeights)
+
+        foreach (var weight in currentWeights)
         {
             totalWeight += weight.Value;
         }
+
         float randomValue = Random.Range(0, totalWeight);
         float checkWeight = 0;
-        foreach(var weight in currentWeights)
+
+        foreach (var weight in currentWeights)
         {
-            //check if observed category value falls into random number generated
             checkWeight += weight.Value;
-            if(randomValue <= checkWeight)
+
+            if (randomValue <= checkWeight)
             {
                 return weight.Key;
             }
         }
-        return EventCategory.Neutral; //backup
+
+        return EventCategory.Neutral;
     }
+
+    // ✅ MODIFIED (core change)
     private WetlandEvent SelectRandomEvent(EventCategory category)
     {
-        List<WetlandEvent> eventsInCategory = new List<WetlandEvent>();
-        switch(category)
+        if (!unusedEvents.ContainsKey(category))
+            return null;
+
+        // Refill when all used
+        if (unusedEvents[category].Count == 0)
         {
-            case EventCategory.Catastrophic:
-                eventsInCategory = catastrophicEvents;
-                break;
-            case EventCategory.Bad:
-                eventsInCategory = badEvents;
-                break;
-            case EventCategory.Neutral:
-                eventsInCategory = neutralEvents;
-                break;
-            case EventCategory.Good:
-                eventsInCategory = goodEvents;
-                break;
+            switch (category)
+            {
+                case EventCategory.Catastrophic:
+                    unusedEvents[category] = new List<WetlandEvent>(catastrophicEvents);
+                    break;
+                case EventCategory.Bad:
+                    unusedEvents[category] = new List<WetlandEvent>(badEvents);
+                    break;
+                case EventCategory.Neutral:
+                    unusedEvents[category] = new List<WetlandEvent>(neutralEvents);
+                    break;
+                case EventCategory.Good:
+                    unusedEvents[category] = new List<WetlandEvent>(goodEvents);
+                    break;
+            }
         }
-        if(eventsInCategory.Count == 0)
+
+        var list = unusedEvents[category];
+
+        if (list.Count == 0)
         {
             Debug.Log("no events");
+            return null;
         }
-        int randomIndex = Random.Range(0, eventsInCategory.Count); //later make it so it can't pick same event from category too many times?
-        return eventsInCategory[randomIndex];
+
+        int randomIndex = Random.Range(0, list.Count);
+        WetlandEvent selected = list[randomIndex];
+
+        // Prevent repeat this cycle
+        list.RemoveAt(randomIndex);
+
+        return selected;
     }
+
     private void UpdateEventsCooldowns(EventCategory category)
     {
-        switch(category) //set cooldown to created event's category
+        switch (category)
         {
             case EventCategory.Catastrophic:
                 categoryCooldowns[category] = catastrophicCooldown;
@@ -171,7 +222,8 @@ public class RandomEventSystem : MonoBehaviour
                 categoryCooldowns[category] = goodCooldown;
                 break;
         }
-        foreach(var key in categoryCooldowns.Keys.ToList()) //reduce cooldowns, throws error if keys not turned to list
+
+        foreach (var key in categoryCooldowns.Keys.ToList())
         {
             if (categoryCooldowns[key] > 0)
             {
@@ -179,6 +231,7 @@ public class RandomEventSystem : MonoBehaviour
             }
         }
     }
+
     private void AdjustWeights()
     {
         currentWeights[EventCategory.Catastrophic] = baseWeights[EventCategory.Catastrophic];
@@ -186,39 +239,43 @@ public class RandomEventSystem : MonoBehaviour
         currentWeights[EventCategory.Neutral] = baseWeights[EventCategory.Neutral];
         currentWeights[EventCategory.Good] = baseWeights[EventCategory.Good];
 
-        //weight 0 if on cooldown so can't be selected
-        foreach(var cooldown in categoryCooldowns)
+        foreach (var cooldown in categoryCooldowns)
         {
-            if(cooldown.Value > 0)
+            if (cooldown.Value > 0)
             {
                 currentWeights[cooldown.Key] = 0;
             }
         }
-        //in case all categories are somehow on cooldown
+
         bool hasValidCategory = false;
-        foreach(var weight in currentWeights)
+
+        foreach (var weight in currentWeights)
         {
             if (weight.Value > 0)
             {
                 hasValidCategory = true;
             }
         }
-        if(!hasValidCategory)
+
+        if (!hasValidCategory)
         {
             currentWeights[EventCategory.Neutral] = baseWeights[EventCategory.Neutral];
         }
     }
+
     public WetlandEvent CheckNextEvent()
     {
-        if(eventQue.Count > 0)
+        if (eventQue.Count > 0)
         {
             Debug.Log("peeking eventque");
+
             int j = 0;
             foreach (WetlandEvent e in eventQue)
             {
                 Debug.Log($"Event: {e.name} at id: {j}");
                 j++;
             }
+
             Debug.Log($"when peeking we get {eventQue.Peek()}");
             return eventQue.Peek();
         }
