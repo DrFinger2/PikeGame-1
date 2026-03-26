@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6be4bec5bdfc5458332aaa9dcddb06, type: 3}
+  m_Name: EventResponse_neutral_fi
+  m_EditorClassIdentifier: 
+  linkedEventId: supikoira_nahty
+  answerCategory: 1
+  responseText: Seuraat tilannetta ja katsot, vaikuttaako supikoira lintuihin
+  responseTextLocalized:
+    fi: Seuraat tilannetta ja katsot, vaikuttaako supikoira lintuihin
+    sw: "Du f\xF6ljer situationen och ser om m\xE5rdhunden p\xE5verkar f\xE5glarna"
+    en: You monitor the situation and see whether the raccoon dog affects the birds
+  outcomeText: "Supikoira saattaa v\xE4hent\xE4\xE4 lintujen pesint\xE4\xE4 sy\xF6m\xE4ll\xE4
+    n\xE4iden munia"
+  outcomeTextLocalized:
+    fi: "Supikoira saattaa v\xE4hent\xE4\xE4 lintujen pesint\xE4\xE4 sy\xF6m\xE4ll\xE4
+      n\xE4iden munia"
+    sw: "M\xE5rdhunden kan minska f\xE5glarnas h\xE4ckning genom att \xE4ta deras
+      \xE4gg"
+    en: The raccoon dog may reduce bird nesting by eating their eggs
+  effects: []

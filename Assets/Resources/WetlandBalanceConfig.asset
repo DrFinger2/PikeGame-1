@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e639c4a99f40f34c8ae77170fe193d3, type: 3}
+  m_Name: WetlandBalanceConfig
+  m_EditorClassIdentifier:
+  startingDay: 1
+  startingCoins: 0
+  startingActionPoints: 4
+  startingWaterClarity: 20
+  startingOxygen: 18
+  startingPlantBalance: 15
+  startingAnimalBalance: 0
+  startingInvasiveCount: 6
+  startingGrassCount: 0
+  startingReedCount: 0
+  startingFloatingLeafCount: 0
+  startingSubmergedCount: 0
+  quizCorrectCoinReward: 5
+  quizWrongCoinReward: 1
+  baseDailyWaterDecay: 5
+  grassCancelWaterDecayThreshold: 5
+  grassWaterBonusPerPlant: 1
+  reedWaterBonusPerPlant: 2
+  reedWaterBonusPerDayCap: 12
+  submergedOxygenBonusPerPlant: 3
+  submergedOxygenBonusPerDayCap: 15
+  floatingOxygenBonusPerPlant: 1
+  floatingBonusPerDayCap: 8
+  invasiveWaterPenaltyPerPlant: 2
+  invasiveOxygenPenaltyPerPlant: 1
+  tooOpenCoverageThreshold: 4
+  tooOpenWaterPenalty: 8
+  plantBalanceBase: 10
+  plantBalancePerUniqueType: 12
+  plantBalanceBeneficialPlantCap: 20
+  plantBalanceInvasivePenaltyPerPlant: 4
+  monoPenaltyMinBeneficialPlants: 6
+  monoPenaltyShareThreshold: 0.7
+  monoPenaltyValue: 10
+  invasiveLowBalanceThreshold: 50
+  invasiveMediumBalanceThreshold: 70
+  invasiveSpawnWhenLowBalance: 2
+  invasiveSpawnWhenMediumBalance: 1
+  maxInvasiveCount: 50
+  smallFishWaterThreshold: 45
+  smallFishOxygenThreshold: 40
+  smallFishAnimalScore: 30
+  pikeWaterThreshold: 70
+  pikeOxygenThreshold: 65
+  pikeRequiredSubmergedPlants: 3
+  pikeMaxInvasivePlants: 2
+  pikeAnimalScore: 40
+  animalFloatingBonusPerPlant: 2
+  animalFloatingBonusCap: 20
+  animalInvasivePenaltyPerPlant: 2
+  animalInvasivePenaltyCap: 20
+  clearChance: 55
+  rainChance: 25
+  heavyRainChance: 10
+  sunnyCalmChance: 10
+  rainWaterPenalty: 8
+  rainInvasiveSpawnBonus: 1
+  heavyRainWaterPenalty: 12
+  heavyRainInvasiveSpawnBonus: 2
+  sunnyCalmWaterBonus: 2
+  sunnyCalmOxygenBonus: 5
+  firstMilestoneWaterThreshold: 50
+  firstMilestoneOxygenThreshold: 45
+  firstMilestoneCoinReward: 20
+  firstPikeCoinReward: 30
+  dailyRewardMinStability: 50
+  dailyRewardCoins: 2
+  victoryStabilityThreshold: 90
+  victoryWaterThreshold: 75
+  victoryOxygenThreshold: 70
+  victoryMaxInvasivePlants: 2
+  victoryRequiredStreakDays: 6
+  failureStabilityThreshold: 20
+  failureRequiredStreakDays: 3
+  minStatValue: 0
+  maxStatValue: 100
+  maxActionPointsPerDay: 8

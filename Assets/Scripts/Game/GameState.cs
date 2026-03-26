@@ -5,6 +5,7 @@ using UnityEngine.Events;
 using System.Collections;
 using NUnit.Framework.Constraints;
 
+
 public class GameState : MonoBehaviour
 {
     public int currentActionPoints = 4;
@@ -13,7 +14,7 @@ public class GameState : MonoBehaviour
     public List<OngoingEffect> activeEffects;
     private List<MetricEffect> pendingEffects;
     private RandomEventSystem randomEventSystem;
-    [SerializeField] private Vector2 valueRange = new Vector2(0,100);
+    public static Vector2 MetricRange { get; } = new Vector2(0, 100);
 
     public UnityEvent onEventChoiceMade;
     public UnityEvent onNewEvent;
@@ -30,13 +31,13 @@ public class GameState : MonoBehaviour
     {
         activeEffects = new List<OngoingEffect>();
         pendingEffects = new List<MetricEffect>();
-        metrics = new Dictionary<MetricType, float>
-        {
-            {MetricType.WaterQuality,50f },
-            {MetricType.BiodiversityLevel,30f },
-            {MetricType.PollutionLevel, 60f }
+        metrics = new Dictionary<MetricType, float> {
+            {MetricType.WaterQuality, MetricDefaults.WaterQuality },
+            {MetricType.BiodiversityLevel, MetricDefaults.Biodiversity },
+            {MetricType.PollutionLevel, MetricDefaults.Pollution }
         };
     }
+
     public void EndTurn()
     {
         HandleOngoingEffects();
@@ -48,15 +49,15 @@ public class GameState : MonoBehaviour
     //apply active effects each turn and remove when amount of active turns done
     private void HandleOngoingEffects()
     {
-        for(int i = activeEffects.Count - 1;i >= 0; i--)
+        for (int i = activeEffects.Count - 1; i >= 0; i--)
         {
             var effect = activeEffects[i];
-            foreach(var metricEffect in effect.effects)
+            foreach (var metricEffect in effect.effects)
             {
                 ApplyMetricEffect(metricEffect);
             }
             effect.remainingTurns--;
-            if(effect.remainingTurns <= 0)
+            if (effect.remainingTurns <= 0)
             {
                 activeEffects.RemoveAt(i);
             }
@@ -65,7 +66,7 @@ public class GameState : MonoBehaviour
     //apply all the effects that were applied from actions this turn
     private void ApplyPendingEffects()
     {
-        if(pendingEffects.Count > 0)
+        if (pendingEffects.Count > 0)
         {
             foreach (var effect in pendingEffects)
             {
@@ -83,7 +84,7 @@ public class GameState : MonoBehaviour
     public void HandleRandomEvent(AnswerCategory answer)
     {
         Debug.Log($"selected {answer.ToString()} response");
-        switch(answer)
+        switch (answer)
         {
             case AnswerCategory.Good:
                 currentTurnBonusPoints += 3;
@@ -117,7 +118,7 @@ public class GameState : MonoBehaviour
     public void ApplyMetricEffect(MetricEffect effect)
     {
         metrics[effect.type] += effect.value;
-        metrics[effect.type] = Mathf.Clamp(metrics[effect.type], valueRange[0], valueRange[1]);
+        metrics[effect.type] = Mathf.Clamp(metrics[effect.type], MetricRange[0], MetricRange[1]);
     }
     //add multi turn effect to list
     public void AddOngoingEffect(OngoingEffect effect)
