@@ -3,9 +3,14 @@ using TMPro;
 using UnityEngine.UI;
 using DG.Tweening;
 using System.Collections.Generic;
+using UnityEngine.Events; // Added for UnityEvent
 
 public class EventPanelUI : MonoBehaviour
 {
+    [Header("Events")]
+    public UnityEvent onPanelOpened; // Triggered when panel starts opening
+    public UnityEvent onPanelClosed; // Triggered when outcome is closed
+
     [Header("Panels")]
     [SerializeField] private GameObject eventPopupPanel;
     [SerializeField] private GameObject outcomePopupPanel;
@@ -68,16 +73,15 @@ public class EventPanelUI : MonoBehaviour
     // Unified entry point
     public void OpenPanel(bool loadNewEvent)
     {
+        onPanelOpened?.Invoke(); // Trigger opened event
         gameObject.SetActive(true);
 
-        // If we explicitly want a new event, or there is no current event yet
         if (loadNewEvent || currentEvent == null)
         {
             GetNewEvent();
         }
         else
         {
-            // Just show existing event UI again
             SetupEventUI();
         }
 
@@ -85,9 +89,6 @@ public class EventPanelUI : MonoBehaviour
         EnableAnswerButtons(true);
         okButton.interactable = selectedAnswer.HasValue;
     }
-
-
-
 
     public void GetNewEvent()
     {
@@ -204,7 +205,11 @@ public class EventPanelUI : MonoBehaviour
     {
         outcomePopupPanel.transform.DOScale(Vector3.zero, 0.2f)
             .SetUpdate(true)
-            .OnComplete(() => outcomePopupPanel.SetActive(false));
+            .OnComplete(() =>
+            {
+                outcomePopupPanel.SetActive(false);
+                onPanelClosed?.Invoke(); // Trigger closed event after animation
+            });
 
         turnManager.ToggleEndTurnButton(true);
     }

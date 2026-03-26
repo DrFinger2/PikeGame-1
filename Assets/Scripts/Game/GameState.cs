@@ -75,7 +75,7 @@ public class GameState : MonoBehaviour
             pendingEffects.Clear();
         }
     }
-    private void GetRandomEvent()
+    public void GetRandomEvent()
     {
         currentEvent = randomEventSystem.GetNextEvent();
         //Debug.Log(currentEvent.name);

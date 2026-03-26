@@ -9,6 +9,7 @@ public class EventPanelButtonHolder : MonoBehaviour
 
     private int openCount = 0;
     private int maxOpens = 3;
+    private bool isPanelOpen = false;
 
     private EventPanelUI panel;
 
@@ -16,35 +17,55 @@ public class EventPanelButtonHolder : MonoBehaviour
     {
         panel = eventPanelUI.GetComponent<EventPanelUI>();
         openButton.onClick.AddListener(OpenEventPanel);
+        panel.onPanelOpened.AddListener(HandlePanelOpened);
+        panel.onPanelClosed.AddListener(HandlePanelClosed);
     }
 
     private void OpenEventPanel()
     {
-        // ❗ Prevent opening before the first event exists
+        // 1. Block if a panel instance is already open
+        if (isPanelOpen) 
+            return;
+
+        // 2 . Skip first day (event data does not exist)
         if (panel.CurrentEvent == null)
         {
-            Debug.Log("No event available yet. Start a new day first.");
             return;
         }
 
+        // 3. Daily limit check
         if (openCount >= maxOpens)
         {
-            Debug.Log("EventPanelUI can no longer be opened today.");
             openButton.interactable = false;
             return;
         }
 
-        // Reopen the existing event
-        panel.OpenPanel(false);
+        
+        TurnManager.Instance.gameState.GetRandomEvent();
+        panel.OpenPanel(true);
 
         openCount++;
-        Debug.Log($"EventPanelUI opened {openCount} times today.");
+
+        if (openCount >= maxOpens)
+        {
+            openButton.interactable = false;
+        }
+    }
+
+    private void HandlePanelOpened()
+    {
+        isPanelOpen = true;
+    }
+
+    private void HandlePanelClosed()
+    {
+        isPanelOpen = false;
     }
 
     public void ResetDailyLimit()
     {
         openCount = 0;
+        isPanelOpen = false;
         openButton.interactable = true;
-        Debug.Log("Daily EventPanelUI limit reset.");
     }
 }
