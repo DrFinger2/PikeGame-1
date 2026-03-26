@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Linq;
 using Deform;
 using UnityEngine.UIElements;
+using UnityEngine.EventSystems; 
 
 public enum BookMarkPlacement
 {
@@ -11,7 +12,7 @@ public enum BookMarkPlacement
 }
 
 [ExecuteInEditMode]
-public class BookMark : MonoBehaviour
+public class BookMark : MonoBehaviour, IPointerClickHandler
 {
     [HideInInspector]
     public int PageNumber
@@ -28,16 +29,33 @@ public class BookMark : MonoBehaviour
     BookMarkPlacement placementSide = BookMarkPlacement.Front;
     [SerializeField] BookMarkData placementData = new();
 
-    void OnValidate() {
+    void OnValidate()
+    {
         UpdateBookmark(placementData, placementSide);
     }
+
     void OnEnable()
     {
         UpdateBookmark(placementData, placementSide);
     }
+
     void Start()
     {
         UpdateBookmark(placementData, placementSide);
+
+        // Inherit the Journal's layer so the Physics Raycaster can see this object
+        if (Application.isPlaying && Journal.Instance != null)
+        {
+            int journalLayer = Journal.Instance.gameObject.layer;
+
+            this.gameObject.layer = journalLayer;
+
+            if (bookMarkMesh != null)
+                bookMarkMesh.gameObject.layer = journalLayer;
+
+            if (pageMesh != null)
+                pageMesh.gameObject.layer = journalLayer;
+        }
     }
 
     public void ApplyBookmarkData(BookMarkData data)
@@ -69,7 +87,7 @@ public class BookMark : MonoBehaviour
         float x = CalculateXPosition(pageSize, markSize, data.widthPosOffset);
         float z = CalculateZPosition(pageSize, markSize, data.depthPosOffset);
 
-        this.transform.localPosition = new Vector3 ( x, y, z );
+        this.transform.localPosition = new Vector3(x, y, z);
     }
 
     private float CalculateXPosition(Vector3 pageSize, Vector3 markSize, float xPosOffset)
@@ -97,5 +115,20 @@ public class BookMark : MonoBehaviour
         float zPosition = baseZPosition - zOffset;
         return zPosition;
     }
-    
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (!Application.isPlaying) return;
+
+        if (Journal.Instance != null)
+        {
+            // Fixed the string interpolation here with the '$' symbol
+            Debug.Log($"Opening page: {PageNumber}");
+            Journal.Instance.OpenPageNumber(PageNumber);
+        }
+        else
+        {
+            Debug.LogWarning("Journal Instance not found.");
+        }
+    }
 }

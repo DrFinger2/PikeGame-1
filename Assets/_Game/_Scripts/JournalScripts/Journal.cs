@@ -30,6 +30,7 @@ public class Journal : SingletonInstance<Journal>
     [SerializeField] private float multiPageDuration = 1f;
     [SerializeField] private float multiPageTurnDelay = 0.2f;
     [SerializeField] private float backgroundPageSmoothness = 10f;
+    [SerializeField] private float closeFadeDuration = 1f;
 
     [Header("Materials")]
     [SerializeField] private MaterialFader fader;
@@ -199,12 +200,12 @@ public class Journal : SingletonInstance<Journal>
 
     public void CloseJournal()
     {
-        fader.FadeOut(3f);
+        fader.FadeOut(closeFadeDuration);
     }
     
     public void OpenJournal()
     {
-        fader.FadeIn(3f);
+        fader.FadeIn(closeFadeDuration);
     }
 
     public void OpenNextPage()
