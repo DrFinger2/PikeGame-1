@@ -4,9 +4,9 @@ using UnityEngine.UI;
 public class EventPanelButtonHolder : MonoBehaviour
 {
     [Header("Assign in Inspector")]
-    public GameObject eventPanelUI;
+    public EventPanelUI eventPanelUI;
     public Button openButton;
-
+    
     private int openCount = 0;
     private int maxOpens = 3;
     private bool isPanelOpen = false;
@@ -15,7 +15,6 @@ public class EventPanelButtonHolder : MonoBehaviour
 
     private void Start()
     {
-        panel = eventPanelUI.GetComponent<EventPanelUI>();
         openButton.onClick.AddListener(OpenEventPanel);
         panel.onPanelOpened.AddListener(HandlePanelOpened);
         panel.onPanelClosed.AddListener(HandlePanelClosed);
@@ -68,4 +67,5 @@ public class EventPanelButtonHolder : MonoBehaviour
         isPanelOpen = false;
         openButton.interactable = true;
     }
+
 }
