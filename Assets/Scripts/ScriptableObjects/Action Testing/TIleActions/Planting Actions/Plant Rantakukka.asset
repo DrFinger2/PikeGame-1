@@ -12,7 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efa774112c5fd774fb99d21a129ae890, type: 3}
   m_Name: Plant Rantakukka
   m_EditorClassIdentifier: 
-  actionName: Plant Rantakukka
+  actionName:
+    fi: Istuta Rantakukka
+    sw: 
+    en: 
   actionDebugMessage: Plant
   plants:
   - {fileID: 11400000, guid: 5ef121772f94b224fabd3e1a0aaba976, type: 2}
+  plantedType: 0
+  autoDetectTypeFromPlantName: 1
