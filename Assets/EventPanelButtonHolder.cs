@@ -11,13 +11,11 @@ public class EventPanelButtonHolder : MonoBehaviour
     private int maxOpens = 3;
     private bool isPanelOpen = false;
 
-    private EventPanelUI panel;
-
     private void Start()
     {
         openButton.onClick.AddListener(OpenEventPanel);
-        panel.onPanelOpened.AddListener(HandlePanelOpened);
-        panel.onPanelClosed.AddListener(HandlePanelClosed);
+        eventPanelUI.onPanelOpened.AddListener(HandlePanelOpened);
+        eventPanelUI.onPanelClosed.AddListener(HandlePanelClosed);
     }
 
     private void OpenEventPanel()
@@ -27,7 +25,7 @@ public class EventPanelButtonHolder : MonoBehaviour
             return;
 
         // 2 . Skip first day (event data does not exist)
-        if (panel.CurrentEvent == null)
+        if (eventPanelUI.CurrentEvent == null)
         {
             return;
         }
@@ -41,7 +39,7 @@ public class EventPanelButtonHolder : MonoBehaviour
 
         
         TurnManager.Instance.gameState.GetRandomEvent();
-        panel.OpenPanel(true);
+        eventPanelUI.OpenPanel(true);
 
         openCount++;
 
@@ -67,5 +65,5 @@ public class EventPanelButtonHolder : MonoBehaviour
         isPanelOpen = false;
         openButton.interactable = true;
     }
-
 }
+
