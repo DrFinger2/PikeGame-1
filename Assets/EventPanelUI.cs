@@ -211,7 +211,7 @@ public class EventPanelUI : MonoBehaviour
                 onPanelClosed?.Invoke(); // Trigger closed event after animation
             });
 
-        turnManager.ToggleEndTurnButton(true);
+        //turnManager.ToggleEndTurnButton(true);
     }
 
     private void ShuffleButtons()
