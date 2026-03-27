@@ -6,26 +6,15 @@ public class BuyCowButton : MonoBehaviour
     public GameObject cowPrefab;
     public int cost = 2;
 
-    private List<Transform> spawnPoints;
     private int currentSpawnIndex = 0;
 
-    void Awake()
+    // SpawnPoints
+    private List<Vector3> spawnPositions = new List<Vector3>()
     {
-        spawnPoints = new List<Transform>();
-
-        GameObject parent = GameObject.Find("CowSpawnPoints");
-
-        if (parent == null)
-        {
-            Debug.LogError("CowSpawnPoints not found!");
-            return;
-        }
-
-        foreach (Transform child in parent.transform)
-        {
-            spawnPoints.Add(child);
-        }
-    }
+        new Vector3(0, 0, 9),
+        new Vector3(0, 0, 0),
+        new Vector3(-6, 0, 5)
+    };
 
     public void BuyCow()
     {
@@ -37,9 +26,9 @@ public class BuyCowButton : MonoBehaviour
             return;
         }
 
-        if (spawnPoints.Count == 0)
+        if (spawnPositions.Count == 0)
         {
-            Debug.LogError("No spawn points!");
+            Debug.LogError("No spawn positions!");
             return;
         }
 
@@ -47,13 +36,13 @@ public class BuyCowButton : MonoBehaviour
         gameState.currentActionPoints -= cost;
         TurnManager.Instance.onActionPointsChanged?.Invoke(gameState.currentActionPoints);
 
-        
-        Transform spawnPoint = spawnPoints[currentSpawnIndex];
+        // Choose spawn position
+        Vector3 spawnPos = spawnPositions[currentSpawnIndex];
+
+        // Spawn cow
+        Instantiate(cowPrefab, spawnPos, Quaternion.identity);
 
         
-        Instantiate(cowPrefab, spawnPoint.position, Quaternion.identity);
-
-        
-        currentSpawnIndex = (currentSpawnIndex + 1) % spawnPoints.Count;
+        currentSpawnIndex = (currentSpawnIndex + 1) % spawnPositions.Count;
     }
 }
