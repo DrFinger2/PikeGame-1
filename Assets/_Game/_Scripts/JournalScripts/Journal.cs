@@ -8,13 +8,16 @@ using JournalSystem;
 
 #if UNITY_EDITOR
 using UnityEditor;
-    using UnityEditor.SceneManagement;
+using UnityEditor.SceneManagement;
 #endif
-
 
 [ExecuteAlways]
 public class Journal : SingletonInstance<Journal>
 {
+    [Header("Editor Tools")]
+    [Tooltip("Check this box to force destroy and rebuild all pages from the current Prefab.")]
+    [SerializeField] private bool forceRebuildPages = false;
+
     [Header("References")]
     [SerializeField] private GameObject pagePrefab;
     [SerializeField] private GameObject pageContainer;
@@ -30,7 +33,6 @@ public class Journal : SingletonInstance<Journal>
     [SerializeField] private float multiPageDuration = 1f;
     [SerializeField] private float multiPageTurnDelay = 0.2f;
     [SerializeField] private float backgroundPageSmoothness = 10f;
-    [SerializeField] private float closeFadeDuration = 1f;
 
     [Header("Materials")]
     [SerializeField] private MaterialFader fader;
@@ -44,12 +46,12 @@ public class Journal : SingletonInstance<Journal>
     private Dictionary<int, Coroutine> closingAnimations = new();
     private Coroutine openPageIndexCoroutine;
 
-
     private int currentPageNumber = 0;
     public int CurrentPageNumber => currentPageNumber;
 
 #if UNITY_EDITOR
     [HideInInspector, SerializeField] private GameObject pageContainerSnapshot;
+    [HideInInspector, SerializeField] private GameObject pagePrefabSnapshot; // Added to track prefab swaps
     [HideInInspector, SerializeField] private Texture2D emptyPageSnapshot;
     [HideInInspector, SerializeField] private JournalPageData[] pageDataSnapshot;
 
@@ -66,20 +68,30 @@ public class Journal : SingletonInstance<Journal>
         if (gameObject.scene.name == null && pageContainer != null) return;
         if (Application.isPlaying) return;
 
+        // --- NEW: Manual Refresh Logic ---
+        if (forceRebuildPages)
+        {
+            forceRebuildPages = false; // Uncheck it immediately so it acts like a button
+            ForceRebuildPages();
+            return;
+        }
+
         bool pagesChanged = pageDataSnapshot == null || HavePagesChangedEditor();
         bool emptyPageChanged = emptyPage != emptyPageSnapshot;
+        bool prefabSwapped = pagePrefab != pagePrefabSnapshot; // Track if the prefab reference changed
 
-        if (pagesChanged || emptyPageChanged)
+        if (pagesChanged || emptyPageChanged || prefabSwapped)
         {
             bool shouldClearPreviousContainer = pageContainer != pageContainerSnapshot && pageContainerSnapshot != null;
-            if (shouldClearPreviousContainer)
+            if (shouldClearPreviousContainer || prefabSwapped)
             {
-                RemoveChildrenImmediate(pageContainerSnapshot.transform);
+                RemoveChildrenImmediate(pageContainer != null ? pageContainer.transform : pageContainerSnapshot.transform);
             }
 
             EditorApplication.delayCall += UpdatePages;
             pageContainerSnapshot = pageContainer;
             emptyPageSnapshot = emptyPage;
+            pagePrefabSnapshot = pagePrefab;
 
             if (pageData != null)
             {
@@ -96,7 +108,22 @@ public class Journal : SingletonInstance<Journal>
         }
         ApplyAllPageTransformsImmediate();
     }
-    
+
+    // --- NEW: Context menu option for quick access ---
+    [ContextMenu("Force Rebuild Pages")]
+    private void ForceRebuildPages()
+    {
+        EditorApplication.delayCall += () =>
+        {
+            if (pageContainer != null)
+            {
+                RemoveChildrenImmediate(pageContainer.transform);
+            }
+            UpdatePages();
+            ApplyAllPageTransformsImmediate();
+        };
+    }
+
     private void RemoveChildrenImmediate(Transform container)
     {
         if (container == null) return;
@@ -105,8 +132,6 @@ public class Journal : SingletonInstance<Journal>
             DestroyImmediate(container.GetChild(i).gameObject);
         }
     }
-    
-
 
     private bool HavePagesChangedEditor()
     {
@@ -149,6 +174,7 @@ public class Journal : SingletonInstance<Journal>
             pageContainerSnapshot = null;
             pageDataSnapshot = null;
             emptyPageSnapshot = null;
+            pagePrefabSnapshot = null;
             UpdatePages();
             ApplyAllPageTransformsImmediate();
         };
@@ -180,7 +206,7 @@ public class Journal : SingletonInstance<Journal>
         {
             return GetPageByIndex(currentPageNumber - 1);
         }
-        return null; 
+        return null;
     }
 
     public JournalPage GetPageByNumber(int pageNumber)
@@ -198,14 +224,14 @@ public class Journal : SingletonInstance<Journal>
         return null;
     }
 
-    public void CloseJournal()
+    public void CloseJournal(float fadeDuration = 1f)
     {
-        fader.FadeOut(closeFadeDuration);
+        fader.FadeOut(fadeDuration);
     }
-    
-    public void OpenJournal()
+
+    public void OpenJournal(float fadeDuration = 1f)
     {
-        fader.FadeIn(closeFadeDuration);
+        fader.FadeIn(fadeDuration);
     }
 
     public void OpenNextPage()
@@ -214,12 +240,12 @@ public class Journal : SingletonInstance<Journal>
         OpenPage(singlePageDuration);
     }
 
-    public void CloseCurrentPage() 
+    public void CloseCurrentPage()
     {
         if (openPageIndexCoroutine != null) return;
         ClosePage(singlePageDuration);
     }
-    
+
     public void OpenPageNumber(int pageNumber)
     {
         if (openPageIndexCoroutine != null)
@@ -232,7 +258,6 @@ public class Journal : SingletonInstance<Journal>
     private IEnumerator OpenPageCoroutine(int targetSheetIndex)
     {
         targetSheetIndex = Mathf.Clamp((targetSheetIndex + 1) / 2, 0, journalPages.Count);
-
 
         while (currentPageNumber != targetSheetIndex)
         {
@@ -253,22 +278,21 @@ public class Journal : SingletonInstance<Journal>
     {
         if (currentPageNumber >= journalPages.Count) return;
 
+        if (JournalCamera.Instance != null)
+        {
+            JournalCamera.Instance.AutoFocus(currentPageNumber + 1, journalPages.Count, 0.2f);
+        }
+
         int pageIndexToOpen = currentPageNumber;
 
-        // --- FIX START ---
-        // Safely stop the closing animation if it's running for this page.
-        // TryGetValue is more efficient and safer than ContainsKey followed by an access.
         if (closingAnimations.TryGetValue(pageIndexToOpen, out Coroutine closingAnimation))
         {
-            // Add a null check before stopping to prevent the NullReferenceException.
             if (closingAnimation != null)
             {
                 StopCoroutine(closingAnimation);
             }
-            // Always remove the entry from the dictionary.
             closingAnimations.Remove(pageIndexToOpen);
         }
-        // --- FIX END ---
 
         if (openingAnimations.ContainsKey(pageIndexToOpen)) return;
 
@@ -283,6 +307,13 @@ public class Journal : SingletonInstance<Journal>
     {
         if (currentPageNumber <= 0) return;
 
+        if (JournalCamera.Instance != null)
+        {
+            // We are moving back to the previous sheet (currentPageNumber - 1)
+            JournalCamera.Instance.AutoFocus(currentPageNumber - 1, journalPages.Count, 0.2f);
+        }
+
+
         int pageIndexToClose = currentPageNumber - 1;
 
         if (openingAnimations.TryGetValue(pageIndexToClose, out Coroutine openingAnimation))
@@ -293,7 +324,6 @@ public class Journal : SingletonInstance<Journal>
             }
             openingAnimations.Remove(pageIndexToClose);
         }
-        // --- FIX END ---
 
         if (closingAnimations.ContainsKey(pageIndexToClose)) return;
 
@@ -351,7 +381,7 @@ public class Journal : SingletonInstance<Journal>
         ApplyAllPageTransformsImmediate();
         updatePagesCoroutine = null;
     }
-    
+
     private void ApplyPageTransformations(Transform page, int index)
     {
         if (pagePivot == null)

@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Linq;
 using Deform;
 using UnityEngine.UIElements;
-using UnityEngine.EventSystems; 
+using UnityEngine.EventSystems; // Required for the UI Input Module clicks
 
 public enum BookMarkPlacement
 {
@@ -12,7 +12,7 @@ public enum BookMarkPlacement
 }
 
 [ExecuteInEditMode]
-public class BookMark : MonoBehaviour, IPointerClickHandler
+public class BookMark : MonoBehaviour, IPointerClickHandler // Added the interface here
 {
     [HideInInspector]
     public int PageNumber
@@ -29,8 +29,14 @@ public class BookMark : MonoBehaviour, IPointerClickHandler
     BookMarkPlacement placementSide = BookMarkPlacement.Front;
     [SerializeField] BookMarkData placementData = new();
 
+    void Awake()
+    {
+        FindMissingPageMesh();
+    }
+
     void OnValidate()
     {
+        FindMissingPageMesh();
         UpdateBookmark(placementData, placementSide);
     }
 
@@ -42,19 +48,16 @@ public class BookMark : MonoBehaviour, IPointerClickHandler
     void Start()
     {
         UpdateBookmark(placementData, placementSide);
+    }
 
-        // Inherit the Journal's layer so the Physics Raycaster can see this object
-        if (Application.isPlaying && Journal.Instance != null)
+    // --- NEW: Automatically find the page mesh on the parent if missing ---
+    private void FindMissingPageMesh()
+    {
+        // Check if it's missing AND that we actually have a parent object
+        if (pageMesh == null && transform.parent != null)
         {
-            int journalLayer = Journal.Instance.gameObject.layer;
-
-            this.gameObject.layer = journalLayer;
-
-            if (bookMarkMesh != null)
-                bookMarkMesh.gameObject.layer = journalLayer;
-
-            if (pageMesh != null)
-                pageMesh.gameObject.layer = journalLayer;
+            // Explicitly look at the parent to avoid accidentally grabbing the bookmark's own mesh
+            pageMesh = transform.parent.GetComponent<MeshRenderer>();
         }
     }
 
@@ -122,7 +125,7 @@ public class BookMark : MonoBehaviour, IPointerClickHandler
 
         if (Journal.Instance != null)
         {
-            // Fixed the string interpolation here with the '$' symbol
+            // Added the '$' here so your PageNumber variable prints correctly
             Debug.Log($"Opening page: {PageNumber}");
             Journal.Instance.OpenPageNumber(PageNumber);
         }
