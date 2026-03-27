@@ -16,17 +16,15 @@ public class TurnManager : MonoBehaviour
     public UnityEvent<int> onTurnChanged;
     public UnityEvent<int> onActionPointsChanged;
     public UnityEvent<Dictionary<MetricType, float>> onMetricsUpdated;
+
     [SerializeField] private Button endTurnButton;
     [SerializeField] private bool enableSimulationIntegration = false;
-    //and more...
 
-
-    //create global instance so we can access this easily
     private void Awake()
-    {   
+    {
         milestoneHandler = GetComponent<MilestoneHandler>();
-        
-        if(Instance == null && Instance != this)
+
+        if (Instance == null && Instance != this)
         {
             Instance = this;
             gameState = GetComponent<GameState>();
@@ -49,50 +47,50 @@ public class TurnManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
     private void Start()
     {
         StartCoroutine(DelayedInitialize());
     }
-    //make sure initial event subscriptions go through before sending them
+
     private IEnumerator DelayedInitialize()
     {
         yield return null;
         Initialize();
     }
-    //invoke events at game start to update all base values etc.
+
     private void Initialize()
     {
         onTurnChanged?.Invoke(currentTurn);
         onActionPointsChanged?.Invoke(gameState.currentActionPoints);
         onMetricsUpdated?.Invoke(gameState.metrics);
     }
-    //check if action can be executed and execute it, trigger for example from a button
-    /*
-    public void ExecuteAction(WetlandAction action)
-    {
-        if(action.CanBeExecuted(gameState))
-        {
-            action.ExecuteAction(gameState);
-            onActionPointsChanged?.Invoke(gameState.currentActionPoints);
-        }
-    }
-    */
-    //handle end turn logic and trigger events to update UI etc. for next turn 
+
     public void EndTurn()
     {
         gameState.EndTurn();
         currentTurn++;
+
+        // Reset daily limit for the 3-times button
+        EventPanelButtonHolder holder = FindObjectOfType<EventPanelButtonHolder>();
+        if (holder != null)
+        {
+            holder.ResetDailyLimit();
+        }
+
         onTurnChanged?.Invoke(currentTurn);
         onActionPointsChanged?.Invoke(gameState.currentActionPoints);
         onMetricsUpdated?.Invoke(gameState.metrics);
+
         ToggleEndTurnButton(false);
     }
+
     public void ToggleEndTurnButton(bool state)
     {
-        if(endTurnButton != null)
+        if (endTurnButton != null)
         {
             endTurnButton.interactable = state;
         }
     }
-    
 }
+

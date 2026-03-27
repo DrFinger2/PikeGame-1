@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6be4bec5bdfc5458332aaa9dcddb06, type: 3}
+  m_Name: EventResponse_neutral_fi
+  m_EditorClassIdentifier: 
+  linkedEventId: vahemman_hyonteisia
+  answerCategory: 1
+  responseText: "Odotat ja katsot palautuuko hy\xF6nteiskanta luonnostaan."
+  responseTextLocalized:
+    fi: "Odotat ja katsot palautuuko hy\xF6nteiskanta luonnostaan."
+    sw: "Du v\xE4ntar och ser om insektsbest\xE5ndet \xE5terh\xE4mtar sig naturligt."
+    en: You wait and see if the insect population recovers naturally.
+  outcomeText: "Kasvit eiv\xE4t juurru kunnolla kylm\xE4ss\xE4 s\xE4\xE4ss\xE4. Osa
+    kuolee ja ty\xF6 menee osittain hukkaan."
+  outcomeTextLocalized:
+    fi: "Hy\xF6nteisten m\xE4\xE4r\xE4 saattaa palautua hitaasti tai j\xE4\xE4d\xE4
+      v\xE4h\xE4iseksi."
+    sw: "Antalet insekter kan \xE5terh\xE4mta sig l\xE5ngsamt eller f\xF6rbli l\xE5gt."
+    en: The number of insects may recover slowly or remain low.
+  effects: []

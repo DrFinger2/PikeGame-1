@@ -47,7 +47,7 @@ public class PopupHandler : MonoBehaviour
     public void ClosePopup()
     {
         dialogueButton.interactable = true;
-        nextTurnButton.interactable = true;
+        nextTurnButton.interactable = false;
         bookPopupButton.interactable = true;
         isAnyPopupOpen = false;
     }

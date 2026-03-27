@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6be4bec5bdfc5458332aaa9dcddb06, type: 3}
+  m_Name: EventResponse_good_fi
+  m_EditorClassIdentifier: 
+  linkedEventId: vahemman_hyonteisia
+  answerCategory: 0
+  responseText: "Lis\xE4\xE4t monipuolisia kosteikkokasveja, joissa hy\xF6nteiset
+    voivat lis\xE4\xE4nty\xE4."
+  responseTextLocalized:
+    fi: "Lis\xE4\xE4t monipuolisia kosteikkokasveja, joissa hy\xF6nteiset voivat
+      lis\xE4\xE4nty\xE4."
+    sw: "Du l\xE4gger till m\xE5ngsidiga v\xE5tmarksv\xE4xter och grunda vattenomr\xE5den
+      d\xE4r insekter kan f\xF6r\xF6ka sig."
+    en: You add diverse wetland plants and shallow water areas where insects can
+      reproduce.
+  outcomeText: "Hy\xF6nteiset palaavat ja kosteikon ravintoverkko vahvistuu."
+  outcomeTextLocalized:
+    fi: "Hy\xF6nteiset palaavat ja kosteikon ravintoverkko vahvistuu."
+    sw: "Insekterna \xE5terv\xE4nder och v\xE5tmarkens n\xE4ringskedja st\xE4rks."
+    en: Insects return and the wetland food web strengthens.
+  effects: []
