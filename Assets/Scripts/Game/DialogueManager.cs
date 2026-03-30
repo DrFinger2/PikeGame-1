@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -256,5 +256,21 @@ public class DialogueManager : MonoBehaviour
     {
         /*if (Input.GetKeyDown(KeyCode.Alpha1)) CompleteTask("task_one");
         if (Input.GetKeyDown(KeyCode.Alpha2)) CompleteTask("task_two");*/
+    }
+
+    public void NextDialogue()
+    {
+        if (!isDialogueRunning)
+            return;
+
+        if (typeWriterEffectCoroutine != null)
+        {
+            StopCoroutine(typeWriterEffectCoroutine);
+            dialogueText.text = finalText;
+            typeWriterEffectCoroutine = null;
+            return;
+        }
+
+        ShowRandomDialogue(); 
     }
 }
