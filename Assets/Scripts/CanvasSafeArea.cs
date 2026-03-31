@@ -1,54 +1,49 @@
+using System.Collections;
 using UnityEngine;
-using UnityEngine.EventSystems; // Required for UIBehaviour
+using UnityEngine.Events;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(RectTransform))]
 [ExecuteAlways]
-public class EventDrivenSafeArea : UIBehaviour // Inherit from UIBehaviour
+public class SafeArea : MonoBehaviour
 {
+    public static UnityEvent OnResize = new UnityEvent();
+
     private RectTransform panel;
-    private Rect lastSafeArea = new Rect(0, 0, 0, 0);
+    private Rect lastSafeArea;
 
-    protected override void Awake()
+    private void Awake() => panel = GetComponent<RectTransform>();
+
+
+    private void Update()
     {
-        base.Awake();
-        panel = GetComponent<RectTransform>();
-    }
-
-    protected override void OnEnable()
-    {
-        base.OnEnable();
-        ApplySafeArea();
-    }
-
-    protected override void OnRectTransformDimensionsChange()
-    {
-        base.OnRectTransformDimensionsChange();
-        ApplySafeArea();
-    }
-
-    private void ApplySafeArea()
-    {
-        if (panel == null) return;
-
         Rect currentSafeArea = Screen.safeArea;
 
-        // Exit early if the safe area hasn't actually changed
-        if (currentSafeArea == lastSafeArea) return;
-        lastSafeArea = currentSafeArea;
+        if (currentSafeArea != lastSafeArea && Screen.width > 0 && Screen.height > 0)
+        {
+            lastSafeArea = currentSafeArea;
 
-        // Prevent division by zero during Editor initialization
-        if (Screen.width == 0 || Screen.height == 0) return;
+            if (Application.isPlaying)
+            {
+                StopAllCoroutines();
+                StartCoroutine(ApplySafeArea());
+            }
+            else
+            {
+                panel.anchorMin = new Vector2(currentSafeArea.xMin / Screen.width, currentSafeArea.yMin / Screen.height);
+                panel.anchorMax = new Vector2(currentSafeArea.xMax / Screen.width, currentSafeArea.yMax / Screen.height);
+            }
+        }
+    }
 
-        Vector2 anchorMin = currentSafeArea.position;
-        Vector2 anchorMax = currentSafeArea.position + currentSafeArea.size;
+    private IEnumerator ApplySafeArea()
+    {
+        yield return new WaitForEndOfFrame();
 
-        anchorMin.x /= Screen.width;
-        anchorMin.y /= Screen.height;
-        anchorMax.x /= Screen.width;
-        anchorMax.y /= Screen.height;
+        panel.anchorMin = new Vector2(lastSafeArea.xMin / Screen.width, lastSafeArea.yMin / Screen.height);
+        panel.anchorMax = new Vector2(lastSafeArea.xMax / Screen.width, lastSafeArea.yMax / Screen.height);
 
-        panel.anchorMin = anchorMin;
-        panel.anchorMax = anchorMax;
+        Canvas.ForceUpdateCanvases();
+        OnResize.Invoke();
     }
 }
-

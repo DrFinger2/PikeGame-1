@@ -50,17 +50,10 @@ public class ActionButton : MonoBehaviour,IPointerEnterHandler, IPointerExitHand
         
         if (selected)
         {   
-            if (Touchscreen.current == null)
+            if (Pointer.current != null)
             {
-                var mousePos = Mouse.current.position.ReadValue();
-                transform.position = mousePos;
+                transform.position = Pointer.current.position.ReadValue();
             }
-            else
-            {
-                transform.position = mouseRaycaster.touchPosition;
-            }
-            
-            
         }
         
         

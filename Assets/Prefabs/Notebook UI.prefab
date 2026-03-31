@@ -280,6 +280,7 @@ GameObject:
   - component: {fileID: 5240166109602422593}
   - component: {fileID: 2591924570833145086}
   - component: {fileID: 3409583095329708542}
+  - component: {fileID: 2087247406937863836}
   m_Layer: 5
   m_Name: Bookmark Pond
   m_TagString: Untagged
@@ -296,16 +297,16 @@ RectTransform:
   m_GameObject: {fileID: 1044029056202900333}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.82, y: 0.82, z: 0.82}
+  m_LocalScale: {x: 0.74999994, y: 0.74999994, z: 0.74999994}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2762572800988749390}
   m_Father: {fileID: 75663883085470045}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -326.48}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -326.48}
+  m_SizeDelta: {x: 150.5, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5240166109602422593
 CanvasRenderer:
@@ -401,6 +402,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2087247406937863836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044029056202900333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 868f51f7b29bb664fb482e3b187b2b76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPageIndex: 2
+  targetX: 0.1
+  targetScale: {x: 0.85, y: 0.85, z: 0.85}
+  targetRotation: {x: 0, y: 0, z: -4}
+  duration: 0.25
+  easeType: 6
 --- !u!1 &1321878160398166640
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,6 +566,10 @@ GameObject:
   m_Component:
   - component: {fileID: 75663883085470045}
   - component: {fileID: 4571107964562800920}
+  - component: {fileID: 4476917453860340905}
+  - component: {fileID: 4064468560885718289}
+  - component: {fileID: 4238459480894236554}
+  - component: {fileID: 2977988677833386247}
   m_Layer: 5
   m_Name: Notebook Bookmarks
   m_TagString: Untagged
@@ -574,8 +597,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -401.58, y: 168.4}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -430.7, y: 11.48}
+  m_SizeDelta: {x: 164.3, y: 506.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4571107964562800920
 MonoBehaviour:
@@ -590,12 +613,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
+    m_Left: 65
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 38.24
+  m_Spacing: 20
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -603,6 +626,76 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &4476917453860340905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2598664289002012844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff153aa95f3d69440a390ea1d66a9632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pageHandler: {fileID: 5876753559499597208}
+  allBookmarks:
+  - {fileID: 2452670974281586903}
+  - {fileID: 6017560182216446702}
+  - {fileID: 2087247406937863836}
+  - {fileID: 9150840423714910578}
+--- !u!114 &4064468560885718289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2598664289002012844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding: {x: 0, y: -1000, z: 0, w: -1000}
+  m_Softness: {x: 0, y: 0}
+--- !u!222 &4238459480894236554
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2598664289002012844}
+  m_CullTransparentMesh: 1
+--- !u!114 &2977988677833386247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2598664289002012844}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &3013661301424213243
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,6 +746,7 @@ GameObject:
   - component: {fileID: 5221399691709176998}
   - component: {fileID: 1713411047328628797}
   - component: {fileID: 528399296234582524}
+  - component: {fileID: 6017560182216446702}
   m_Layer: 5
   m_Name: Bookmark Pike
   m_TagString: Untagged
@@ -669,16 +763,16 @@ RectTransform:
   m_GameObject: {fileID: 3223516707291131644}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.82, y: 0.82, z: 0.82}
+  m_LocalScale: {x: 0.74999994, y: 0.74999994, z: 0.74999994}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5159929801956189902}
   m_Father: {fileID: 75663883085470045}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -188.24}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -188.24}
+  m_SizeDelta: {x: 150.5, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5221399691709176998
 CanvasRenderer:
@@ -774,6 +868,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6017560182216446702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3223516707291131644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 868f51f7b29bb664fb482e3b187b2b76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPageIndex: 1
+  targetX: 0.1
+  targetScale: {x: 0.85, y: 0.85, z: 0.85}
+  targetRotation: {x: 0, y: 0, z: -4}
+  duration: 0.25
+  easeType: 6
 --- !u!1 &3324185108399747878
 GameObject:
   m_ObjectHideFlags: 0
@@ -1224,6 +1336,12 @@ MonoBehaviour:
   - {fileID: 2050093594306525704, guid: 37e8cb1fb7c3f524db60b169d1ac0789, type: 3}
   newPages: []
   currentPage: 0
+  OnPageChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnBookClosed:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!82 &4971342557744199170
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1598,6 +1716,7 @@ GameObject:
   - component: {fileID: 332656488754879634}
   - component: {fileID: 7816747551958435556}
   - component: {fileID: 2863864186880714532}
+  - component: {fileID: 9150840423714910578}
   m_Layer: 5
   m_Name: Bookmark Bio
   m_TagString: Untagged
@@ -1614,16 +1733,16 @@ RectTransform:
   m_GameObject: {fileID: 8304217723494161043}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.82, y: 0.82, z: 0.82}
+  m_LocalScale: {x: 0.74999994, y: 0.74999994, z: 0.74999994}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5759413399489908966}
   m_Father: {fileID: 75663883085470045}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -464.72}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -464.72}
+  m_SizeDelta: {x: 150.5, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &332656488754879634
 CanvasRenderer:
@@ -1719,6 +1838,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &9150840423714910578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8304217723494161043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 868f51f7b29bb664fb482e3b187b2b76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPageIndex: 3
+  targetX: 0.1
+  targetScale: {x: 0.85, y: 0.85, z: 0.85}
+  targetRotation: {x: 0, y: 0, z: -4}
+  duration: 0.25
+  easeType: 6
 --- !u!1 &8881331933533310634
 GameObject:
   m_ObjectHideFlags: 0
@@ -1942,6 +2079,7 @@ GameObject:
   - component: {fileID: 8356882918325628012}
   - component: {fileID: 6677108971728307550}
   - component: {fileID: 2113298529783224666}
+  - component: {fileID: 2452670974281586903}
   m_Layer: 5
   m_Name: Bookmark Home
   m_TagString: Untagged
@@ -1958,16 +2096,16 @@ RectTransform:
   m_GameObject: {fileID: 9127985238927628431}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.82, y: 0.82, z: 0.82}
+  m_LocalScale: {x: 0.74999994, y: 0.74999994, z: 0.74999994}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6544980015036759532}
   m_Father: {fileID: 75663883085470045}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -50}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -50}
+  m_SizeDelta: {x: 150.5, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8356882918325628012
 CanvasRenderer:
@@ -2063,6 +2201,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2452670974281586903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9127985238927628431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 868f51f7b29bb664fb482e3b187b2b76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPageIndex: 0
+  targetX: 0.1
+  targetScale: {x: 0.85, y: 0.85, z: 0.85}
+  targetRotation: {x: 0, y: 0, z: -4}
+  duration: 0.25
+  easeType: 6
 --- !u!1001 &5855058862743041146
 PrefabInstance:
   m_ObjectHideFlags: 0

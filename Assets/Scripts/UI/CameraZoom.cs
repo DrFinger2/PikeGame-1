@@ -64,8 +64,31 @@ public class CameraZoom : MonoBehaviour
     private bool isActivelyZooming;
     private bool isTouchOverUI;
 
-    private void Awake() => EnhancedTouchSupport.Enable();
-    private void OnDisable() => EnhancedTouchSupport.Disable();
+    private bool needsBoundsRecalculation = false;
+
+    private void OnEnable()
+    {
+        EnhancedTouchSupport.Enable();
+        SafeArea.OnResize.AddListener(OnScreenResized);
+    }
+
+    // FIX: Clean up the listener
+    private void OnDisable()
+    {
+        EnhancedTouchSupport.Disable();
+        SafeArea.OnResize.RemoveListener(OnScreenResized);
+    }
+
+    private void OnScreenResized()
+    {
+        // Don't calculate immediately. Let Unity update the camera's aspect ratio first.
+        if (cam != null)
+        {
+            needsBoundsRecalculation = true;
+            Debug.Log("cam != null!");
+        }
+        Debug.Log("resized!");
+    }
 
     void Start()
     {
@@ -96,8 +119,17 @@ public class CameraZoom : MonoBehaviour
 #endif
     }
 
-    void LateUpdate() => ClampAndSmoothCamera();
+    void LateUpdate()
+    {
+        if (needsBoundsRecalculation)
+        {
+            CalculateAbsoluteWorldBounds();
+            needsBoundsRecalculation = false;
+        }
 
+        ClampAndSmoothCamera();
+    }
+    
     private void HandleTouchInput()
     {
         if (Touchscreen.current == null) return;
@@ -304,6 +336,11 @@ public class CameraZoom : MonoBehaviour
 
     private void CalculateAbsoluteWorldBounds()
     {
+        Vector3 cachedPosition = cam.transform.position;
+        float cachedFOV = cam.fieldOfView;
+
+        cam.fieldOfView = initialFOV;
+
         Vector3[] panCorners = new Vector3[] {
             initialPosition + new Vector3(minPanX, 0, minPanZ),
             initialPosition + new Vector3(minPanX, 0, maxPanZ),
@@ -325,8 +362,10 @@ public class CameraZoom : MonoBehaviour
             if (maxZ > worldMaxZ) worldMaxZ = maxZ;
         }
 
-        cam.transform.position = initialPosition;
+        cam.transform.position = cachedPosition;
+        cam.fieldOfView = cachedFOV;
     }
+
 
     private void GetGroundFootprint(out float minX, out float maxX, out float minZ, out float maxZ)
     {

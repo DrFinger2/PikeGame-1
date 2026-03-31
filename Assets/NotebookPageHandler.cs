@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.Events;
 
 public class NotebookPageHandler : MonoBehaviour
 {
@@ -9,7 +10,8 @@ public class NotebookPageHandler : MonoBehaviour
     public GameObject[] bookPages;
     [SerializeField] private List<GameObject> newPages = new List<GameObject>();
     [SerializeField] private int currentPage;
-
+    public UnityEvent<int> OnPageChanged = new();
+    public UnityEvent OnBookClosed = new();
     private AudioSource audio;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -40,6 +42,8 @@ public class NotebookPageHandler : MonoBehaviour
 
     public void NextPage()
     {
+        audio.pitch = Random.Range(1.02f, 1.06f);
+
         if (currentPage < bookPages.Length - 1)
         {
             currentPage++;
@@ -48,12 +52,15 @@ public class NotebookPageHandler : MonoBehaviour
         {
             currentPage = 0;
         }
-        
+
         JumpToPage(currentPage);
+        
     }
 
     public void PreviousPage()
     {
+        audio.pitch = Random.Range(0.94f, 0.98f); // Subtly lower pitch
+
         if (currentPage > 0)
         {
             currentPage--;
@@ -67,7 +74,14 @@ public class NotebookPageHandler : MonoBehaviour
     }
 
     public void JumpToPage(int page)
-    {   
+    {
+
+        if (page != currentPage)
+        {
+            // If jumping directly via a bookmark, reset the pitch to normal
+            audio.pitch = Random.Range(0.98f, 1.02f); // Baseline with tiny variance
+        }
+        
         foreach (GameObject pg in newPages)
         {
             pg.SetActive(false);
@@ -77,13 +91,15 @@ public class NotebookPageHandler : MonoBehaviour
         {
             audio.Play();
         }
-        
+
         newPages[page].gameObject.SetActive(true);
         currentPage = page;
+        OnPageChanged.Invoke(currentPage);
     }
 
     public void CloseNotebook()
     {
         this.transform.parent.gameObject.SetActive(false);
+        OnBookClosed.Invoke();
     }
 }
