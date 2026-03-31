@@ -16702,6 +16702,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -444.65002
       objectReference: {fileID: 0}
+    - target: {fileID: 2087247406937863836, guid: 36078983e07e84e4692af58cae6f7005, type: 3}
+      propertyPath: duration
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2452670974281586903, guid: 36078983e07e84e4692af58cae6f7005, type: 3}
+      propertyPath: duration
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 3324185108399747878, guid: 36078983e07e84e4692af58cae6f7005, type: 3}
       propertyPath: m_Name
       value: Notebook UI
@@ -16785,6 +16793,14 @@ PrefabInstance:
     - target: {fileID: 3841840558298075449, guid: 36078983e07e84e4692af58cae6f7005, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017560182216446702, guid: 36078983e07e84e4692af58cae6f7005, type: 3}
+      propertyPath: duration
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9150840423714910578, guid: 36078983e07e84e4692af58cae6f7005, type: 3}
+      propertyPath: duration
+      value: 0.15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
