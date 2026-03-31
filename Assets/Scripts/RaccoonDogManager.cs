@@ -20,7 +20,7 @@ public class RaccoonDogManager : MonoBehaviour
         if(spawn == true)
         {
             spawn = false;
-            SpawnCoons();
+            SpawnRacs();
         }
 
         CoonCooldown();
@@ -30,7 +30,7 @@ public class RaccoonDogManager : MonoBehaviour
 
 
 
-    public void SpawnCoons()
+    public void SpawnRacs()
     {
         Vector3 spawnPos;
 
@@ -52,10 +52,8 @@ public class RaccoonDogManager : MonoBehaviour
         else
         {
             spawnCooldown = 60;
-            SpawnCoons();
+            SpawnRacs();
         }
-
-
     }
 
 

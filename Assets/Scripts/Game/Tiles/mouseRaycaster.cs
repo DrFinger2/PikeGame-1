@@ -83,10 +83,8 @@ public class mouseRaycaster : MonoBehaviour
     {
         Ray ray = cam.ScreenPointToRay(touchPosition);
         RaycastHit hit;
-        UnityEngine.Debug.Log("1");
         if (Physics.Raycast(ray, out hit))
         {
-            UnityEngine.Debug.Log(hit.transform.name);
             if (hit.collider != null && hit.collider.CompareTag("NPC"))
             {
                 DialogueManager.instance.InteractWithNPC();
@@ -94,7 +92,6 @@ public class mouseRaycaster : MonoBehaviour
 
             if (hit.collider != null && hit.collider.CompareTag("RaccoonDog"))
             {
-                UnityEngine.Debug.Log("3");
                 hit.transform.GetComponent<RaccoonDogMovement>().touched = true;
             }
         }

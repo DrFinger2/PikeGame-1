@@ -8,7 +8,7 @@ using NUnit.Framework.Constraints;
 
 public class GameState : MonoBehaviour
 {
-    public int currentActionPoints = 4;
+    public int currentActionPoints = 10;
     private int currentTurnBonusPoints;
     public Dictionary<MetricType, float> metrics;
     public List<OngoingEffect> activeEffects;
@@ -75,7 +75,7 @@ public class GameState : MonoBehaviour
             pendingEffects.Clear();
         }
     }
-    private void GetRandomEvent()
+    public void GetRandomEvent()
     {
         currentEvent = randomEventSystem.GetNextEvent();
         //Debug.Log(currentEvent.name);

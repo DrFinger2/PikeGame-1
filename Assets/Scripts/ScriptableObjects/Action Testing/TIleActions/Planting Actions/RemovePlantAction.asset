@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efcd742aac15aa24bb83867e9aae414b, type: 3}
   m_Name: RemovePlantAction
   m_EditorClassIdentifier: 
-  actionName: Cut Plant
+  actionName:
+    fi: Poista Kasvi
+    sw: 
+    en: 
   actionDebugMessage: You cut down plants
