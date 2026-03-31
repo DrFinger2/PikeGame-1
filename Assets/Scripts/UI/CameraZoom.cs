@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem.EnhancedTouch;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.Controls;
 
 
 /// <summary>
@@ -64,7 +65,6 @@ public class CameraZoom : MonoBehaviour
     private bool isActivelyZooming;
     private bool isTouchOverUI;
 
-    private bool needsBoundsRecalculation = false;
 
     private void OnEnable()
     {
@@ -83,9 +83,10 @@ public class CameraZoom : MonoBehaviour
     {
         if (cam != null)
         {
-             CalculateAbsoluteWorldBounds();
+            CalculateAbsoluteWorldBounds();
         }
     }
+
 
     void Start()
     {
@@ -109,41 +110,34 @@ public class CameraZoom : MonoBehaviour
         isActivelyPanning = false;
         isActivelyZooming = false;
 
-        HandleTouchInput();
+        HandleInput(); // Renamed from HandleTouchInput
 
 #if UNITY_EDITOR || UNITY_STANDALONE
         HandleDebugInput();
 #endif
     }
-
+    
     void LateUpdate()
     {
         ClampAndSmoothCamera();
     }
-    
-    private void HandleTouchInput()
+
+    private void HandleInput()
     {
-        if (Touchscreen.current == null) return;
-
+        // 1. Unified Pointer/UI Check
         int touchCount = UnityEngine.InputSystem.EnhancedTouch.Touch.activeTouches.Count;
-        var touches = Touchscreen.current.touches;
+        bool isPointerDown = Pointer.current != null && Pointer.current.press.isPressed;
+        
 
-
-        if (touchCount == 0)
+        if (!isPointerDown && touchCount == 0)
         {
             isTouchOverUI = false;
         }
-        else
+        else if (Pointer.current != null && Pointer.current.press.wasPressedThisFrame)
         {
-            // Just check the active fingers. If any of them just tapped a UI element, lock the camera.
-            for (int i = 0; i < Mathf.Min(touchCount, 2); i++)
-            {
-                if (touches[i].phase.ReadValue() == UnityEngine.InputSystem.TouchPhase.Began)
-                {
-                    if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject(touches[i].touchId.ReadValue()))
-                        isTouchOverUI = true;
-                }
-            }
+            // Unifies mouse click and first touch UI check
+            if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+                isTouchOverUI = true;
         }
 
         if (isTouchOverUI)
@@ -152,12 +146,13 @@ public class CameraZoom : MonoBehaviour
             activeZoomMomentum = 0f;
             return;
         }
-        // --------------------------------
 
+
+        // 2. Multi-Touch Pinch Zoom
         if (touchCount == 2)
         {
             isActivelyZooming = true;
-
+            var touches = Touchscreen.current.touches;
             Vector2 t1 = touches[0].position.ReadValue();
             Vector2 t2 = touches[1].position.ReadValue();
             float currentDist = Vector2.Distance(t1, t2);
@@ -168,7 +163,6 @@ public class CameraZoom : MonoBehaviour
             if (currentDist > 1f && prevDistance > 1f)
             {
                 float previousTargetFOV = targetFOV;
-
                 float rawPinchRatio = prevDistance / currentDist;
                 float adjustedPinchRatio = Mathf.Lerp(1f, rawPinchRatio, zoomSpeedMultiplier);
 
@@ -190,21 +184,22 @@ public class CameraZoom : MonoBehaviour
             activePanMomentum = Vector3.zero;
             prevDistance = currentDist;
         }
-        else if (touchCount == 1 && tileManager.Instance.toolBeingUsed == false)
+
+        // 3. Unified Panning 
+        else if (isPointerDown && touchCount <= 1 && tileManager.Instance.toolBeingUsed == false)
         {
             isActivelyPanning = true;
 
-            Vector2 touchPos = touches[0].position.ReadValue();
-            Vector2 touchDelta = touches[0].delta.ReadValue();
+            Vector2 pointerPos = Pointer.current.position.ReadValue();
+            Vector2 pointerDelta = Pointer.current.delta.ReadValue();
 
-            Ray rayNow = cam.ScreenPointToRay(touchPos);
-            Ray rayPrev = cam.ScreenPointToRay(touchPos - touchDelta);
+            Ray rayNow = cam.ScreenPointToRay(pointerPos);
+            Ray rayPrev = cam.ScreenPointToRay(pointerPos - pointerDelta);
 
             if (groundPlane.Raycast(rayNow, out float enterNow) && groundPlane.Raycast(rayPrev, out float enterPrev))
             {
                 Vector3 worldNow = rayNow.GetPoint(enterNow);
                 Vector3 worldPrev = rayPrev.GetPoint(enterPrev);
-
                 Vector3 worldDelta = worldPrev - worldNow;
 
                 targetPosition += worldDelta;
@@ -212,6 +207,7 @@ public class CameraZoom : MonoBehaviour
                 activeZoomMomentum = 0f;
             }
         }
+        // 4. Momentum
         else
         {
             if (activePanMomentum.sqrMagnitude > 0.001f)
@@ -227,6 +223,7 @@ public class CameraZoom : MonoBehaviour
             }
         }
     }
+    
 
     private void HandleDebugInput()
     {
@@ -381,6 +378,7 @@ public class CameraZoom : MonoBehaviour
         }
     }
 
+#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         if (!Application.isPlaying) return;
@@ -392,4 +390,5 @@ public class CameraZoom : MonoBehaviour
 
         Gizmos.DrawWireCube(center, new Vector3(width, 0.1f, depth));
     }
+#endif
 }
