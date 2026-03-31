@@ -93,7 +93,7 @@ public class RaccoonDogMovement : MonoBehaviour
     
     void RaccoonTouched()
     {
-        Debug.Log("GOT HIS ASS");
+        Debug.Log("GOT HIS ASS"); // lmao wtf is this
         anim.SetInteger("DogState", 2);
 
         if (hitCooldown > 0 && !scared)
