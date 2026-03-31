@@ -81,13 +81,10 @@ public class CameraZoom : MonoBehaviour
 
     private void OnScreenResized()
     {
-        // Don't calculate immediately. Let Unity update the camera's aspect ratio first.
         if (cam != null)
         {
-            needsBoundsRecalculation = true;
-            Debug.Log("cam != null!");
+             CalculateAbsoluteWorldBounds();
         }
-        Debug.Log("resized!");
     }
 
     void Start()
@@ -121,12 +118,6 @@ public class CameraZoom : MonoBehaviour
 
     void LateUpdate()
     {
-        if (needsBoundsRecalculation)
-        {
-            CalculateAbsoluteWorldBounds();
-            needsBoundsRecalculation = false;
-        }
-
         ClampAndSmoothCamera();
     }
     

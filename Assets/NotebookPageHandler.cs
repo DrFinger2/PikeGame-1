@@ -42,57 +42,84 @@ public class NotebookPageHandler : MonoBehaviour
 
     public void NextPage()
     {
-        audio.pitch = Random.Range(1.02f, 1.06f);
+        
+        int page = currentPage;
 
         if (currentPage < bookPages.Length - 1)
         {
-            currentPage++;
+            page++;
         }
         else if (currentPage == bookPages.Length - 1)
         {
-            currentPage = 0;
+            page = 0;
         }
 
-        JumpToPage(currentPage);
+        JumpToPage(page);
         
     }
 
     public void PreviousPage()
     {
-        audio.pitch = Random.Range(0.94f, 0.98f); // Subtly lower pitch
+        
+        int page = currentPage;
 
         if (currentPage > 0)
         {
-            currentPage--;
+            page--;
         }
         else if (currentPage == 0)
         {
-            currentPage = bookPages.Length - 1;
+            page = bookPages.Length - 1;
         }
         
-        JumpToPage(currentPage);
+        JumpToPage(page);
     }
 
     public void JumpToPage(int page)
     {
 
-        if (page != currentPage)
+        bool isNextPage = (page > currentPage);
+        bool isPreviousPage = (page < currentPage);
+
+         for (int i = 0; i < newPages.Count; i++)
         {
-            // If jumping directly via a bookmark, reset the pitch to normal
-            audio.pitch = Random.Range(0.98f, 1.02f); // Baseline with tiny variance
+            if (i == page)
+            {
+                newPages[i].SetActive(true);
+                RectTransform pageRect = newPages[i].GetComponent<RectTransform>();
+                pageRect.DOKill();
+
+                float startOffset = (isNextPage ? 30f : isPreviousPage ? -30f : 0f);
+                float startScale = (isNextPage || isPreviousPage) ? 0.98f : 1f; 
+
+                pageRect.anchoredPosition = new Vector2(startOffset, 0);
+                pageRect.localScale = Vector3.one * startScale; 
+
+                pageRect.DOAnchorPos(Vector2.zero, 0.2f).SetEase(Ease.OutQuad, 1.2f);
+                pageRect.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutQuad);
+            }
+            else
+            {
+                newPages[i].SetActive(false);
+            }
         }
-        
-        foreach (GameObject pg in newPages)
-        {
-            pg.SetActive(false);
-        }
+    
 
         if (!audio.isPlaying)
         {
+            float pitch = 1f;
+            
+            if (isNextPage)
+                pitch = Random.Range(1.01f, 1.04f);
+            else if (isPreviousPage)
+                pitch = Random.Range(0.96f, 0.99f);
+            else
+                pitch = Random.Range(0.98f, 1.02f); 
+                
+            audio.pitch = pitch;
             audio.Play();
         }
 
-        newPages[page].gameObject.SetActive(true);
         currentPage = page;
         OnPageChanged.Invoke(currentPage);
     }

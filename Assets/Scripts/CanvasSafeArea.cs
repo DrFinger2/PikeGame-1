@@ -12,8 +12,10 @@ public class SafeArea : MonoBehaviour
     private RectTransform panel;
     private Rect lastSafeArea;
 
-    private void Awake() => panel = GetComponent<RectTransform>();
-
+    private void Awake()
+    {
+        panel = GetComponent<RectTransform>();
+    }
 
     private void Update()
     {
