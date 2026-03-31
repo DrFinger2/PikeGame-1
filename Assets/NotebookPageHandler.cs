@@ -22,11 +22,6 @@ public class NotebookPageHandler : MonoBehaviour
         JumpToPage(currentPage);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void GeneratePages()
     {
@@ -89,14 +84,19 @@ public class NotebookPageHandler : MonoBehaviour
                 RectTransform pageRect = newPages[i].GetComponent<RectTransform>();
                 pageRect.DOKill();
 
-                float startOffset = (isNextPage ? 30f : isPreviousPage ? -30f : 0f);
-                float startScale = (isNextPage || isPreviousPage) ? 0.98f : 1f; 
+                float timeVariation = Random.Range(-0.05f, 0.05f);
+                float scaleVariation = Random.Range(-0.01f, 0.01f);
+                float offsetVariation = Random.Range(-5f, 5f);
+                int sign = (isNextPage ? 1 : -1);
 
+                float startOffset = (isNextPage || isPreviousPage) ? (20 * sign) + offsetVariation : 0f;
+                float startScale = (isNextPage || isPreviousPage) ? 0.98f + scaleVariation : 1f; 
+                
                 pageRect.anchoredPosition = new Vector2(startOffset, 0);
                 pageRect.localScale = Vector3.one * startScale; 
 
-                pageRect.DOAnchorPos(Vector2.zero, 0.2f).SetEase(Ease.OutQuad, 1.2f);
-                pageRect.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutQuad);
+                pageRect.DOAnchorPos(Vector2.zero, 0.2f + timeVariation).SetEase(Ease.OutQuad, 1.2f);
+                pageRect.DOScale(Vector3.one, 0.2f + timeVariation).SetEase(Ease.OutQuad);
             }
             else
             {
@@ -105,17 +105,12 @@ public class NotebookPageHandler : MonoBehaviour
         }
     
 
-        if (!audio.isPlaying)
+        if (true)
         {
-            float pitch = 1f;
+            float pitch = isNextPage ? Random.Range(1.01f, 1.04f)
+                        : isPreviousPage ? Random.Range(0.96f, 0.99f)
+                        : Random.Range(0.98f, 1.02f); 
             
-            if (isNextPage)
-                pitch = Random.Range(1.01f, 1.04f);
-            else if (isPreviousPage)
-                pitch = Random.Range(0.96f, 0.99f);
-            else
-                pitch = Random.Range(0.98f, 1.02f); 
-                
             audio.pitch = pitch;
             audio.Play();
         }
