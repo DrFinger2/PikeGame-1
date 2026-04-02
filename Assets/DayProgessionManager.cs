@@ -12,7 +12,7 @@ public class DayProgressionManager : MonoBehaviour
     public Button shopButton;
     public GameObject coinDisplay;
 
-    [Header("Day 3: Floating Plants")]
+    [Header("Day 3: Floating Plantss")]
     //public GameObject smallFishFeature;
     public Button[] floatingPlantButtons;
 
@@ -85,13 +85,24 @@ public class DayProgressionManager : MonoBehaviour
 
     private void SetInteractable(bool state, params Button[] buttons)
     {
-        if (buttons == null) return;
-        foreach (var btn in buttons) if (btn != null) btn.interactable = state;
+        if (buttons == null)
+            return;
+            
+        foreach (var btn in buttons)
+        {
+            if (btn != null) btn.interactable = state;
+        }
+        
     }
 
     private void SetActive(bool state, params GameObject[] objects)
     {
-        if (objects == null) return;
-        foreach (var obj in objects) if (obj != null) obj.SetActive(state);
+        if (objects == null)
+            return;
+            
+        foreach (var obj in objects)
+        {
+            if (obj != null) obj.SetActive(state);
+        }
     }
 }
