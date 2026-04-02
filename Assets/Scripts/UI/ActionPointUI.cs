@@ -5,24 +5,38 @@ public class ActionPointUI : MonoBehaviour
 {
     private TurnManager turnManager;
     [SerializeField] private TMP_Text apValueText;
+    private int currentPoints = 0;
 
     private void Start()
     {
         turnManager = TurnManager.Instance;
-        turnManager.onActionPointsChanged.AddListener(UpdateActionPointsUI);
+
+        turnManager.onActionPointsChanged.AddListener((int points) =>
+        {
+            currentPoints = points;
+            if (this.isActiveAndEnabled) 
+                UpdateActionPointsUI(currentPoints);
+        });
     }
 
     private void OnEnable()
     {
-        if (turnManager != null)
+        if (TurnManager.Instance != null && TurnManager.Instance.gameState != null)
         {
-            int points = turnManager.gameState.currentActionPoints;
-            UpdateActionPointsUI(points);
+            currentPoints = TurnManager.Instance.gameState.currentActionPoints;
+            UpdateActionPointsUI(currentPoints);
+        }
+        else
+        {
+            UpdateActionPointsUI(currentPoints); 
         }
     }
     
     private void UpdateActionPointsUI(int actionPoints)
     {
-        apValueText.text = actionPoints.ToString();
+        if (apValueText != null)
+        {
+            apValueText.text = actionPoints.ToString();
+        }
     }
 }
