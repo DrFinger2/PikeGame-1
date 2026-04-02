@@ -11,24 +11,34 @@ public class PopupHandler : MonoBehaviour
 
     private bool isAnyPopupOpen;
 
+    // Cached interaction states
+    private bool wasDialogueInteractable;
+    private bool wasNextTurnInteractable;
+    private bool wasBookInteractable;
+
+
     public void BookPopupOpen()
     {
-        if(!isAnyPopupOpen)
+        if (!isAnyPopupOpen)
         {
             isAnyPopupOpen = true;
             DisableButtonInteractions();
         }
     }
+
     public void DialoguePopupOpen()
     {
-        if(!isAnyPopupOpen && !dialoguePanel.activeSelf)
+        if (!isAnyPopupOpen && !dialoguePanel.activeSelf)
         {
             Debug.Log("dialoguepanel popup open triggered");
             isAnyPopupOpen = true;
             DisableButtonInteractions();
+
+            // Re-enable this specific one after storing and disabling
             dialogueButton.interactable = true;
         }
     }
+
     public void EventPopupOpen()
     {
         if (!isAnyPopupOpen)
@@ -37,18 +47,29 @@ public class PopupHandler : MonoBehaviour
             DisableButtonInteractions();
         }
     }
+
     private void DisableButtonInteractions()
     {
+        // Store current states before modifying them
+        wasDialogueInteractable = dialogueButton.interactable;
+        wasNextTurnInteractable = nextTurnButton.interactable;
+        wasBookInteractable = bookPopupButton.interactable;
+
         dialogueButton.interactable = false;
         nextTurnButton.interactable = false;
         bookPopupButton.interactable = false;
     }
+
     //dialogueManager closedialogue also triggers this, others from close button
     public void ClosePopup()
     {
-        dialogueButton.interactable = true;
-        nextTurnButton.interactable = false;
-        bookPopupButton.interactable = true;
-        isAnyPopupOpen = false;
+        if (isAnyPopupOpen)
+        {
+            dialogueButton.interactable = wasDialogueInteractable;
+            nextTurnButton.interactable = wasNextTurnInteractable;
+            bookPopupButton.interactable = wasBookInteractable;
+            isAnyPopupOpen = false;
+        }
+
     }
 }

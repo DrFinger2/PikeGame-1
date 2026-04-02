@@ -1,32 +1,41 @@
 using System;
 using TMPro;
+using UnityEditor.PackageManager;
 using UnityEngine;
+using UnityEngine.Events; // Added for UnityEvent
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.UI; 
 
-
-public class ActionButton : MonoBehaviour,IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler
+public class ActionButton : Selectable, IPointerClickHandler
 {
     // Temporary fix for larger architectural problem
     public static event Action<LocalizedText> OnActiveToolChanged;
+
+    [System.Serializable]
+    public class ActionEvents { public UnityEvent onClick = new(); public UnityEvent onDown = new(); }
+    public ActionEvents ButtonEvents = new ActionEvents();
+
 
     public tileAction action;
     private TurnManager turnManager;
     private tileManager tm;
     public TextMeshProUGUI buttonText;
-    [SerializeField]private bool selected = false;
+    [SerializeField] private bool selected = false;
     private Vector3 originalPosition;
-    private mouseRaycaster mouseRaycaster;
+    //private mouseRaycaster mouseRaycaster;
     private RectTransform rect;
 
 
-    void Start()
+    protected override void Start()
     {
+        base.Start();
+
         rect = GetComponent<RectTransform>();
         originalPosition = rect.anchoredPosition;
         tm = tileManager.Instance;
         turnManager = TurnManager.Instance;
-        mouseRaycaster = turnManager.gameObject.GetComponent<mouseRaycaster>();
+        //mouseRaycaster = turnManager.gameObject.GetComponent<mouseRaycaster>();
     }
 
     void Update()
@@ -43,8 +52,6 @@ public class ActionButton : MonoBehaviour,IPointerEnterHandler, IPointerExitHand
             {
                 inputPos = Mouse.current.position.ReadValue();
             }
-
-
         }
         */
         
@@ -55,22 +62,26 @@ public class ActionButton : MonoBehaviour,IPointerEnterHandler, IPointerExitHand
                 transform.position = Pointer.current.position.ReadValue();
             }
         }
-        
-        
-        
-    }
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        //Debug.Log("Mouse enter");
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        //Debug.Log("Mouse exit");
     }
     
-    public void OnPointerClick (PointerEventData eventData)
+    public override void OnPointerEnter(PointerEventData eventData)
+    {
+        base.OnPointerEnter(eventData);
+    }
+
+    public override void OnPointerExit(PointerEventData eventData)
+    {
+        base.OnPointerExit(eventData);
+    }
+    
+    public void OnPointerClick(PointerEventData eventData)
     {   
+        // Prevents clicking if the object is disabled or locked
+        if (!IsActive() || !IsInteractable()) return;
+
+        // Fire the new onClick event
+        ButtonEvents.onClick?.Invoke();
+
         /*
         if (tm.selectedTile != null)
         {
@@ -80,19 +91,28 @@ public class ActionButton : MonoBehaviour,IPointerEnterHandler, IPointerExitHand
         */
     }
     
-    public void OnPointerDown(PointerEventData pointerEventData)
+    public override void OnPointerDown(PointerEventData pointerEventData)
     {
+        base.OnPointerDown(pointerEventData);
+
+        if (!IsInteractable()) return;
+
         selected = true;
         tm.toolBeingUsed = true;
 
         if (action != null)
         {
             OnActiveToolChanged?.Invoke(action.actionName);
+            ButtonEvents.onDown?.Invoke();
         }
     }
 
-    public void OnPointerUp(PointerEventData pointerEventData)
+    public override void OnPointerUp(PointerEventData pointerEventData)
     {
+        base.OnPointerUp(pointerEventData);
+
+        if (!selected) return;
+
         Debug.Log("Pointer up!");
         if (tm.selectedTile != null)
         {
@@ -106,16 +126,4 @@ public class ActionButton : MonoBehaviour,IPointerEnterHandler, IPointerExitHand
         
         OnActiveToolChanged?.Invoke(null);
     }
-    
-    /*
-    public void ClickButton()
-    {
-        if (tm.selectedTile != null && action != null)
-        {
-            action.affectTile(tm.selectedTile);
-        }
-        
-    }
-    */
-    
 }
