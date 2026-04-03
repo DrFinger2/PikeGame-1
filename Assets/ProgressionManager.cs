@@ -38,7 +38,7 @@ public class ProgressionManager : MonoBehaviour
             int day = TurnManager.Instance.CurrentTurn;
             day1Unlocked = day >= 1;
             day2Unlocked = day >= 2;
-            day3Unlocked = day >= 2;
+            day3Unlocked = day >= 3;
             day5Unlocked = day >= 5;
 
             SetInteractable(day1Unlocked, cutPlantsButton, openPlantsButton);
