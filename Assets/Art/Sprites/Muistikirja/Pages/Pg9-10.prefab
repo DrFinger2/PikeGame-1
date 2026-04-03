@@ -66,12 +66,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<align=center><b>Linnut</b></align>\n\n\nNokikana\u200B\r\n\r\nNokikana
-    on kokomusta rantakanojen heimoon kuuluva vesilintu, jolla on valkoinen nokka
-    ja otsakilpi. \r\n\r\nNokikana on noin 36-42cm pitk\xE4, se painaa 0,6-1,2kg
-    ja sen siipien k\xE4rkiv\xE4li on 70-80cm. \r\n\r\nNokikana munii huhtikuun loppupuolella
-    4-12 munaa ja sen pes\xE4 sijaitsee osmank\xE4\xE4mi- tai ruokokasvustossa tai
-    n\xE4kyv\xE4sti m\xE4tt\xE4ill\xE4. \u200B"
+  m_text: "<align=center><b>EL\xC4IMET JA HY\xD6NTEISET</b></align>\n\n\nSupikoira\u200B\r\n\r\nSupikoira
+    on pienikokoinen ja pitk\xE4karvainen koirael\xE4in, joka sy\xF6 sek\xE4 el\xE4in-
+    ett\xE4 kasviravintoa ja voi vaipua talviuneen. Kosteikoilla supikoira aiheuttaa
+    paljon vahinkoa. Se sy\xF6 lintujen munia ja poikasia, voi levitt\xE4\xE4 tauteja
+    ja lis\xE4\xE4ntyy nopeasti. T\xE4m\xE4n vuoksi se voi uhata alueen luonnon tasapainoa.\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
   m_sharedMaterial: {fileID: 6471187536760470386, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
@@ -109,8 +108,9 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
-  m_lineSpacing: -52.6
+  m_lineSpacing: -40
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -155,33 +155,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonText:
-    fi: "<align=center><b>Linnut</b></align>\n\n\nNokikana\u200B\r\n\r\nNokikana
-      on kokomusta rantakanojen heimoon kuuluva vesilintu, jolla on valkoinen nokka
-      ja otsakilpi. \r\n\r\nNokikana on noin 36-42cm pitk\xE4, se painaa 0,6-1,2kg
-      ja sen siipien k\xE4rkiv\xE4li on 70-80cm. \r\n\r\nNokikana munii huhtikuun
-      loppupuolella 4-12 munaa ja sen pes\xE4 sijaitsee osmank\xE4\xE4mi- tai ruokokasvustossa
-      tai n\xE4kyv\xE4sti m\xE4tt\xE4ill\xE4. \u200B"
-    sw: "<align=center><b>F\xE5glar</b></align>\nSoth\xF6na\nSoth\xF6nan \xE4r en
-      helsvart vattenf\xE5gel tillh\xF6rande rallidae-familjen, med vit n\xE4bb och
-      pannpl\xE5t.\nSoth\xF6nan \xE4r ungef\xE4r 36-42cm l\xE5ng, v\xE4ger 0,6-1,2kg
-      och har ett vingspann p\xE5 70-80cm.\nSoth\xF6nan l\xE4gger 4-12 \xE4gg i slutet
-      av april, och dess bo finns i kaveldun- eller vassvegetation eller synligt
-      p\xE5 tuvor.\nBoth translations maintain a similar structure and length as
-      your original Finnish text, which should work well for your game localization."
-    en: '<align=center><b>Birds</b></align>
+    fi: "<align=center><b>EL\xC4IMET JA HY\xD6NTEISET</b></align>\n\n\nSupikoira\u200B\r\n\r\nSupikoira
+      on pienikokoinen ja pitk\xE4karvainen koirael\xE4in, joka sy\xF6 sek\xE4 el\xE4in-
+      ett\xE4 kasviravintoa ja voi vaipua talviuneen. Kosteikoilla supikoira aiheuttaa
+      paljon vahinkoa. Se sy\xF6 lintujen munia ja poikasia, voi levitt\xE4\xE4 tauteja
+      ja lis\xE4\xE4ntyy nopeasti. T\xE4m\xE4n vuoksi se voi uhata alueen luonnon
+      tasapainoa.\u200B"
+    sw: "<align=center><b>DJUR OCH INSEKTER</b></align>\n\n\nM\xE5rdhund\n\nM\xE5rdhunden
+      \xE4r ett sm\xE5vuxet och l\xE5ngh\xE5rigt hunddjur som \xE4ter b\xE5de animalisk
+      och vegetabilisk f\xF6da och kan g\xE5 i vinterdvala. I v\xE5tmarker orsakar
+      m\xE5rdhunden mycket skada. Den \xE4ter f\xE5glars \xE4gg och ungar, kan sprida
+      sjukdomar och f\xF6r\xF6kar sig snabbt. D\xE4rf\xF6r kan den hota den naturliga
+      balansen i omr\xE5det."
+    en: '<align=center><b>ANIMALS AND INSECTS</b></align>
 
-      Eurasian Coot
 
-      The Eurasian
-      Coot is an all-black waterbird belonging to the rail family, with a white beak
-      and frontal shield.
 
-      The Eurasian Coot is about 36-42cm long, weighs
-      0.6-1.2kg, and has a wingspan of 70-80cm.
+      Raccoon Dog
 
-      The Eurasian Coot lays 4-12
-      eggs in late April, and its nest is located in cattail or reed vegetation or
-      visibly on tussocks.'
+
+      The
+      raccoon dog is a small, long-haired canid that eats both animal and plant based
+      food and can even hibernate. In wetlands it causes significant harm by eating
+      bird eggs, spreading diseases, and reproducing quickly. For this reason, it
+      can threaten the ecological balance of the area.'
 --- !u!1 &1967441730839845199
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,6 +282,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -425,11 +423,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\nPunajalkaviklo\u200B\r\n\r\nPunajalkaviklo on kurppien heimoon kuuluva
-    kahlaaja. Se on selk\xE4puolelta ruskeankirjava ja sen siiven takareuna on valkoinen.
-    Jalat ovat punaiset tai nuoremmalla linnulla keltaiset.\n\r\nPunajalkaviklo on
-    24-27cm pitk\xE4, sen siipien k\xE4rkiv\xE4li on 47-53cm ja paino 92-127g. Se
-    pesii kosteilla sis\xE4maan niityill\xE4 tai merenrannikon niityill\xE4."
+  m_text: "\nLehm\xE4\u200B\r\n\r\nLehm\xE4t laiduntavat rannoilla ja pit\xE4v\xE4t
+    kasvillisuuden matalana. T\xE4m\xE4 est\xE4\xE4 kosteikkoa kasvamasta umpeen
+    ja luo avoimia alueita, joissa monet lajit viihtyv\xE4t. Laiduntaminen lis\xE4\xE4
+    my\xF6s luonnon monimuotoisuutta."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
   m_sharedMaterial: {fileID: 6471187536760470386, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
@@ -467,8 +464,9 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
-  m_lineSpacing: -52.6
+  m_lineSpacing: -40
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -513,25 +511,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonText:
-    fi: "\nPunajalkaviklo\u200B\r\n\r\nPunajalkaviklo on kurppien heimoon kuuluva
-      kahlaaja. Se on selk\xE4puolelta ruskeankirjava ja sen siiven takareuna on
-      valkoinen. Jalat ovat punaiset tai nuoremmalla linnulla keltaiset.\n\r\nPunajalkaviklo
-      on 24-27cm pitk\xE4, sen siipien k\xE4rkiv\xE4li on 47-53cm ja paino 92-127g.
-      Se pesii kosteilla sis\xE4maan niityill\xE4 tai merenrannikon niityill\xE4."
-    sw: "R\xF6dbena\nR\xF6dbenan \xE4r en vadare som tillh\xF6r sn\xE4ppfamiljen.
-      Den har brokigt brun ovansida och vit bakkant p\xE5 vingarna. Benen \xE4r r\xF6da
-      eller gula hos yngre f\xE5glar.\nR\xF6dbenan \xE4r 24-27cm l\xE5ng, har ett
-      vingspann p\xE5 47-53cm och v\xE4ger 92-127g. Den h\xE4ckar p\xE5 fuktiga inlands\xE4ngar
-      eller kust\xE4ngar."
-    en: 'Common Redshank
+    fi: "\nLehm\xE4\u200B\n\nLehm\xE4t laiduntavat rannoilla ja pit\xE4v\xE4t kasvillisuuden
+      matalana. T\xE4m\xE4 est\xE4\xE4 kosteikkoa kasvamasta umpeen ja luo avoimia
+      alueita, joissa monet lajit viihtyv\xE4t. Laiduntaminen lis\xE4\xE4 my\xF6s
+      luonnon monimuotoisuutta."
+    sw: "\nKo\n\nKor betar l\xE4ngs str\xE4nderna och h\xE5ller vegetationen l\xE5g.
+      Detta hindrar v\xE5tmarken fr\xE5n att v\xE4xa igen och skapar \xF6ppna omr\xE5den
+      d\xE4r m\xE5nga arter trivs. Betandet \xF6kar ocks\xE5 den biologiska m\xE5ngfalden."
+    en: '
 
-      The Common Redshank is a wader belonging to the sandpiper
-      family. Its back is mottled brown and the trailing edge of its wing is white.
-      The legs are red, or yellow in younger birds.
+      Cow
 
-      The Common Redshank is
-      24-27cm long, has a wingspan of 47-53cm, and weighs 92-127g. It nests on wet
-      inland meadows or coastal meadows.'
+
+      Cows graze along the shores and keep the vegetation
+      short. This prevents the wetland from becoming overgrown and creates open areas
+      where many species thrive. Grazing also increases biodiversity.'
 --- !u!1 &3754958998092947573
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,6 +629,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -770,7 +765,7 @@ RectTransform:
   m_GameObject: {fileID: 5229606787551601754}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.19, y: 2.19, z: 2.19}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1528673805664511592}

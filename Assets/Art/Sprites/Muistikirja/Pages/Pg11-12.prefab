@@ -66,13 +66,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Viiksitimali\n\nViiksitimali on pieni pitk\xE4pyrst\xF6inen lintu. Sen
-    selk\xE4 on punaruskea ja siivet punaruskea-, musta- ja valkokirjavat. Koiraan
-    tunnistaa helposti viiksijuovasta.\r\n\r\nSen pituus on 14-15,5cm ja paino 11-21g.
-    Viiksitimali rakentaa pes\xE4ns\xE4 j\xE4rviruokojen varaan ja munii 3-11 munaa
-    huhti- toukokuussa.\r\n\r\nToinen ja kolmaskin poikue saman vuoden aikana ovat
-    mahdollisia. Se on yhdyskuntapesij\xE4 eli pes\xE4t sijaitsevat l\xE4hell\xE4
-    toisiaan.\u200B\r\n\u200Bv\xE4sti m\xE4tt\xE4ill\xE4. \u200B"
+  m_text: "Pikkukalat\n\nPikkukalat ovat t\xE4rke\xE4 osa kosteikon el\xE4m\xE4\xE4.
+    Niihin kuuluvat esimerkiksi s\xE4rjen poikaset sek\xE4 ahvenen nuoret yksil\xF6t.
+    Ne sy\xF6v\xE4t planktonia ja pieni\xE4 selk\xE4rangattomia el\xE4imi\xE4 ja
+    toimivat itse ravintona suuremmille kaloille. Esimerkiksi hauki saalistaa pikkukaloja,
+    mik\xE4 auttaa pit\xE4m\xE4\xE4n kalakannat tasapainossa.\r\n\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
   m_sharedMaterial: {fileID: 6471187536760470386, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
@@ -110,8 +108,9 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
-  m_lineSpacing: -52.6
+  m_lineSpacing: -40
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -156,33 +155,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonText:
-    fi: "Viiksitimali\n\nViiksitimali on pieni pitk\xE4pyrst\xF6inen lintu. Sen selk\xE4
-      on punaruskea ja siivet punaruskea-, musta- ja valkokirjavat. Koiraan tunnistaa
-      helposti viiksijuovasta.\r\n\r\nSen pituus on 14-15,5cm ja paino 11-21g. Viiksitimali
-      rakentaa pes\xE4ns\xE4 j\xE4rviruokojen varaan ja munii 3-11 munaa huhti- toukokuussa.\r\n\r\nToinen
-      ja kolmaskin poikue saman vuoden aikana ovat mahdollisia. Se on yhdyskuntapesij\xE4
-      eli pes\xE4t sijaitsevat l\xE4hell\xE4 toisiaan.\u200B\r\n\u200Bv\xE4sti m\xE4tt\xE4ill\xE4.
-      \u200B"
-    sw: "Sk\xE4ggmes\nSk\xE4ggmesen \xE4r en liten f\xE5gel med l\xE5ng stj\xE4rt.
-      Dess rygg \xE4r r\xF6dbrun och vingarna \xE4r spr\xE4ckliga i r\xF6dbrunt,
-      svart och vitt. Hanen k\xE4nns l\xE4tt igen p\xE5 sitt mustaschstreck.\nDess
-      l\xE4ngd \xE4r 14-15,5cm och vikt 11-21g. Sk\xE4ggmesen bygger sitt bo med
-      st\xF6d av vass och l\xE4gger 3-11 \xE4gg i april-maj.\nEn andra och till och
-      med tredje kull under samma \xE5r \xE4r m\xF6jlig. Den \xE4r en kolonibyggare,
-      vilket betyder att bona ligger n\xE4ra varandra."
-    en: 'Bearded Reedling
+    fi: "Pikkukalat\n\nPikkukalat ovat t\xE4rke\xE4 osa kosteikon el\xE4m\xE4\xE4.
+      Niihin kuuluvat esimerkiksi s\xE4rjen poikaset sek\xE4 ahvenen nuoret yksil\xF6t.
+      Ne sy\xF6v\xE4t planktonia ja pieni\xE4 selk\xE4rangattomia el\xE4imi\xE4 ja
+      toimivat itse ravintona suuremmille kaloille. Esimerkiksi hauki saalistaa pikkukaloja,
+      mik\xE4 auttaa pit\xE4m\xE4\xE4n kalakannat tasapainossa."
+    sw: "Sm\xE5fiskar\n\nSm\xE5fiskar \xE4r en viktig del av livet i v\xE5tmarker.
+      Till dem h\xF6r till exempel m\xF6rtens yngel och unga abborrar. De \xE4ter
+      plankton och sm\xE5 ryggradsl\xF6sa djur och fungerar sj\xE4lva som f\xF6da
+      f\xF6r st\xF6rre fiskar. Till exempel jagar g\xE4ddan sm\xE5fisk, vilket hj\xE4lper
+      till att h\xE5lla fiskbest\xE5nden i balans."
+    en: 'Small fish
 
-      The Bearded Reedling is a small, long-tailed bird.
-      Its back is reddish-brown and its wings are mottled with reddish-brown, black,
-      and white. The male is easily recognized by its mustache stripe.
 
-      Its
-      length is 14-15.5cm and weight 11-21g. The Bearded Reedling builds its nest
-      supported by common reeds and lays 3-11 eggs in April-May.
-
-      A second
-      and even third brood during the same year are possible. It is a colonial nester,
-      meaning the nests are located close to each other.'
+      Small fish are an important part of wetland life. They
+      include, for example, roach fry and young perch. They feed on plankton and
+      small invertebrates and serve as food for larger fish. For example, pike prey
+      on small fish, which helps keep fish populations in balance.'
 --- !u!1 &1967441730839845199
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,6 +275,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -426,13 +416,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\n\rSilkkiuikku \u200B\n\r\nSilkkiuikku on pitk\xE4kaulainen uikkulintu.
-    Silkkiuikun tunnistaa t\xF6yhd\xF6st\xE4 sen p\xE4\xE4ss\xE4, joka kuitenkin
-    puuttuu talvella. \n\nKaulan etuosa ja vatsa ovat valkoiset ja kaulan takaosa
-    ja selk\xE4 ovat tummanruskeat. \n\nSilkkiuikku on 46\u201351 cm pitk\xE4, sen
-    siipien k\xE4rkiv\xE4li on 59\u201373 cm ja paino 1,3\u20132 kg. Silkkiuikun
-    pes\xE4 on kuolleista kasveista rakennettu lautta, joka on kiinnitetty vesikasveihin
-    ja se munii 3-6 munaa.\u200B\r\n"
+  m_text: "\nSudenkorennot\n\nSudenkorennot el\xE4v\xE4t toukkina vedess\xE4 ja aikuisina
+    ilmassa. Ne saalistavat hy\xF6nteisi\xE4 ja auttavat pit\xE4m\xE4\xE4n hy\xF6nteism\xE4\xE4r\xE4t
+    kurissa. Kosteikoilla tavataan muun muassa keijukorentoja, neitokorentoja ja
+    suurempia aitokorentoja. Sudenkorentojen esiintyminen kertoo yleens\xE4 hyv\xE4st\xE4
+    veden laadusta."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
   m_sharedMaterial: {fileID: 6471187536760470386, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
@@ -470,8 +458,9 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
-  m_lineSpacing: -52.6
+  m_lineSpacing: -40
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -516,32 +505,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonText:
-    fi: "\n\rSilkkiuikku \u200B\n\r\nSilkkiuikku on pitk\xE4kaulainen uikkulintu.
-      Silkkiuikun tunnistaa t\xF6yhd\xF6st\xE4 sen p\xE4\xE4ss\xE4, joka kuitenkin
-      puuttuu talvella. \n\nKaulan etuosa ja vatsa ovat valkoiset ja kaulan takaosa
-      ja selk\xE4 ovat tummanruskeat. \n\nSilkkiuikku on 46\u201351 cm pitk\xE4,
-      sen siipien k\xE4rkiv\xE4li on 59\u201373 cm ja paino 1,3\u20132 kg. Silkkiuikun
-      pes\xE4 on kuolleista kasveista rakennettu lautta, joka on kiinnitetty vesikasveihin
-      ja se munii 3-6 munaa.\u200B\r\n"
-    sw: "Sk\xE4ggdopping\nSk\xE4ggdoppingen \xE4r en l\xE5nghalsad dopping. Sk\xE4ggdoppingen
-      k\xE4nns igen p\xE5 sin tofs p\xE5 huvudet, som dock saknas p\xE5 vintern.\nFramsidan
-      av halsen och buken \xE4r vita, och baksidan av halsen och ryggen \xE4r m\xF6rkbruna.\nSk\xE4ggdoppingen
-      \xE4r 46-51 cm l\xE5ng, har ett vingspann p\xE5 59-73 cm och v\xE4ger 1,3-2
-      kg. Sk\xE4ggdoppingens bo \xE4r en flotte byggd av d\xF6da v\xE4xter, f\xE4st
-      vid vattenv\xE4xter, och den l\xE4gger 3-6 \xE4gg."
-    en: 'Great Crested Grebe
+    fi: "\nSudenkorennot\n\nSudenkorennot el\xE4v\xE4t toukkina vedess\xE4 ja aikuisina
+      ilmassa. Ne saalistavat hy\xF6nteisi\xE4 ja auttavat pit\xE4m\xE4\xE4n hy\xF6nteism\xE4\xE4r\xE4t
+      kurissa. Kosteikoilla tavataan muun muassa keijukorentoja, neitokorentoja ja
+      suurempia aitokorentoja. Sudenkorentojen esiintyminen kertoo yleens\xE4 hyv\xE4st\xE4
+      veden laadusta."
+    sw: "\nSl\xE4nd\xF6r\n\nSl\xE4ndor lever som larver i vattnet och som vuxna i
+      luften. De jagar insekter och bidrar till att h\xE5lla insektsbest\xE5nden
+      under kontroll. I v\xE5tmarker f\xF6rekommer bland annat trollsl\xE4ndor, damsl\xE4ndor
+      och st\xF6rre \xE4delsl\xE4ndor. F\xF6rekomsten av sl\xE4ndor \xE4r oftast
+      ett tecken p\xE5 god vattenkvalitet."
+    en: '
 
-      The Great Crested Grebe is a long-necked grebe.
-      The Great Crested Grebe can be identified by the crest on its head, which is
-      absent in winter.
+      Dragonflies
 
-      The front of the neck and belly are white, and the
-      back of the neck and back are dark brown.
 
-      The Great Crested Grebe is
-      46-51 cm long, has a wingspan of 59-73 cm, and weighs 1.3-2 kg. The Great Crested
-      Grebe''s nest is a raft built of dead plants, attached to aquatic vegetation,
-      and it lays 3-6 eggs.'
+      Dragonflies live as larvae in the water and
+      as adults in the air. They prey on insects and help keep insect populations
+      in check. In wetlands, you can find damselflies, skimmers, and larger true
+      dragonflies, among others. The presence of dragonflies is usually an indication
+      of good water quality.'
 --- !u!1 &3754958998092947573
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,6 +628,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -780,7 +764,7 @@ RectTransform:
   m_GameObject: {fileID: 5229606787551601754}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.19, y: 2.19, z: 2.19}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1528673805664511592}

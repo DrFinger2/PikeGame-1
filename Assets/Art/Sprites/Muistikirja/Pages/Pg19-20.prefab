@@ -66,9 +66,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<align=center><b>Kalat</b></align>\n\nKosteikoilla esiintyy my\xF6s muita\r\nkaloja
-    kuin haukea. \n\nEsimerkiksi\r\ns\xE4rki\xE4, lahnoja ja kymenpiikki\xE4 voi\r\nel\xE4\xE4
-    kosteikolla.\u200B"
+  m_text: "\nUlpukka\n\nUlpukalla on leve\xE4t kelluvat lehdet ja keltaiset kukat.
+    Se kasvaa monenlaisissa vesiss\xE4 ja sen lehdet kest\xE4v\xE4t paremmin virtausta
+    kuin lumpeen lehdet.\r\n\n\n\n\n\nUistinvita\n\nUistinvidalla on soikeat lehdet,
+    jotka kelluvat veden pinnalla sek\xE4 vihre\xE4, t\xE4hk\xE4m\xE4inen kukinto,
+    joka nousee veden yl\xE4puolelle. Se viihtyy reheviss\xE4 vesiss\xE4."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
   m_sharedMaterial: {fileID: 6471187536760470386, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
@@ -106,8 +108,9 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
-  m_lineSpacing: -52.6
+  m_lineSpacing: -40
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -152,25 +155,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonText:
-    fi: "<align=center><b>Kalat</b></align>\n\nKosteikoilla esiintyy my\xF6s muita\r\nkaloja
-      kuin haukea. \n\nEsimerkiksi\r\ns\xE4rki\xE4, lahnoja ja kymenpiikki\xE4 voi\r\nel\xE4\xE4
-      kosteikolla.\u200B"
-    sw: "<align=center><b>Fiskar</b></align>\nI v\xE5tmarker f\xF6rekommer ocks\xE5
-      andra\nfiskarter \xE4n g\xE4dda.\nTill exempel\nm\xF6rt, braxen och sm\xE5spigg
-      kan\nleva i v\xE5tmarken."
-    en: '<align=center><b>Fish</b></align>
+    fi: "\nUlpukka\n\nUlpukalla on leve\xE4t kelluvat lehdet ja keltaiset kukat.
+      Se kasvaa monenlaisissa vesiss\xE4 ja sen lehdet kest\xE4v\xE4t paremmin virtausta
+      kuin lumpeen lehdet.\n\n\n\n\nUistinvita\n\nUistinvidalla on soikeat lehdet,
+      jotka kelluvat veden pinnalla sek\xE4 vihre\xE4, t\xE4hk\xE4m\xE4inen kukinto,
+      joka nousee veden yl\xE4puolelle. Se viihtyy reheviss\xE4 vesiss\xE4."
+    sw: "\nGul n\xE4ckrose\n\nGul n\xE4ckrosen har breda, flytande blad och gula
+      blommor. Den v\xE4xer i m\xE5nga olika typer av vatten och dess blad t\xE5l
+      str\xF6mmar b\xE4ttre \xE4n vit n\xE4ckrosens blad.\n\n\n\n\nG\xE4ddnate\n\nG\xE4ddnaten
+      har avl\xE5nga blad som flyter p\xE5 vattenytan samt en gr\xF6n, axliknande
+      blomst\xE4llning som str\xE4cker sig upp \xF6ver vattenytan. Den trivs i n\xE4ringsrika
+      vatten."
+    en: '
 
-      Wetlands are also home to fish
+      Yellow water-lily
 
-      species
-      other than pike.
 
-      For example,
+      The yellow water-lily has broad, floating
+      leaves and yellow flowers. It grows in many types of water, and its leaves
+      are more resistant to currents than those of the white water-lily.
 
-      roach, bream, and nine-spined stickleback
-      may
 
-      live in the wetland.'
+
+
+
+      Floating
+      pondweed
+
+
+      The floating pondweed has oval leaves that float on the water''s
+      surface and a green, spike-like inflorescence that rises above the water. It
+      thrives in nutrient-rich waters.'
 --- !u!1 &1967441730839845199
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,6 +289,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -357,6 +373,7 @@ GameObject:
   - component: {fileID: 8917685424953469543}
   - component: {fileID: 5188029298047065234}
   - component: {fileID: 3927925753585208204}
+  - component: {fileID: 4971891982203824043}
   m_Layer: 5
   m_Name: Text B
   m_TagString: Untagged
@@ -380,7 +397,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 272.9, y: 177.3}
+  m_AnchoredPosition: {x: 166, y: 174}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5188029298047065234
@@ -411,7 +428,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: "<align=center><b>UPOSLEHTISET KASVIT</b></align>\n\nUposlehtiset kasvit
+    kasvavat veden alla. Ne tuottavat happea, sitovat ravinteita, pit\xE4v\xE4t veden
+    kirkkaana ja tarjoavat suojaa kaloille ja pieneli\xF6ille.\n\u200B\n\n\u200BTummalahnanruoho\n\nTummalahnanruoho
+    kasvaa pohjassa melko syv\xE4ss\xE4 vedess\xE4. Sill\xE4 on tummanvihre\xE4t
+    lehdet, jotka muodostavat tihe\xE4n ruusukkeen."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
   m_sharedMaterial: {fileID: 6471187536760470386, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
@@ -449,8 +470,9 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
-  m_lineSpacing: -52.6
+  m_lineSpacing: -40
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -476,12 +498,40 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -43.0346, y: 1.5565662, z: -82.227325, w: -178.49335}
+  m_margin: {x: -43.0346, y: 1.5565662, z: -82.227325, w: -299.1712}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &4971891982203824043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3752300061302600148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36422ed2236b4ef4d88887b861d3bdcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonText:
+    fi: "<align=center><b>UPOSLEHTISET KASVIT</b></align>\n\nUposlehtiset kasvit
+      kasvavat veden alla. Ne tuottavat happea, sitovat ravinteita, pit\xE4v\xE4t
+      veden kirkkaana ja tarjoavat suojaa kaloille ja pieneli\xF6ille.\n\u200B\n\n\u200BTummalahnanruoho\n\nTummalahnanruoho
+      kasvaa pohjassa melko syv\xE4ss\xE4 vedess\xE4. Sill\xE4 on tummanvihre\xE4t
+      lehdet, jotka muodostavat tihe\xE4n ruusukkeen."
+    sw: "<align=center><b>VATTENV\xC4XTER</b></align>\n\nVattenv\xE4xter v\xE4xer
+      under vattenytan. De producerar syre, binder n\xE4rings\xE4mnen, h\xE5ller
+      vattnet klart och erbjuder skydd \xE5t fiskar och mikroorganismer.\n\u200B\n\nStyvt
+      braxengr\xE4s\n\nSvytt braxengr\xE4s v\xE4xer p\xE5 botten i ganska djupt vatten.
+      Den har m\xF6rkgr\xF6na blad som bildar en t\xE4t rosett."
+    en: "<align=center><b>SUBMERGED PLANTS</b></align>\n\nSubmerged plants grow underwater.
+      They produce oxygen, absorb nutrients, keep the water clear, and provide shelter
+      for fish and microorganisms.\n\u200B\n\nLake quillwort\n\nThe lake quillwort
+      grows on the bottom in fairly deep water. It has dark green leaves that form
+      a dense rosette."
 --- !u!1 &3754958998092947573
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,6 +635,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0

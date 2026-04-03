@@ -66,12 +66,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "J\xE4rvikaisla\n\nJ\xE4rvikaisla on lehdet\xF6n ja paksuvartinen kasvi,
-    joka sekoitetaan usein j\xE4rviruokoon. Sen ruskeat kukinnot kasvavat pienin\xE4
-    ryhmin\xE4. Se kasvaa j\xE4rviss\xE4 ja v\xE4h\xE4suolaisissa murtovesiss\xE4.\n\n\n\nOsmank\xE4\xE4mi\n\nSuomessa
-    kasvaa kahta \nosmank\xE4\xE4milajia: leve\xE4- ja \nkapeaosmank\xE4\xE4mi. Ne
-    ovat \nkorkeita kasveja, joilla on paksut varret ja tiivis kukinto, ja ne kasvavat
-    matalassa vedess\xE4."
+  m_text: "<align=center><b>Muut</b></align>\n\nKosteikoilla el\xE4\xE4 my\xF6s kaikenlaisia
+    muita hy\xF6nteisi\xE4 ja nilvi\xE4isi\xE4. Kosteikoilla esiintyy monenlaisia
+    kuoriaisia, juotikkaita, perhosia, simpukoita, kotiloita ja h\xE4m\xE4h\xE4kkej\xE4."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
   m_sharedMaterial: {fileID: 6471187536760470386, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
@@ -111,7 +108,7 @@ MonoBehaviour:
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
   m_wordSpacing: 0
-  m_lineSpacing: -40
+  m_lineSpacing: -52.6
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -156,24 +153,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonText:
-    fi: "J\xE4rvikaisla\n\nJ\xE4rvikaisla on lehdet\xF6n ja paksuvartinen kasvi,
-      joka sekoitetaan usein j\xE4rviruokoon. Sen ruskeat kukinnot kasvavat pienin\xE4
-      ryhmin\xE4. Se kasvaa j\xE4rviss\xE4 ja v\xE4h\xE4suolaisissa murtovesiss\xE4.\n\n\n\nOsmank\xE4\xE4mi\n\nSuomessa
-      kasvaa kahta \nosmank\xE4\xE4milajia: leve\xE4- ja \nkapeaosmank\xE4\xE4mi.
-      Ne ovat \nkorkeita kasveja, joilla on paksut varret ja tiivis kukinto, ja ne
-      kasvavat matalassa vedess\xE4."
-    sw: "S\xE4v\n\nS\xE4v \xE4r en bladl\xF6s och tjockstj\xE4lkad v\xE4xt som ofta
-      f\xF6rv\xE4xlas med bladvass. Dess bruna blomst\xE4llningar sitter i sm\xE5
-      grupper. Den v\xE4xer i sj\xF6ar och i svagt br\xE4ckta vatten.\n\n\n\nKaveldun\n\nI
-      Finland v\xE4xer tv\xE5 arter \nav kaveldun: bred- och \nsmalkaveldun. Det
-      \xE4r h\xF6ga \nv\xE4xter med tjocka stj\xE4lkar och t\xE4ta blomst\xE4llningar,
-      som trivs i grunt vatten.\r\n"
-    en: "Common club-rush\n\nCommon club-rush is a leafless, thick-stemmed plant
-      that is often confused with common reed. Its brown inflorescences grow in small
-      clusters. It grows in lakes and brackish waters.\n\n\n\nCattail\n\nTwo species
-      of cattail \ngrow in Finland: the \nbroad-leaved cattail and \nthe narrow-leaved
-      cattail. They are tall plants with thick stems and dense inflorescences, and
-      they grow in shallow water."
+    fi: "<align=center><b>Muut</b></align>\n\nKosteikoilla el\xE4\xE4 my\xF6s kaikenlaisia
+      muita hy\xF6nteisi\xE4 ja nilvi\xE4isi\xE4. Kosteikoilla esiintyy monenlaisia
+      kuoriaisia, juotikkaita, perhosia, simpukoita, kotiloita ja h\xE4m\xE4h\xE4kkej\xE4."
+    sw: "<align=center><b>\xD6vriga</b></align>\nV\xE5tmarker \xE4r ocks\xE5 hem
+      f\xF6r alla m\xF6jliga andra insekter och bl\xF6tdjur. I v\xE5tmarker f\xF6rekommer
+      m\xE5nga olika skalbaggar, iglar, fj\xE4rilar, musslor, sn\xE4ckor och spindlar."
+    en: '<align=center><b>Others</b></align>
+
+      Wetlands are also home to all
+      kinds of other insects and mollusks. Wetlands host many types of beetles, leeches,
+      butterflies, mussels, snails, and spiders.'
 --- !u!1 &1830784678095604653
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,7 +198,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 231, y: 57.9}
+  m_AnchoredPosition: {x: 170.8, y: 28.6}
   m_SizeDelta: {x: 383, y: 198}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7544180009584468391
@@ -314,7 +304,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 15
+  m_text: 25
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
   m_sharedMaterial: {fileID: 6471187536760470386, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
@@ -396,7 +386,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1528673805664511592}
   m_Layer: 5
-  m_Name: Pg15-16
+  m_Name: Pg25-26
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -421,6 +411,8 @@ RectTransform:
   - {fileID: 4891227290643758567}
   - {fileID: 4910241335753492185}
   - {fileID: 932748643385145419}
+  - {fileID: 3248693958090183330}
+  - {fileID: 8856814957345269086}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -439,7 +431,6 @@ GameObject:
   - component: {fileID: 8917685424953469543}
   - component: {fileID: 5188029298047065234}
   - component: {fileID: 3927925753585208204}
-  - component: {fileID: 1757137428322153564}
   m_Layer: 5
   m_Name: Text B
   m_TagString: Untagged
@@ -463,7 +454,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 166.5, y: 177.3}
+  m_AnchoredPosition: {x: 272.9, y: 177.3}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5188029298047065234
@@ -494,12 +485,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<align=center><b>RUOHOT</b></align>\n\nRuohokasvit auttavat vahvistamaan
-    kosteikon rantoja ja est\xE4v\xE4t eroosiota. Ne tarjoavat elinymp\xE4rist\xF6j\xE4
-    monille hy\xF6nteisille.\r\n\n\n\n\n\nJouhivihvil\xE4\n\nJouhivihvil\xE4ll\xE4
-    on pitk\xE4 vaakasuora juurakko ja ohuita, millimetrin paksuisia varsia. Sen
-    tihe\xE4 kukinto nousee usein puoliv\xE4liin vartta, ja kasvi viihtyy paljaalla
-    kostealla maalla.\r\n"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
   m_sharedMaterial: {fileID: 6471187536760470386, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
@@ -539,7 +525,7 @@ MonoBehaviour:
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
   m_wordSpacing: 0
-  m_lineSpacing: -40
+  m_lineSpacing: -52.6
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -565,56 +551,12 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -43.0346, y: 1.5565662, z: -82.227325, w: -296.43707}
+  m_margin: {x: -43.0346, y: 1.5565662, z: -82.227325, w: -178.49335}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &1757137428322153564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3752300061302600148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36422ed2236b4ef4d88887b861d3bdcc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonText:
-    fi: "<align=center><b>RUOHOT</b></align>\n\nRuohokasvit auttavat vahvistamaan
-      kosteikon rantoja ja est\xE4v\xE4t eroosiota. Ne tarjoavat elinymp\xE4rist\xF6j\xE4
-      monille hy\xF6nteisille.\n\n\n\n\n\nJouhivihvil\xE4\n\nJouhivihvil\xE4ll\xE4
-      on pitk\xE4 vaakasuora juurakko ja ohuita, millimetrin paksuisia varsia. Sen
-      tihe\xE4 kukinto nousee usein puoliv\xE4liin vartta, ja kasvi viihtyy paljaalla
-      kostealla maalla.\n"
-    sw: "<align=center><b>GR\xC4SARTER</b></align>\n\nGr\xE4sarter hj\xE4lper till
-      att st\xE4rka v\xE5tmarkens str\xE4nder och f\xF6rebygga erosion. De ger ocks\xE5
-      livsmilj\xF6er f\xF6r m\xE5nga insekter.\n\n\n\n\nTr\xE5dt\xE5g\n\nTr\xE5dt\xE5g
-      har en l\xE5ng, horisontell rotstock och tunna stj\xE4lkar som \xE4r bara n\xE5gra
-      millimeter tjocka. Dess t\xE4ta blomstand n\xE5r ofta upp till mitten av stj\xE4lken,
-      och v\xE4xten trivs p\xE5 bar, fuktig mark."
-    en: '<align=center><b>GRASSES</b></align>
-
-
-      Grasses help stabilize wetland
-      banks and prevent erosion. They provide habitats for many insects.
-
-
-
-
-
-
-
-      Thread
-      rush
-
-
-      Thread rush has a long, horizontal rhizome and thin stems that
-      are about a millimeter thick. Its dense inflorescence often rises to the middle
-      of the stem, and the plant thrives in bare, moist soil.'
 --- !u!1 &3754958998092947573
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,7 +622,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 16
+  m_text: 26
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
   m_sharedMaterial: {fileID: 6471187536760470386, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
@@ -777,16 +719,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5782378760303657406}
-  m_LocalRotation: {x: -0, y: -0, z: -0.1515483, w: 0.98844993}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.39000002, y: 0.39000002, z: 0.39000002}
+  m_LocalScale: {x: 0.44, y: 0.44, z: 0.44}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1528673805664511592}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -17.433}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -81.9, y: 37.7}
+  m_AnchoredPosition: {x: -154.2, y: -38.8}
   m_SizeDelta: {x: 383, y: 198}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2932462691614499806
@@ -818,6 +760,156 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: d4f0e8595c70102438070105d3c0d47f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!1 &6919612858299072384
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8856814957345269086}
+  - component: {fileID: 7389249649008183305}
+  - component: {fileID: 5934809131769067254}
+  m_Layer: 5
+  m_Name: Image (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8856814957345269086
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6919612858299072384}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1528673805664511592}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 194.1, y: -73}
+  m_SizeDelta: {x: 383, y: 198}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &7389249649008183305
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6919612858299072384}
+  m_CullTransparentMesh: 1
+--- !u!114 &5934809131769067254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6919612858299072384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 28d78042dd2f36f4cb9e41147db9a16a, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!1 &7018074675499505483
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3248693958090183330}
+  - component: {fileID: 282740007443024880}
+  - component: {fileID: 7751971806357274587}
+  m_Layer: 5
+  m_Name: Image (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3248693958090183330
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7018074675499505483}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1528673805664511592}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 192.3, y: 130.6}
+  m_SizeDelta: {x: 383, y: 198}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &282740007443024880
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7018074675499505483}
+  m_CullTransparentMesh: 1
+--- !u!114 &7751971806357274587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7018074675499505483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 229a3158887d57b4b8b668a074f0277c, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -861,7 +953,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -198.6, y: -133.5}
+  m_AnchoredPosition: {x: -224.7, y: 54.7}
   m_SizeDelta: {x: 383, y: 198}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3659797726571549720
