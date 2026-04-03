@@ -60,7 +60,7 @@ public class PopupHandler : MonoBehaviour
             $"Is nextTurnButton.interactable: {nextTurnButton.interactable}," +
             $"Is bookPopupButton.interactable: {bookPopupButton.interactable}"
         );
-        
+
         dialogueButton.interactable = false;
         nextTurnButton.interactable = false;
         bookPopupButton.interactable = false;
@@ -75,6 +75,12 @@ public class PopupHandler : MonoBehaviour
             nextTurnButton.interactable = wasNextTurnInteractable;
             bookPopupButton.interactable = wasBookInteractable;
             isAnyPopupOpen = false;
+
+            Debug.Log(
+                $"Is dialogueButton.interactable: {wasDialogueInteractable}, " +
+                $"Is nextTurnButton.interactable: {wasNextTurnInteractable}," +
+                $"Is bookPopupButton.interactable: {wasBookInteractable}"
+            );
         }
 
     }

@@ -121,7 +121,9 @@ public class NotebookPageHandler : MonoBehaviour
 
     public void CloseNotebook()
     {
-        this.transform.parent.gameObject.SetActive(false);
+        // Invoke the event FIRST so the PopupHandler can restore buttons
         OnBookClosed.Invoke();
+        this.transform.parent.gameObject.SetActive(false);
     }
+
 }
