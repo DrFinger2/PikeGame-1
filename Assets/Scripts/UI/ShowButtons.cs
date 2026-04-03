@@ -9,14 +9,13 @@ public class ShowButtons : MonoBehaviour
     [SerializeField] GameObject button2;
     [SerializeField] GameObject button3;
 
-    private bool isOpen = false;
-
+    public bool IsOpen { get; private set; } = false;
 
     public void ToggleButtons()
     {
-        isOpen = !isOpen;
-        button1.SetActive(isOpen);
-        button2.SetActive(isOpen);
-        button3.SetActive(isOpen);
+        IsOpen = !IsOpen;
+        button1.SetActive(IsOpen);
+        button2.SetActive(IsOpen);
+        button3.SetActive(IsOpen);
     }
 }
