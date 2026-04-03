@@ -55,6 +55,12 @@ public class PopupHandler : MonoBehaviour
         wasNextTurnInteractable = nextTurnButton.interactable;
         wasBookInteractable = bookPopupButton.interactable;
 
+        Debug.Log(
+            $"Is dialogueButton.interactable: {dialogueButton.interactable}, " +
+            $"Is nextTurnButton.interactable: {nextTurnButton.interactable}," +
+            $"Is bookPopupButton.interactable: {bookPopupButton.interactable}"
+        );
+        
         dialogueButton.interactable = false;
         nextTurnButton.interactable = false;
         bookPopupButton.interactable = false;

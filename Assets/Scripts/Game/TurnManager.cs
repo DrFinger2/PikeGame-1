@@ -13,6 +13,7 @@ public class TurnManager : MonoBehaviour
     public int CurrentTurn => currentTurn;
     private int currentTurn = 1;
 
+    // POS solution
     public bool IsInitializing { get; private set; } = true;
     public UnityEvent<int> onTurnChanged;
     public UnityEvent<int> onActionPointsChanged;
@@ -85,7 +86,7 @@ public class TurnManager : MonoBehaviour
         onActionPointsChanged?.Invoke(gameState.currentActionPoints);
         onMetricsUpdated?.Invoke(gameState.metrics);
 
-        ToggleEndTurnButton(false);
+        //ToggleEndTurnButton(false);
     }
 
     public void ToggleEndTurnButton(bool state)
