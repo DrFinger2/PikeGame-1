@@ -6,6 +6,7 @@ public class ProgressionManager : MonoBehaviour
     [Header("Day 1: Tools & Reeds")]
     public Button cutPlantsButton;
     public Button openPlantsButton;
+    public ShowButtons openPlantsMenu;
     public Button[] reedPlantButtons;
 
     [Header("Day 2: Economy & Cows")]
@@ -19,6 +20,12 @@ public class ProgressionManager : MonoBehaviour
     [Header("Day 5: Guide")]
     public Button wetlandGuideButton;
 
+    // storing the state
+    bool day1Unlocked = false;
+    bool day2Unlocked = false;
+    bool day3Unlocked = false;
+    bool day5Unlocked = false;
+
     // Awake is completely removed to prevent premature locking.
 
     private void Start()
@@ -29,17 +36,17 @@ public class ProgressionManager : MonoBehaviour
 
             // Perform a clean initialization without blanket-disabling first
             int day = TurnManager.Instance.CurrentTurn;
-            bool passedDay1 = day >= 1;
-            bool passedDay2 = day >= 2;
-            bool passedDay3 = day >= 2;
-            bool passedDay5 = day >= 5;
+            day1Unlocked = day >= 1;
+            day2Unlocked = day >= 2;
+            day3Unlocked = day >= 2;
+            day5Unlocked = day >= 5;
 
-            SetInteractable(passedDay1, cutPlantsButton, openPlantsButton);
-            SetInteractable(passedDay1, reedPlantButtons);
-            SetInteractable(passedDay2, shopButton, questionsButton);
-            SetActive(passedDay2, coinDisplay, shopButton?.gameObject);
-            SetInteractable(passedDay3, floatingPlantButtons);
-            SetInteractable(passedDay5, wetlandGuideButton);
+            SetInteractable(day1Unlocked, cutPlantsButton, openPlantsButton);
+            SetInteractable(day1Unlocked, reedPlantButtons);
+            SetInteractable(day2Unlocked, shopButton, questionsButton);
+            SetActive(day2Unlocked, coinDisplay, shopButton?.gameObject);
+            SetInteractable(day3Unlocked, floatingPlantButtons);
+            SetInteractable(day5Unlocked, wetlandGuideButton);
         }
     }
     
@@ -63,24 +70,49 @@ public class ProgressionManager : MonoBehaviour
 
     private void UnlockDay1()
     {
-        SetInteractable(true, cutPlantsButton, openPlantsButton);
-        SetInteractable(true, reedPlantButtons);
+        if (!day1Unlocked)
+        {
+            SetInteractable(true, cutPlantsButton, openPlantsButton);
+            SetInteractable(true, reedPlantButtons);
+            day1Unlocked = true;
+        }
     }
-
+    
     private void UnlockDay2()
     {
-        SetInteractable(true, shopButton, questionsButton);
-        SetActive(true, coinDisplay, shopButton?.gameObject);
+        if (!day2Unlocked)
+        {
+            SetInteractable(true, shopButton, questionsButton);
+            SetActive(true, coinDisplay, shopButton?.gameObject);
+            day2Unlocked = true;
+        }
     }
 
     private void UnlockDay3()
     {
-        SetInteractable(true, floatingPlantButtons);
+        if (!day3Unlocked)
+        {
+            SetInteractable(true, floatingPlantButtons);
+            if (openPlantsMenu != null && !openPlantsMenu.IsOpen && openPlantsButton != null)
+            {
+                UnlockableButton unlockable = openPlantsButton.GetComponent<UnlockableButton>();
+                if (unlockable != null)
+                {
+                    unlockable.ReHighlight();
+                }
+            }
+            day3Unlocked = true;
+        }
     }
 
     private void UnlockDay5()
     {
-        SetInteractable(true, wetlandGuideButton);
+        if (!day5Unlocked)
+        {
+            SetInteractable(true, wetlandGuideButton);
+            day5Unlocked = true;
+        }
+        
     }
 
     private void SetInteractable(bool state, params Button[] buttons)

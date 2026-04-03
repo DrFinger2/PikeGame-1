@@ -2330,6 +2330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DayProgressionManager
   cutPlantsButton: {fileID: 91264539}
   openPlantsButton: {fileID: 313382768}
+  openPlantsMenu: {fileID: 579571193}
   reedPlantButtons:
   - {fileID: 2030015106}
   - {fileID: 51802138}

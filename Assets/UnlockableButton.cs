@@ -56,6 +56,18 @@ public class UnlockableButton : MonoBehaviour
             .ToArray();
     }
 
+
+    public void ReHighlight()
+    {
+        isAcknowledged = false;
+
+        if (Button != null && Button.interactable && glowBackground != null)
+        {
+            glowBackground.SetActive(true);
+            StartPulse();
+        }
+    }
+    
     private void OnEnable()
     {
         if (unlockMode == UnlockMode.UnlockOnEnable)
