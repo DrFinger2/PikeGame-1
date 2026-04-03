@@ -11,7 +11,7 @@ public class CowRelease : MonoBehaviour
 
     [SerializeField] Vector3 targetPos = new(0, 0, 0);
     [SerializeField] List<GameObject> cows = new();
-
+    [SerializeField] GameObject pikeHolder;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -42,6 +42,13 @@ public class CowRelease : MonoBehaviour
         }
         cowsReleased = true;
 
+    }
+
+
+    public void SpawnPike()
+    {
+        GameObject pike = Instantiate(pikeHolder, new(-20, 0.5f, 5), pikeHolder.transform.rotation);
+        pike.transform.GetChild(1).transform.position = targetPos;
     }
 
 
