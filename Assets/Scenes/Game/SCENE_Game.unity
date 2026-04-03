@@ -2335,7 +2335,7 @@ MonoBehaviour:
   - {fileID: 51802138}
   shopButton: {fileID: 1208568882}
   questionsButton: {fileID: 391022948}
-  coinDisplay: {fileID: 743495096}
+  coinDisplay: {fileID: 0}
   floatingPlantButtons:
   - {fileID: 407258255}
   wetlandGuideButton: {fileID: 988257670}
@@ -4488,11 +4488,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a2456e55ee59c4d4ea5b82a6c4ba0487, type: 3}
   m_PrefabInstance: {fileID: 29878730}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &743495096 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6814359666206583396, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
-  m_PrefabInstance: {fileID: 1160520424}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &751425804
 PrefabInstance:
