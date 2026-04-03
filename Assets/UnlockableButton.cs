@@ -135,13 +135,22 @@ public class UnlockableButton : MonoBehaviour
         if (isAcknowledged) return;
 
         Events.OnUnlock?.Invoke();
-
         transform.DOKill();
-        transform.localScale = Vector3.zero;
-        transform.localRotation = Quaternion.Euler(0, 0, -15f);
 
-        transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack).SetUpdate(true);
-        transform.DORotate(Vector3.zero, 0.5f).SetEase(Ease.OutBack).SetUpdate(true);
+        // If TurnManager is still doing its delayed setup, this is a startup unlock.
+        bool isStartup = TurnManager.Instance == null || TurnManager.Instance.IsInitializing;
+
+        if (!isStartup)
+        {
+            Vector3 scale = transform.localScale;
+            Vector3 rotation = transform.localRotation.eulerAngles;
+
+            transform.localScale = Vector3.zero;
+            transform.localRotation = Quaternion.Euler(0, 0, -15f);
+
+            transform.DOScale(scale, 0.5f).SetEase(Ease.OutBack).SetUpdate(true);
+            transform.DORotate(rotation, 0.5f).SetEase(Ease.OutBack).SetUpdate(true);
+        }
 
         if (glowBackground)
         {
@@ -153,9 +162,6 @@ public class UnlockableButton : MonoBehaviour
     public void SetUnlocked()
     {
         isAcknowledged = true;
-        transform.localScale = Vector3.one;
-        transform.localRotation = Quaternion.identity;
-
         if (glowBackground) glowBackground.SetActive(false);
         pulseTween?.Kill();
     }

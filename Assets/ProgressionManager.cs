@@ -1,38 +1,48 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DayProgressionManager : MonoBehaviour
+public class ProgressionManager : MonoBehaviour
 {
     [Header("Day 1: Tools & Reeds")]
     public Button cutPlantsButton;
-    public Button  openPlantsButton;
+    public Button openPlantsButton;
     public Button[] reedPlantButtons;
 
     [Header("Day 2: Economy & Cows")]
     public Button shopButton;
+    public Button questionsButton;
     public GameObject coinDisplay;
 
-    [Header("Day 3: Floating Plantss")]
-    //public GameObject smallFishFeature;
+    [Header("Day 3: Floating Plants")]
     public Button[] floatingPlantButtons;
 
     [Header("Day 5: Guide")]
     public Button wetlandGuideButton;
 
-    private void Awake()
-    {
-        LockFeatures();
+    // Awake is completely removed to prevent premature locking.
 
-    }
-    
     private void Start()
     {
         if (TurnManager.Instance != null)
         {
             TurnManager.Instance.onTurnChanged.AddListener(HandleDayChanged);
-            HandleDayChanged(TurnManager.Instance.CurrentTurn);
+
+            // Perform a clean initialization without blanket-disabling first
+            int day = TurnManager.Instance.CurrentTurn;
+            bool passedDay1 = day >= 1;
+            bool passedDay2 = day >= 2;
+            bool passedDay3 = day >= 2;
+            bool passedDay5 = day >= 5;
+
+            SetInteractable(passedDay1, cutPlantsButton, openPlantsButton);
+            SetInteractable(passedDay1, reedPlantButtons);
+            SetInteractable(passedDay2, shopButton, questionsButton);
+            SetActive(passedDay2, coinDisplay, shopButton?.gameObject);
+            SetInteractable(passedDay3, floatingPlantButtons);
+            SetInteractable(passedDay5, wetlandGuideButton);
         }
     }
+    
 
     private void OnDestroy()
     {
@@ -44,20 +54,11 @@ public class DayProgressionManager : MonoBehaviour
 
     private void HandleDayChanged(int day)
     {
+        // Unlock things progressively as the days advance in-game
         if (day >= 1) UnlockDay1();
         if (day >= 2) UnlockDay2();
         if (day >= 3) UnlockDay3();
         if (day >= 5) UnlockDay5();
-    }
-
-    private void LockFeatures()
-    {
-        SetInteractable(false, cutPlantsButton, openPlantsButton);
-        SetInteractable(false, reedPlantButtons);
-        SetInteractable(false, shopButton);
-        SetActive(false, coinDisplay, shopButton?.gameObject /*, smallFishFeature*/);
-        SetInteractable(false, floatingPlantButtons);
-        SetInteractable(false, wetlandGuideButton);
     }
 
     private void UnlockDay1()
@@ -68,13 +69,12 @@ public class DayProgressionManager : MonoBehaviour
 
     private void UnlockDay2()
     {
-        SetInteractable(true, shopButton);
+        SetInteractable(true, shopButton, questionsButton);
         SetActive(true, coinDisplay, shopButton?.gameObject);
     }
 
     private void UnlockDay3()
     {
-        /*SetActive(true, smallFishFeature);*/
         SetInteractable(true, floatingPlantButtons);
     }
 
@@ -92,7 +92,6 @@ public class DayProgressionManager : MonoBehaviour
         {
             if (btn != null) btn.interactable = state;
         }
-        
     }
 
     private void SetActive(bool state, params GameObject[] objects)

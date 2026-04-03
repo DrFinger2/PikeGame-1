@@ -13,9 +13,11 @@ public class TurnManager : MonoBehaviour
     public int CurrentTurn => currentTurn;
     private int currentTurn = 1;
 
+    public bool IsInitializing { get; private set; } = true;
     public UnityEvent<int> onTurnChanged;
     public UnityEvent<int> onActionPointsChanged;
     public UnityEvent<Dictionary<MetricType, float>> onMetricsUpdated;
+    
 
     [SerializeField] private Button endTurnButton;
     [SerializeField] private bool enableSimulationIntegration = false;
@@ -64,6 +66,7 @@ public class TurnManager : MonoBehaviour
         onTurnChanged?.Invoke(currentTurn);
         onActionPointsChanged?.Invoke(gameState.currentActionPoints);
         onMetricsUpdated?.Invoke(gameState.metrics);
+        IsInitializing = false;
     }
 
     public void EndTurn()
