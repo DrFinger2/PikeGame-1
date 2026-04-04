@@ -50,9 +50,9 @@ public class DialogueManager : MonoBehaviour
         turnManager.onTurnChanged.AddListener(OnTurnChanged);
         HideDialogue();
         HideTask();
-        if(tutorialActive)
+        if (tutorialActive)
         {
-            if(dialogueDB.tutorialSequence.Count > 0)
+            if (dialogueDB.tutorialSequence.Count > 0)
             {
                 ShowNextTutorialDialogue();
             }
@@ -75,11 +75,11 @@ public class DialogueManager : MonoBehaviour
     }
     private void ShowNextTutorialDialogue()
     {
-        if(currentTutorialIndex < dialogueDB.tutorialSequence.Count)
+        if (currentTutorialIndex < dialogueDB.tutorialSequence.Count)
         {
             TutorialDialogue tutorial = dialogueDB.tutorialSequence[currentTutorialIndex];
             ShowDialogue(tutorial);
-            if(!string.IsNullOrEmpty(tutorial.taskDescription))
+            if (!string.IsNullOrEmpty(tutorial.taskDescription))
             {
                 ShowTask(tutorial.taskId, tutorial.taskDescription);
             }
@@ -92,7 +92,7 @@ public class DialogueManager : MonoBehaviour
     }
     public void CompleteTask(string taskID)
     {
-        if(currentTaskId == taskID && currentTutorialIndex < dialogueDB.tutorialSequence.Count)
+        if (currentTaskId == taskID && currentTutorialIndex < dialogueDB.tutorialSequence.Count)
         {
             TutorialDialogue currentTutorial = dialogueDB.tutorialSequence[currentTutorialIndex];
             currentTutorial.isCompleted = true;
@@ -116,7 +116,7 @@ public class DialogueManager : MonoBehaviour
         currentTaskId = taskId;
         taskPanel.SetActive(true);
         taskDescriptionText.text = taskDescription;
-        if(icon != null)
+        if (icon != null)
         {
             taskImage.sprite = icon;
             taskImage.gameObject.SetActive(true);
@@ -133,7 +133,7 @@ public class DialogueManager : MonoBehaviour
     }
     public void GiveHintForNextEvent()
     {
-        if(hasGivenHintThisTurn)
+        if (hasGivenHintThisTurn)
         {
             Debug.Log("somehow has given hint already");
             ShowRandomDialogue();
@@ -142,10 +142,10 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("giving hint");
         WetlandEvent nextEvent = randomEventSystem.CheckNextEvent();
         //Debug.Log(nextEvent.eventCategory.ToString());
-        if(nextEvent != null)
+        if (nextEvent != null)
         {
             EventHintDialogue hint = dialogueDB.GetHintForEvent(nextEvent);
-            if(hint != null)
+            if (hint != null)
             {
                 ShowDialogue(hint);
                 hasGivenHintThisTurn = true;
@@ -156,9 +156,9 @@ public class DialogueManager : MonoBehaviour
     public void ShowRandomDialogue()
     {
         RandomDialogue randomDialogue = dialogueDB.GetRandomDialogue(turnManager.CurrentTurn);
-        if(randomDialogue != null)
+        if (randomDialogue != null)
         {
-            if(randomDialogue.isJoke)
+            if (randomDialogue.isJoke)
             {
                 SoundManager.Instance.PlayGameSound("joke01");
             }
@@ -173,12 +173,12 @@ public class DialogueManager : MonoBehaviour
     {
         dialoguePanel.SetActive(true);
         speakerNameText.text = dialogue.npcNameLocalized.GetText();
-        if(useEffect)
+        if (useEffect)
         {
             dialogueText.text = "";
             typeWriterEffectCoroutine = StartCoroutine(TypeWriterEffect(dialogue.dialogueTextLocalized.GetText(), dialogue.typeSpeed));
         }
-        if(dialogue.npcImage != null)
+        if (dialogue.npcImage != null)
         {
             speakerImage.sprite = dialogue.npcImage;
             speakerImage.gameObject.SetActive(true);
@@ -194,11 +194,11 @@ public class DialogueManager : MonoBehaviour
         finalText = text;
         dialogueText.text = "";
         float typingSpeed = speed * baseTypingSpeed;
-        float timePerChar = 1f/typingSpeed;
-        for(int i = 0; i< text.Length; i++)
+        float timePerChar = 1f / typingSpeed;
+        for (int i = 0; i < text.Length; i++)
         {
             dialogueText.text += text[i];
-            if(i < text.Length - 1)
+            if (i < text.Length - 1)
             {
                 yield return new WaitForSeconds(timePerChar);
             }
@@ -208,7 +208,7 @@ public class DialogueManager : MonoBehaviour
     //bool just for popuphandler which was temporary
     public void HideDialogue()
     {
-        if(isDialogueRunning && typeWriterEffectCoroutine != null)
+        if (isDialogueRunning && typeWriterEffectCoroutine != null)
         {
             StopCoroutine(typeWriterEffectCoroutine);
             isDialogueRunning = false;
@@ -219,9 +219,9 @@ public class DialogueManager : MonoBehaviour
     }
     public void InteractWithNPC()
     {
-        if(isDialogueRunning)
+        if (isDialogueRunning)
         {
-            if(typeWriterEffectCoroutine != null)
+            if (typeWriterEffectCoroutine != null)
             {
                 StopCoroutine(typeWriterEffectCoroutine);
                 dialogueText.text = finalText;
@@ -234,11 +234,11 @@ public class DialogueManager : MonoBehaviour
             }
             return;
         }
-        if(tutorialActive)
+        if (tutorialActive)
         {
             ShowNextTutorialDialogue();
         }
-        else if(!hasGivenHintThisTurn)
+        else if (!hasGivenHintThisTurn)
         {
             GiveHintForNextEvent();
         }
@@ -271,6 +271,6 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        ShowRandomDialogue(); 
+        ShowRandomDialogue();
     }
 }
