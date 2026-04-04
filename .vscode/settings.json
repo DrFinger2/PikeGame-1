@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "PikeGame-1.sln"
+    "dotnet.defaultSolution": "PikeGame-1.slnx"
 }

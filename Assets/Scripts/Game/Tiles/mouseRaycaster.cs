@@ -18,6 +18,7 @@ public class mouseRaycaster : MonoBehaviour
     private InputSystem_Actions inputActions;
 
     //touch screen input
+ 
     private bool useTouch = true;
     public bool isTouching;
     public Vector2 touchPosition;
@@ -49,13 +50,10 @@ public class mouseRaycaster : MonoBehaviour
     void Update()
     {   
         
-        if (Touchscreen.current == null)
+        // Pointer.current  gets the position of the Mouse OR the Touchscreen
+        if (Pointer.current != null)
         {
-            touchPosition = Mouse.current.position.ReadValue();
-        }
-        else
-        {
-            mousePos = touchPosition;
+            mousePos = Pointer.current.position.ReadValue();
         }
         
         Plane plane = new Plane(Vector3.up, Vector3.zero);
