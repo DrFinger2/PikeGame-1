@@ -3,7 +3,6 @@ using UnityEngine.UI;
 
 public class PopupHandler : MonoBehaviour
 {
-    //sorry about this, big crunch
     [SerializeField] private Button dialogueButton;
     [SerializeField] private Button nextTurnButton;
     [SerializeField] private Button bookPopupButton;
@@ -11,17 +10,30 @@ public class PopupHandler : MonoBehaviour
 
     private bool isAnyPopupOpen;
 
+    // NEW: Generic popup open
+    public void OpenPopup(GameObject popup)
+    {
+        if (!isAnyPopupOpen)
+        {
+            isAnyPopupOpen = true;
+            DisableButtonInteractions();
+            popup.SetActive(true);
+        }
+    }
+
+    // Existing systems
     public void BookPopupOpen()
     {
-        if(!isAnyPopupOpen)
+        if (!isAnyPopupOpen)
         {
             isAnyPopupOpen = true;
             DisableButtonInteractions();
         }
     }
+
     public void DialoguePopupOpen()
     {
-        if(!isAnyPopupOpen && !dialoguePanel.activeSelf)
+        if (!isAnyPopupOpen && !dialoguePanel.activeSelf)
         {
             Debug.Log("dialoguepanel popup open triggered");
             isAnyPopupOpen = true;
@@ -29,6 +41,7 @@ public class PopupHandler : MonoBehaviour
             dialogueButton.interactable = true;
         }
     }
+
     public void EventPopupOpen()
     {
         if (!isAnyPopupOpen)
@@ -37,18 +50,23 @@ public class PopupHandler : MonoBehaviour
             DisableButtonInteractions();
         }
     }
+
     private void DisableButtonInteractions()
     {
         dialogueButton.interactable = false;
         nextTurnButton.interactable = false;
         bookPopupButton.interactable = false;
     }
-    //dialogueManager closedialogue also triggers this, others from close button
-    public void ClosePopup()
+
+    // NEW: Close ANY popup
+    public void ClosePopup(GameObject popup)
     {
+        popup.SetActive(false);
+
         dialogueButton.interactable = true;
-        nextTurnButton.interactable = false;
+        nextTurnButton.interactable = true;
         bookPopupButton.interactable = true;
+
         isAnyPopupOpen = false;
     }
 }
