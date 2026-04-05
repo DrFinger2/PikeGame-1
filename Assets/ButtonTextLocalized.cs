@@ -16,3 +16,5 @@ public class ButtonTextLocalized : MonoBehaviour
         buttonTextObject.text = buttonText.GetText();
     }
 }
+
+// This is also set to MainMenu Credits as the text holder?

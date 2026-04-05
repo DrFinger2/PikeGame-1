@@ -46,6 +46,8 @@ public class MenuManager : MonoBehaviour
         creditsPanel.SetActive(false);
         mainPanel.SetActive(true);
     }
+
+    // Credits screen... Scroll?
     public void EnableCredits()
     {
         mainPanel.SetActive(false);
@@ -66,6 +68,8 @@ public class MenuManager : MonoBehaviour
         }
         creditsScroll.localPosition = creditsStartPos;
     }
+
+    // so this is supposed to scroll the credists until the set "top position" is reached? and then enable main menu automatically?
     private IEnumerator ScrollCredits()
     {
         while (creditsScroll.localPosition.y < creditsTopPos)
@@ -76,6 +80,9 @@ public class MenuManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
         EnableMain();
     }
+
+
+
     private void UpdateText()
     {
         startGame.text = startGameText.GetText();
