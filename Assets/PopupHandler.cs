@@ -54,7 +54,7 @@ public class PopupHandler : MonoBehaviour
     private void DisableButtonInteractions()
     {
         dialogueButton.interactable = false;
-        nextTurnButton.interactable = false;
+        nextTurnButton.interactable = true;
         bookPopupButton.interactable = false;
     }
 
