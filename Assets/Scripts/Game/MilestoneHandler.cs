@@ -30,7 +30,7 @@ public class MilestoneHandler : MonoBehaviour
     [SerializeField] private GameObject fadeObject;
     [SerializeField] private GameObject endScreen;
 
-    // ✅ NEW: Popup system
+    // Popup system
     [SerializeField] private PopupHandler popupHandler;
     [SerializeField] private GameObject milestonePopup;
     [SerializeField] private TMP_Text milestonePopupText;
@@ -80,7 +80,7 @@ public class MilestoneHandler : MonoBehaviour
         UpdateSlider();
     }
 
-    // ✅ NEW: One-click milestone system
+    // One-click milestone system
     public void ProgressMilestone(int milestone)
     {
         switch (milestone)
@@ -127,7 +127,7 @@ public class MilestoneHandler : MonoBehaviour
         targetBiodiversity = currentBiodiversity; // keep smoothing in sync
     }
 
-    // ✅ Handles reward + popup
+    // Handles reward + popup
     private void CompleteMilestone(Toggle toggle, Button button, int rewardAP)
     {
         toggle.isOn = true;
@@ -142,7 +142,7 @@ public class MilestoneHandler : MonoBehaviour
         ShowMilestonePopup(rewardAP);
     }
 
-    // ✅ Popup display
+    // Popup display
     private void ShowMilestonePopup(int rewardAP)
     {
         if (popupHandler != null && milestonePopup != null)
