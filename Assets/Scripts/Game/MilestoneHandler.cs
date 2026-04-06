@@ -173,9 +173,10 @@ public class MilestoneHandler : MonoBehaviour
     {
         if (popup != null)
         {
-            PopupHandler popupHandler = FindObjectOfType<PopupHandler>();
+            MilestonePopupHandler popupHandler = FindObjectOfType<MilestonePopupHandler>();
             if (popupHandler != null)
-                popupHandler.OpenPopup(popup);
+                popupHandler.OpenMilestonePopup(popup);
+
             else
                 popup.SetActive(true);
         }
