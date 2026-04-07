@@ -5,6 +5,7 @@ public class Day5Tasks : DayTaskBase
 {
     [Header("UI Elements")]
     [SerializeField] private ActionButtonsUI actionButtons;
+    [SerializeField] private Button questionButton;
     [SerializeField] private Button nextDayButton;
 
     [Header("Dialogue References")]
@@ -18,7 +19,7 @@ public class Day5Tasks : DayTaskBase
         Events.OnDayStarted.Invoke();
         this.enabled = true;
 
-        SetInteractable(true, actionButtons.CutPlants.Button, actionButtons.OpenPlants.Button, actionButtons.OpenBook.Button);
+        SetInteractable(true, actionButtons.CutPlants.Button, actionButtons.OpenPlants.Button, actionButtons.OpenBook.Button, questionButton);
         SetInteractable(false, nextDayButton);
 
         DialogueManager.instance.PlayTutorialNode(
@@ -70,7 +71,7 @@ public class Day5Tasks : DayTaskBase
             onDialogueFinished: () =>
             {
                 DialogueManager.instance.CompleteTask("E16");
-                SetInteractable(true, nextDayButton);
+                SetInteractable(true, nextDayButton, questionButton);
                 CompleteDay();
             }
         );

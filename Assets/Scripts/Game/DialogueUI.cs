@@ -30,9 +30,8 @@ public class DialogueUI : MonoBehaviour
     public void ShowDialogue(DialogueBase dialogue)
     {
         dialoguePanel.SetActive(true);
-        if (continueButton != null)
-            continueButton.SetActive(false); // Hide button when new text starts
-            
+        continueButton.SetActive(true);
+
         string finalName = !string.IsNullOrEmpty(dialogue.npcNameLocalized?.GetText())
             ? dialogue.npcNameLocalized.GetText()
             : dialogue.npcName;
@@ -65,7 +64,6 @@ public class DialogueUI : MonoBehaviour
         {
             // Pass the safely grabbed text directly
             dialogueText.text = finalDialogueText;
-            if (continueButton != null) continueButton.SetActive(true); // Show immediately if no typing effect
         }
     }
 
@@ -90,8 +88,6 @@ public class DialogueUI : MonoBehaviour
             }
         }
         typeWriterEffectCoroutine = null;
-        if (continueButton != null) 
-            continueButton.SetActive(true); 
     }
     
     public void SkipTyping()
@@ -101,7 +97,6 @@ public class DialogueUI : MonoBehaviour
             StopCoroutine(typeWriterEffectCoroutine);
             dialogueText.text = finalText;
             typeWriterEffectCoroutine = null;
-            if (continueButton != null) continueButton.SetActive(true);
         }
     }
 
@@ -112,8 +107,6 @@ public class DialogueUI : MonoBehaviour
             StopCoroutine(typeWriterEffectCoroutine);
             typeWriterEffectCoroutine = null;
         }
-        if (continueButton != null) 
-            continueButton.SetActive(false);
         dialoguePanel.SetActive(false);
         
     }
