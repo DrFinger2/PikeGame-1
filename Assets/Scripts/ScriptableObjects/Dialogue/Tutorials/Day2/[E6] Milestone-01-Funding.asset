@@ -17,7 +17,7 @@ MonoBehaviour:
     fi: 
     sw: 
     en: 
-  npcImage: {fileID: 0}
+  npcImage: {fileID: 21300000, guid: 13062ce599809b74db8286a76d7b2edd, type: 3}
   dialogueText: "Hyv\xE4n ty\xF6n ansiosta saimme hieman rahoitusta kosteikon hoitoon.
     Saat n\xE4m\xE4 kolikot k\xE4ytt\xF6\xF6si."
   dialogueTextLocalized:

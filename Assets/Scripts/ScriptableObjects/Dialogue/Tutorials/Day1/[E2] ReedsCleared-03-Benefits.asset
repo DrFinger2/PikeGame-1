@@ -17,7 +17,7 @@ MonoBehaviour:
     fi: 
     sw: 
     en: 
-  npcImage: {fileID: 0}
+  npcImage: {fileID: 21300000, guid: 13062ce599809b74db8286a76d7b2edd, type: 3}
   dialogueText: "Ne sitovat ravinteita, puhdistavat vett\xE4 ja tarjoavat pes\xE4paikkoja
     linnuille ja niiden poikasille."
   dialogueTextLocalized:
