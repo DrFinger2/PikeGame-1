@@ -19,7 +19,6 @@ public class RemovePlantAction : tileAction
 
             if (weedScript != null)
             {
-                // Only spend AP and trigger success if the component actually exists
                 TurnManager.Instance.gameState.currentActionPoints -= 1;
                 TurnManager.Instance.onActionPointsChanged?.Invoke(TurnManager.Instance.gameState.currentActionPoints);
 
@@ -38,7 +37,8 @@ public class RemovePlantAction : tileAction
                     TurnManager.Instance.milestoneHandler.RefreshBiodiversityNow();
                 }
 
-                return true; // Action was successful
+                PlantEvents.TriggerPlantRemoved(removedInvasive);
+                return true; 
             }
             else
             {

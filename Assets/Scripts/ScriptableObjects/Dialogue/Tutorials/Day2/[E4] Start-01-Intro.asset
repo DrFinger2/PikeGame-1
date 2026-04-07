@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49bd6be61d54f1b459390291a3e98b6a, type: 3}
+  m_Name: '[E4] Start-01-Intro'
+  m_EditorClassIdentifier: Assembly-CSharp::TutorialDialogue
+  npcName: Costeicco Guru
+  npcNameLocalized:
+    fi: 
+    sw: 
+    en: 
+  npcImage: {fileID: 0}
+  dialogueText: "Upeaa, ranta alkaa jo vihert\xE4\xE4! Seuraavaksi vuorossa on istuttaa
+    uusia ruohokasveja. T\xE4ss\xE4 on jouhivihvil\xE4\xE4 ja suo-ohdaketta"
+  dialogueTextLocalized:
+    fi: 
+    sw: 
+    en: 
+  typeSpeed: 0
+  taskId: E4
+  taskDescription: 
+  nextDialogue: {fileID: 11400000, guid: ab1ac660c4dfdf242a2979d6d54ac378, type: 2}
+  isCompleted: 0

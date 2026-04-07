@@ -6,22 +6,35 @@ public class EventPanelButtonHolder : MonoBehaviour
     [Header("Assign in Inspector")]
     public EventPanelUI eventPanelUI;
     public Button openButton;
-    
+
+    [Header("TutorialSettings")]
+    public bool IsInTutorialMode = true;
+
     private int openCount = 0;
     private int maxOpens = 3;
     private bool isPanelOpen = false;
 
     private void Start()
     {
+        TurnManager.Instance.onTurnChanged.AddListener(OnTurnChanged);
         openButton.onClick.AddListener(OpenEventPanel);
         eventPanelUI.onPanelOpened.AddListener(HandlePanelOpened);
         eventPanelUI.onPanelClosed.AddListener(HandlePanelClosed);
     }
 
+    private void OnTurnChanged(int turn)
+    {
+        if (!IsInTutorialMode)
+        {
+            ResetDailyLimit();
+        }
+    }
+
+
     private void OpenEventPanel()
     {
         // 1. Block if a panel instance is already open
-        if (isPanelOpen) 
+        if (isPanelOpen)
             return;
 
         // 2 . Skip first day (event data does not exist)
@@ -30,14 +43,13 @@ public class EventPanelButtonHolder : MonoBehaviour
             return;
         }
 
-        // 3. Daily limit check
         if (openCount >= maxOpens)
         {
             openButton.interactable = false;
             return;
         }
 
-        
+
         TurnManager.Instance.gameState.GetRandomEvent();
         eventPanelUI.OpenPanel(true);
 
@@ -61,9 +73,11 @@ public class EventPanelButtonHolder : MonoBehaviour
 
     public void ResetDailyLimit()
     {
+   
         openCount = 0;
         isPanelOpen = false;
         openButton.interactable = true;
+        
     }
 }
 

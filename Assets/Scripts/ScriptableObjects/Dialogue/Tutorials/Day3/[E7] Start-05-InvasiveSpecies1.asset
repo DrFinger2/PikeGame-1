@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49bd6be61d54f1b459390291a3e98b6a, type: 3}
+  m_Name: '[E7] Start-05-InvasiveSpecies1'
+  m_EditorClassIdentifier: Assembly-CSharp::TutorialDialogue
+  npcName: Costeicco Guru
+  npcNameLocalized:
+    fi: 
+    sw: 
+    en: 
+  npcImage: {fileID: 0}
+  dialogueText: "Kuulitko tuon rapinan tuolta tiheik\xF6st\xE4? Huoh, n\xE4ytt\xE4\xE4
+    silt\xE4, ett\xE4 meill\xE4 on kutsumattomia vieraita. Supikoira on p\xE4\xE4ssyt
+    livahtamaan alueelle."
+  dialogueTextLocalized:
+    fi: 
+    sw: 
+    en: 
+  typeSpeed: 0
+  taskId: E7
+  taskDescription: 
+  nextDialogue: {fileID: 11400000, guid: 97b342722258e5249989645bb0732b02, type: 2}
+  isCompleted: 0

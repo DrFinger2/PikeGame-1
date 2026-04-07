@@ -74,14 +74,7 @@ public class TurnManager : MonoBehaviour
     {
         gameState.EndTurn();
         currentTurn++;
-
-        // Reset daily limit for the 3-times button
-        EventPanelButtonHolder holder = FindObjectOfType<EventPanelButtonHolder>();
-        if (holder != null)
-        {
-            holder.ResetDailyLimit();
-        }
-
+        
         onTurnChanged?.Invoke(currentTurn);
         onActionPointsChanged?.Invoke(gameState.currentActionPoints);
         onMetricsUpdated?.Invoke(gameState.metrics);

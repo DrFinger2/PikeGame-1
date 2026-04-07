@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49bd6be61d54f1b459390291a3e98b6a, type: 3}
+  m_Name: '[E11] InvasivesCut-02-QuizIntro'
+  m_EditorClassIdentifier: Assembly-CSharp::TutorialDialogue
+  npcName: Costeicco Guru
+  npcNameLocalized:
+    fi: 
+    sw: 
+    en: 
+  npcImage: {fileID: 0}
+  dialogueText: "Kun haluat testata, kuinka hyvin olet oppinut asioita t\xE4\xE4ll\xE4,
+    voit vastata kysymyksiin ansaitaksesi muutaman lis\xE4kolikon."
+  dialogueTextLocalized:
+    fi: 
+    sw: 
+    en: 
+  typeSpeed: 0
+  taskId: E11
+  taskDescription: 
+  nextDialogue: {fileID: 11400000, guid: a694bb7b87a991949ba17baed770b242, type: 2}
+  isCompleted: 0

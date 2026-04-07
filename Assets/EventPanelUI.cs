@@ -3,13 +3,16 @@ using TMPro;
 using UnityEngine.UI;
 using DG.Tweening;
 using System.Collections.Generic;
-using UnityEngine.Events; // Added for UnityEvent
+using UnityEngine.Events;
+using System;
 
 public class EventPanelUI : MonoBehaviour
 {
     [Header("Events")]
     public UnityEvent onPanelOpened; // Triggered when panel starts opening
     public UnityEvent onPanelClosed; // Triggered when outcome is closed
+
+    public static event Action<AnswerCategory> OnQuestionAnswered;
 
     [Header("Panels")]
     [SerializeField] private GameObject eventPopupPanel;
@@ -172,6 +175,7 @@ public class EventPanelUI : MonoBehaviour
     {
         if (selectedAnswer.HasValue)
         {
+            OnQuestionAnswered?.Invoke(selectedAnswer.Value);
             turnManager.gameState.HandleRandomEvent(selectedAnswer.Value);
             DisplayEventOutcome(selectedAnswer.Value);
             ResetSelectionState();
@@ -201,7 +205,7 @@ public class EventPanelUI : MonoBehaviour
         outcomePopupPanel.transform.DOScale(Vector3.one, 0.4f).SetUpdate(true);
     }
 
-    private void CloseOutcomePanel()
+    public void CloseOutcomePanel()
     {
         outcomePopupPanel.transform.DOScale(Vector3.zero, 0.2f)
             .SetUpdate(true)
@@ -241,7 +245,7 @@ public class EventPanelUI : MonoBehaviour
         while (n > 1)
         {
             n--;
-            int k = Random.Range(0, n + 1);
+            int k = UnityEngine.Random.Range(0, n + 1);
             T value = list[k];
             list[k] = list[n];
             list[n] = value;

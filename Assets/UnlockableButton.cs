@@ -39,7 +39,19 @@ public class UnlockableButton : MonoBehaviour
     public float lightRayMaxAlpha = 0.15f;
     public float lightRayRotationDuration = 14f;
 
-    public Button Button { get; private set; }
+    private Button _button;
+    public Button Button
+    {
+        get
+        {
+            if (_button == null)
+            {
+                _button = GetComponent<Button>();
+            }
+            return _button;
+        }
+    }
+
     private Image glowImage;
     private Image lightRaysImage;
 
@@ -55,7 +67,6 @@ public class UnlockableButton : MonoBehaviour
 
     private void Awake()
     {
-        Button = GetComponent<Button>();
         Button.transition = Selectable.Transition.None;
         Button.onClick.AddListener(OnClickAction);
 

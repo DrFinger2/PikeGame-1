@@ -34,9 +34,12 @@ public class PlantAction : tileAction
                 tile.plantPrefab = plants[randomIndex].organismPrefab;
                 tile.UpdatePlant();
 
+                var type = ResolvePlacedType(tile.grownPlant);
+                var name = tile.grownPlant.organismName;
+                
                 if (WetlandProgressionManager.Instance != null)
                 {
-                    WetlandProgressionManager.Instance.RegisterPlantPlaced(ResolvePlacedType(tile.grownPlant));
+                    WetlandProgressionManager.Instance.RegisterPlantPlaced(type);
                 }
 
                 if (TurnManager.Instance != null && TurnManager.Instance.milestoneHandler != null)
@@ -44,7 +47,8 @@ public class PlantAction : tileAction
                     TurnManager.Instance.milestoneHandler.RefreshBiodiversityNow();
                 }
 
-                return true; // Action was successful
+                PlantEvents.TriggerPlantPlaced(type, name);
+                return true;
             }
             else
             {
@@ -75,6 +79,7 @@ public class PlantAction : tileAction
 
         string plantIdentity = (plant.name + " " + plant.organismName).ToLowerInvariant();
 
+        // WHAT IS THIS ??????
         if (plantIdentity.Contains("reed") || plantIdentity.Contains("ruov"))
         {
             return WetlandPlantType.Reed;
