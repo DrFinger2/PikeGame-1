@@ -25,7 +25,10 @@ public class Day1Tasks : DayTaskBase
         Events.OnDayStarted.Invoke();
 
         this.enabled = true;
-        SetInteractable(false, actionButtons.CutPlants.Button, actionButtons.OpenPlants.Button);
+        SetInteractable(false,
+            actionButtons.CutPlants.Button,
+            actionButtons.OpenPlants.Button
+        );
         SetInteractable(false, actionButtons.PlantSuovehka.Button);
 
         // Kicks off Chain 1: 01 -> 02 -> 03 -> 04 -> 05 -> 06
@@ -47,13 +50,14 @@ public class Day1Tasks : DayTaskBase
 
     public void OnReedsClearedClicked()
     {
+        SetInteractable(false, actionButtons.CutPlants.Button);
         DialogueManager.instance.CompleteTask("E1");
         DialogueManager.instance.PlayTutorialNode(
             node: day1ReedsClearedDialogue,
             onDialogueFinished: () =>
             {
                 PlantEvents.OnPlantPlaced += OnPlantPlaced;
-                SetInteractable(false, actionButtons.CutPlants.Button);
+                
                 SetInteractable(true, actionButtons.OpenPlants.Button);
                 SetInteractable(true, actionButtons.PlantSuovehka.Button);
             }
