@@ -17,6 +17,9 @@ public abstract class DayTaskBase : MonoBehaviour
 
     public DayEvents Events = new DayEvents();
 
+    public int extraPointsPerDay;
+
+
     public abstract void StartDay();
     public abstract void EndDay();
 
