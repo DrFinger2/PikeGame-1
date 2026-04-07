@@ -4595,6 +4595,7 @@ MonoBehaviour:
     OnDayEnded:
       m_PersistentCalls:
         m_Calls: []
+  extraPointsPerDay: 1
   actionButtons: {fileID: 1160520427}
   shopButton: {fileID: 1208568882}
   nextDayButton: {fileID: 777801969}
@@ -5038,6 +5039,7 @@ MonoBehaviour:
     OnDayEnded:
       m_PersistentCalls:
         m_Calls: []
+  extraPointsPerDay: 0
   actionButtons: {fileID: 1160520427}
   questionButton: {fileID: 391022948}
   nextDayButton: {fileID: 777801969}
@@ -6333,6 +6335,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1726252970662708082, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_text
+      value: 'Kolikot:'
+      objectReference: {fileID: 0}
     - target: {fileID: 1809722550818189938, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6989,6 +6995,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7245297829907943397, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: buttonText.en
+      value: 'Coins:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245297829907943397, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: buttonText.fi
+      value: 'Kolikot:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245297829907943397, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: buttonText.sw
+      value: 'Mynt:'
+      objectReference: {fileID: 0}
     - target: {fileID: 7251553942152232534, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -7007,7 +7025,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.028821243
       objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMin.y
@@ -7305,6 +7323,7 @@ MonoBehaviour:
     OnDayEnded:
       m_PersistentCalls:
         m_Calls: []
+  extraPointsPerDay: 0
   actionButtons: {fileID: 1160520427}
   nextDayButton: {fileID: 777801969}
   shopButton: {fileID: 1208568882}
@@ -9786,6 +9805,7 @@ MonoBehaviour:
     OnDayEnded:
       m_PersistentCalls:
         m_Calls: []
+  extraPointsPerDay: 0
   actionButtons: {fileID: 1160520427}
   nextDayButton: {fileID: 777801969}
   day1StartDialogue: {fileID: 11400000, guid: 10983ff78611e6c469d558fb646783e9, type: 2}
@@ -13130,6 +13150,7 @@ MonoBehaviour:
     OnDayEnded:
       m_PersistentCalls:
         m_Calls: []
+  extraPointsPerDay: 0
   actionButtons: {fileID: 1160520427}
   eventPanel: {fileID: 567694490}
   questionsButton: {fileID: 391022948}
