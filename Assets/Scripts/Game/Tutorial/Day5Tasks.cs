@@ -4,24 +4,46 @@ using UnityEngine.UI;
 public class Day5Tasks : DayTaskBase
 {
     [Header("UI Elements")]
-    [SerializeField] private Button wetlandGuideButton;
+    [SerializeField] private ActionButtonsUI actionButtons;
+    [SerializeField] private Button nextDayButton;
 
     [Header("Dialogue References")]
-    [SerializeField] private TutorialDialogue day5IntroDialogue;
-    [SerializeField] private TutorialDialogue day5GuideOpenedDialogue;
-
-    private bool guideOpened;
+    [SerializeField] private TutorialDialogue day5IntroDialogue;      // E13
+    [SerializeField] private TutorialDialogue day5NotebookDialogue;   // E14
+    [SerializeField] private TutorialDialogue day5PikeDialogue;       // E15
+    [SerializeField] private TutorialDialogue day5ConclusionDialogue; // E16
 
     public override void StartDay()
     {
         Events.OnDayStarted.Invoke();
         this.enabled = true;
-        guideOpened = false;
 
-        SetInteractable(false, wetlandGuideButton);
+        SetInteractable(true, actionButtons.CutPlants.Button, actionButtons.OpenPlants.Button, actionButtons.OpenBook.Button);
+        SetInteractable(false, nextDayButton);
 
-        DialogueManager.instance.PlayTutorialNode(day5IntroDialogue);
+        DialogueManager.instance.PlayTutorialNode(
+            node: day5IntroDialogue,
+            onDialogueFinished: () =>
+            {
+                DialogueManager.instance.CompleteTask("E13");
+                NotebookPageHandler.OnBookOpened.AddListener(OnBookOpened);
+
+            }
+        );
     }
+    public void OnBookOpened()
+    {
+        NotebookPageHandler.OnBookOpened.RemoveListener(OnBookOpened);
+        DialogueManager.instance.PlayTutorialNode(
+            day5NotebookDialogue,
+            () =>
+            {
+                DialogueManager.instance.CompleteTask("E14");
+                PlayPikeSequence();
+            }
+        );
+    }
+
 
     public override void EndDay()
     {
@@ -29,25 +51,28 @@ public class Day5Tasks : DayTaskBase
         this.enabled = false;
     }
 
-    public void UnlockGuide()
+    private void PlayPikeSequence()
     {
-        SetInteractable(true, wetlandGuideButton);
+        DialogueManager.instance.PlayTutorialNode(
+            node: day5PikeDialogue,
+            onDialogueFinished: () =>
+            {
+                DialogueManager.instance.CompleteTask("E15");
+                PlayConclusionSequence();
+            }
+        );
     }
 
-    public void OnGuideBookOpened()
+    private void PlayConclusionSequence()
     {
-        if (guideOpened) return;
-        guideOpened = true;
-        
-        DialogueManager.instance.CompleteTask("task_guide_opened");
-        DialogueManager.instance.PlayTutorialNode(day5GuideOpenedDialogue);
-    }
-
-    public void OnTutorialComplete()
-    {
-        DialogueManager.instance.CompleteTask("task_tutorial_complete");
-        DialogueManager.instance.FinishEntireTutorialSequence(); 
-        
-        CompleteDay();
+        DialogueManager.instance.PlayTutorialNode(
+            node: day5ConclusionDialogue,
+            onDialogueFinished: () =>
+            {
+                DialogueManager.instance.CompleteTask("E16");
+                SetInteractable(true, nextDayButton);
+                CompleteDay();
+            }
+        );
     }
 }

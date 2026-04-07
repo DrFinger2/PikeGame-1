@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49bd6be61d54f1b459390291a3e98b6a, type: 3}
+  m_Name: '[E13] Start-02-GoodSign'
+  m_EditorClassIdentifier: Assembly-CSharp::TutorialDialogue
+  npcName: Costeicco Guru
+  npcNameLocalized:
+    fi: 
+    sw: 
+    en: 
+  npcImage: {fileID: 0}
+  dialogueText: "Se on hyv\xE4 merkki. Kun hy\xF6nteisi\xE4 on paljon, my\xF6s kalat
+    ja linnut viihtyv\xE4t paremmin."
+  dialogueTextLocalized:
+    fi: 
+    sw: 
+    en: 
+  typeSpeed: 0
+  taskId: E13
+  taskDescription: 
+  nextDialogue: {fileID: 11400000, guid: 7b02a44593853e04da94ee8a168244b1, type: 2}
+  isCompleted: 0

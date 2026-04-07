@@ -10,8 +10,9 @@ public class NotebookPageHandler : MonoBehaviour
     public GameObject[] bookPages;
     [SerializeField] private List<GameObject> newPages = new List<GameObject>();
     [SerializeField] private int currentPage;
-    public UnityEvent<int> OnPageChanged = new();
-    public UnityEvent OnBookClosed = new();
+    static public UnityEvent<int> OnPageChanged = new();
+    static public UnityEvent OnBookClosed = new();
+    static public UnityEvent OnBookOpened = new();
     private AudioSource audio;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,6 +21,12 @@ public class NotebookPageHandler : MonoBehaviour
         audio = GetComponent<AudioSource>();
         GeneratePages();
         JumpToPage(currentPage);
+    }
+
+    void OnEnable()
+    {
+        this.transform.parent.gameObject.SetActive(true);
+        OnBookOpened?.Invoke();
     }
 
 
