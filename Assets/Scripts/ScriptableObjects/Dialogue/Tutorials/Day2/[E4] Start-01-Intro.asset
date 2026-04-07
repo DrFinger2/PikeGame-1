@@ -17,7 +17,7 @@ MonoBehaviour:
     fi: 
     sw: 
     en: 
-  npcImage: {fileID: 0}
+  npcImage: {fileID: 21300000, guid: 539b1fb467eadee4e8bbea246fabc30b, type: 3}
   dialogueText: "Upeaa, ranta alkaa jo vihert\xE4\xE4! Seuraavaksi vuorossa on istuttaa
     uusia ruohokasveja. T\xE4ss\xE4 on jouhivihvil\xE4\xE4 ja suo-ohdaketta"
   dialogueTextLocalized:

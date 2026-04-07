@@ -17,7 +17,7 @@ MonoBehaviour:
     fi: 
     sw: 
     en: 
-  npcImage: {fileID: 0}
+  npcImage: {fileID: 21300000, guid: f003c18d0ce99c5488b9dfa623c6e577, type: 3}
   dialogueText: "Ennen sammakot kurnuttivat, hauet liikkuivat vedess\xE4 ja linnut
     pesiv\xE4t rannoilla. Mutta sitten vesi lakkasi virtaamasta ja kosteikko alkoi
     kasvaa umpeen. Ravinteet kertyiv\xE4t ja huonot kasvit valtasivat tilaa. Nyt

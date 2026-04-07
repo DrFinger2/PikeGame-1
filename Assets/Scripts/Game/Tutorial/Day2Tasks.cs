@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -30,7 +31,10 @@ public class Day2Tasks : DayTaskBase
         grassPlantsPlantedCount = 0;
         shopVisited = false;
 
-        SetInteractable(false, actionButtons.PlantSuovehka.Button, actionButtons.PlantRantakukka.Button);
+        SetInteractable(false,
+            actionButtons.CutPlants.Button,
+            actionButtons.PlantSuovehka.Button,
+            actionButtons.PlantRantakukka.Button);
         SetInteractable(false, shopButton, nextDayButton);
         SetActive(false, coinDisplay);
 
@@ -64,6 +68,7 @@ public class Day2Tasks : DayTaskBase
                 SetInteractable(true,
                     shopButton,
                     nextDayButton,
+                    actionButtons.CutPlants.Button,
                     actionButtons.OpenPlants.Button,
                     actionButtons.PlantRantakukka.Button,
                     actionButtons.PlantSuovehka.Button
