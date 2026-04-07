@@ -25,6 +25,7 @@ public class Day2Tasks : DayTaskBase
     public override void StartDay()
     {
         Events.OnDayStarted.Invoke();
+        TurnManager.Instance.gameState.AddPoints(extraPointsPerDay);
         this.enabled = true;
         grassPlantsPlantedCount = 0;
         shopVisited = false;

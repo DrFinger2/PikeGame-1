@@ -23,7 +23,7 @@ public class Day1Tasks : DayTaskBase
     public override void StartDay()
     {
         Events.OnDayStarted.Invoke();
-
+        TurnManager.Instance.gameState.AddPoints(extraPointsPerDay);
         this.enabled = true;
         SetInteractable(false,
             actionButtons.CutPlants.Button,

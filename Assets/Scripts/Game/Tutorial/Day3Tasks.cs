@@ -24,7 +24,7 @@ public class Day3Tasks : DayTaskBase
     public override void StartDay()
     {
         Events.OnDayStarted.Invoke();
-        
+        TurnManager.Instance.gameState.AddPoints(extraPointsPerDay);
         this.enabled = true;
         
         floatingPlantsPlantedCount = 0;
