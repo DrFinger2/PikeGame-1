@@ -20,9 +20,9 @@ MonoBehaviour:
   npcImage: {fileID: 0}
   dialogueText: Hetkinen...
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: Hetkinen...
+    sw: "V\xE4nta lite\u2026"
+    en: "Wait a moment\u2026"
   typeSpeed: 0
   taskId: E7
   taskDescription: 

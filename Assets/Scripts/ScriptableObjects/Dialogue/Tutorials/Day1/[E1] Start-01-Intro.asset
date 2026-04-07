@@ -21,9 +21,12 @@ MonoBehaviour:
   dialogueText: "Tervehdys! Hienoa, ett\xE4 p\xE4\xE4sit tulemaan. Min\xE4 olen Costeicco
     Guru ja pidin t\xE4st\xE4 kosteikosta ennen huolta."
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Tervehdys! Hienoa, ett\xE4 p\xE4\xE4sit tulemaan. Min\xE4 olen Costeicco
+      Guru ja pidin t\xE4st\xE4 kosteikosta ennen huolta."
+    sw: "Hejsan! Vad roligt att du kunde komma. Jag heter Coisteicco Guru och jag
+      brukade ta hand om den h\xE4r v\xE5tmarken."
+    en: Greetings, glad to see you made it. My name is Coisteicco Guru and I used
+      to take care of this wetland.
   typeSpeed: 0
   taskId: E1
   taskDescription: 

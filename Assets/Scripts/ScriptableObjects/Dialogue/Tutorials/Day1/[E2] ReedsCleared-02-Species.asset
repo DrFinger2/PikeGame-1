@@ -21,9 +21,12 @@ MonoBehaviour:
   dialogueText: "Nyt kun tilaa on, voimme istuttaa ruokokasveja. T\xE4ss\xE4 on j\xE4rviruokoa,
     j\xE4rvikaislaa ja osmank\xE4\xE4mi\xE4."
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Nyt kun tilaa on, voimme istuttaa ruokokasveja. T\xE4ss\xE4 on j\xE4rviruokoa,
+      j\xE4rvikaislaa ja osmank\xE4\xE4mi\xE4."
+    sw: "Nu n\xE4r vi har plats kan vi plantera vassv\xE4xter. H\xE4r har vi vass,
+      s\xE4v och kaveldun."
+    en: Now that we have space, we can plant some reeds. Here we have common reed,
+      common club-rush and cattail.
   typeSpeed: 0
   taskId: E2
   taskDescription: 

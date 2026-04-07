@@ -21,9 +21,12 @@ MonoBehaviour:
   dialogueText: "Hyv\xE4! Nyt voimme keskitty\xE4 taas uusien kasvien istuttamiseen.
     Kun hauet palaavat, ne tarvitsevat suojaa ja paikkoja lis\xE4\xE4nty\xE4."
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Hyv\xE4! Nyt voimme keskitty\xE4 taas uusien kasvien istuttamiseen. Kun
+      hauet palaavat, ne tarvitsevat suojaa ja paikkoja lis\xE4\xE4nty\xE4."
+    sw: "Bra! Nu kan vi forts\xE4tta plantera. N\xE4r g\xE4ddorna \xE5terv\xE4nder
+      beh\xF6ver de skydd och platser att f\xF6r\xF6ka sig."
+    en: "Good! Now we can focus again on planting new vegetation. When the pike return,
+      they\u2019ll need shelter and places to reproduce."
   typeSpeed: 0
   taskId: E8
   taskDescription: 

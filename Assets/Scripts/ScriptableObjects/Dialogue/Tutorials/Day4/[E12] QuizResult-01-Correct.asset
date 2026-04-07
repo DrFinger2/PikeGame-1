@@ -20,9 +20,9 @@ MonoBehaviour:
   npcImage: {fileID: 0}
   dialogueText: "Hyv\xE4! jatka samaan malliin!"
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Hyv\xE4! jatka samaan malliin!"
+    sw: "Bra! Forts\xE4tt s\xE5!"
+    en: Good! Keep it up!
   typeSpeed: 0
   taskId: E12
   taskDescription: 

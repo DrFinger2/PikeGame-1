@@ -21,9 +21,11 @@ MonoBehaviour:
   dialogueText: "Kuten huomaat, t\xE4m\xE4 paikka on n\xE4hnyt parempiakin p\xE4ivi\xE4
     - vesi seisoo ja el\xE4m\xE4 on hiljennyt."
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Kuten huomaat, t\xE4m\xE4 paikka on n\xE4hnyt parempiakin p\xE4ivi\xE4 -
+      vesi seisoo ja el\xE4m\xE4 on hiljennyt."
+    sw: "Som du ser har den h\xE4r platsen sett b\xE4ttre dagar - vattnet st\xE5r
+      stilla och livet har tystnat."
+    en: 'This place didn''t look like this before. '
   typeSpeed: 0
   taskId: E1
   taskDescription: 

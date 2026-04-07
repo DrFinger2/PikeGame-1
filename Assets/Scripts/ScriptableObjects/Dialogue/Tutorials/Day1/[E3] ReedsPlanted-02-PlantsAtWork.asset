@@ -21,9 +21,11 @@ MonoBehaviour:
   dialogueText: "Vesi ei puhdistu hetkess\xE4, mutta kasvit tekev\xE4t ty\xF6t\xE4\xE4n
     koko ajan."
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Vesi ei puhdistu hetkess\xE4, mutta kasvit tekev\xE4t ty\xF6t\xE4\xE4n koko
+      ajan."
+    sw: "Vattnet blir inte rent p\xE5 en g\xE5ng, men v\xE4xterna arbetar hela tiden."
+    en: "The water won\u2019t clean itself instantly but the plants are working on
+      it all the time."
   typeSpeed: 0
   taskId: E3
   taskDescription: 

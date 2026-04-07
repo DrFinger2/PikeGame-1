@@ -21,9 +21,12 @@ MonoBehaviour:
   dialogueText: "Huomaatko kuinka paljon kirkkaammalta vesi jo n\xE4ytt\xE4\xE4?
     Kasvit tekev\xE4t ty\xF6ns\xE4 hyvin."
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Huomaatko kuinka paljon kirkkaammalta vesi jo n\xE4ytt\xE4\xE4? Kasvit tekev\xE4t
+      ty\xF6ns\xE4 hyvin."
+    sw: "Ser du hur mycket klarare vattnet har blivit? V\xE4xterna g\xF6r sitt jobb
+      bra."
+    en: Do you see how much clearer the water already looks? The plants are doing
+      their job well.
   typeSpeed: 0
   taskId: E10
   taskDescription: 

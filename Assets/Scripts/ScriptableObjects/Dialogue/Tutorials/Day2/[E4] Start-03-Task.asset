@@ -20,9 +20,9 @@ MonoBehaviour:
   npcImage: {fileID: 0}
   dialogueText: "Istuta niit\xE4 tuohon kosteaan maahan rannan tuntumaan"
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Istuta niit\xE4 tuohon kosteaan maahan rannan tuntumaan."
+    sw: "Plantera dem i den fuktiga jorden n\xE4ra stranden."
+    en: Plant them in that damp soil near the shore.
   typeSpeed: 0
   taskId: E4
   taskDescription: 

@@ -21,9 +21,11 @@ MonoBehaviour:
   dialogueText: "Jatkossa voit vastata kahteen kysymykseen p\xE4iv\xE4ss\xE4 ja testata,
     kuinka hyvin olet oppinut asioita!"
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Jatkossa voit vastata kahteen kysymykseen p\xE4iv\xE4ss\xE4 ja testata,
+      kuinka hyvin olet oppinut asioita!"
+    sw: "Fram\xF6ver kan du svara p\xE5 tv\xE5 fr\xE5gor per dag och testa dina kunskaper!"
+    en: "From now on you can answer two questions per day and test how well you\u2019ve
+      learned!"
   typeSpeed: 0
   taskId: E12
   taskDescription: 

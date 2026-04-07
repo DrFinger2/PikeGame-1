@@ -23,9 +23,20 @@ MonoBehaviour:
     kasvaa umpeen. Ravinteet kertyiv\xE4t ja huonot kasvit valtasivat tilaa. Nyt
     luonto tukahtuu."
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Ennen sammakot kurnuttivat, hauet liikkuivat vedess\xE4 ja linnut pesiv\xE4t
+      rannoilla. Mutta sitten vesi lakkasi virtaamasta ja kosteikko alkoi kasvaa
+      umpeen. Ravinteet kertyiv\xE4t ja huonot kasvit valtasivat tilaa. Nyt luonto
+      tukahtuu."
+    sw: "F\xF6rr kv\xE4kte grodorna, g\xE4ddorna r\xF6rde sig i vattnet och f\xE5glarna
+      h\xE4ckade l\xE4ngs str\xE4nderna. Men sedan slutade vattnet att r\xF6ra sig
+      och v\xE5tmarken b\xF6rjade v\xE4xa igen. N\xE4rings\xE4mnen ansamlades och
+      som en f\xF6ljd b\xF6rjade vassen/v\xE4xterna ta \xF6ver omr\xE5det."
+    en: 'Once frogs croaked, pikes swam through the water and birds nested along
+      the shores.
+
+      But then the water stopped flowing, and the wetland began
+      to overgrow. The reed bed became structurally monotonous, which undermines
+      the survival prospects of many species.'
   typeSpeed: 0
   taskId: E1
   taskDescription: 

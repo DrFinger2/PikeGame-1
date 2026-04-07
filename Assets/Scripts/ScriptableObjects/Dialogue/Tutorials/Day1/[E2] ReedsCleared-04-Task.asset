@@ -20,9 +20,9 @@ MonoBehaviour:
   npcImage: {fileID: 0}
   dialogueText: "Istuta ne tuohon pehme\xE4\xE4n rantamutaan aivan vesirajaan."
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Istuta ne tuohon pehme\xE4\xE4n rantamutaan aivan vesirajaan."
+    sw: Plantera dem i den mjuka strand leran precis vid vattenkanten.
+    en: "Plant them into that soft shoreline mud, right at the water\u2019s edge."
   typeSpeed: 0
   taskId: E2
   taskDescription: 

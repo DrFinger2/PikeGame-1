@@ -21,9 +21,9 @@ MonoBehaviour:
   dialogueText: "Jos n\xE4et n\xE4it\xE4 kasveja, leikkaa ne heti pois. Ryhdyt\xE4\xE4n
     hommiin!"
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Jos n\xE4et n\xE4it\xE4 kasveja, leikkaa ne heti pois. Ryhdyt\xE4\xE4n hommiin!"
+    sw: "Om du ser dem, ta bort dem direkt. Nu s\xE4tter vi ig\xE5ng!"
+    en: "If you see these plants, cut them down immediately. Let\u2019s get to work!"
   typeSpeed: 0
   taskId: E10
   taskDescription: 

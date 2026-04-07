@@ -21,9 +21,10 @@ MonoBehaviour:
   dialogueText: "Ne est\xE4v\xE4t eroosiota ja houkuttelevat hy\xF6nteisi\xE4, jotka
     taas houkuttelevat lintuja."
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Ne est\xE4v\xE4t eroosiota ja houkuttelevat hy\xF6nteisi\xE4, jotka taas
+      houkuttelevat lintuja."
+    sw: "De f\xF6rhindrar erosion och lockar insekter, som i sin tur lockar f\xE5glar."
+    en: They prevent erosion and attract insects which in turn attract birds.
   typeSpeed: 0
   taskId: E4
   taskDescription: 

@@ -20,9 +20,9 @@ MonoBehaviour:
   npcImage: {fileID: 0}
   dialogueText: "Hienoa ty\xF6t\xE4! Nyt ranta n\xE4ytt\xE4\xE4 jo paljon paremmalta."
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Hienoa ty\xF6t\xE4! Nyt ranta n\xE4ytt\xE4\xE4 jo paljon paremmalta."
+    sw: "Bra jobbat! Stranden ser redan mycket b\xE4ttre ut."
+    en: Great work! The shoreline already looks much better.
   typeSpeed: 0
   taskId: E2
   taskDescription: 

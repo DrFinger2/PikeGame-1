@@ -20,9 +20,9 @@ MonoBehaviour:
   npcImage: {fileID: 0}
   dialogueText: "Saat lis\xE4\xE4 kolikoita edetess\xE4si.\r\n"
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Saat lis\xE4\xE4 kolikoita edetess\xE4si."
+    sw: "Du f\xE5r fler mynt n\xE4r du g\xF6r framsteg och n\xE5r milstolpar."
+    en: "You\u2019ll earn more coins as you progress and reach milestones."
   typeSpeed: 0
   taskId: E6
   taskDescription: 

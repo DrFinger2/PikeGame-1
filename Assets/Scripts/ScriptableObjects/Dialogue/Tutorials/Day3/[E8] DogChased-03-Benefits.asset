@@ -21,9 +21,10 @@ MonoBehaviour:
   dialogueText: "Ne tarjoavat suojaa kaloille, varjostavat vett\xE4 ja v\xE4hent\xE4v\xE4t
     levien kasvua."
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Ne tarjoavat suojaa kaloille, varjostavat vett\xE4 ja v\xE4hent\xE4v\xE4t
+      levien kasvua."
+    sw: "De ger skydd \xE5t fiskar, skuggar vattnet och minskar algtillv\xE4xt."
+    en: They provide shelter for fish, shade the water and reduce algae growth.
   typeSpeed: 0
   taskId: E8
   taskDescription: 

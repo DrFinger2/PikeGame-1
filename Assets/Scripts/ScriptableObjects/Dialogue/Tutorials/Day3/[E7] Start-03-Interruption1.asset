@@ -20,9 +20,9 @@ MonoBehaviour:
   npcImage: {fileID: 0}
   dialogueText: ...
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: ...
+    sw: . . .
+    en: .  .  .
   typeSpeed: 0
   taskId: E7
   taskDescription: 

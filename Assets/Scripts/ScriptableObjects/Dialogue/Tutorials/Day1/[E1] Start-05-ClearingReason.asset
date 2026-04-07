@@ -22,9 +22,19 @@ MonoBehaviour:
     on kasvanut liian tihe\xE4ksi. Se est\xE4\xE4 valoa p\xE4\xE4sem\xE4st\xE4 veteen
     ja tekee vedest\xE4 hapetonta. "
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Ensimm\xE4inen askel on raivata tilaa. T\xE4m\xE4 vanha ruovikko on kasvanut
+      liian tihe\xE4ksi. Se est\xE4\xE4 valoa p\xE4\xE4sem\xE4st\xE4 veteen ja tekee
+      vedest\xE4 hapetonta."
+    sw: "F\xF6rsta steget \xE4r att r\xF6ja plats. Den h\xE4r gamla vassen har blivit
+      f\xF6r t\xE4t. Den hindrar ljuset fr\xE5n att n\xE5 vattnet. Genom selektiv
+      r\xF6jning kan man f\xF6rb\xE4ttra den biologiska m\xE5ngfalden i strandzonen.
+      Igenv\xE4xning kan f\xF6rs\xE4mra vattenkvaliteten genom \xF6kadd ansamling
+      av organiskt material."
+    en: The first step is to clear the area in sections. The dense reeds that have
+      grown here block sunlight from reaching the water, causing many plants and
+      animals to stop thriving along the shore. When the vegetation grows too much,
+      it also begins to accumulate mud and other debris, which can cloud the water
+      and degrade its quality.
   typeSpeed: 0
   taskId: E1
   taskDescription: 
