@@ -21,9 +21,12 @@ MonoBehaviour:
   dialogueText: "Upeaa, ranta alkaa jo vihert\xE4\xE4! Seuraavaksi vuorossa on istuttaa
     uusia ruohokasveja. T\xE4ss\xE4 on jouhivihvil\xE4\xE4 ja suo-ohdaketta"
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Upeaa, ranta alkaa jo vihert\xE4\xE4! Seuraavaksi vuorossa on istuttaa uusia
+      ruohokasveja. T\xE4ss\xE4 on jouhivihvil\xE4\xE4 ja suo-ohdaketta"
+    sw: "Fantastiskt, stranden b\xF6rjar redan bli gr\xF6n! N\xE4sta steg \xE4r att
+      plantera nya gr\xE4sarter. H\xE4r \xE4r tr\xE5dt\xE5g och k\xE4rrtistel"
+    en: "Wonderful, the shoreline is already turning green! Next, we\u2019ll plant
+      new grasses. Here we have thread rush and marsh thistle."
   typeSpeed: 0
   taskId: E4
   taskDescription: 

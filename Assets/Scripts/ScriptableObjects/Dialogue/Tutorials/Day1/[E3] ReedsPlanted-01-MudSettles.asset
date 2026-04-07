@@ -20,9 +20,9 @@ MonoBehaviour:
   npcImage: {fileID: 0}
   dialogueText: Katsoppas vaan! Muta alkaa jo asettua pohjaan.
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: Katsoppas vaan! Muta alkaa jo asettua pohjaan.
+    sw: "Titta d\xE4r! Gyttjan b\xF6rjar redan sjunka till botten."
+    en: Well would you look at that! The sediment is already starting to settle.
   typeSpeed: 0
   taskId: E3
   taskDescription: 

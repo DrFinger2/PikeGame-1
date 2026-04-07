@@ -20,9 +20,9 @@ MonoBehaviour:
   npcImage: {fileID: 0}
   dialogueText: Kaikkea ei voi oppia heti, parempi onni ensi kerralla!
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: Kaikkea ei voi oppia heti, parempi onni ensi kerralla!
+    sw: "Man l\xE4r sig inte allt p\xE5 en g\xE5ng . B\xE4ttre lycka n\xE4sta g\xE5ng!"
+    en: "You can\u2019t learn everything at once\u2026 Better luck next time!"
   typeSpeed: 0
   taskId: E12
   taskDescription: 

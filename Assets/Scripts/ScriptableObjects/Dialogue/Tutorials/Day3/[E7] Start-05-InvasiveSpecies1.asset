@@ -22,9 +22,13 @@ MonoBehaviour:
     silt\xE4, ett\xE4 meill\xE4 on kutsumattomia vieraita. Supikoira on p\xE4\xE4ssyt
     livahtamaan alueelle."
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Kuulitko tuon rapinan tuolta tiheik\xF6st\xE4? Huoh, n\xE4ytt\xE4\xE4 silt\xE4,
+      ett\xE4 meill\xE4 on kutsumattomia vieraita. Supikoira on p\xE4\xE4ssyt livahtamaan
+      alueelle."
+    sw: "H\xF6rde du det d\xE4r prasslet i buskarna? Suck\u2026 det verkar som att
+      vi har objudna g\xE4ster. En m\xE5rdhund har tagit sig in i omr\xE5det."
+    en: "Did you hear that rustling from the bushes? Sigh\u2026 looks like we have
+      uninvited guests. A raccoon dog has slipped into the area."
   typeSpeed: 0
   taskId: E7
   taskDescription: 

@@ -21,9 +21,12 @@ MonoBehaviour:
   dialogueText: "Hyv\xE4n ty\xF6n ansiosta saimme hieman rahoitusta kosteikon hoitoon.
     Saat n\xE4m\xE4 kolikot k\xE4ytt\xF6\xF6si."
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Hyv\xE4n ty\xF6n ansiosta saimme hieman rahoitusta kosteikon hoitoon. Saat
+      n\xE4m\xE4 kolikot k\xE4ytt\xF6\xF6si."
+    sw: "Tack vare ditt arbete har vi f\xE5tt lite finansiering f\xF6r v\xE5tmarken.
+      H\xE4r \xE4r n\xE5gra mynt."
+    en: "Thanks to your good work, we\u2019ve received some funding for maintaining
+      the wetland. These coins are yours to use."
   typeSpeed: 0
   taskId: E6
   taskDescription: 

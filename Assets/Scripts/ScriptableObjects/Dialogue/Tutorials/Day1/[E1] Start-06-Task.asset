@@ -21,9 +21,12 @@ MonoBehaviour:
   dialogueText: "Ota t\xE4st\xE4 viikate ja leikkaa nuo huonot varret pois, jotta
     valo p\xE4\xE4see taas pohjaan asti."
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Ota t\xE4st\xE4 viikate ja leikkaa nuo huonot varret pois, jotta valo p\xE4\xE4see
+      taas pohjaan asti."
+    sw: "Ta den h\xE4r sk\xE4ran och sk\xE4r bort den f\xF6r utbredda vegetationen,
+      s\xE5 att ljuset n\xE5r \xE4nda ner till botten igen."
+    en: Take this sickle and cut back the overgrown reeds so that light can reach
+      the bottom again.
   typeSpeed: 0
   taskId: E1
   taskDescription: 

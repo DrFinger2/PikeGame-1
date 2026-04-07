@@ -21,9 +21,11 @@ MonoBehaviour:
   dialogueText: "Hienoa! Vaikka osa noista kasveista saattaa n\xE4ytt\xE4\xE4 n\xE4tilt\xE4,
     emme halua niit\xE4 t\xE4nne."
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Hienoa! Vaikka osa noista kasveista saattaa n\xE4ytt\xE4\xE4 n\xE4tilt\xE4,
+      emme halua niit\xE4 t\xE4nne."
+    sw: "Bra! \xC4ven om de kanske ser fina ut, vill vi inte ha dem h\xE4r."
+    en: "Great! Even though some of those plants may look pretty, we don\u2019t want
+      them here."
   typeSpeed: 0
   taskId: E11
   taskDescription: 

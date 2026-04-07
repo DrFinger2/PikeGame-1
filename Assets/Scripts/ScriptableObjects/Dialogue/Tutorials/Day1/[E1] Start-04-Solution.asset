@@ -21,9 +21,12 @@ MonoBehaviour:
   dialogueText: "Mutta sinun avullasi voimme tehd\xE4 t\xE4st\xE4 paikasta taas kauniin
     ja el\xE4v\xE4n. Aloitetaan heti!"
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Mutta sinun avullasi voimme tehd\xE4 t\xE4st\xE4 paikasta taas kauniin ja
+      el\xE4v\xE4n. Aloitetaan heti!"
+    sw: "Men med din hj\xE4lp kan vi g\xF6ra den h\xE4r platsen levande och vacker
+      igen. L\xE5t oss b\xF6rja. genast!"
+    en: "But with your help we can make this place beautiful and alive again. Let\u2019s
+      get started right away!"
   typeSpeed: 0
   taskId: E1
   taskDescription: 

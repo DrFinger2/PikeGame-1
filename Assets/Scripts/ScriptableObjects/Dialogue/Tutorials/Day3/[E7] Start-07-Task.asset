@@ -22,9 +22,14 @@ MonoBehaviour:
     on liian my\xF6h\xE4ist\xE4. Supikoirat sy\xF6v\xE4t lintujen poikasia ja munia,
     voivat levitt\xE4\xE4 tauteja ja niiden nopeakasvuinen kanta uhkaa luonnon monimuotoisuutta."
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Jos n\xE4et niit\xE4 lis\xE4\xE4, h\xE4\xE4d\xE4 ne pois ennen kuin on liian
+      my\xF6h\xE4ist\xE4. Supikoirat sy\xF6v\xE4t lintujen poikasia ja munia, voivat
+      levitt\xE4\xE4 tauteja ja niiden nopeakasvuinen kanta uhkaa luonnon monimuotoisuutta."
+    sw: "Om du ser fler, skr\xE4m bort dem innan det \xE4r f\xF6r sent. De \xE4ter
+      f\xE5gelungar och \xE4gg, kan sprida sjukdomar och hotar den biologiska m\xE5ngfalden."
+    en: "If you see more of them, drive them away before it\u2019s too late.Raccoon
+      dogs eat bird chicks and eggs, can spread diseases and their rapidly growing
+      population threatens biodiversity."
   typeSpeed: 0
   taskId: E7
   taskDescription: 

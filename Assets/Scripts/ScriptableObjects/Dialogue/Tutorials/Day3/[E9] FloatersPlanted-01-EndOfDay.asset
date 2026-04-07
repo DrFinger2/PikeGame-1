@@ -20,9 +20,9 @@ MonoBehaviour:
   npcImage: {fileID: 0}
   dialogueText: "Hyv\xE4! Jatketaan taas huomenna siit\xE4 mihin j\xE4imme."
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Hyv\xE4! Jatketaan taas huomenna siit\xE4 mihin j\xE4imme."
+    sw: "Bra! Vi forts\xE4tter imorgon."
+    en: "Good! Let\u2019s continue from here again tomorrow."
   typeSpeed: 0
   taskId: E9
   taskDescription: 

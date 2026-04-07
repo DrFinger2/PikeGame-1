@@ -21,9 +21,11 @@ MonoBehaviour:
   dialogueText: "Se ei kuulu t\xE4nne. Supikoira on vieraslaji ja aiheuttaa paljon
     vahinkoa luonnollemme."
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Se ei kuulu t\xE4nne. Supikoira on vieraslaji ja aiheuttaa paljon vahinkoa
+      luonnollemme."
+    sw: "Den \xE4r en fr\xE4mmande art och g\xF6r mycket skada i v\xE5r natur."
+    en: "It doesn\u2019t belong in our ecosystem - it\u2019s an invasive species
+      and very dangerous here."
   typeSpeed: 0
   taskId: E7
   taskDescription: 

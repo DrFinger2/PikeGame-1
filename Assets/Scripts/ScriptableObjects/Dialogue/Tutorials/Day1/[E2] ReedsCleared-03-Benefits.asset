@@ -21,9 +21,11 @@ MonoBehaviour:
   dialogueText: "Ne sitovat ravinteita, puhdistavat vett\xE4 ja tarjoavat pes\xE4paikkoja
     linnuille ja niiden poikasille."
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Ne sitovat ravinteita, puhdistavat vett\xE4 ja tarjoavat pes\xE4paikkoja
+      linnuille ja niiden poikasille."
+    sw: "De binder n\xE4rings\xE4mnen, renar vattnet och ger skydd \xE5t f\xE5glar
+      och deras ungar."
+    en: They bind nutrients, clean the water and provide nesting places for birds.
   typeSpeed: 0
   taskId: E2
   taskDescription: 

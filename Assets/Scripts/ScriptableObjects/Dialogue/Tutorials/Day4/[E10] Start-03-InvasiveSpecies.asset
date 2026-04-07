@@ -22,9 +22,15 @@ MonoBehaviour:
     alkuper\xE4iset lajit. N\xE4it\xE4 lajeja t\xE4\xE4ll\xE4 kosteikolla on muun
     muassa j\xE4ttipalsami, lupiini, isosorsimo ja lammikki."
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Jotkut kasvit levi\xE4v\xE4t liian nopeasti ja syrj\xE4ytt\xE4v\xE4t alkuper\xE4iset
+      lajit. N\xE4it\xE4 lajeja t\xE4\xE4ll\xE4 kosteikolla on muun muassa j\xE4ttipalsami,
+      lupiini, isosorsimo ja lammikki."
+    sw: "H\xE4r i v\xE5tmarken g\xE4ller det bland annat j\xE4ttebalsamin, lupin,
+      j\xE4ttegr\xF6e och sj\xF6gull."
+    en: 'Some plants spread too quickly and push out native species. In this wetland,
+      these include Himalayan balsam, lupine, reed-grass and fringed water-lily.
+
+'
   typeSpeed: 0
   taskId: E10
   taskDescription: 

@@ -20,9 +20,9 @@ MonoBehaviour:
   npcImage: {fileID: 0}
   dialogueText: "Istuta ne v\xE4h\xE4n keskemm\xE4lle veteen."
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Istuta ne v\xE4h\xE4n keskemm\xE4lle veteen."
+    sw: "Plantera dem lite l\xE4ngre ut i vattnet."
+    en: Plant them a bit further out in the water.
   typeSpeed: 0
   taskId: E8
   taskDescription: 

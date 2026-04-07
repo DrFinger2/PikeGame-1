@@ -21,9 +21,13 @@ MonoBehaviour:
   dialogueText: "Katsopas tuota! Pikkukalat ovat ilmestyneet veteen. Kun tavoitteenamme
     on saada hauet takaisin, on t\xE4rke\xE4\xE4 ett\xE4 niille l\xF6ytyy ravintoa. "
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Katsopas tuota! Pikkukalat ovat ilmestyneet veteen. Kun tavoitteenamme on
+      saada hauet takaisin, on t\xE4rke\xE4\xE4 ett\xE4 niille l\xF6ytyy ravintoa."
+    sw: "Titta d\xE4r! Sm\xE5 fiskar har dykt upp i vattnet. Eftersom v\xE5rt m\xE5l
+      \xE4r att f\xE5 tillbaka g\xE4ddorna \xE4r det viktigt att de har n\xE5got
+      att \xE4ta."
+    en: "Look at that! Small fish have appeared in the water. Since our goal is to
+      bring back pike it\u2019s important that they have something to feed on."
   typeSpeed: 0
   taskId: E7
   taskDescription: 

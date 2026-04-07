@@ -21,9 +21,9 @@ MonoBehaviour:
   dialogueText: "Nyt meid\xE4n t\xE4ytyy olla kuitenkin tarkkana toisen ongelman
     kanssa."
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Nyt meid\xE4n t\xE4ytyy olla kuitenkin tarkkana toisen ongelman kanssa."
+    sw: "Vissa v\xE4xter sprider sig f\xF6r snabbt och tr\xE4nger undan andra arter."
+    en: But now we need to watch out for another problem.
   typeSpeed: 0
   taskId: E10
   taskDescription: 

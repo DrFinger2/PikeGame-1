@@ -21,9 +21,12 @@ MonoBehaviour:
   dialogueText: "Kun haluat testata, kuinka hyvin olet oppinut asioita t\xE4\xE4ll\xE4,
     voit vastata kysymyksiin ansaitaksesi muutaman lis\xE4kolikon."
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Kun haluat testata, kuinka hyvin olet oppinut asioita t\xE4\xE4ll\xE4, voit
+      vastata kysymyksiin ansaitaksesi muutaman lis\xE4kolikon."
+    sw: "Om du vill testa vad du har l\xE4rt dig kan du svara p\xE5 fr\xE5gor och
+      f\xE5 extra mynt."
+    en: "If you want to test how well you\u2019ve learned things here, you can answer
+      questions to earn a few extra coins."
   typeSpeed: 0
   taskId: E11
   taskDescription: 

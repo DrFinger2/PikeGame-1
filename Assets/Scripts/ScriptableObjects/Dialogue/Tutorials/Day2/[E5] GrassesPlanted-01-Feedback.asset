@@ -20,9 +20,10 @@ MonoBehaviour:
   npcImage: {fileID: 0}
   dialogueText: "Loistavaa! Kasvit est\xE4v\xE4t my\xF6s uuden mudan valumasta veteen"
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Loistavaa! Kasvit est\xE4v\xE4t my\xF6s uuden mudan valumasta veteen."
+    sw: "Utm\xE4rkt! V\xE4xterna hindrar ocks\xE5 ny lera fr\xE5n att rinna ut i
+      vattnet."
+    en: Excellent! They also help prevent new sediment from washing into the water.
   typeSpeed: 0
   taskId: E5
   taskDescription: 

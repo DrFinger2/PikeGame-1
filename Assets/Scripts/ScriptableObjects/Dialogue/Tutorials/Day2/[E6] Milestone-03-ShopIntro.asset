@@ -21,9 +21,10 @@ MonoBehaviour:
   dialogueText: "Tuolla n\xE4kyy kauppa. K\xE4yd\xE4\xE4n katsomassa mit\xE4 siell\xE4
     on tarjolla."
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Tuolla n\xE4kyy kauppa. K\xE4yd\xE4\xE4n katsomassa mit\xE4 siell\xE4 on
+      tarjolla."
+    sw: "D\xE4r borta finns en butik. L\xE5t oss ta en titt p\xE5 vad som finns d\xE4r."
+    en: "There\u2019s a shop. Let\u2019s go see what they have to offer."
   typeSpeed: 0
   taskId: E6
   taskDescription: 

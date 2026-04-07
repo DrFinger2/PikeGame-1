@@ -20,9 +20,9 @@ MonoBehaviour:
   npcImage: {fileID: 0}
   dialogueText: Testataan heti!
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: Testataan heti!
+    sw: Nu testar vi!
+    en: "Let\u2019s try one right away!"
   typeSpeed: 0
   taskId: E11
   taskDescription: 

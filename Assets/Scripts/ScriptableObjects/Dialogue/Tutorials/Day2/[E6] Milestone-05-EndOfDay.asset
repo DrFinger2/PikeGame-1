@@ -20,9 +20,9 @@ MonoBehaviour:
   npcImage: {fileID: 0}
   dialogueText: "Kun olet valmis, voimme siirty\xE4 seuraavaan p\xE4iv\xE4\xE4n."
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Kun olet valmis, voimme siirty\xE4 seuraavaan p\xE4iv\xE4\xE4n."
+    sw: "N\xE4r du \xE4r redo kan vi g\xE5 vidare till n\xE4sta dag."
+    en: "When you\u2019re ready, we can move on the next day."
   typeSpeed: 0
   taskId: E6
   taskDescription: 

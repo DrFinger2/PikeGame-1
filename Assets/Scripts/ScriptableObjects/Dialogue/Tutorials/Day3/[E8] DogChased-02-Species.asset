@@ -21,9 +21,12 @@ MonoBehaviour:
   dialogueText: "Istutetaan seuraavaksi kelluskasveja, t\xE4ss\xE4 on ulpukkaa, lummetta
     ja uistinvitaa"
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Istutetaan seuraavaksi kelluskasveja, t\xE4ss\xE4 on ulpukkaa, lummetta
+      ja uistinvitaa."
+    sw: "Nu planterar vi flytv\xE4xter. H\xE4r \xE4r gul n\xE4ckros, vit n\xE4ckros
+      och g\xE4ddnate."
+    en: "Next, let\u2019s plant floating plants. Here we have yellow water-lily,
+      white water-lily, and floating pondweed."
   typeSpeed: 0
   taskId: E8
   taskDescription: 
