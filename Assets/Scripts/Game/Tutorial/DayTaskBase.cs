@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using System;
 using UnityEngine.Events;
 
 public abstract class DayTaskBase : MonoBehaviour
@@ -30,13 +29,13 @@ public abstract class DayTaskBase : MonoBehaviour
 
     protected void SetInteractable(bool state, params Button[] buttons)
     {
-        foreach (var btn in buttons) 
+        foreach (var btn in buttons)
             if (btn != null) btn.interactable = state;
     }
 
     protected void SetActive(bool state, params GameObject[] objects)
     {
-        foreach (var obj in objects) 
+        foreach (var obj in objects)
             if (obj != null) obj.SetActive(state);
     }
 }
