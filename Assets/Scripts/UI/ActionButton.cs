@@ -35,8 +35,8 @@ public class ActionButton : Selectable, IPointerClickHandler, IDragHandler
         originalPosition = rect.anchoredPosition;
         tm = tileManager.Instance;
         turnManager = TurnManager.Instance;
-
-        mouseRaycaster = turnManager?.gameObject.GetComponent<mouseRaycaster>();
+        if (turnManager != null)
+            mouseRaycaster = turnManager?.gameObject?.GetComponent<mouseRaycaster>();
     }
 
     public void OnDrag(PointerEventData eventData)
