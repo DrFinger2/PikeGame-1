@@ -33,7 +33,6 @@ public class DialogueUI : MonoBehaviour
         dialoguePanel.SetActive(true);
         continueButton.SetActive(showContinue);
 
-
         string finalName = !string.IsNullOrEmpty(dialogue.npcNameLocalized?.GetText())
             ? dialogue.npcNameLocalized.GetText()
             : dialogue.npcName;
@@ -56,16 +55,13 @@ public class DialogueUI : MonoBehaviour
 
         if (useEffect)
         {
-            dialogueText.text = "";
             if (typeWriterEffectCoroutine != null) StopCoroutine(typeWriterEffectCoroutine);
-
-            // Pass the safely grabbed text into the Typewriter
             typeWriterEffectCoroutine = StartCoroutine(TypeWriterEffect(finalDialogueText, dialogue.typeSpeed));
         }
         else
         {
-            // Pass the safely grabbed text directly
             dialogueText.text = finalDialogueText;
+            dialogueText.maxVisibleCharacters = 99999; // Ensure all characters are visible
         }
     }
 
@@ -73,34 +69,49 @@ public class DialogueUI : MonoBehaviour
     private IEnumerator TypeWriterEffect(string text, float speed)
     {
         finalText = text;
-        dialogueText.text = "";
 
-        // FIX: If speed is 0 or negative, force it to 1 so we don't divide by zero!
+        // 1. Give TMP the full text immediately, but hide it
+        dialogueText.text = text;
+        dialogueText.maxVisibleCharacters = 0;
+
         if (speed <= 0f) speed = 1f;
 
-        float typingSpeed = speed * baseTypingSpeed;
-        float timePerChar = 1f / typingSpeed;
+        float typingSpeed = speed * baseTypingSpeed; // Characters per second
+        float timer = 0f;
 
-        for (int i = 0; i < text.Length; i++)
+        // Force TMP to generate the mesh so we know exactly how many characters there are 
+        // (This ignores invisible rich text tags like <color=red>!)
+        dialogueText.ForceMeshUpdate();
+        int totalVisibleCharacters = dialogueText.textInfo.characterCount;
+
+        // 2. Reveal characters based on total elapsed time, entirely decoupled from framerate
+        while (dialogueText.maxVisibleCharacters < totalVisibleCharacters)
         {
-            dialogueText.text += text[i];
-            if (i < text.Length - 1)
-            {
-                yield return new WaitForSeconds(timePerChar);
-            }
+            timer += Time.deltaTime;
+
+            // Calculate how many characters SHOULD be visible by now
+            int charsToShow = Mathf.FloorToInt(timer * typingSpeed);
+            dialogueText.maxVisibleCharacters = charsToShow;
+
+            yield return null; // Wait for the next frame
         }
+
+        // Ensure we end up fully revealed
+        dialogueText.maxVisibleCharacters = totalVisibleCharacters;
         typeWriterEffectCoroutine = null;
     }
-    
+
+
     public void SkipTyping()
     {
         if (typeWriterEffectCoroutine != null)
         {
             StopCoroutine(typeWriterEffectCoroutine);
-            dialogueText.text = finalText;
+            dialogueText.maxVisibleCharacters = 99999;
             typeWriterEffectCoroutine = null;
         }
     }
+    
 
     public void HideDialogue()
     {

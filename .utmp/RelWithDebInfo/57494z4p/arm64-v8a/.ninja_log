@@ -1,0 +1,10 @@
+# ninja log v5
+200	4726	7973341099511182	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	60337db27593465c
+68	4762	7973341099827817	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	68ef38a3125575be
+166	4766	7973341099727326	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	9e07a5628649305d
+289	4829	7973341100577614	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	f4e6ed0e58bb614b
+39	4882	7973341101345983	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	3cbc602e6ead52fd
+321	5181	7973341104284516	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	33fa55e61ec03920
+102	5349	7973341105930197	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	d6d4b748095acddd
+1	5563	7973341108154283	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	c8cc94ebc995b10c
+5564	5889	7973341111479737	C:/Users/ShreksLove/Documents/GitHub/PikeGame-1/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/57494z4p/obj/arm64-v8a/libgame.so	4eef3fe7174bdc04
