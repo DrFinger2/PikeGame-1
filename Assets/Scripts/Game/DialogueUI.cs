@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,10 +28,11 @@ public class DialogueUI : MonoBehaviour
     public bool IsDialogueActive => dialoguePanel.activeInHierarchy;
     public bool IsTyping => typeWriterEffectCoroutine != null;
 
-    public void ShowDialogue(DialogueBase dialogue)
+    public void ShowDialogue(DialogueBase dialogue, bool showContinue = true)
     {
         dialoguePanel.SetActive(true);
-        continueButton.SetActive(true);
+        continueButton.SetActive(showContinue);
+
 
         string finalName = !string.IsNullOrEmpty(dialogue.npcNameLocalized?.GetText())
             ? dialogue.npcNameLocalized.GetText()

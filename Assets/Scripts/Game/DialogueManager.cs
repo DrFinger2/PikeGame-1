@@ -89,9 +89,8 @@ public class DialogueManager : MonoBehaviour
             dialogueUI.HideTask();
             return;
         }
-        Debug.Log("YO");
-
-        ShowDialogue(node);
+        
+        dialogueUI.ShowDialogue(node, true);
 
         if (!string.IsNullOrEmpty(node.taskDescription))
         {
@@ -132,10 +131,7 @@ public class DialogueManager : MonoBehaviour
         Events.OnTaskAssigned?.Invoke(taskId);
     }
 
-    public void ShowDialogue(DialogueBase dialogue)
-    {
-        dialogueUI.ShowDialogue(dialogue);
-    }
+
 
     public void GiveHintForNextEvent()
     {
@@ -151,7 +147,7 @@ public class DialogueManager : MonoBehaviour
             EventHintDialogue hint = dialogueDB.GetHintForEvent(nextEvent);
             if (hint != null)
             {
-                ShowDialogue(hint);
+                dialogueUI.ShowDialogue(hint, false);
                 state.hasGivenHintThisTurn = true;
                 RandomDialogueSoundEffectPlayer();
             }
@@ -165,8 +161,7 @@ public class DialogueManager : MonoBehaviour
         {
             if (randomDialogue.isJoke) SoundManager.Instance.PlayGameSound("joke01");
             else RandomDialogueSoundEffectPlayer();
-
-            ShowDialogue(randomDialogue);
+            dialogueUI.ShowDialogue(randomDialogue, false);
         }
     }
 
@@ -190,10 +185,7 @@ public class DialogueManager : MonoBehaviour
             }
             return;
         }
-
-        // If the player clicks the NPC while a tutorial task is active, repeat the active instructions
-        if (state.tutorialActive && state.currentActiveNode != null)
-            PlayTutorialNode(state.currentActiveNode);
+        
         else if (!state.hasGivenHintThisTurn)
             GiveHintForNextEvent();
         else
@@ -236,6 +228,7 @@ public class DialogueManager : MonoBehaviour
 
         Action callback = state.onSequenceFinishedCallback;
         state.onSequenceFinishedCallback = null;
+        state.currentActiveNode = null;
         callback?.Invoke();
     }
 

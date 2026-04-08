@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI; 
 
-public class ActionButton : Selectable, IPointerClickHandler
+public class ActionButton : Selectable, IPointerClickHandler, IDragHandler
 {
     // Temporary fix for larger architectural problem
     public static event Action<LocalizedText> OnActiveToolChanged;
@@ -25,42 +25,37 @@ public class ActionButton : Selectable, IPointerClickHandler
     private Vector3 originalPosition;
     //private mouseRaycaster mouseRaycaster;
     private RectTransform rect;
+    private mouseRaycaster mouseRaycaster;
 
 
     protected override void Start()
     {
         base.Start();
-
         rect = GetComponent<RectTransform>();
         originalPosition = rect.anchoredPosition;
         tm = tileManager.Instance;
         turnManager = TurnManager.Instance;
-        //mouseRaycaster = turnManager.gameObject.GetComponent<mouseRaycaster>();
+
+        mouseRaycaster = turnManager?.gameObject.GetComponent<mouseRaycaster>();
     }
 
-    void Update()
+    public void OnDrag(PointerEventData eventData)
     {
-        /* broken code, drag doesn't work?
-        if (selected)
+        if (!selected || !IsInteractable()) return;
+
+        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            (RectTransform)rect.parent,
+            eventData.position,
+            eventData.pressEventCamera,
+            out Vector2 localPoint))
         {
-            Vector2 inputPos;
-            if (Touchscreen.current != null && mouseRaycaster.isTouching)
-            {
-                inputPos = mouseRaycaster.touchPosition;
-            }
-            else
-            {
-                inputPos = Mouse.current.position.ReadValue();
-            }
+            rect.localPosition = localPoint;
         }
-        */
-        
-        if (selected)
-        {   
-            if (Pointer.current != null)
-            {
-                transform.position = Pointer.current.position.ReadValue();
-            }
+
+        // 3. Feed the perfectly accurate UI pointer position to the raycaster
+        if (mouseRaycaster != null)
+        {
+            mouseRaycaster.PerformRaycast(eventData.position);
         }
     }
     
@@ -113,17 +108,25 @@ public class ActionButton : Selectable, IPointerClickHandler
 
         if (!selected) return;
 
+        // 4. Force one final accurate raycast right before evaluating the drop
+        if (mouseRaycaster != null)
+        {
+            mouseRaycaster.PerformRaycast(pointerEventData.position);
+        }
+
         Debug.Log("Pointer up!");
         if (tm.selectedTile != null)
         {
             action.affectTile(tm.selectedTile);
             Debug.Log("clicked!" + TurnManager.Instance.gameState.currentActionPoints);
         }
+
         selected = false;
         tm.toolBeingUsed = false;
         tm.selectedTile = null;
         rect.anchoredPosition = originalPosition;
-        
+
         OnActiveToolChanged?.Invoke(null);
     }
+    
 }

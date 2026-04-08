@@ -5043,6 +5043,8 @@ MonoBehaviour:
   actionButtons: {fileID: 1160520427}
   questionButton: {fileID: 391022948}
   nextDayButton: {fileID: 777801969}
+  shopButton: {fileID: 1208568882}
+  npcButton: {fileID: 1283628129}
   day5IntroDialogue: {fileID: 11400000, guid: a3063c9d3232dc34bb10e9a1ceb062a4, type: 2}
   day5NotebookDialogue: {fileID: 11400000, guid: d254c10fc25c0d347b3f7e8184ad19e2, type: 2}
   day5PikeDialogue: {fileID: 11400000, guid: a7c36e4f907b2f34f9ea0a398473082f, type: 2}
@@ -7017,7 +7019,7 @@ PrefabInstance:
       objectReference: {fileID: 1206503449}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0.9492441
       objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMax.y
@@ -7025,11 +7027,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.028821243
+      value: 0.05075594
       objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.049065422
       objectReference: {fileID: 0}
     - target: {fileID: 7594832027408045432, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

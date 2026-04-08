@@ -10,6 +10,22 @@ public class ShowButtons : MonoBehaviour
     [SerializeField] GameObject button3;
 
     public bool IsOpen { get; private set; } = false;
+    
+
+    private void Start()
+    {
+        TurnManager.Instance.onTurnChanged.AddListener(TurnChanged);
+    }
+
+    private void OnDestroy()
+    {
+        TurnManager.Instance.onTurnChanged.RemoveListener(TurnChanged);
+    }
+
+    private void TurnChanged(int turn)
+    {
+        Hide();
+    }
 
     public void ToggleButtons()
     {

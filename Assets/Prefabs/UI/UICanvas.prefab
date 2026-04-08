@@ -16615,6 +16615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventPanelUI: {fileID: 222166964287693015}
   openButton: {fileID: 3383046664822905595}
+  IsInTutorialMode: 1
 --- !u!1 &8448624574453041973
 GameObject:
   m_ObjectHideFlags: 0

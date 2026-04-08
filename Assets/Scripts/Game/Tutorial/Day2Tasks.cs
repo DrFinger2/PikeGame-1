@@ -30,9 +30,12 @@ public class Day2Tasks : DayTaskBase
         this.enabled = true;
         grassPlantsPlantedCount = 0;
         shopVisited = false;
+        actionButtons.ShowButtons.Hide();
+
 
         SetInteractable(false,
             actionButtons.CutPlants.Button,
+            actionButtons.OpenPlants.Button,
             actionButtons.PlantSuovehka.Button,
             actionButtons.PlantRantakukka.Button);
         SetInteractable(false, shopButton, nextDayButton);
@@ -111,6 +114,14 @@ public class Day2Tasks : DayTaskBase
                     PlayMilestoneDialogue();
                 }
             );
+        }
+        else
+        {
+            if (!actionButtons.ShowButtons.IsOpen)
+                actionButtons.OpenPlants.ReHighlight();
+                
+            actionButtons.PlantRantakukka.ReHighlight();
+            
         }
     }
 }

@@ -7,6 +7,7 @@ public class Day1Tasks : DayTaskBase
 {
     [Header("UI Elements")]
     [SerializeField] private ActionButtonsUI actionButtons;
+    
     [SerializeField] private Button nextDayButton;
 
 
@@ -23,12 +24,9 @@ public class Day1Tasks : DayTaskBase
     public override void StartDay()
     {
         Events.OnDayStarted.Invoke();
-        TurnManager.Instance.gameState.AddPoints(extraPointsPerDay);
+
         this.enabled = true;
-        SetInteractable(false,
-            actionButtons.CutPlants.Button,
-            actionButtons.OpenPlants.Button
-        );
+        SetInteractable(false, actionButtons.CutPlants.Button, actionButtons.OpenPlants.Button);
         SetInteractable(false, actionButtons.PlantSuovehka.Button);
 
         // Kicks off Chain 1: 01 -> 02 -> 03 -> 04 -> 05 -> 06
@@ -57,13 +55,11 @@ public class Day1Tasks : DayTaskBase
             onDialogueFinished: () =>
             {
                 PlantEvents.OnPlantPlaced += OnPlantPlaced;
-                
                 SetInteractable(true, actionButtons.OpenPlants.Button);
                 SetInteractable(true, actionButtons.PlantSuovehka.Button);
             }
         );
     }
-
 
     public void OnReedPlantsPlantedClicked()
     {
@@ -102,5 +98,13 @@ public class Day1Tasks : DayTaskBase
             OnReedPlantsPlantedClicked();
             PlantEvents.OnPlantPlaced -= OnPlantPlaced;
         }
+        else
+        {
+            if (!actionButtons.ShowButtons.IsOpen)
+                actionButtons.OpenPlants.ReHighlight();
+                
+            actionButtons.PlantSuovehka.ReHighlight();
+        }
+
     }
 }

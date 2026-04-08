@@ -7,9 +7,9 @@ public class Day4Tasks : DayTaskBase
     [SerializeField] private ActionButtonsUI actionButtons;
     [SerializeField] private EventPanelUI eventPanel;
     [SerializeField] private Button questionsButton; // Dedicated quiz button
-     [SerializeField] private Button shopButton;
+    [SerializeField] private Button shopButton;
     [SerializeField] private Button nextDayButton;
-    
+
 
     [Header("Dialogue References")]
     [SerializeField] private TutorialDialogue day4IntroDialogue;           // E10
@@ -32,7 +32,8 @@ public class Day4Tasks : DayTaskBase
         questionAnswered = false;
 
         // Lock the cut tool and quiz button initially (Book is left free to use)
-        SetInteractable(false, actionButtons.CutPlants.Button, questionsButton, nextDayButton, shopButton);
+        SetInteractable(false, actionButtons.CutPlants.Button, actionButtons.OpenPlants.Button, questionsButton, nextDayButton, shopButton);
+
 
         // Kicks off E10 Chain: Intro -> Warning -> Task
         DialogueManager.instance.PlayTutorialNode(
@@ -51,7 +52,7 @@ public class Day4Tasks : DayTaskBase
     {
         Events.OnDayEnded.Invoke();
         this.enabled = false;
-        
+
         PlantEvents.OnPlantRemoved -= OnPlantRemoved;
         EventPanelUI.OnQuestionAnswered -= OnQuestionAnswered;
     }
@@ -90,7 +91,7 @@ public class Day4Tasks : DayTaskBase
     {
         if (questionAnswered)
             return;
-            
+
         questionAnswered = true;
         eventPanel.CloseOutcomePanel();
 
@@ -104,10 +105,11 @@ public class Day4Tasks : DayTaskBase
             node: selectedDialogue,
             onDialogueFinished: () =>
             {
-                SetInteractable(true, actionButtons.CutPlants.Button, questionsButton, nextDayButton, shopButton);
+                SetInteractable(true, actionButtons.CutPlants.Button, actionButtons.OpenPlants.Button, questionsButton, nextDayButton, shopButton);
                 CompleteDay();
             }
         );
-        
+
     }
 }
+

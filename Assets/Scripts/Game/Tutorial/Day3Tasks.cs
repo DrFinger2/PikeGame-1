@@ -26,10 +26,10 @@ public class Day3Tasks : DayTaskBase
         Events.OnDayStarted.Invoke();
         TurnManager.Instance.gameState.AddPoints(extraPointsPerDay);
         this.enabled = true;
-        
+
         floatingPlantsPlantedCount = 0;
         raccoonChaseCount = 0;
-        
+
         SetInteractable(false,
             nextDayButton,
             shopButton,
@@ -43,7 +43,8 @@ public class Day3Tasks : DayTaskBase
         // Kicks off E7 Chain: Intro -> Milestone -> Invasive Species Warning
         DialogueManager.instance.PlayTutorialNode(
             node: day3IntroDialogue,
-            onDialogueFinished: () => {
+            onDialogueFinished: () =>
+            {
                 RaccoonDogMovement.OnRaccoonChased += OnRaccoonDogChased;
             }
         );
@@ -57,21 +58,22 @@ public class Day3Tasks : DayTaskBase
         this.enabled = false;
         PlantEvents.OnPlantPlaced -= OnPlantPlaced;
     }
-    
+
 
     public void OnRaccoonDogChased()
-    {            
+    {
         raccoonChaseCount += 1;
-        if(raccoonChaseCount >= requiredRaccoonsChased)
+        if (raccoonChaseCount >= requiredRaccoonsChased)
         {
             RaccoonDogMovement.OnRaccoonChased -= OnRaccoonDogChased;
             DialogueManager.instance.CompleteTask("E7");
             DialogueManager.instance.PlayTutorialNode(
                 node: day3RaccoonChasedDialogue,
-                onDialogueFinished: () =>{
+                onDialogueFinished: () =>
+                {
                     if (!actionButtons.ShowButtons.IsOpen)
                         actionButtons.OpenPlants.ReHighlight();
-                    
+
                     SetInteractable(true, actionButtons.OpenPlants.Button, actionButtons.PlantLumme.Button);
                     PlantEvents.OnPlantPlaced += OnPlantPlaced;
                 }
@@ -82,7 +84,7 @@ public class Day3Tasks : DayTaskBase
     private void OnPlantPlaced(WetlandPlantType plantType, string plantName)
     {
         floatingPlantsPlantedCount++;
-        
+
         if (floatingPlantsPlantedCount >= floatingPlantsRequired)
         {
             PlantEvents.OnPlantPlaced -= OnPlantPlaced;
@@ -90,7 +92,7 @@ public class Day3Tasks : DayTaskBase
             actionButtons.ShowButtons.Hide();
 
             DialogueManager.instance.CompleteTask("E8");
-    
+
             DialogueManager.instance.PlayTutorialNode(
                 node: day3EndOfDayDialogue,
                 onDialogueFinished: () =>
@@ -108,6 +110,13 @@ public class Day3Tasks : DayTaskBase
                     CompleteDay();
                 }
             );
+        }
+        else
+        {
+            if (!actionButtons.ShowButtons.IsOpen)
+                actionButtons.OpenPlants.ReHighlight();
+
+            actionButtons.PlantLumme.ReHighlight();
         }
     }
 }

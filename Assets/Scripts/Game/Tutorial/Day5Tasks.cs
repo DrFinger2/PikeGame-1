@@ -7,6 +7,8 @@ public class Day5Tasks : DayTaskBase
     [SerializeField] private ActionButtonsUI actionButtons;
     [SerializeField] private Button questionButton;
     [SerializeField] private Button nextDayButton;
+    [SerializeField] private Button shopButton;
+    [SerializeField] private Button npcButton;
 
     [Header("Dialogue References")]
     [SerializeField] private TutorialDialogue day5IntroDialogue;      // E13
@@ -19,13 +21,18 @@ public class Day5Tasks : DayTaskBase
         Events.OnDayStarted.Invoke();
         this.enabled = true;
 
-        SetInteractable(true, actionButtons.CutPlants.Button, actionButtons.OpenPlants.Button, actionButtons.OpenBook.Button, questionButton);
-        SetInteractable(false, nextDayButton);
+        SetInteractable(false, nextDayButton, questionButton, shopButton, npcButton);
+        SetInteractable(false,
+            actionButtons.CutPlants.Button,
+            actionButtons.OpenPlants.Button,
+            actionButtons.OpenBook.Button
+        );
 
         DialogueManager.instance.PlayTutorialNode(
             node: day5IntroDialogue,
             onDialogueFinished: () =>
             {
+                SetInteractable(true, actionButtons.OpenBook.Button);
                 DialogueManager.instance.CompleteTask("E13");
                 NotebookPageHandler.OnBookOpened.AddListener(OnBookOpened);
 
@@ -71,7 +78,12 @@ public class Day5Tasks : DayTaskBase
             onDialogueFinished: () =>
             {
                 DialogueManager.instance.CompleteTask("E16");
-                SetInteractable(true, nextDayButton, questionButton);
+                SetInteractable(true, nextDayButton, questionButton, shopButton, npcButton);
+                SetInteractable(true,
+                    actionButtons.CutPlants.Button,
+                    actionButtons.OpenPlants.Button,
+                    actionButtons.OpenBook.Button
+                );
                 CompleteDay();
             }
         );
