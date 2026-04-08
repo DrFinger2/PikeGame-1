@@ -17,13 +17,15 @@ MonoBehaviour:
     fi: 
     sw: 
     en: 
-  npcImage: {fileID: 0}
+  npcImage: {fileID: 21300000, guid: 13062ce599809b74db8286a76d7b2edd, type: 3}
   dialogueText: "Olet todistanut sen, ett\xE4 olet kykenev\xE4 hoitamaan kosteikkoa
     nyt omin voimin. "
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Olet todistanut sen, ett\xE4 olet kykenev\xE4 hoitamaan kosteikkoa nyt omin
+      voimin."
+    sw: "Du har visat att du klarar av att ta hand om v\xE5tmarken sj\xE4lv."
+    en: "You\u2019ve proven that you are capable of managing the wetland on your
+      own now."
   typeSpeed: 0
   taskId: E16
   taskDescription: 

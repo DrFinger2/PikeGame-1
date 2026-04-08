@@ -17,12 +17,12 @@ MonoBehaviour:
     fi: 
     sw: 
     en: 
-  npcImage: {fileID: 0}
+  npcImage: {fileID: 21300000, guid: 13062ce599809b74db8286a76d7b2edd, type: 3}
   dialogueText: "Ennen kuin jatkamme minulla on sinulle jotain n\xE4ytett\xE4v\xE4\xE4."
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Ennen kuin jatkamme minulla on sinulle jotain n\xE4ytett\xE4v\xE4\xE4."
+    sw: "Men innan vi forts\xE4tter har jag n\xE5got att visa."
+    en: Before we continue, I have something to show you.
   typeSpeed: 0
   taskId: E13
   taskDescription: 

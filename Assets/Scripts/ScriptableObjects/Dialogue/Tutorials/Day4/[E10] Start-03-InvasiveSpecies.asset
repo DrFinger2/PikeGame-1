@@ -17,7 +17,7 @@ MonoBehaviour:
     fi: 
     sw: 
     en: 
-  npcImage: {fileID: 0}
+  npcImage: {fileID: 21300000, guid: 13062ce599809b74db8286a76d7b2edd, type: 3}
   dialogueText: "Jotkut kasvit levi\xE4v\xE4t liian nopeasti ja syrj\xE4ytt\xE4v\xE4t
     alkuper\xE4iset lajit. N\xE4it\xE4 lajeja t\xE4\xE4ll\xE4 kosteikolla on muun
     muassa j\xE4ttipalsami, lupiini, isosorsimo ja lammikki."

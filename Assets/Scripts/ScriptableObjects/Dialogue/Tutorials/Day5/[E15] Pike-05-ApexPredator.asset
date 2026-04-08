@@ -17,13 +17,16 @@ MonoBehaviour:
     fi: 
     sw: 
     en: 
-  npcImage: {fileID: 0}
+  npcImage: {fileID: 21300000, guid: 13062ce599809b74db8286a76d7b2edd, type: 3}
   dialogueText: "Hauki on petokala, joka pit\xE4\xE4 pikkukalojen m\xE4\xE4r\xE4n
     tasapainossa."
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Se on merkki terveest\xE4 vesist\xF6st\xE4. Hauki on petokala, joka pit\xE4\xE4
+      pikkukalojen m\xE4\xE4r\xE4n tasapainossa."
+    sw: "Det \xE4r ett tecken p\xE5 en frisk v\xE5tmark. G\xE4ddan h\xE5ller balansen
+      i ekosystemet.\n"
+    en: "That\u2019s a sign of a healthy ecosystem. Pike are predator fish that keep
+      the small fish population in balance.\n"
   typeSpeed: 0
   taskId: E15
   taskDescription: 

@@ -17,12 +17,12 @@ MonoBehaviour:
     fi: 
     sw: 
     en: 
-  npcImage: {fileID: 0}
+  npcImage: {fileID: 21300000, guid: 539b1fb467eadee4e8bbea246fabc30b, type: 3}
   dialogueText: "Siell\xE4 se on!"
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Siell\xE4 se on!"
+    sw: "D\xE4r \xE4r den!"
+    en: There it is!
   typeSpeed: 0
   taskId: E15
   taskDescription: 

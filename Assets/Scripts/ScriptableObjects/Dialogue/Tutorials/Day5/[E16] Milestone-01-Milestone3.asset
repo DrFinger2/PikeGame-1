@@ -21,9 +21,11 @@ MonoBehaviour:
   dialogueText: "Olet todistanut sen, ett\xE4 olet kykenev\xE4 hoitamaan kosteikkoa
     nyt omin voimin. "
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Olet todistanut sen, ett\xE4 olet kykenev\xE4 hoitamaan kosteikkoa nyt omin
+      voimin."
+    sw: "Du har visat att du klarar av att ta hand om v\xE5tmarken sj\xE4lv."
+    en: "You\u2019ve proven that you are capable of managing the wetland on your
+      own now."
   typeSpeed: 0
   taskId: E16
   taskDescription: 

@@ -17,13 +17,16 @@ MonoBehaviour:
     fi: 
     sw: 
     en: 
-  npcImage: {fileID: 0}
+  npcImage: {fileID: 21300000, guid: 13062ce599809b74db8286a76d7b2edd, type: 3}
   dialogueText: "Min\xE4 olen kuitenkin t\xE4\xE4ll\xE4, jos tarvitset neuvojani,
     sek\xE4 kosteikko-opas on aina k\xE4yt\xF6ss\xE4si. "
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Min\xE4 olen kuitenkin t\xE4\xE4ll\xE4, jos tarvitset neuvojani, sek\xE4
+      kosteikko-opas on aina k\xE4yt\xF6ss\xE4si."
+    sw: "Jag finns h\xE4r om du beh\xF6ver hj\xE4lp, och v\xE5tmarksguiden \xE4r
+      alltid tillg\xE4nglig."
+    en: "I\u2019ll still be here if you need my advice, and the wetland guide is
+      always at your disposal."
   typeSpeed: 0
   taskId: E16
   taskDescription: 

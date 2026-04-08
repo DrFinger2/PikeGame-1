@@ -17,12 +17,12 @@ MonoBehaviour:
     fi: 
     sw: 
     en: 
-  npcImage: {fileID: 0}
+  npcImage: {fileID: 21300000, guid: 13062ce599809b74db8286a76d7b2edd, type: 3}
   dialogueText: "Katsotaanpas vett\xE4 tarkemmin."
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Katsotaanpas vett\xE4 tarkemmin."
+    sw: "L\xE5t oss titta n\xE4rmare p\xE5 vattnet."
+    en: "Let\u2019s take a closer look at the water."
   typeSpeed: 0
   taskId: E15
   taskDescription: 

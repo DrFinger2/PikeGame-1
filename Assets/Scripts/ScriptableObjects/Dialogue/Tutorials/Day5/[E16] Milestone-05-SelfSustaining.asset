@@ -17,13 +17,16 @@ MonoBehaviour:
     fi: 
     sw: 
     en: 
-  npcImage: {fileID: 0}
+  npcImage: {fileID: 21300000, guid: 13062ce599809b74db8286a76d7b2edd, type: 3}
   dialogueText: "Lopulta kosteikko alkaa huolehtia itsest\xE4\xE4n ja silloin tied\xE4mme,
     ett\xE4 ty\xF6si t\xE4\xE4ll\xE4 on onnistunut. "
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Lopulta kosteikko alkaa huolehtia itsest\xE4\xE4n ja silloin tied\xE4mme,
+      ett\xE4 ty\xF6si t\xE4\xE4ll\xE4 on onnistunut."
+    sw: "Till slut b\xF6rjar v\xE5tmarken ta hand om sig sj\xE4lv, och d\xE5 vet
+      vi att du har lyckats."
+    en: "Eventually, the wetland will begin to take care of itself and that\u2019s
+      when we\u2019ll know your work here has succeeded."
   typeSpeed: 0
   taskId: E16
   taskDescription: 

@@ -17,13 +17,16 @@ MonoBehaviour:
     fi: 
     sw: 
     en: 
-  npcImage: {fileID: 0}
+  npcImage: {fileID: 21300000, guid: 13062ce599809b74db8286a76d7b2edd, type: 3}
   dialogueText: "Muista n\xE4m\xE4 kolme asiaa: pid\xE4 vesi kirkkaana, pid\xE4 kasvillisuus
     monipuolisena sek\xE4 pid\xE4 vieraslajit kurissa. "
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Muista n\xE4m\xE4 kolme asiaa: pid\xE4 vesi kirkkaana, pid\xE4 kasvillisuus
+      monipuolisena sek\xE4 pid\xE4 vieraslajit kurissa."
+    sw: "Kom ih\xE5g dessa tre saker: h\xE5ll vattnet klart, vegetationen m\xE5ngsidig
+      och de invasiva arterna under kontroll."
+    en: 'Remember these three things: keep the water clear, keep the vegetation diverse,
+      and keep invasive species under control.'
   typeSpeed: 0
   taskId: E16
   taskDescription: 

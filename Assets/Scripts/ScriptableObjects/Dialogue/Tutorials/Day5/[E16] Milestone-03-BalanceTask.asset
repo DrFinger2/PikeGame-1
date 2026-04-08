@@ -17,13 +17,13 @@ MonoBehaviour:
     fi: 
     sw: 
     en: 
-  npcImage: {fileID: 0}
+  npcImage: {fileID: 21300000, guid: 13062ce599809b74db8286a76d7b2edd, type: 3}
   dialogueText: "T\xE4st\xE4 eteenp\xE4in teht\xE4v\xE4si on pit\xE4\xE4 kosteikko
     tasapainossa. "
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "T\xE4st\xE4 eteenp\xE4in teht\xE4v\xE4si on pit\xE4\xE4 kosteikko tasapainossa."
+    sw: "Fr\xE5n och med nu \xE4r din uppgift att h\xE5lla den i balans."
+    en: From here on, your task is to keep the wetland in balance.
   typeSpeed: 0
   taskId: E16
   taskDescription: 

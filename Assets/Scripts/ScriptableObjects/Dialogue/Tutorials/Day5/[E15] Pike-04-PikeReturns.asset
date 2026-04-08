@@ -17,13 +17,12 @@ MonoBehaviour:
     fi: 
     sw: 
     en: 
-  npcImage: {fileID: 0}
-  dialogueText: "Hauki on vihdoin palannut kosteikkoon!\r\nSe on merkki terveest\xE4
-    vesist\xF6st\xE4. "
+  npcImage: {fileID: 21300000, guid: 539b1fb467eadee4e8bbea246fabc30b, type: 3}
+  dialogueText: "Hauki on vihdoin palannut kosteikkoon!\r "
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: Hauki on vihdoin palannut kosteikkoon!
+    sw: "G\xE4ddan har \xE4ntligen \xE5terv\xE4nt!"
+    en: The pike has finally returned to the wetland!
   typeSpeed: 0
   taskId: E15
   taskDescription: 

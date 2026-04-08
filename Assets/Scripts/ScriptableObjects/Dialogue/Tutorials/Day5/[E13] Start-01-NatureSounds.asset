@@ -17,13 +17,16 @@ MonoBehaviour:
     fi: 
     sw: 
     en: 
-  npcImage: {fileID: 0}
+  npcImage: {fileID: 21300000, guid: f003c18d0ce99c5488b9dfa623c6e577, type: 3}
   dialogueText: "Kuuletko tuon?\r\nHy\xF6nteisi\xE4 surisee ja linnut ovat palanneet
     rantaan. "
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: "Kuuletko tuon?\r\nHy\xF6nteisi\xE4 surisee ja linnut ovat palanneet rantaan."
+    sw: "H\xF6r du det?"
+    en: 'Can you hear that?
+
+      Insects are buzzing and birds have returned to
+      the shore.'
   typeSpeed: 0
   taskId: E13
   taskDescription: 

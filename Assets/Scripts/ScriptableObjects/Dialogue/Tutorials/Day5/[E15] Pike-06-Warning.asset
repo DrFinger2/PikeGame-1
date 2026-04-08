@@ -17,13 +17,16 @@ MonoBehaviour:
     fi: 
     sw: 
     en: 
-  npcImage: {fileID: 0}
+  npcImage: {fileID: 21300000, guid: 13062ce599809b74db8286a76d7b2edd, type: 3}
   dialogueText: Ole kuitenkin varovainen, jos vesi muuttuu taas mutaiseksi tai ravinteita
     kertyy liikaa, hauet katoavat nopeasti.
   dialogueTextLocalized:
-    fi: 
-    sw: 
-    en: 
+    fi: Ole kuitenkin varovainen, jos vesi muuttuu taas mutaiseksi tai ravinteita
+      kertyy liikaa, hauet katoavat nopeasti.
+    sw: "Men var f\xF6rsiktig, om vattnet blir grumligt igen eller f\xF6r mycket
+      n\xE4ring samlas, f\xF6rsvinner den snabbt."
+    en: But be careful. If the water becomes muddy again or too many nutrients build
+      up, the pike will disappear quickly.
   typeSpeed: 0
   taskId: E15
   taskDescription: 
