@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49bd6be61d54f1b459390291a3e98b6a, type: 3}
+  m_Name: '[E7] Start-05-InvasiveSpecies1'
+  m_EditorClassIdentifier: Assembly-CSharp::TutorialDialogue
+  npcName: Costeicco Guru
+  npcNameLocalized:
+    fi: 
+    sw: 
+    en: 
+  npcImage: {fileID: 21300000, guid: 13062ce599809b74db8286a76d7b2edd, type: 3}
+  dialogueText: "Kuulitko tuon rapinan tuolta tiheik\xF6st\xE4? Huoh, n\xE4ytt\xE4\xE4
+    silt\xE4, ett\xE4 meill\xE4 on kutsumattomia vieraita. Supikoira on p\xE4\xE4ssyt
+    livahtamaan alueelle."
+  dialogueTextLocalized:
+    fi: "Kuulitko tuon rapinan tuolta tiheik\xF6st\xE4? Huoh, n\xE4ytt\xE4\xE4 silt\xE4,
+      ett\xE4 meill\xE4 on kutsumattomia vieraita. Supikoira on p\xE4\xE4ssyt livahtamaan
+      alueelle."
+    sw: "H\xF6rde du det d\xE4r prasslet i buskarna? Suck\u2026 det verkar som att
+      vi har objudna g\xE4ster. En m\xE5rdhund har tagit sig in i omr\xE5det."
+    en: "Did you hear that rustling from the bushes? Sigh\u2026 looks like we have
+      uninvited guests. A raccoon dog has slipped into the area."
+  typeSpeed: 0
+  taskId: E7
+  taskDescription: 
+  nextDialogue: {fileID: 11400000, guid: 97b342722258e5249989645bb0732b02, type: 2}
+  isCompleted: 0

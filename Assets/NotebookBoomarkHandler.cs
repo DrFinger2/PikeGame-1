@@ -9,13 +9,13 @@ public class NotebookBookmarkHandler : MonoBehaviour
 
     private NotebookBookmark currentActiveBookmark;
 
+
     private void OnEnable()
     {
         if (pageHandler != null)
         {
-            // Subscribing to the UnityEvents in code
-            pageHandler.OnPageChanged.AddListener(OnPageUpdate);
-            pageHandler.OnBookClosed.AddListener(OnBookClosed);
+            NotebookPageHandler.OnPageChanged.AddListener(OnPageUpdate);
+            NotebookPageHandler.OnBookClosed.AddListener(OnBookClosed);
         }
     }
 
@@ -24,8 +24,8 @@ public class NotebookBookmarkHandler : MonoBehaviour
         if (pageHandler != null)
         {
             // Unsubscribing to prevent memory leaks or errors when disabled
-            pageHandler.OnPageChanged.RemoveListener(OnPageUpdate);
-            pageHandler.OnBookClosed.RemoveListener(OnBookClosed);
+            NotebookPageHandler.OnPageChanged.RemoveListener(OnPageUpdate);
+            NotebookPageHandler.OnBookClosed.RemoveListener(OnBookClosed);
         }
     }
 
