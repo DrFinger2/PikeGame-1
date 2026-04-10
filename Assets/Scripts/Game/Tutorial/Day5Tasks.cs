@@ -16,6 +16,9 @@ public class Day5Tasks : DayTaskBase
     [SerializeField] private TutorialDialogue day5PikeDialogue;       // E15
     [SerializeField] private TutorialDialogue day5ConclusionDialogue; // E16
 
+    [Header("Pike Controller")]
+    [SerializeField] CowRelease cr;
+
     public override void StartDay()
     {
         Events.OnDayStarted.Invoke();
@@ -61,6 +64,7 @@ public class Day5Tasks : DayTaskBase
 
     private void PlayPikeSequence()
     {
+        cr.ReleasePike();
         DialogueManager.instance.PlayTutorialNode(
             node: day5PikeDialogue,
             onDialogueFinished: () =>
