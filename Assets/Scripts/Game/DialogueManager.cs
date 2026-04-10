@@ -1,260 +1,235 @@
-using System.Collections;
-using TMPro;
+﻿using System;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
+    [System.Serializable]
+    public class DialogueEvents
+    {
+        public UnityEvent<string> OnTaskAssigned = new();
+        public UnityEvent<string> OnTaskCompleted = new();
+        public UnityEvent OnTutorialCompleted = new();
+        public UnityEvent OnDialogueClosed = new();
+    }
+
+    private class DialogueState
+    {
+        public bool tutorialActive = true;
+        public bool hasGivenHintThisTurn = false;
+        public string currentTaskId = "";
+        public Action onSequenceFinishedCallback;
+
+        // REPLACED indices with the explicit hard-reference
+        public TutorialDialogue currentActiveNode;
+    }
+
     public static DialogueManager instance;
-    [Header("References")]
+
+    [Header("Core References")]
+    [SerializeField] private DialogueUI dialogueUI;
     [SerializeField] private DialogueDatabase dialogueDB;
-    [SerializeField] private GameObject dialoguePanel;
-    [SerializeField] private TMP_Text speakerNameText;
-    [SerializeField] private TMP_Text dialogueText;
-    [SerializeField] private Image speakerImage;
-    [SerializeField] private GameObject taskPanel;
-    [SerializeField] private TMP_Text taskDescriptionText;
-    [SerializeField] private Image taskImage;
     private RandomEventSystem randomEventSystem;
     private TurnManager turnManager;
-    [Header("Typewriter Effect")]
-    [SerializeField] private bool useEffect = true;
-    [SerializeField] private float baseTypingSpeed = 50f;
-    [Header("Events")]
-    public UnityEvent<string> onTaskAssigned;
-    public UnityEvent<string> onTaskCompleted;
-    public UnityEvent onTutorialCompleted;
-    public UnityEvent onDialogueClosed;
+
+    public DialogueEvents Events = new DialogueEvents();
+
     [Header("Sound")]
     [SerializeField] private string[] soundIDs;
 
-    private int currentTutorialIndex = 0;
-    private bool tutorialActive = true;
-    private bool hasGivenHintThisTurn = false;
-    private string currentTaskId = "";
-    private Coroutine typeWriterEffectCoroutine;
-    private bool isDialogueRunning = false;
-    private string finalText;
-    public bool IsDialogueActive => dialoguePanel.activeInHierarchy;
+    private DialogueState state = new DialogueState();
+    public bool isSequenceActive { get; private set; } = false;
+    public bool IsDialogueActive => dialogueUI.IsDialogueActive;
+
+
+    
 
     private void Awake()
     {
         if (instance == null) instance = this;
         else Destroy(gameObject);
     }
+
     private void Start()
     {
         randomEventSystem = RandomEventSystem.instance;
         turnManager = TurnManager.Instance;
         turnManager.onTurnChanged.AddListener(OnTurnChanged);
-        HideDialogue();
-        HideTask();
-        if(tutorialActive)
+
+        if (state.currentActiveNode == null)
         {
-            if(dialogueDB.tutorialSequence.Count > 0)
-            {
-                ShowNextTutorialDialogue();
-            }
-            else
-            {
-                tutorialActive = false;
-            }
+            dialogueUI.HideDialogue();
+            dialogueUI.HideTask();
         }
+
+        // The day scripts (ProgressionManager/Day1Tasks) will now explicitly trigger 
+        // the first dialogue, so we don't need to auto-loop the old database list here.
     }
-    private void Update()
-    {
-        //if (Input.GetKeyDown(KeyCode.A)) InteractWithNPC();
-        TemporaryQuestManager();
-    }
+
     private void OnTurnChanged(int turnNumber)
     {
-        hasGivenHintThisTurn = false;
-        //temp
-        HideDialogue();
-    }
-    private void ShowNextTutorialDialogue()
-    {
-        if(currentTutorialIndex < dialogueDB.tutorialSequence.Count)
+        state.hasGivenHintThisTurn = false;
+        if (!state.tutorialActive)
         {
-            TutorialDialogue tutorial = dialogueDB.tutorialSequence[currentTutorialIndex];
-            ShowDialogue(tutorial);
-            if(!string.IsNullOrEmpty(tutorial.taskDescription))
-            {
-                ShowTask(tutorial.taskId, tutorial.taskDescription);
-            }
+            dialogueUI.HideDialogue();
+        }
+    }
+
+    // --- NEW EXPLICIT TUTORIAL PIPELINE ---
+    // DayXTasks calls this directly with the hard-referenced TutorialDialogue asset
+    public void PlayTutorialNode(TutorialDialogue node, Action onDialogueFinished = null)
+    {
+        state.tutorialActive = true;
+        state.currentActiveNode = node;
+        state.onSequenceFinishedCallback = onDialogueFinished;
+
+        if (node == null)
+        {
+            dialogueUI.HideDialogue();
+            dialogueUI.HideTask();
+            return;
+        }
+        
+        dialogueUI.ShowDialogue(node, true);
+
+        if (!string.IsNullOrEmpty(node.taskDescription))
+        {
+            ShowTask(node.taskId, node.taskDescription);
         }
         else
         {
-            tutorialActive = false;
-            onTutorialCompleted?.Invoke();
+            dialogueUI.HideTask();
         }
     }
+
+    // DayXTasks calls this to finish a task and fire YOUR existing UnityEvents
     public void CompleteTask(string taskID)
     {
-        if(currentTaskId == taskID && currentTutorialIndex < dialogueDB.tutorialSequence.Count)
+        if (state.currentTaskId == taskID)
         {
-            TutorialDialogue currentTutorial = dialogueDB.tutorialSequence[currentTutorialIndex];
-            currentTutorial.isCompleted = true;
-            currentTutorialIndex++;
-            onTaskCompleted?.Invoke(taskID);
-            currentTaskId = "";
-            HideTask();
-            if (currentTutorialIndex < dialogueDB.tutorialSequence.Count)
-            {
-                ShowNextTutorialDialogue();
-            }
-            else if (currentTutorialIndex >= dialogueDB.tutorialSequence.Count)
-            {
-                tutorialActive = false;
-                onTutorialCompleted?.Invoke();
-            }
+            if (state.currentActiveNode != null)
+                state.currentActiveNode.isCompleted = true;
+
+            Events.OnTaskCompleted?.Invoke(taskID);
+            state.currentTaskId = "";
+            dialogueUI.HideTask();
         }
     }
+
+    // Called by Day5Tasks (or Manager) when the absolute final tutorial is done
+    public void FinishEntireTutorialSequence()
+    {
+        state.tutorialActive = false;
+        state.currentActiveNode = null;
+        Events.OnTutorialCompleted?.Invoke();
+    }
+
     private void ShowTask(string taskId, string taskDescription, Sprite icon = null)
     {
-        currentTaskId = taskId;
-        taskPanel.SetActive(true);
-        taskDescriptionText.text = taskDescription;
-        if(icon != null)
-        {
-            taskImage.sprite = icon;
-            taskImage.gameObject.SetActive(true);
-        }
-        else
-        {
-            taskImage.gameObject.SetActive(false);
-        }
-        onTaskAssigned?.Invoke(taskId);
+        state.currentTaskId = taskId;
+        dialogueUI.ShowTask(taskDescription, icon);
+        Events.OnTaskAssigned?.Invoke(taskId);
     }
-    private void HideTask()
-    {
-        taskPanel.SetActive(false);
-    }
+
+
+
     public void GiveHintForNextEvent()
     {
-        if(hasGivenHintThisTurn)
+        if (state.hasGivenHintThisTurn)
         {
-            Debug.Log("somehow has given hint already");
             ShowRandomDialogue();
             return;
         }
-        Debug.Log("giving hint");
+
         WetlandEvent nextEvent = randomEventSystem.CheckNextEvent();
-        //Debug.Log(nextEvent.eventCategory.ToString());
-        if(nextEvent != null)
+        if (nextEvent != null)
         {
             EventHintDialogue hint = dialogueDB.GetHintForEvent(nextEvent);
-            if(hint != null)
+            if (hint != null)
             {
-                ShowDialogue(hint);
-                hasGivenHintThisTurn = true;
+                dialogueUI.ShowDialogue(hint, false);
+                state.hasGivenHintThisTurn = true;
                 RandomDialogueSoundEffectPlayer();
             }
         }
     }
+
     public void ShowRandomDialogue()
     {
         RandomDialogue randomDialogue = dialogueDB.GetRandomDialogue(turnManager.CurrentTurn);
-        if(randomDialogue != null)
+        if (randomDialogue != null)
         {
-            if(randomDialogue.isJoke)
-            {
-                SoundManager.Instance.PlayGameSound("joke01");
-            }
-            else
-            {
-                RandomDialogueSoundEffectPlayer();
-            }
-            ShowDialogue(randomDialogue);
+            if (randomDialogue.isJoke) SoundManager.Instance.PlayGameSound("joke01");
+            else RandomDialogueSoundEffectPlayer();
+            dialogueUI.ShowDialogue(randomDialogue, false);
         }
     }
-    public void ShowDialogue(DialogueBase dialogue)
-    {
-        dialoguePanel.SetActive(true);
-        speakerNameText.text = dialogue.npcNameLocalized.GetText();
-        if(useEffect)
-        {
-            dialogueText.text = "";
-            typeWriterEffectCoroutine = StartCoroutine(TypeWriterEffect(dialogue.dialogueTextLocalized.GetText(), dialogue.typeSpeed));
-        }
-        if(dialogue.npcImage != null)
-        {
-            speakerImage.sprite = dialogue.npcImage;
-            speakerImage.gameObject.SetActive(true);
-        }
-        else
-        {
-            speakerImage.gameObject.SetActive(false);
-        }
-        isDialogueRunning = true;
-    }
-    private IEnumerator TypeWriterEffect(string text, float speed)
-    {
-        finalText = text;
-        dialogueText.text = "";
-        float typingSpeed = speed * baseTypingSpeed;
-        float timePerChar = 1f/typingSpeed;
-        for(int i = 0; i< text.Length; i++)
-        {
-            dialogueText.text += text[i];
-            if(i < text.Length - 1)
-            {
-                yield return new WaitForSeconds(timePerChar);
-            }
-        }
-        typeWriterEffectCoroutine = null;
-    }
-    //bool just for popuphandler which was temporary
-    public void HideDialogue()
-    {
-        if(isDialogueRunning && typeWriterEffectCoroutine != null)
-        {
-            StopCoroutine(typeWriterEffectCoroutine);
-            isDialogueRunning = false;
-        }
-        isDialogueRunning = false;
-        dialoguePanel.SetActive(false);
 
+    public void RandomDialogueSoundEffectPlayer()
+    {
+        int i = UnityEngine.Random.Range(0, soundIDs.Length);
+        SoundManager.Instance.PlayGameSound(soundIDs[i]);
     }
+
     public void InteractWithNPC()
     {
-        if(isDialogueRunning)
+        if (dialogueUI.IsDialogueActive)
         {
-            if(typeWriterEffectCoroutine != null)
+            if (dialogueUI.IsTyping)
             {
-                StopCoroutine(typeWriterEffectCoroutine);
-                dialogueText.text = finalText;
-                typeWriterEffectCoroutine = null;
+                dialogueUI.SkipTyping();
             }
             else
             {
-                onDialogueClosed?.Invoke();
-                HideDialogue();
+                FinishCurrentSequence();
             }
             return;
         }
-        if(tutorialActive)
-        {
-            ShowNextTutorialDialogue();
-        }
-        else if(!hasGivenHintThisTurn)
-        {
+        
+        else if (!state.hasGivenHintThisTurn)
             GiveHintForNextEvent();
-        }
         else
-        {
             ShowRandomDialogue();
+    }
+
+    public void NextDialogue()
+    {
+        if (!dialogueUI.IsDialogueActive)
+            return;
+
+        if (dialogueUI.IsTyping)
+        {
+            dialogueUI.SkipTyping();
+            return;
         }
+
+        // If we are in a multi-page tutorial (Page 1 -> Page 2), play the next page
+        if (state.tutorialActive && state.currentActiveNode != null)
+        {
+            if (state.currentActiveNode.nextDialogue != null)
+            {
+                PlayTutorialNode(state.currentActiveNode.nextDialogue, state.onSequenceFinishedCallback);
+                return;
+            }
+            else
+            {
+                FinishCurrentSequence();
+                return;
+            }
+        }
+
+        ShowRandomDialogue();
     }
-    public void RandomDialogueSoundEffectPlayer()
+
+    private void FinishCurrentSequence()
     {
-        int i = Random.Range(0, soundIDs.Length);
-        SoundManager.Instance.PlayGameSound(soundIDs[i]);
+        Events.OnDialogueClosed?.Invoke();
+        dialogueUI.HideDialogue();
+
+        Action callback = state.onSequenceFinishedCallback;
+        state.onSequenceFinishedCallback = null;
+        state.currentActiveNode = null;
+        callback?.Invoke();
     }
-    private void TemporaryQuestManager()
-    {
-        /*if (Input.GetKeyDown(KeyCode.Alpha1)) CompleteTask("task_one");
-        if (Input.GetKeyDown(KeyCode.Alpha2)) CompleteTask("task_two");*/
-    }
+
 }

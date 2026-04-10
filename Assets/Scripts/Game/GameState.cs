@@ -125,4 +125,10 @@ public class GameState : MonoBehaviour
     {
         activeEffects.Add(effect);
     }
+    public void AddPoints(int points)
+    {
+        currentActionPoints += points;
+        TurnManager.Instance.onActionPointsChanged?.Invoke(currentActionPoints);
+    }
+
 }

@@ -13,9 +13,12 @@ public class TurnManager : MonoBehaviour
     public int CurrentTurn => currentTurn;
     private int currentTurn = 1;
 
+    // POS solution
+    public bool IsInitializing { get; private set; } = true;
     public UnityEvent<int> onTurnChanged;
     public UnityEvent<int> onActionPointsChanged;
     public UnityEvent<Dictionary<MetricType, float>> onMetricsUpdated;
+    
 
     [SerializeField] private Button endTurnButton;
     [SerializeField] private bool enableSimulationIntegration = false;
@@ -64,25 +67,19 @@ public class TurnManager : MonoBehaviour
         onTurnChanged?.Invoke(currentTurn);
         onActionPointsChanged?.Invoke(gameState.currentActionPoints);
         onMetricsUpdated?.Invoke(gameState.metrics);
+        IsInitializing = false;
     }
 
     public void EndTurn()
     {
         gameState.EndTurn();
         currentTurn++;
-
-        // Reset daily limit for the 3-times button
-        EventPanelButtonHolder holder = FindObjectOfType<EventPanelButtonHolder>();
-        if (holder != null)
-        {
-            holder.ResetDailyLimit();
-        }
-
+        
         onTurnChanged?.Invoke(currentTurn);
         onActionPointsChanged?.Invoke(gameState.currentActionPoints);
         onMetricsUpdated?.Invoke(gameState.metrics);
 
-        ToggleEndTurnButton(false);
+        //ToggleEndTurnButton(false);
     }
 
     public void ToggleEndTurnButton(bool state)

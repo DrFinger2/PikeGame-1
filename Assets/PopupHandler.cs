@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class PopupHandler : MonoBehaviour
 {
+    //sorry about this, big crunch
     [SerializeField] private Button dialogueButton;
     [SerializeField] private Button nextTurnButton;
     [SerializeField] private Button bookPopupButton;
@@ -10,18 +11,12 @@ public class PopupHandler : MonoBehaviour
 
     private bool isAnyPopupOpen;
 
-    // NEW: Generic popup open
-    public void OpenPopup(GameObject popup)
-    {
-        if (!isAnyPopupOpen)
-        {
-            isAnyPopupOpen = true;
-            DisableButtonInteractions();
-            popup.SetActive(true);
-        }
-    }
+    // Cached interaction states
+    private bool wasDialogueInteractable;
+    private bool wasNextTurnInteractable;
+    private bool wasBookInteractable;
 
-    // Existing systems
+
     public void BookPopupOpen()
     {
         if (!isAnyPopupOpen)
@@ -38,6 +33,8 @@ public class PopupHandler : MonoBehaviour
             Debug.Log("dialoguepanel popup open triggered");
             isAnyPopupOpen = true;
             DisableButtonInteractions();
+
+            // Re-enable this specific one after storing and disabling
             dialogueButton.interactable = true;
         }
     }
@@ -53,20 +50,38 @@ public class PopupHandler : MonoBehaviour
 
     private void DisableButtonInteractions()
     {
+        // Store current states before modifying them
+        wasDialogueInteractable = dialogueButton.interactable;
+        wasNextTurnInteractable = nextTurnButton.interactable;
+        wasBookInteractable = bookPopupButton.interactable;
+
+        Debug.Log(
+            $"Is dialogueButton.interactable: {dialogueButton.interactable}, " +
+            $"Is nextTurnButton.interactable: {nextTurnButton.interactable}," +
+            $"Is bookPopupButton.interactable: {bookPopupButton.interactable}"
+        );
+
         dialogueButton.interactable = false;
-        nextTurnButton.interactable = true;
+        nextTurnButton.interactable = false;
         bookPopupButton.interactable = false;
     }
 
-    // NEW: Close ANY popup
-    public void ClosePopup(GameObject popup)
+    //dialogueManager closedialogue also triggers this, others from close button
+    public void ClosePopup()
     {
-        popup.SetActive(false);
+        if (isAnyPopupOpen)
+        {
+            dialogueButton.interactable = wasDialogueInteractable;
+            nextTurnButton.interactable = wasNextTurnInteractable;
+            bookPopupButton.interactable = wasBookInteractable;
+            isAnyPopupOpen = false;
 
-        dialogueButton.interactable = true;
-        nextTurnButton.interactable = true;
-        bookPopupButton.interactable = true;
+            Debug.Log(
+                $"Is dialogueButton.interactable: {wasDialogueInteractable}, " +
+                $"Is nextTurnButton.interactable: {wasNextTurnInteractable}," +
+                $"Is bookPopupButton.interactable: {wasBookInteractable}"
+            );
+        }
 
-        isAnyPopupOpen = false;
     }
 }

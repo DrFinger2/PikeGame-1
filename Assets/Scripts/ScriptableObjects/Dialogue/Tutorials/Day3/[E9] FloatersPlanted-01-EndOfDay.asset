@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49bd6be61d54f1b459390291a3e98b6a, type: 3}
+  m_Name: '[E9] FloatersPlanted-01-EndOfDay'
+  m_EditorClassIdentifier: Assembly-CSharp::TutorialDialogue
+  npcName: Costeicco Guru
+  npcNameLocalized:
+    fi: 
+    sw: 
+    en: 
+  npcImage: {fileID: 21300000, guid: 539b1fb467eadee4e8bbea246fabc30b, type: 3}
+  dialogueText: "Hyv\xE4! Jatketaan taas huomenna siit\xE4 mihin j\xE4imme."
+  dialogueTextLocalized:
+    fi: "Hyv\xE4! Jatketaan taas huomenna siit\xE4 mihin j\xE4imme."
+    sw: "Bra! Vi forts\xE4tter imorgon."
+    en: "Good! Let\u2019s continue from here again tomorrow."
+  typeSpeed: 0
+  taskId: E9
+  taskDescription: 
+  nextDialogue: {fileID: 0}
+  isCompleted: 0
