@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "PlantAction", menuName = "PlantAction")]
@@ -9,54 +10,65 @@ public class PlantAction : tileAction
     public WetlandPlantType plantedType = WetlandPlantType.Grass;
     [SerializeField] private bool autoDetectTypeFromPlantName = true;
 
-    public override void affectTile(gameTile tile)
+    public override bool affectTile(gameTile tile)
+{
+    if (plants == null || plants.Length == 0)
     {
-        if (plants == null || plants.Length == 0)
-        {
-            Debug.LogWarning("PlantAction has no Plant assets assigned.");
-            return;
-        }
+        Debug.LogWarning("PlantAction has no Plant assets assigned.");
+        return false;
+    }
 
-        if (TurnManager.Instance.gameState.currentActionPoints >= 1)
+    if (TurnManager.Instance.gameState.currentActionPoints >= 1)
+    {
+        if (tile.grownPlant == null)
         {
-            if (tile.grownPlant == null)
+            if (tile.overgrownState < 3)
             {
-                if (tile.overgrownState < 3)
+                // ALL SUCCESS LOGIC HERE
+                TurnManager.Instance.gameState.currentActionPoints -= 1;
+                TurnManager.Instance.onActionPointsChanged?.Invoke(TurnManager.Instance.gameState.currentActionPoints);
+
+                int randomIndex = Random.Range(0, plants.Length);
+                tile.grownPlant = plants[randomIndex];
+                tile.grownPlant.plantGrowStage = 0;
+                tile.plantPrefab = plants[randomIndex].organismPrefab;
+                tile.UpdatePlant();
+
+                var type = ResolvePlacedType(tile.grownPlant);
+                var name = tile.grownPlant.organismName;
+                
+                if (WetlandProgressionManager.Instance != null)
                 {
-                    TurnManager.Instance.gameState.currentActionPoints -= 1;
-                    TurnManager.Instance.onActionPointsChanged?.Invoke(TurnManager.Instance.gameState.currentActionPoints);
-
-                    int randomIndex = Random.Range(0, plants.Length);
-                    tile.grownPlant = plants[randomIndex];
-                    tile.grownPlant.plantGrowStage = 0;
-                    tile.plantPrefab = plants[randomIndex].organismPrefab;
-                    tile.UpdatePlant();
-
-                    if (WetlandProgressionManager.Instance != null)
-                    {
-                        WetlandProgressionManager.Instance.RegisterPlantPlaced(ResolvePlacedType(tile.grownPlant));
-                    }
-
-                    if (TurnManager.Instance != null && TurnManager.Instance.milestoneHandler != null)
-                    {
-                        TurnManager.Instance.milestoneHandler.RefreshBiodiversityNow();
-                    }
+                    WetlandProgressionManager.Instance.RegisterPlantPlaced(type);
                 }
-                else
+
+                if (TurnManager.Instance != null && TurnManager.Instance.milestoneHandler != null)
                 {
-                    TurnManager.Instance.warningMessages.ShowWarningOvergrown();
+                    TurnManager.Instance.milestoneHandler.RefreshBiodiversityNow();
                 }
+
+                PlantEvents.TriggerPlantPlaced(type, name);
+                return true;
             }
             else
             {
-                TurnManager.Instance.warningMessages.ShowWarningExistingPlant();
+                TurnManager.Instance.warningMessages.ShowWarningOvergrown();
+                return false;
             }
+            
         }
         else
         {
-            TurnManager.Instance.warningMessages.ShowWarningAP();
+            TurnManager.Instance.warningMessages.ShowWarningExistingPlant();
+            return false;
         }
     }
+    else
+    {
+        TurnManager.Instance.warningMessages.ShowWarningAP();
+        return false;
+    }
+}
 
     private WetlandPlantType ResolvePlacedType(Plant plant)
     {
@@ -67,6 +79,7 @@ public class PlantAction : tileAction
 
         string plantIdentity = (plant.name + " " + plant.organismName).ToLowerInvariant();
 
+        // WHAT IS THIS ??????
         if (plantIdentity.Contains("reed") || plantIdentity.Contains("ruov"))
         {
             return WetlandPlantType.Reed;

@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49bd6be61d54f1b459390291a3e98b6a, type: 3}
+  m_Name: '[E16] Milestone-04-ThreeRules'
+  m_EditorClassIdentifier: Assembly-CSharp::TutorialDialogue
+  npcName: Costeicco Guru
+  npcNameLocalized:
+    fi: 
+    sw: 
+    en: 
+  npcImage: {fileID: 21300000, guid: 13062ce599809b74db8286a76d7b2edd, type: 3}
+  dialogueText: "Muista n\xE4m\xE4 kolme asiaa: pid\xE4 vesi kirkkaana, pid\xE4 kasvillisuus
+    monipuolisena sek\xE4 pid\xE4 vieraslajit kurissa. "
+  dialogueTextLocalized:
+    fi: "Muista n\xE4m\xE4 kolme asiaa: pid\xE4 vesi kirkkaana, pid\xE4 kasvillisuus
+      monipuolisena sek\xE4 pid\xE4 vieraslajit kurissa."
+    sw: "Kom ih\xE5g dessa tre saker: h\xE5ll vattnet klart, vegetationen m\xE5ngsidig
+      och de invasiva arterna under kontroll."
+    en: 'Remember these three things: keep the water clear, keep the vegetation diverse,
+      and keep invasive species under control.'
+  typeSpeed: 0
+  taskId: E16
+  taskDescription: 
+  nextDialogue: {fileID: 11400000, guid: 0c09c8d222338bb46a2365ecc284d944, type: 2}
+  isCompleted: 0

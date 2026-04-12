@@ -1,6 +1,10 @@
 using UnityEngine;
+using System;
+
 public class RaccoonDogMovement : MonoBehaviour
 {
+    public static event Action OnRaccoonChased;
+
     Rigidbody rb;
     Animator anim;
 
@@ -24,7 +28,7 @@ public class RaccoonDogMovement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
         rb = transform.GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         targetPos = new Vector3(-5.5f, transform.position.y, 3.5f);
@@ -37,7 +41,7 @@ public class RaccoonDogMovement : MonoBehaviour
     }
 
 
-    
+
 
 
     // Update is called once per frame
@@ -64,13 +68,13 @@ public class RaccoonDogMovement : MonoBehaviour
     void MoveTowardsCenter()
     {
 
-        if((targetPos-transform.position).magnitude < 11)
+        if ((targetPos - transform.position).magnitude < 11)
         {
             rb.linearVelocity = Vector3.zero;
             anim.SetInteger("DogState", 1);
             eating = true;
         }
-        
+
     }
 
 
@@ -78,7 +82,7 @@ public class RaccoonDogMovement : MonoBehaviour
 
     void EatPlants()
     {
-        if(eatCooldown > 0)
+        if (eatCooldown > 0)
         {
             eatCooldown -= Time.deltaTime;
         }
@@ -90,7 +94,7 @@ public class RaccoonDogMovement : MonoBehaviour
     }
 
 
-    
+
     void RaccoonTouched()
     {
         Debug.Log("GOT HIS ASS"); // lmao wtf is this
@@ -103,7 +107,9 @@ public class RaccoonDogMovement : MonoBehaviour
         else if (!scared)
         {
             scared = true;
-            transform.rotation = Quaternion.Euler(roteuler.x, roteuler.y+180, roteuler.z);
+            OnRaccoonChased?.Invoke();
+            
+            transform.rotation = Quaternion.Euler(roteuler.x, roteuler.y + 180, roteuler.z);
             Debug.Log(Quaternion.Euler(roteuler.x, roteuler.y + 180, roteuler.z));
             rb.linearVelocity = -dir * speed;
             hitCooldown = 7;
@@ -111,12 +117,12 @@ public class RaccoonDogMovement : MonoBehaviour
         else if (scared)
         {
             hitCooldown -= Time.deltaTime;
-            if(hitCooldown <= 0)
+            if (hitCooldown <= 0)
             {
                 Destroy(gameObject);
             }
         }
-            
+
     }
 
 

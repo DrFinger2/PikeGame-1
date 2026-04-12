@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49bd6be61d54f1b459390291a3e98b6a, type: 3}
+  m_Name: '[E1] Start-02-Situation'
+  m_EditorClassIdentifier: Assembly-CSharp::TutorialDialogue
+  npcName: Costeicco Guru
+  npcNameLocalized:
+    fi: 
+    sw: 
+    en: 
+  npcImage: {fileID: 21300000, guid: 13062ce599809b74db8286a76d7b2edd, type: 3}
+  dialogueText: "Kuten huomaat, t\xE4m\xE4 paikka on n\xE4hnyt parempiakin p\xE4ivi\xE4
+    - vesi seisoo ja el\xE4m\xE4 on hiljennyt."
+  dialogueTextLocalized:
+    fi: "Kuten huomaat, t\xE4m\xE4 paikka on n\xE4hnyt parempiakin p\xE4ivi\xE4 -
+      vesi seisoo ja el\xE4m\xE4 on hiljennyt."
+    sw: "Som du ser har den h\xE4r platsen sett b\xE4ttre dagar - vattnet st\xE5r
+      stilla och livet har tystnat."
+    en: 'This place didn''t look like this before. '
+  typeSpeed: 0
+  taskId: E1
+  taskDescription: 
+  nextDialogue: {fileID: 11400000, guid: 0bea8aad498eb2740a1f73d059bbf6f7, type: 2}
+  isCompleted: 0
