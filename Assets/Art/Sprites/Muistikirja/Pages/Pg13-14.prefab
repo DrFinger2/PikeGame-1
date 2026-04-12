@@ -66,12 +66,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<align=center><b>Sudenkorennot\u200B ja muut hy\xF6nteiset</b></align>\n\nKosteikoilla
-    el\xE4\xE4 monenlaisia\r\nhy\xF6nteisi\xE4. \n\nSudenkorennot ovat\r\nyleisi\xE4
-    kosteikon asukkaita, sill\xE4 ne\r\npystyv\xE4t lis\xE4\xE4ntym\xE4\xE4n hyvin
-    kosteikon vesiymp\xE4rist\xF6ss\xE4 ja el\xE4v\xE4t rehevien vesialueiden\r\nl\xE4hell\xE4.
-    \n\nKosteikolla voi t\xF6rm\xE4t\xE4 esimerkiksi hoikkatyt\xF6nkorentoon, v\xE4lkekorentoon,
-    id\xE4nkirsikorentoon,\r\nkarvaukonkorentoon ja ruskohukankorentoon.\u200B"
+  m_text: "\nLinnut\n\nLinnut k\xE4ytt\xE4v\xE4t kosteikkoa pesint\xE4\xE4n, ruokailuun
+    ja lev\xE4ht\xE4miseen. Kosteikoilla tavataan esimerkiksi sorsia, hanhia, joutsenia,
+    kahlaajia ja nokikanoja. Runsas linnusto kertoo, ett\xE4 kosteikolla on riitt\xE4v\xE4sti
+    ravintoa ja suojaa."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
   m_sharedMaterial: {fileID: 6471187536760470386, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
@@ -109,8 +107,9 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
-  m_lineSpacing: -52.6
+  m_lineSpacing: -40
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -155,38 +154,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonText:
-    fi: "<align=center><b>Sudenkorennot\u200B ja muut hy\xF6nteiset</b></align>\n\nKosteikoilla
-      el\xE4\xE4 monenlaisia\r\nhy\xF6nteisi\xE4. \n\nSudenkorennot ovat\r\nyleisi\xE4
-      kosteikon asukkaita, sill\xE4 ne\r\npystyv\xE4t lis\xE4\xE4ntym\xE4\xE4n hyvin
-      kosteikon vesiymp\xE4rist\xF6ss\xE4 ja el\xE4v\xE4t rehevien vesialueiden\r\nl\xE4hell\xE4.
-      \n\nKosteikolla voi t\xF6rm\xE4t\xE4 esimerkiksi hoikkatyt\xF6nkorentoon, v\xE4lkekorentoon,
-      id\xE4nkirsikorentoon,\r\nkarvaukonkorentoon ja ruskohukankorentoon.\u200B"
-    sw: "<align=center><b>Trollsl\xE4ndor och andra insekter</b></align>\nV\xE5tmarker
-      \xE4r hem f\xF6r m\xE5nga olika\ninsekter.\nTrollsl\xE4ndor \xE4r\nvanliga
-      v\xE5tmarksinv\xE5nare, eftersom de\nkan f\xF6r\xF6ka sig v\xE4l i v\xE5tmarkens
-      vattenmilj\xF6 och lever n\xE4ra frodiga vattenomr\xE5den.\nI v\xE5tmarken
-      kan du st\xF6ta p\xE5 arter som ljus lyrflicksl\xE4nda, guldtrollsl\xE4nda,
-      nordisk k\xE4rrtrollsl\xE4nda,\ntidig mosaiksl\xE4nda och brun mosaiksl\xE4nda."
-    en: '<align=center><b>Dragonflies and Other Insects</b></align>
+    fi: "\nLinnut\n\nLinnut k\xE4ytt\xE4v\xE4t kosteikkoa pesint\xE4\xE4n, ruokailuun
+      ja lev\xE4ht\xE4miseen. Kosteikoilla tavataan esimerkiksi sorsia, hanhia, joutsenia,
+      kahlaajia ja nokikanoja. Runsas linnusto kertoo, ett\xE4 kosteikolla on riitt\xE4v\xE4sti
+      ravintoa ja suojaa."
+    sw: "\nF\xE5glar\n\nF\xE5glarna anv\xE4nder v\xE5tmarken f\xF6r att h\xE4cka,
+      \xE4ta och vila. I v\xE5tmarkerna kan man till exempel se \xE4nder, g\xE4ss,
+      svanar, vadare och soth\xF6ns. Den rika f\xE5gelfaunan visar att v\xE5tmarken
+      erbjuder tillr\xE4ckligt med f\xF6da och skydd."
+    en: '
 
-      Wetlands
-      are home to many kinds of
+      Birds
 
-      insects.
 
-      Dragonflies are
-
-      common
-      wetland residents, as they
-
-      can reproduce well in the wetland''s aquatic
-      environment and live near lush water areas.
-
-      In wetlands, you might encounter
-      species such as the Azure Bluet, Brilliant Emerald, Yellow-spotted Whiteface,
-
-      Hairy
-      Dragonfly, and Brown Hawker.'
+      Birds use the wetland for nesting, feeding, and resting.
+      Species found in the wetland include ducks, geese, swans, waders, and grouse.
+      The abundance of birdlife indicates that the wetland provides sufficient food
+      and shelter.'
 --- !u!1 &1967441730839845199
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,6 +274,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -401,7 +386,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 272.9, y: 177.3}
+  m_AnchoredPosition: {x: 179, y: 157.1}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5188029298047065234
@@ -432,7 +417,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sudenkorentoja
+  m_text: "<align=center><b>RUO\u2019OT</b></align>\n\nRuo\u2019ot ovat kosteikon
+    t\xE4rkeimpi\xE4 kasveja. Ne sitovat ravinteita, puhdistavat vett\xE4 ja tarjoavat
+    suojaa monille el\xE4imille. Lis\xE4ksi ne est\xE4v\xE4t eroosiota.\n\n\n\n\n\nJ\xE4rviruoko\n\nJ\xE4rviruoko
+    on korkea kasvi, joka muodostaa tiheit\xE4 ruovikkoja rannoille. Se levi\xE4\xE4
+    tehokkaasti juurakon avulla ja viihtyy reheviss\xE4 vesiss\xE4."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
   m_sharedMaterial: {fileID: 6471187536760470386, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
@@ -470,8 +459,9 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
-  m_lineSpacing: -52.6
+  m_lineSpacing: -40
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -497,7 +487,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -43.0346, y: 1.5565662, z: -82.227325, w: -178.49335}
+  m_margin: {x: -43.0346, y: -15.602308, z: -55.36551, w: -276.5441}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -516,9 +506,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonText:
-    fi: Sudenkorentoja
-    sw: "Trollsl\xE4ndor"
-    en: Dragonflies
+    fi: "<align=center><b>RUO\u2019OT</b></align>\n\nRuo\u2019ot ovat kosteikon t\xE4rkeimpi\xE4
+      kasveja. Ne sitovat ravinteita, puhdistavat vett\xE4 ja tarjoavat suojaa monille
+      el\xE4imille. Lis\xE4ksi ne est\xE4v\xE4t eroosiota.\n\n\n\n\n\nJ\xE4rviruoko\n\nJ\xE4rviruoko
+      on korkea kasvi, joka muodostaa tiheit\xE4 ruovikkoja rannoille. Se levi\xE4\xE4
+      tehokkaasti juurakon avulla ja viihtyy reheviss\xE4 vesiss\xE4."
+    sw: "<align=center><b>VASSV\xC4XTER</b></align>\n\nVassv\xE4xter \xE4r bland
+      de viktigaste v\xE4xterna i v\xE5tmarker. De binder n\xE4rings\xE4mnen, f\xF6rb\xE4ttrar
+      vattenkvaliteten och ger skydd \xE5t m\xE5nga djur. Dessutom motverkar de erosion.\n\n\n\n\n\nVass\n\nVass
+      \xE4r en h\xF6g v\xE4xt som bildar t\xE4ta vassbest\xE5nd l\xE4ngs str\xE4nderna.
+      Den sprider sig effektivt med jordstammar och trivs i n\xE4ringsrika vatten."
+    en: '<align=center><b>REEDS</b></align>
+
+
+      Reeds are one the most important
+      plants in wetlands. They absorb nutrients, purify the water, and provide shelter
+      for many animals. They also prevent erosion.
+
+
+
+
+
+
+      Common Reed
+
+
+      Common
+      reed is a tall plant that forms dense stands along shorelines. It spreads rapidly
+      via its rhizomes and thrives in nutrient-rich waters.'
 --- !u!1 &3754958998092947573
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,6 +637,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -689,7 +705,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 117.300026, y: 17.4}
+  m_AnchoredPosition: {x: -266, y: 8}
   m_SizeDelta: {x: 383, y: 198}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2932462691614499806
@@ -764,7 +780,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 257.1, y: 19.9}
+  m_AnchoredPosition: {x: -103, y: 10}
   m_SizeDelta: {x: 383, y: 198}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2609294007601381149
@@ -839,7 +855,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 194.30002, y: 122}
+  m_AnchoredPosition: {x: -199.2, y: -81.2}
   m_SizeDelta: {x: 383, y: 198}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3659797726571549720
@@ -914,7 +930,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 207.90002, y: -78}
+  m_AnchoredPosition: {x: 245, y: 43}
   m_SizeDelta: {x: 383, y: 198}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &784381936927492948

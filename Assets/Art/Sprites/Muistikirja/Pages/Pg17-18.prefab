@@ -66,16 +66,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<align=center><b>Kasvit</b></align>\n\nKosteikoilla kasvaa monenlaisia
-    kasveja. \n\nKosteikoille on tyypillist\xE4 rannansuuntainen vy\xF6hykkeisyys
-    eli rannan ja vesist\xF6n eri alueilla on yleens\xE4 yksi vallitseva laji. \n\nPullosara
-    on yleinen kasvi niityn vetisiss\xE4 osissa ja sit\xE4 esiintyykin kaikkialla
-    Suomessa. \n\nMatalilla vesialueilla yleinen kasvi on j\xE4rviruoko, jota kasvaakin
-    melkein jokaisessa osassa. J\xE4rviruoko on Suomen suurin hein\xE4 ja se voi
-    kasvaa 1-4m pituiseksi. \n\nSiirtyess\xE4 syvempiin vesialueisiin voi kosteikolla
-    esiinty\xE4 uistinvitaa, joka kelluu vedess\xE4. \n\nKosteikoilla voi my\xF6s
-    esiinty\xE4 monia muita kasveja, kuten osmank\xE4\xE4mi\xE4, pikkulimaskaa ja
-    eri puulajeja.\u200B\r\n\u200B"
+  m_text: "\nSuo-ohdake\n\nSuo-ohdakkeella on korkea varsi ja piikkiset lehdet. Sen
+    purppuranpunaiset kukat houkuttelevat p\xF6lytt\xE4ji\xE4, ja se kasvaa kosteilla
+    niityill\xE4 ja rannoilla."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
   m_sharedMaterial: {fileID: 6471187536760470386, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
@@ -113,8 +106,9 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
-  m_lineSpacing: -52.6
+  m_lineSpacing: -40
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -159,47 +153,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonText:
-    fi: "<align=center><b>Kasvit</b></align>\n\nKosteikoilla kasvaa monenlaisia kasveja.
-      \n\nKosteikoille on tyypillist\xE4 rannansuuntainen vy\xF6hykkeisyys eli rannan
-      ja vesist\xF6n eri alueilla on yleens\xE4 yksi vallitseva laji. \n\nPullosara
-      on yleinen kasvi niityn vetisiss\xE4 osissa ja sit\xE4 esiintyykin kaikkialla
-      Suomessa. \n\nMatalilla vesialueilla yleinen kasvi on j\xE4rviruoko, jota kasvaakin
-      melkein jokaisessa osassa. J\xE4rviruoko on Suomen suurin hein\xE4 ja se voi
-      kasvaa 1-4m pituiseksi. \n\nSiirtyess\xE4 syvempiin vesialueisiin voi kosteikolla
-      esiinty\xE4 uistinvitaa, joka kelluu vedess\xE4. \n\nKosteikoilla voi my\xF6s
-      esiinty\xE4 monia muita kasveja, kuten osmank\xE4\xE4mi\xE4, pikkulimaskaa
-      ja eri puulajeja.\u200B\r\n\u200B"
-    sw: "<align=center><b>V\xE4xter</b></align>\nI v\xE5tmarker v\xE4xer m\xE5nga
-      olika v\xE4xter.\nTypiskt f\xF6r v\xE5tmarker \xE4r strandparallell zonering,
-      vilket betyder att olika omr\xE5den av stranden och vattendraget vanligtvis
-      har en dominerande art.\nFlaskstarr \xE4r en vanlig v\xE4xt i de v\xE5ta delarna
-      av \xE4ngar och f\xF6rekommer \xF6ver hela Finland.\nI grunda vattenomr\xE5den
-      \xE4r vass en vanlig v\xE4xt, som v\xE4xer i n\xE4stan varje sektion. Vass
-      \xE4r Finlands st\xF6rsta gr\xE4s och kan v\xE4xa till 1-4m i h\xF6jd.\nN\xE4r
-      man r\xF6r sig mot djupare vattenomr\xE5den kan g\xE4ddnate f\xF6rekomma i
-      v\xE5tmarken, flytande p\xE5 vattnet.\nV\xE5tmarker kan ocks\xE5 hysa m\xE5nga
-      andra v\xE4xter, som kaveldun, andmat och olika tr\xE4darter."
-    en: '<align=center><b>Plants</b></align>
+    fi: "\nSuo-ohdake\n\nSuo-ohdakkeella on korkea varsi ja piikkiset lehdet. Sen
+      purppuranpunaiset kukat houkuttelevat p\xF6lytt\xE4ji\xE4, ja se kasvaa kosteilla
+      niityill\xE4 ja rannoilla."
+    sw: "\nK\xE4rrtistel\n\nK\xE4rrtisteln har en h\xF6g stam och taggiga blad. Dess
+      purpurf\xE4rgade blommor lockar pollinerare, och v\xE4xten v\xE4xer p\xE5 fuktiga
+      \xE4ngar och vid str\xE4nder."
+    en: '
 
-      Many kinds of plants grow in
-      wetlands.
+      Marsh thistle
 
-      Wetlands typically have shore-parallel zonation, meaning different
-      areas of the shore and water body usually have one dominant species.
 
-      Bottle
-      sedge is a common plant in the wet parts of meadows and it occurs throughout
-      Finland.
-
-      Common reed is a prevalent plant in shallow water areas, growing
-      in almost every section. Common reed is Finland''s largest grass and can grow
-      to 1-4m in height.
-
-      Moving to deeper water areas, floating pondweed may
-      occur in the wetland, floating on the water.
-
-      Wetlands may also feature
-      many other plants, such as cattail, common duckweed, and various tree species.'
+      The marsh thistle has a tall stem and spiny
+      leaves. Its purplish-red flowers attract pollinators, and it grows in damp
+      meadows and along riverbanks.'
 --- !u!1 &1967441730839845199
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,6 +270,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -388,6 +356,7 @@ GameObject:
   - component: {fileID: 8917685424953469543}
   - component: {fileID: 5188029298047065234}
   - component: {fileID: 3927925753585208204}
+  - component: {fileID: 6669157294236315822}
   m_Layer: 5
   m_Name: Text B
   m_TagString: Untagged
@@ -411,7 +380,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 272.9, y: 177.3}
+  m_AnchoredPosition: {x: 165, y: 177.3}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5188029298047065234
@@ -442,7 +411,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: "<align=center><b>KELLUSLEHTISET KASVIT</b></align>\n\nKelluslehtiset kasvit
+    kelluvat veden pinnalla ja pit\xE4v\xE4t kosteikon tasapainossa. Ne varjostavat
+    vett\xE4, v\xE4hent\xE4v\xE4t levien kasvua ja tarjoavat suojaa el\xE4imille
+    ja joillekin my\xF6s ravintoa.\r\n\u200B\n\n\n\r\n\u200BLumme\n\nLumpeella on
+    suuret kelluvat lehdet ja valkoiset kukat. Se kasvaa suojaisissa ja pehme\xE4pohjaisissa
+    vesiss\xE4. Kasvi on myrkyllinen, mutta sen l\xE4sn\xE4olo kertoo monipuolisesta
+    ja elinvoimaisesta kosteikosta."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
   m_sharedMaterial: {fileID: 6471187536760470386, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
@@ -480,8 +455,9 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
-  m_lineSpacing: -52.6
+  m_lineSpacing: -40
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -507,12 +483,46 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -43.0346, y: 1.5565662, z: -82.227325, w: -178.49335}
+  m_margin: {x: -43.0346, y: 1.5565662, z: -82.227325, w: -299.1712}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6669157294236315822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3752300061302600148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36422ed2236b4ef4d88887b861d3bdcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonText:
+    fi: "<align=center><b>KELLUSLEHTISET KASVIT</b></align>\n\nKelluslehtiset kasvit
+      kelluvat veden pinnalla ja pit\xE4v\xE4t kosteikon tasapainossa. Ne varjostavat
+      vett\xE4, v\xE4hent\xE4v\xE4t levien kasvua ja tarjoavat suojaa el\xE4imille
+      ja joillekin my\xF6s ravintoa.\n\n\n\n\u200B\n\u200BLumme\n\nLumpeella on suuret
+      kelluvat lehdet ja valkoiset kukat. Se kasvaa suojaisissa ja pehme\xE4pohjaisissa
+      vesiss\xE4. Kasvi on myrkyllinen, mutta sen l\xE4sn\xE4olo kertoo monipuolisesta
+      ja elinvoimaisesta kosteikosta."
+    sw: "<align=center><b>V\xC4XTER MED FLYKTIGA BLAD</b></align>\n\nV\xE4xter med
+      flyktiga blad flyter p\xE5 vattenytan och bidrar till att uppr\xE4tth\xE5lla
+      balansen i v\xE5tmarken. De skuggar vattnet, minskar algtillv\xE4xten och erbjuder
+      skydd \xE5t djur och, f\xF6r vissa, \xE4ven f\xF6da.\r\n\n\n\n\nVit n\xE4ckrose\n\nVit
+      n\xE4ckrosen har stora flytande blad och vita blommor. Den v\xE4xer i skyddade
+      vatten med mjuk botten. V\xE4xten \xE4r giftig, men dess f\xF6rekomst \xE4r
+      ett tecken p\xE5 ett m\xE5ngsidigt och livskraftigt v\xE5tmarksomr\xE5de."
+    en: "<align=center><b>FLOATING-LEAVED PLANTS</b></align>\n\nFloating-leaved plants
+      float on the water's surface and help maintain the balance of the wetland.
+      They shade the water, reduce algae growth, and provide shelter for animals\u2014and,
+      for some, food as well.\r\n\u200B\n\n\n\nWhite water-lily\n\nThe white water-lily
+      has large floating leaves and white flowers. It grows in sheltered waters with
+      soft bottoms. The plant is poisonous, but its presence indicates a diverse
+      and thriving wetland."
 --- !u!1 &3754958998092947573
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,6 +626,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -676,14 +687,14 @@ RectTransform:
   m_GameObject: {fileID: 5214254717420658632}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1528673805664511592}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 251.3, y: 32.7}
+  m_AnchoredPosition: {x: 241, y: 42}
   m_SizeDelta: {x: 544, y: 745}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5648849080697951572
@@ -751,14 +762,14 @@ RectTransform:
   m_GameObject: {fileID: 7922161017032487599}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.43, y: 1.43, z: 1.43}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1528673805664511592}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 148.8, y: 42.7}
+  m_AnchoredPosition: {x: -225, y: 10}
   m_SizeDelta: {x: 383, y: 198}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3659797726571549720
