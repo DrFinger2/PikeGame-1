@@ -141,10 +141,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Hei! \n\nT\xE4ss\xE4 on kosteikkovihkosi, jonka annan sinulle nyt kun
-    siirryt hoitamaan kosteikkoa. \n\nVihkosta l\xF6yd\xE4t tietoa kosteikoista ja
-    siihen vaikuttavista asioista. \n\nTietoa l\xF6ytyy esimerkiksi kosteikon eri
-    el\xE4imist\xE4 ja veden laadusta. \n"
+  m_text: "Hei!\n\nT\xE4ss\xE4 on kosteikkovihkosi, jonka annan sinulle nyt kun siirryt
+    hoitamaan kosteikkoa. \n\nVihkosta l\xF6yd\xE4t tietoa kosteikoista ja siihen
+    vaikuttavista asioista. \n\nTietoa l\xF6ytyy esimerkiksi kosteikon eri el\xE4imist\xE4
+    ja veden laadusta. \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
   m_sharedMaterial: {fileID: 6471187536760470386, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
@@ -229,8 +229,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonText:
-    fi: "Hei! \n\nT\xE4ss\xE4 on kosteikkovihkosi, jonka\r\nannan sinulle nyt kun
-      siirryt\r\nhoitamaan kosteikkoa. \n\nVihkosta l\xF6yd\xE4t tietoa kosteikoista
+    fi: "<b>Hei! </b>\n\nT\xE4ss\xE4 on kosteikkovihkosi, jonka\r\nannan sinulle
+      nyt kun siirryt\r\nhoitamaan kosteikkoa. \n\nVihkosta l\xF6yd\xE4t tietoa kosteikoista
       ja siihen\r\nvaikuttavista asioista. \n\nTietoa l\xF6ytyy\r\nesimerkiksi kosteikon
       eri el\xE4imist\xE4 ja\r\nveden laadusta. \n"
     sw: "Hej!\nH\xE4r \xE4r din v\xE5tmarkshandbok, som\njag ger dig nu n\xE4r du
@@ -433,7 +433,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 100, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3754958998092947573
 GameObject:
@@ -725,32 +725,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonText:
-    fi: "Hei! \n\nT\xE4ss\xE4 on kosteikkovihkosi, jonka\r\nannan sinulle nyt kun
-      siirryt\r\nhoitamaan kosteikkoa. \n\nVihkosta l\xF6yd\xE4t tietoa kosteikoista
-      ja siihen\r\nvaikuttavista asioista. \n\nTietoa l\xF6ytyy\r\nesimerkiksi kosteikon
-      eri el\xE4imist\xE4 ja\r\nveden laadusta. \n"
-    sw: "Hej!\nH\xE4r \xE4r din v\xE5tmarkshandbok, som\njag ger dig nu n\xE4r du
-      g\xE5r vidare\ntill att f\xF6rvalta v\xE5tmarken.\nI handboken hittar du information
-      om v\xE5tmarker och\nfaktorer som p\xE5verkar dem.\nDu hittar information\ntill
-      exempel om olika djur i v\xE5tmarken och\nvattenkvalitet."
-    en: 'Hi!
-
-      Here is your wetland handbook, which
-
-      I''m giving to you
-      now as you move on
-
-      to manage the wetland.
-
-      In the handbook, you''ll
-      find information about wetlands and the
-
-      factors affecting them.
-
-      There
-      is information
-
-      for example about different animals in the wetland and
-
-      water
-      quality.'
+    fi: "Lukemalla  vihkoa pystyt selvi\xE4m\xE4\xE4n paremmin kosteikon tapahtumista,
+      olivat ne  sitten positiivisia tai negatiivisia ja saat yleist\xE4 t\xE4rke\xE4\xE4
+      tietoa  kosteikoista!\n"
+    sw: "Genom att l\xE4sa anteckningsboken kommer du att klara av h\xE4ndelser i
+      v\xE5tmarken b\xE4ttre, oavsett om de \xE4r positiva eller negativa, och du
+      f\xE5r ocks\xE5 viktig allm\xE4n kunskap om v\xE5tmarker!\n"
+    en: "By reading the handbook you can better navigate wetland events, whether
+      they are negative or positive, and you\u2019ll get important information about
+      wetlands.\_"

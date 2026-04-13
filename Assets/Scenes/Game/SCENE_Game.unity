@@ -7374,7 +7374,7 @@ PrefabInstance:
       objectReference: {fileID: 1206503449}
     - target: {fileID: 5700756183095246233, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5732644734727637806, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_IsActive
@@ -7623,6 +7623,24 @@ PrefabInstance:
       propertyPath: m_lineSpacing
       value: -35
       objectReference: {fileID: 0}
+    - target: {fileID: 7412476682078334772, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: buttonText.en
+      value: "\nBy reading the handbook you can better navigate wetland events, whether
+        they are negative or positive, and you\u2019ll get important information
+        about wetlands.\_"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7412476682078334772, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: buttonText.fi
+      value: "\nLukemalla  vihkoa pystyt selvi\xE4m\xE4\xE4n paremmin kosteikon tapahtumista,
+        olivat ne  sitten positiivisia tai negatiivisia ja saat yleist\xE4 t\xE4rke\xE4\xE4
+        tietoa  kosteikoista!\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7412476682078334772, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: buttonText.sw
+      value: "\nGenom att l\xE4sa anteckningsboken kommer du att klara av h\xE4ndelser
+        i v\xE5tmarken b\xE4ttre, oavsett om de \xE4r positiva eller negativa, och
+        du f\xE5r ocks\xE5 viktig allm\xE4n kunskap om v\xE5tmarker!\n"
+      objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -7803,6 +7821,22 @@ PrefabInstance:
       propertyPath: m_margin.z
       value: -51.013283
       objectReference: {fileID: 0}
+    - target: {fileID: 8480906518039146819, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 8480906518039146819, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 8480906518039146819, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8480906518039146819, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8712873689702253435, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -7877,7 +7911,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9000047798404075889, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.82938355
+      value: 0.8293836
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
