@@ -17,44 +17,45 @@ public class Day5Tasks : DayTaskBase
     [SerializeField] private TutorialDialogue day5ConclusionDialogue; // E16
 
     [Header("Pike Controller")]
-    [SerializeField] CowRelease cr;
+    [SerializeField] PikeRelease pikeRelease;
 
     public override void StartDay()
     {
         Events.OnDayStarted.Invoke();
         this.enabled = true;
 
-        SetInteractable(false, nextDayButton, questionButton, shopButton, npcButton);
-        SetInteractable(false,
-            actionButtons.CutPlants.Button,
-            actionButtons.OpenPlants.Button,
-            actionButtons.OpenBook.Button
-        );
+        DialogueManager dialogue = DialogueManager.instance;
+        TurnManager turn = TurnManager.Instance;
+        GameState state = turn.gameState;
 
-        DialogueManager.instance.PlayTutorialNode(
-            node: day5IntroDialogue,
-            onDialogueFinished: () =>
-            {
-                SetInteractable(true, actionButtons.OpenBook.Button);
-                DialogueManager.instance.CompleteTask("E13");
-                NotebookPageHandler.OnBookOpened.AddListener(OnBookOpened);
+        state.AddPoints(extraPointsPerDay);
 
-            }
-        );
+        nextDayButton.interactable = false;
+        questionButton.interactable = false;
+        shopButton.interactable = false;
+        npcButton.interactable = false;
+        actionButtons.LockAll();
+
+        dialogue.PlayTutorialNode(day5IntroDialogue, () =>
+        {
+            actionButtons.OpenBook.Button.interactable = true;
+            dialogue.CompleteTask("E13");
+            NotebookPageHandler.OnBookOpened.AddListener(OnBookOpened);
+        });
     }
+
     public void OnBookOpened()
     {
-        NotebookPageHandler.OnBookOpened.RemoveListener(OnBookOpened);
-        DialogueManager.instance.PlayTutorialNode(
-            day5NotebookDialogue,
-            () =>
-            {
-                DialogueManager.instance.CompleteTask("E14");
-                PlayPikeSequence();
-            }
-        );
-    }
 
+        NotebookPageHandler.OnBookOpened.RemoveListener(OnBookOpened);
+        DialogueManager dialogue = DialogueManager.instance;
+
+        dialogue.PlayTutorialNode(day5NotebookDialogue, () =>
+        {
+            dialogue.CompleteTask("E14");
+            PlayPikeSequence();
+        });
+    }
 
     public override void EndDay()
     {
@@ -64,32 +65,31 @@ public class Day5Tasks : DayTaskBase
 
     private void PlayPikeSequence()
     {
-        cr.ReleasePike();
-        DialogueManager.instance.PlayTutorialNode(
-            node: day5PikeDialogue,
-            onDialogueFinished: () =>
-            {
-                DialogueManager.instance.CompleteTask("E15");
-                PlayConclusionSequence();
-            }
-        );
+        DialogueManager dialogue = DialogueManager.instance;
+        pikeRelease.ReleasePike();
+
+        dialogue.PlayTutorialNode(day5PikeDialogue, () =>
+        {
+            dialogue.CompleteTask("E15");
+            PlayConclusionSequence();
+        });
     }
+
 
     private void PlayConclusionSequence()
     {
-        DialogueManager.instance.PlayTutorialNode(
-            node: day5ConclusionDialogue,
-            onDialogueFinished: () =>
-            {
-                DialogueManager.instance.CompleteTask("E16");
-                SetInteractable(true, nextDayButton, questionButton, shopButton, npcButton);
-                SetInteractable(true,
-                    actionButtons.CutPlants.Button,
-                    actionButtons.OpenPlants.Button,
-                    actionButtons.OpenBook.Button
-                );
-                CompleteDay();
-            }
-        );
+        DialogueManager dialogue = DialogueManager.instance;
+
+        dialogue.PlayTutorialNode(day5ConclusionDialogue, () =>
+        {
+            dialogue.CompleteTask("E16");
+            nextDayButton.interactable = true;
+            questionButton.interactable = true;
+            shopButton.interactable = true;
+            npcButton.interactable = true;
+            actionButtons.UnlockAll();
+            CompleteDay();
+        });
     }
 }
+

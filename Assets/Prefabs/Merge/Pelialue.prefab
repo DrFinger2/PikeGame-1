@@ -404,6 +404,37 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1528899571110166850
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 880680116268302216}
+  m_Layer: 0
+  m_Name: PikeSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &880680116268302216
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528899571110166850}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -27, y: 0.152, z: 5.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8520528608992463909}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1618768724391189521
 GameObject:
   m_ObjectHideFlags: 0
@@ -1203,6 +1234,8 @@ Transform:
   - {fileID: 8380466294751358453}
   - {fileID: 8718877340962573816}
   - {fileID: 4501762652097793476}
+  - {fileID: 6321440117644834558}
+  - {fileID: 880680116268302216}
   m_Father: {fileID: 6806160766465012048}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8511023281324618219
@@ -1217,12 +1250,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecf89d97b69b6643a61a07628b15ca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CowRelease
-  releaseCows: 0
-  targetPos: {x: 0, y: 0, z: 0}
-  cows:
+  playAreaPoint: {fileID: 6321440117644834558}
+  outsideAreaPoint: {fileID: 880680116268302216}
+  playAreaPikes: []
+  outsideAreaPikes:
   - {fileID: 8624649494694942740}
   - {fileID: 8863682250802493465}
   - {fileID: 4432938359281317925}
+  pikeHolder: {fileID: 0}
 --- !u!1 &3974724506658441648
 GameObject:
   m_ObjectHideFlags: 0
@@ -3023,6 +3058,37 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &7108325412288359197
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6321440117644834558}
+  m_Layer: 0
+  m_Name: PikeSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6321440117644834558
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7108325412288359197}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.43, y: 0.152, z: 5.19}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8520528608992463909}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7491638689061621810
 GameObject:
   m_ObjectHideFlags: 0

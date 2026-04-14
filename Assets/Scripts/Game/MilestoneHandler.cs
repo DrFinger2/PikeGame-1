@@ -2,68 +2,78 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class MilestoneHandler : MonoBehaviour
 {
+    [Header("Main UI")]
     public Button milestoneButton;
     public Slider milestoneSlider;
+    [SerializeField] private TMP_Text milestoneInstructionText;
 
+    [Space]
+    [Header("Milestone Toggles")]
     public Toggle milestone1;
     public Toggle milestone2;
     public Toggle milestone3;
 
+    [Space]
+    [Header("Milestone Buttons")]
     public Button milestone1Button;
     public Button milestone2Button;
     public Button milestone3Button;
 
-    [SerializeField] private TMP_Text milestoneInstructionText;
-
+    [Space]
+    [Header("Milestone State & Progress")]
     // Kept for save compatibility, even though Juri's single-click system skips incremental progress
     public int milestone1Progress;
     public int milestone2Progress;
     public int milestone3Progress;
-
     public int totalMilestoneProgress;
     public int highestMilestoneReached;
 
+    [Space]
+    [Header("Biodiversity State")]
     public int currentBiodiversity;
     public int maxBiodiversity;
-
-    [SerializeField] private bool useSimulationBiodiversity = false;
-
     [SerializeField] private int tileCount;
+    // SELMA: Kept for force unlock functionality
+    public int forcedBiodiversityMinimum = 0;
+
+    [Space]
+    [Header("Milestone Sprites")]
     [SerializeField] private Sprite milestoneLockedSprite;
     [SerializeField] private Sprite milestoneOneAvailable;
     [SerializeField] private Sprite milestoneTwoAvailable;
     [SerializeField] private Sprite milestoneThreeAvailable;
 
+    [Space]
+    [Header("Popups & Sequences")]
     // JURI: NEW POPUP REFERENCES
-    public GameObject milestone1Popup;
-    public GameObject milestone2Popup;
-    public GameObject milestone3Popup;
-
-    private bool milestone1reward = false;
-    [SerializeField] private GameObject cowCollection;
-
+    public MilestonePopupHandler milestone1Popup;
+    public MilestonePopupHandler milestone2Popup;
+    public MilestonePopupHandler milestone3Popup;
     [SerializeField] private GameObject fadeObject;
     [SerializeField] private GameObject endScreen;
+    private bool milestone1reward = false;
+    //[SerializeField] private GameObject cowCollection;
 
+    [Space]
+    [Header("Recalculation Settings")]
+    [SerializeField] private bool useSimulationBiodiversity = false;
     [SerializeField] private bool useSceneBiodiversityRecalculation = true;
     [SerializeField] private bool recalculateBiodiversityContinuously = false;
     [SerializeField] private float biodiversityRecalculateInterval = 0.25f;
     [SerializeField] private float biodiversitySmoothingPerSecond = 12f;
 
-    // SELMA: Kept for force unlock functionality
-    public int forcedBiodiversityMinimum = 0;
 
+    // Private State Variables (Hidden from standard Inspector)
     private bool biodiversityUiRefreshScheduled;
     private float biodiversityRecalculateTimer;
     private bool isRecalculatingFromScene;
     private int targetBiodiversity;
     private float currentBiodiversityVisual;
-
     private WetlandProgressionManager wetlandProgressionManager;
     private bool simulationBound;
+
 
     void Start()
     {
@@ -85,7 +95,7 @@ public class MilestoneHandler : MonoBehaviour
         if (milestone3 != null) milestone3.isOn = false;
 
         TurnManager.Instance.onTurnChanged.AddListener(ResetBiodiversity);
-        TurnManager.Instance.onTurnChanged.AddListener(SpawnMilestoneReward);
+        //TurnManager.Instance.onTurnChanged.AddListener(SpawnMilestoneReward);
 
         milestone1Button.image.sprite = milestoneLockedSprite;
         milestone2Button.image.sprite = milestoneLockedSprite;
@@ -167,30 +177,11 @@ public class MilestoneHandler : MonoBehaviour
         }
     }
 
-    // SELMA: Kept original logic for actual cow spawning
-    private void SpawnMilestoneReward(int turnNum)
+    private void ShowMilestonePopup(MilestonePopupHandler popup)
     {
-        if (milestone1reward)
-        {
-            milestone1reward = false;
-            cowCollection.SetActive(true);
-        }
+        popup.OpenMilestonePopup();
     }
 
-    // JURI: POPUP HELPER
-    private void ShowMilestonePopup(GameObject popup)
-    {
-        if (popup != null)
-        {
-            MilestonePopupHandler popupHandler = FindObjectOfType<MilestonePopupHandler>();
-            if (popupHandler != null)
-                popupHandler.OpenMilestonePopup(popup);
-            else
-                popup.SetActive(true);
-        }
-    }
-
-    // MERGED: Juri's Single-Click Logic + Selma's Events
     public void ProgressMilestone(int milestone)
     {
         switch (milestone)
@@ -203,7 +194,7 @@ public class MilestoneHandler : MonoBehaviour
 
                     TurnManager.Instance.gameState.currentActionPoints += 10;
                     ShowMilestonePopup(milestone1Popup);
-                    
+
                     RandomEventSystem.instance.ForceNextEvent("kosteikolle_saapuu");
                     milestone1reward = true;
                 }
@@ -217,7 +208,7 @@ public class MilestoneHandler : MonoBehaviour
 
                     TurnManager.Instance.gameState.currentActionPoints += 15;
                     ShowMilestonePopup(milestone2Popup);
-                    
+
                     RandomEventSystem.instance.ForceNextEvent("vesilinnut_saapuvat");
                 }
                 break;
@@ -393,13 +384,14 @@ public class MilestoneHandler : MonoBehaviour
         float plantCoverage = validTileCount > 0 ? (float)plantedTileCount / validTileCount : 0f;
         float invasivePressure = validTileCount > 0 ? (float)invasiveTileCount / validTileCount : 0f;
 
+        // Calculate how much the actual tiles are contributing
         float target01 = Mathf.Clamp01((plantCoverage * 1.20f) - (invasivePressure * 0.60f));
+        int sceneContribution = Mathf.RoundToInt(target01 * maxBiodiversity);
 
         int previousTarget = targetBiodiversity;
-        targetBiodiversity = Mathf.Clamp(Mathf.RoundToInt(target01 * maxBiodiversity), 0, maxBiodiversity);
-        
-        // SELMA: Maintain the forced minimum for restored saves or debug features
-        targetBiodiversity = Mathf.Max(targetBiodiversity, forcedBiodiversityMinimum);
+
+        // Add the scene's active contribution ON TOP of the forced minimum base level
+        targetBiodiversity = Mathf.Clamp(forcedBiodiversityMinimum + sceneContribution, 0, maxBiodiversity);
 
         currentBiodiversityVisual = Mathf.Clamp(currentBiodiversityVisual, 0f, maxBiodiversity);
 
@@ -409,30 +401,33 @@ public class MilestoneHandler : MonoBehaviour
         isRecalculatingFromScene = false;
     }
 
+
+
     public float GetBiodiversity01()
     {
         return Biodiversity01();
     }
 
-    // MERGED: Selma's ForceUnlock adjusted for Juri's single-click system
+
     public void ForceUnlockMilestone(int level, float progress = 1f)
     {
         int bioFloor = 0;
-        bool needsUnlock = false;
 
+        // Scale the biodiversity floor based on the progress float.
         switch (level)
         {
             case 1:
-                bioFloor = GetThreshold1();
-                needsUnlock = !milestone1.isOn;
+                bioFloor = Mathf.RoundToInt(GetThreshold1() * progress);
                 break;
             case 2:
-                bioFloor = GetThreshold2();
-                needsUnlock = !milestone2.isOn;
+                // Progress for level 2 starts from level 1's threshold
+                int base1 = GetThreshold1();
+                bioFloor = base1 + Mathf.RoundToInt((GetThreshold2() - base1) * progress);
                 break;
             case 3:
-                bioFloor = GetThreshold3();
-                needsUnlock = !milestone3.isOn;
+                // Progress for level 3 starts from level 2's threshold
+                int base2 = GetThreshold2();
+                bioFloor = base2 + Mathf.RoundToInt((GetThreshold3() - base2) * progress);
                 break;
         }
 
@@ -441,20 +436,9 @@ public class MilestoneHandler : MonoBehaviour
         targetBiodiversity = forcedBiodiversityMinimum;
         currentBiodiversityVisual = forcedBiodiversityMinimum;
 
-        // The AP Trick: Simulate a single-click without allowing the progress method 
-        // to permanently add redundant Action Points from a loaded save game
-        if (needsUnlock && progress >= 1f)
-        {
-            int realAP = TurnManager.Instance.gameState.currentActionPoints;
-            ProgressMilestone(level);
-            TurnManager.Instance.gameState.currentActionPoints = realAP;
-            TurnManager.Instance.onActionPointsChanged.Invoke(realAP);
-        }
-
         RefreshBiodiversityNow();
     }
 
-    // JURI: Instruction changes
     private void UpdateMilestoneInstruction()
     {
         if (milestoneInstructionText == null)
@@ -530,12 +514,14 @@ public class MilestoneHandler : MonoBehaviour
         if (milestoneToggle.isOn)
         {
             button.interactable = false;
+            button.image.sprite = availableSprite;
             return;
         }
 
         button.interactable = isAvailable;
         button.image.sprite = isAvailable ? availableSprite : milestoneLockedSprite;
     }
+
 
     private bool IsMilestone1Available()
     {
@@ -616,3 +602,4 @@ public class MilestoneHandler : MonoBehaviour
         }
     }
 }
+

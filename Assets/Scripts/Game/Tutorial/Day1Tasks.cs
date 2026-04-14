@@ -1,17 +1,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+
+
 public class Day1Tasks : DayTaskBase
 {
     [Header("Managers & Systems")]
     [SerializeField] private MilestoneHandler milestoneHandler;
 
-
     [Header("UI Elements")]
     [SerializeField] private ActionButtonsUI actionButtons;
-    
     [SerializeField] private Button nextDayButton;
-
 
     [Header("Dialogue References")]
     [SerializeField] private TutorialDialogue day1StartDialogue;
@@ -22,24 +21,21 @@ public class Day1Tasks : DayTaskBase
     [SerializeField] private float requiredPlantAmount = 2f;
     int plantsPlaced = 0;
 
-
     public override void StartDay()
     {
-        Events.OnDayStarted.Invoke();
 
+        Events.OnDayStarted.Invoke();
         this.enabled = true;
-        SetInteractable(false, actionButtons.CutPlants.Button, actionButtons.OpenPlants.Button);
-        SetInteractable(false, actionButtons.PlantSuovehka.Button);
+
+        DialogueManager dialogue = DialogueManager.instance;
+        actionButtons.LockAll();
 
         // Kicks off Chain 1: 01 -> 02 -> 03 -> 04 -> 05 -> 06
-        DialogueManager.instance.PlayTutorialNode(
-            node: day1StartDialogue,
-            onDialogueFinished: () =>
-            {
-                PlantEvents.OnPlantRemoved += OnPlantRemoved;
-                SetInteractable(true, actionButtons.CutPlants.Button);
-            }
-        );
+        dialogue.PlayTutorialNode(day1StartDialogue, () =>
+        {
+            PlantEvents.OnPlantRemoved += OnPlantRemoved;
+            actionButtons.CutPlants.Button.interactable = true;
+        });
     }
 
     public override void EndDay()
@@ -50,44 +46,40 @@ public class Day1Tasks : DayTaskBase
 
     public void OnReedsClearedClicked()
     {
+        DialogueManager dialogue = DialogueManager.instance;
+
         milestoneHandler.ForceUnlockMilestone(level: 1, progress: 0.33f);
-        SetInteractable(false, actionButtons.CutPlants.Button);
-        DialogueManager.instance.CompleteTask("E1");
-        DialogueManager.instance.PlayTutorialNode(
-            node: day1ReedsClearedDialogue,
-            onDialogueFinished: () =>
-            {
-                PlantEvents.OnPlantPlaced += OnPlantPlaced;
-                SetInteractable(true, actionButtons.OpenPlants.Button);
-                SetInteractable(true, actionButtons.PlantSuovehka.Button);
-            }
-        );
+        actionButtons.CutPlants.Button.interactable = false;
+
+        dialogue.CompleteTask("E1");
+        dialogue.PlayTutorialNode(day1ReedsClearedDialogue, () =>
+        {
+            PlantEvents.OnPlantPlaced += OnPlantPlaced;
+            actionButtons.OpenPlants.Button.interactable = true;
+            actionButtons.PlantSuovehka.Button.interactable = true;
+        });
     }
 
     public void OnReedPlantsPlantedClicked()
     {
-        // Tells DialogueManager the task from node 10 is done
+        DialogueManager dialogue = DialogueManager.instance;
+
         milestoneHandler.ForceUnlockMilestone(level: 1, progress: 0.66f);
-        DialogueManager.instance.CompleteTask("E2");
-       
-        // Kicks off Chain 3: 11 -> 12 -> 13
-        DialogueManager.instance.PlayTutorialNode(
-            node: day1ReedsPlantedDialogue,
-            onDialogueFinished: () =>
-            {
-                SetInteractable(true, actionButtons.CutPlants.Button);
-                SetInteractable(true, actionButtons.OpenPlants.Button);
-                SetInteractable(true, actionButtons.PlantSuovehka.Button, nextDayButton);
-                CompleteDay();
-            }
-        );
+        dialogue.CompleteTask("E2");
+        dialogue.PlayTutorialNode(day1ReedsPlantedDialogue, () =>
+        {
+            actionButtons.CutPlants.Button.interactable = true;
+            actionButtons.OpenPlants.Button.interactable = true;
+            actionButtons.PlantSuovehka.Button.interactable = true;
+            nextDayButton.interactable = true;
+            CompleteDay();
+        });
     }
 
     public void OnPlantRemoved(bool wasInvasive)
     {
         OnReedsClearedClicked();
         PlantEvents.OnPlantRemoved -= OnPlantRemoved;
-        
     }
 
     public void OnPlantPlaced(WetlandPlantType plantType, string plantName)
@@ -96,11 +88,9 @@ public class Day1Tasks : DayTaskBase
 
         if (plantsPlaced >= requiredPlantAmount)
         {
-            
             actionButtons.ShowButtons.Hide();
-            SetInteractable(false, actionButtons.CutPlants.Button);
-            SetInteractable(false, actionButtons.OpenPlants.Button);
-            SetInteractable(false, actionButtons.PlantSuovehka.Button);
+            actionButtons.LockAll();
+
             OnReedPlantsPlantedClicked();
             PlantEvents.OnPlantPlaced -= OnPlantPlaced;
         }
@@ -108,9 +98,8 @@ public class Day1Tasks : DayTaskBase
         {
             if (!actionButtons.ShowButtons.IsOpen)
                 actionButtons.OpenPlants.ReHighlight();
-                
+
             actionButtons.PlantSuovehka.ReHighlight();
         }
-
     }
 }

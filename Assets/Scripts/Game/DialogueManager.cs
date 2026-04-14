@@ -77,11 +77,11 @@ public class DialogueManager : MonoBehaviour
 
     // --- NEW EXPLICIT TUTORIAL PIPELINE ---
     // DayXTasks calls this directly with the hard-referenced TutorialDialogue asset
-    public void PlayTutorialNode(TutorialDialogue node, Action onDialogueFinished = null)
+    public void PlayTutorialNode(TutorialDialogue node, Action finished = null)
     {
         state.tutorialActive = true;
         state.currentActiveNode = node;
-        state.onSequenceFinishedCallback = onDialogueFinished;
+        state.onSequenceFinishedCallback = finished;
 
         if (node == null)
         {

@@ -23,39 +23,30 @@ public class Day3Tasks : DayTaskBase
     private int floatingPlantsPlantedCount;
     private int raccoonChaseCount;
 
-
     public override void StartDay()
     {
+
         Events.OnDayStarted.Invoke();
-        TurnManager.Instance.gameState.AddPoints(extraPointsPerDay);
-        milestoneHandler.ForceUnlockMilestone(level: 2, progress: 0.33f);
-         
         this.enabled = true;
-       
+
+        DialogueManager dialogue = DialogueManager.instance;
+        TurnManager turn = TurnManager.Instance;
+        GameState state = turn.gameState;
+
+        state.AddPoints(extraPointsPerDay);
+        milestoneHandler.ForceUnlockMilestone(level: 2, progress: 0.33f);
         floatingPlantsPlantedCount = 0;
         raccoonChaseCount = 0;
 
-        SetInteractable(false,
-            nextDayButton,
-            shopButton,
-            actionButtons.CutPlants.Button,
-            actionButtons.OpenPlants.Button,
-            actionButtons.PlantLumme.Button,
-            actionButtons.PlantRantakukka.Button,
-            actionButtons.PlantSuovehka.Button
-        );
+        nextDayButton.interactable = false;
+        shopButton.interactable = false;
+        actionButtons.LockAll();
 
         // Kicks off E7 Chain: Intro -> Milestone -> Invasive Species Warning
-        DialogueManager.instance.PlayTutorialNode(
-            node: day3IntroDialogue,
-            onDialogueFinished: () =>
-            {
+        dialogue.PlayTutorialNode(day3IntroDialogue, () => {
                 RaccoonDogMovement.OnRaccoonChased += OnRaccoonDogChased;
-            }
-        );
+        });
     }
-
-
 
     public override void EndDay()
     {
@@ -64,26 +55,25 @@ public class Day3Tasks : DayTaskBase
         PlantEvents.OnPlantPlaced -= OnPlantPlaced;
     }
 
-
     public void OnRaccoonDogChased()
     {
         raccoonChaseCount += 1;
         if (raccoonChaseCount >= requiredRaccoonsChased)
         {
-            milestoneHandler.ForceUnlockMilestone(level: 2, progress: 0.66f);
             RaccoonDogMovement.OnRaccoonChased -= OnRaccoonDogChased;
-            DialogueManager.instance.CompleteTask("E7");
-            DialogueManager.instance.PlayTutorialNode(
-                node: day3RaccoonChasedDialogue,
-                onDialogueFinished: () =>
-                {
+            DialogueManager dialogue = DialogueManager.instance;
+
+            milestoneHandler.ForceUnlockMilestone(level: 2, progress: 0.66f);
+            dialogue.CompleteTask("E7");
+            dialogue.PlayTutorialNode(day3RaccoonChasedDialogue, () => {
                     if (!actionButtons.ShowButtons.IsOpen)
                         actionButtons.OpenPlants.ReHighlight();
 
-                    SetInteractable(true, actionButtons.OpenPlants.Button, actionButtons.PlantLumme.Button);
+                    actionButtons.OpenPlants.Button.interactable = true;
+                    actionButtons.PlantLumme.Button.interactable = true;
+                    
                     PlantEvents.OnPlantPlaced += OnPlantPlaced;
-                }
-            );
+            });
         }
     }
 
@@ -93,30 +83,22 @@ public class Day3Tasks : DayTaskBase
 
         if (floatingPlantsPlantedCount >= floatingPlantsRequired)
         {
-            milestoneHandler.ForceUnlockMilestone(level: 2, progress: 1f);
+
             PlantEvents.OnPlantPlaced -= OnPlantPlaced;
-            SetInteractable(false, actionButtons.OpenPlants.Button, actionButtons.PlantLumme.Button);
+            DialogueManager dialogue = DialogueManager.instance;
+
+            milestoneHandler.ForceUnlockMilestone(level: 2, progress: 1f);
+            actionButtons.LockPlanting();
             actionButtons.ShowButtons.Hide();
-
-            DialogueManager.instance.CompleteTask("E8");
-
-            DialogueManager.instance.PlayTutorialNode(
-                node: day3EndOfDayDialogue,
-                onDialogueFinished: () =>
-                {
-                    SetInteractable(true, nextDayButton);
-                    SetInteractable(true,
-                        shopButton,
-                        nextDayButton,
-                        actionButtons.CutPlants.Button,
-                        actionButtons.OpenPlants.Button,
-                        actionButtons.PlantLumme.Button,
-                        actionButtons.PlantRantakukka.Button,
-                        actionButtons.PlantSuovehka.Button
-                    );
+            
+            dialogue.CompleteTask("E8");
+            dialogue.PlayTutorialNode( day3EndOfDayDialogue, () => {
+                    nextDayButton.interactable = true;
+                    shopButton.interactable = true;
+                    actionButtons.CutPlants.Button.interactable = true;
+                    actionButtons.UnlockPlanting();
                     CompleteDay();
-                }
-            );
+            });
         }
         else
         {

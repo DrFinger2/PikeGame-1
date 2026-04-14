@@ -8,7 +8,7 @@ public class Day2Tasks : DayTaskBase
     [SerializeField] private MilestoneHandler milestoneHandler;
 
     [Header("UI Elements")]
-     [SerializeField] private ActionButtonsUI actionButtons;
+    [SerializeField] private ActionButtonsUI actionButtons;
     [SerializeField] private Button shopButton;
     [SerializeField] private Button nextDayButton;
     [SerializeField] private GameObject coinDisplay;
@@ -28,35 +28,34 @@ public class Day2Tasks : DayTaskBase
 
     public override void StartDay()
     {
-        Events.OnDayStarted.Invoke();
-        TurnManager.Instance.gameState.AddPoints(extraPointsPerDay);
         this.enabled = true;
-        grassPlantsPlantedCount = 0;
+        Events.OnDayStarted.Invoke();
+
+        TurnManager turn = TurnManager.Instance;
+        DialogueManager dialogue = DialogueManager.instance;
+        GameState state = turn.gameState;
+        
+        state.AddPoints(extraPointsPerDay);
+        
         shopVisited = false;
+        grassPlantsPlantedCount = 0;
         actionButtons.ShowButtons.Hide();
+        actionButtons.LockAll();
+        
+        shopButton.interactable = false;
+        nextDayButton.interactable = false;
+        coinDisplay.SetActive(false);
 
-
-        SetInteractable(false,
-            actionButtons.CutPlants.Button,
-            actionButtons.OpenPlants.Button,
-            actionButtons.PlantSuovehka.Button,
-            actionButtons.PlantRantakukka.Button);
-        SetInteractable(false, shopButton, nextDayButton);
-        SetActive(false, coinDisplay);
-
-        // Kicks off Event 4
-        DialogueManager.instance.PlayTutorialNode(
-            node: day2IntroDialogue,
-            onDialogueFinished: () =>
-            {
-                SetInteractable(true, actionButtons.OpenPlants.Button, actionButtons.PlantRantakukka.Button);
+        dialogue.PlayTutorialNode(day2IntroDialogue, () => {
+                actionButtons.OpenPlants.Button.interactable = true;
+                actionButtons.PlantRantakukka.Button.interactable = true;
+                
                 if (!actionButtons.ShowButtons.IsOpen)
                 {
                     actionButtons.OpenPlants.ReHighlight();
                 }
                 PlantEvents.OnPlantPlaced += OnGrassPlantPlanted;
-            }
-        );
+        });
     }
 
     public override void EndDay()
@@ -67,22 +66,18 @@ public class Day2Tasks : DayTaskBase
 
     private void PlayMilestoneDialogue()
     {
-        DialogueManager.instance.PlayTutorialNode(
-            node: day2MilestoneDialogue,
-            onDialogueFinished: () =>
-            {
-                SetInteractable(true,
-                    shopButton,
-                    nextDayButton,
-                    actionButtons.CutPlants.Button,
-                    actionButtons.OpenPlants.Button,
-                    actionButtons.PlantRantakukka.Button,
-                    actionButtons.PlantSuovehka.Button
-                );
+        DialogueManager dialogue = DialogueManager.instance;
+        dialogue.PlayTutorialNode(day2MilestoneDialogue,() => {
+                shopButton.interactable = true;
+                nextDayButton.interactable = true;
+                actionButtons.CutPlants.Button.interactable = true;
+                actionButtons.OpenPlants.Button.interactable = true;
+                actionButtons.PlantRantakukka.Button.interactable = true;
+                actionButtons.PlantSuovehka.Button.interactable = true;
 
-                SetActive(true, coinDisplay, shopButton?.gameObject);
-            }
-        );
+                coinDisplay.SetActive(true);
+                if (shopButton != null) shopButton.gameObject.SetActive(true);
+        });
     }
 
     public void OnShopVisited()
@@ -102,30 +97,28 @@ public class Day2Tasks : DayTaskBase
 
         if (grassPlantsPlantedCount >= grassPlantsRequired)
         {
+            DialogueManager dialogue = DialogueManager.instance;
             PlantEvents.OnPlantPlaced -= OnGrassPlantPlanted;
-            milestoneHandler.ForceUnlockMilestone(level: 1, progress: 1.0f);
-            DialogueManager.instance.CompleteTask("E4");
-             
+
+            dialogue.CompleteTask("E4");
+
+            milestoneHandler.ForceUnlockMilestone(level: 1, progress: 1.0f); 
             actionButtons.ShowButtons.Hide();
-            SetInteractable(false, actionButtons.OpenPlants.Button);
-            SetInteractable(false, actionButtons.PlantRantakukka.Button);
+            actionButtons.OpenPlants.Button.interactable = false;
+            actionButtons.PlantRantakukka.Button.interactable = false;
      
-            DialogueManager.instance.PlayTutorialNode(
-                node: day2GrassPlantedDialogue,
-                onDialogueFinished: () =>
-                {
+
+            dialogue.PlayTutorialNode( day2GrassPlantedDialogue,() => {
                     DialogueManager.instance.CompleteTask("E5");
                     PlayMilestoneDialogue();
-                }
-            );
+            });
         }
         else
         {
             if (!actionButtons.ShowButtons.IsOpen)
                 actionButtons.OpenPlants.ReHighlight();
                 
-            actionButtons.PlantRantakukka.ReHighlight();
-            
+            actionButtons.PlantRantakukka.ReHighlight();  
         }
     }
 }

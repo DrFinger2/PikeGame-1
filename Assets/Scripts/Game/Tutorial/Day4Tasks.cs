@@ -13,7 +13,6 @@ public class Day4Tasks : DayTaskBase
     [SerializeField] private Button shopButton;
     [SerializeField] private Button nextDayButton;
 
-
     [Header("Dialogue References")]
     [SerializeField] private TutorialDialogue day4IntroDialogue;           // E10
     [SerializeField] private TutorialDialogue day4InvasiveClearedDialogue; // E11
@@ -29,24 +28,27 @@ public class Day4Tasks : DayTaskBase
     public override void StartDay()
     {
         Events.OnDayStarted.Invoke();
-        TurnManager.Instance.gameState.AddPoints(extraPointsPerDay);
-        
         this.enabled = true;
 
-       
+
+        DialogueManager dialogue = DialogueManager.instance;
+        TurnManager turn = TurnManager.Instance;
+        GameState state = turn.gameState;
+
+        state.AddPoints(extraPointsPerDay);
+
         invasivePlantsCleared = 0;
         questionAnswered = false;
 
-         
-        SetInteractable(false, actionButtons.CutPlants.Button, actionButtons.OpenPlants.Button, questionsButton, nextDayButton, shopButton);
+        actionButtons.CutPlants.Button.interactable = false;
+        actionButtons.OpenPlants.Button.interactable = false;
+        questionsButton.interactable = false;
+        nextDayButton.interactable = false;
+        shopButton.interactable = false;
 
-        // Kicks off E10 Chain: Intro -> Warning -> Task
-        DialogueManager.instance.PlayTutorialNode(
-            node: day4IntroDialogue,
-            onDialogueFinished: () =>
-            {
+        dialogue.PlayTutorialNode(day4IntroDialogue,() => {
                 actionButtons.CutPlants.ReHighlight();
-                SetInteractable(true, actionButtons.CutPlants.Button);
+                actionButtons.CutPlants.Button.interactable = true;
                 PlantEvents.OnPlantRemoved += OnPlantRemoved;
                 EventPanelUI.OnQuestionAnswered += OnQuestionAnswered;
             }
@@ -66,26 +68,24 @@ public class Day4Tasks : DayTaskBase
     private void OnPlantRemoved(bool wasInvasive)
     {
         /*
-        if (!wasInvasive) 
+        if (!wasInvasive)  this check doesnt work for some reason!
             return;
-        */ // this check doesnt work for some reason!
+        */ 
 
         invasivePlantsCleared++;
 
         if (invasivePlantsCleared >= invasivePlantsRequired)
         {
             PlantEvents.OnPlantRemoved -= OnPlantRemoved;
-            SetInteractable(false, actionButtons.CutPlants.Button);
+            DialogueManager dialogue = DialogueManager.instance;
 
-            DialogueManager.instance.CompleteTask("E10");
-            DialogueManager.instance.PlayTutorialNode(
-                node: day4InvasiveClearedDialogue,
-                onDialogueFinished: () =>
-                {
-                    SetActive(true, questionsButton?.gameObject);
-                    SetInteractable(true, questionsButton);
-                }
-            );
+            actionButtons.CutPlants.Button.interactable = false;
+
+            dialogue.CompleteTask("E10");
+            dialogue.PlayTutorialNode( day4InvasiveClearedDialogue, () => {
+                    questionsButton?.gameObject.SetActive(true);
+                    questionsButton.interactable = true;
+            });
         }
         else
         {
@@ -98,24 +98,24 @@ public class Day4Tasks : DayTaskBase
         if (questionAnswered)
             return;
 
+        DialogueManager dialogue = DialogueManager.instance;
+
         questionAnswered = true;
         eventPanel.CloseOutcomePanel();
+        questionsButton.interactable = false;
 
-        SetInteractable(false, questionsButton);
-        DialogueManager.instance.CompleteTask("E11");
+        dialogue.CompleteTask("E11");
 
         bool isCorrect = (answer == AnswerCategory.Good);
         TutorialDialogue selectedDialogue = isCorrect ? day4QuizCorrectDialogue : day4QuizIncorrectDialogue;
 
-        DialogueManager.instance.PlayTutorialNode(
-            node: selectedDialogue,
-            onDialogueFinished: () =>
-            {
-                SetInteractable(true, actionButtons.CutPlants.Button, actionButtons.OpenPlants.Button, questionsButton, nextDayButton, shopButton);
+        dialogue.PlayTutorialNode( selectedDialogue, () => {
+                actionButtons.CutPlants.Button.interactable = true;
+                actionButtons.OpenPlants.Button.interactable = true;
+                questionsButton.interactable = true;
+                nextDayButton.interactable = true;
+                shopButton.interactable = true;
                 CompleteDay();
-            }
-        );
-
+        });
     }
 }
-

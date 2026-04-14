@@ -12,6 +12,7 @@ public class EventPanelUI : MonoBehaviour
     public UnityEvent onPanelOpened; // Triggered when panel starts opening
     public UnityEvent onPanelClosed; // Triggered when outcome is closed
 
+
     public static event Action<AnswerCategory> OnQuestionAnswered;
 
     [Header("Panels")]
