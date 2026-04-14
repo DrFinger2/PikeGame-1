@@ -3,6 +3,9 @@ using UnityEngine.UI;
 
 public class Day3Tasks : DayTaskBase
 {
+    [Header("Managers & Systems")]
+    [SerializeField] private MilestoneHandler milestoneHandler;
+
     [Header("UI Elements")]
     [SerializeField] private ActionButtonsUI actionButtons;
     [SerializeField] private Button nextDayButton;
@@ -25,8 +28,10 @@ public class Day3Tasks : DayTaskBase
     {
         Events.OnDayStarted.Invoke();
         TurnManager.Instance.gameState.AddPoints(extraPointsPerDay);
+        milestoneHandler.ForceUnlockMilestone(level: 2, progress: 0.33f);
+         
         this.enabled = true;
-
+       
         floatingPlantsPlantedCount = 0;
         raccoonChaseCount = 0;
 
@@ -65,6 +70,7 @@ public class Day3Tasks : DayTaskBase
         raccoonChaseCount += 1;
         if (raccoonChaseCount >= requiredRaccoonsChased)
         {
+            milestoneHandler.ForceUnlockMilestone(level: 2, progress: 0.66f);
             RaccoonDogMovement.OnRaccoonChased -= OnRaccoonDogChased;
             DialogueManager.instance.CompleteTask("E7");
             DialogueManager.instance.PlayTutorialNode(
@@ -87,6 +93,7 @@ public class Day3Tasks : DayTaskBase
 
         if (floatingPlantsPlantedCount >= floatingPlantsRequired)
         {
+            milestoneHandler.ForceUnlockMilestone(level: 2, progress: 1f);
             PlantEvents.OnPlantPlaced -= OnPlantPlaced;
             SetInteractable(false, actionButtons.OpenPlants.Button, actionButtons.PlantLumme.Button);
             actionButtons.ShowButtons.Hide();

@@ -62,7 +62,7 @@ Material:
     - _FoamCutOut: 4.44
     - _FoamScale: 100
     - _FoamSpeed: 1.33
-    - _MudAmount: 0.5
+    - _MudAmount: 0.42499995
     - _PollutionAmount: 1
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -74,6 +74,7 @@ Material:
     - _WaterDepth: 0.05
     - _WaterDepthClean: 10
     - _WaterDepthDirty: 0.05
+    - _XRMotionVectorsPass: 1
     - _ZTest: 4
     - _ZWrite: 0
     - _ZWriteControl: 0

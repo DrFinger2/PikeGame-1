@@ -3,6 +3,10 @@ using UnityEngine.UI;
 
 public class Day1Tasks : DayTaskBase
 {
+    [Header("Managers & Systems")]
+    [SerializeField] private MilestoneHandler milestoneHandler;
+
+
     [Header("UI Elements")]
     [SerializeField] private ActionButtonsUI actionButtons;
     
@@ -46,6 +50,7 @@ public class Day1Tasks : DayTaskBase
 
     public void OnReedsClearedClicked()
     {
+        milestoneHandler.ForceUnlockMilestone(level: 1, progress: 0.33f);
         SetInteractable(false, actionButtons.CutPlants.Button);
         DialogueManager.instance.CompleteTask("E1");
         DialogueManager.instance.PlayTutorialNode(
@@ -62,8 +67,9 @@ public class Day1Tasks : DayTaskBase
     public void OnReedPlantsPlantedClicked()
     {
         // Tells DialogueManager the task from node 10 is done
+        milestoneHandler.ForceUnlockMilestone(level: 1, progress: 0.66f);
         DialogueManager.instance.CompleteTask("E2");
-
+       
         // Kicks off Chain 3: 11 -> 12 -> 13
         DialogueManager.instance.PlayTutorialNode(
             node: day1ReedsPlantedDialogue,
@@ -81,6 +87,7 @@ public class Day1Tasks : DayTaskBase
     {
         OnReedsClearedClicked();
         PlantEvents.OnPlantRemoved -= OnPlantRemoved;
+        
     }
 
     public void OnPlantPlaced(WetlandPlantType plantType, string plantName)
@@ -89,6 +96,7 @@ public class Day1Tasks : DayTaskBase
 
         if (plantsPlaced >= requiredPlantAmount)
         {
+            
             actionButtons.ShowButtons.Hide();
             SetInteractable(false, actionButtons.CutPlants.Button);
             SetInteractable(false, actionButtons.OpenPlants.Button);

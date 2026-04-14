@@ -3,6 +3,9 @@ using UnityEngine.UI;
 
 public class Day4Tasks : DayTaskBase
 {
+    [Header("Managers & Systems")]
+    [SerializeField] private MilestoneHandler milestoneHandler;
+
     [Header("UI Elements")]
     [SerializeField] private ActionButtonsUI actionButtons;
     [SerializeField] private EventPanelUI eventPanel;
@@ -27,13 +30,15 @@ public class Day4Tasks : DayTaskBase
     {
         Events.OnDayStarted.Invoke();
         TurnManager.Instance.gameState.AddPoints(extraPointsPerDay);
+        
         this.enabled = true;
+
+       
         invasivePlantsCleared = 0;
         questionAnswered = false;
 
-        // Lock the cut tool and quiz button initially (Book is left free to use)
+         
         SetInteractable(false, actionButtons.CutPlants.Button, actionButtons.OpenPlants.Button, questionsButton, nextDayButton, shopButton);
-
 
         // Kicks off E10 Chain: Intro -> Warning -> Task
         DialogueManager.instance.PlayTutorialNode(
@@ -47,6 +52,7 @@ public class Day4Tasks : DayTaskBase
             }
         );
     }
+
 
     public override void EndDay()
     {

@@ -1,9 +1,11 @@
+
 using UnityEngine;
+
 public class EnvironmentView : MonoBehaviour
 {
-    [Header("Materials")]
-    [SerializeField] Material waterMaterial;
-    [SerializeField] Material underWaterMaterial;
+    [Header("Renderers")]
+    [SerializeField] private Renderer waterRenderer;
+    [SerializeField] private Renderer[] underWaterRenderers;
 
 
     public void ShowPollutionLevel(float level)
@@ -14,10 +16,27 @@ public class EnvironmentView : MonoBehaviour
     {
     }
 
+
     public void ShowWaterQualityLevel(float level)
     {
-        waterMaterial?.SetFloat("_MudAmount", 1 - level);
-        underWaterMaterial?.SetFloat("_MudAmount", 1 - level);
-    }
+        float mudValue = 1.0f - level;
 
+        if (waterRenderer != null)
+        {
+            waterRenderer.material.SetFloat("_MudAmount", mudValue);
+        }
+
+        if (underWaterRenderers != null)
+        {
+            foreach (Renderer ren in underWaterRenderers)
+            {
+                if (ren != null)
+                {
+                    ren.material.SetFloat("_MudAmount", mudValue);
+                }
+            }
+        }
+    }
+    
+    
 }

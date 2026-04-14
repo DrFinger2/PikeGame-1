@@ -18,7 +18,7 @@ MonoBehaviour:
     sw: 
     en: 
   npcImage: {fileID: 21300000, guid: 13062ce599809b74db8286a76d7b2edd, type: 3}
-  dialogueText: "Istuta niit\xE4 tuohon kosteaan maahan rannan tuntumaan"
+  dialogueText: "Istuta niit\xE4 tuohon kosteaan maahan rannan tuntumaan."
   dialogueTextLocalized:
     fi: "Istuta niit\xE4 tuohon kosteaan maahan rannan tuntumaan."
     sw: "Plantera dem i den fuktiga jorden n\xE4ra stranden."

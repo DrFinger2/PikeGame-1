@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-716988964744202970
+--- !u!114 &-6915592201121691527
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,13 +20,14 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_UnderWater
+  m_Name: M_WaterUnder
   m_Shader: {fileID: -6465566751694194690, guid: 28a5ee6a23d0464438c44a40e75bc111, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 2
+  m_InvalidKeywords:
+  - _RECEIVE_SHADOWS_OFF
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -51,10 +52,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Amount: 0.687
+    - _Amount: 1
     - _BaseSmoothness: 1
     - _IOR: 1.33
-    - _MudAmount: 0.5
+    - _MudAmount: 0.42499995
     - _MudSmoothness: 0.5
     - _MurkySmoothness: 0.75
     - _PollutionAmount: 1
@@ -62,11 +63,12 @@ Material:
     - _QueueOffset: 0
     - _SmoothnessClean: 1
     - _SmoothnessDirty: 0.9
+    - _XRMotionVectorsPass: 1
     m_Colors:
-    - _BaseColor: {r: 0.13616937, g: 0.33962256, b: 0.21162742, a: 0}
+    - _BaseColor: {r: 0.029503385, g: 0.3679245, b: 0.07975036, a: 1}
     - _ColorClean: {r: 0.03137255, g: 0.36862746, b: 0.078431375, a: 0}
     - _ColorDirty: {r: 0.22488202, g: 0.24528301, b: 0.15619437, a: 0}
-    - _MudColor: {r: 0.2264151, g: 0.17194732, b: 0.17194732, a: 0}
-    - _MurkyColor: {r: 0.5253851, g: 0.5568628, b: 0.36078432, a: 0}
+    - _MudColor: {r: 0.54509807, g: 0.45150098, b: 0.30907062, a: 1}
+    - _MurkyColor: {r: 0.25318697, g: 0.36862746, b: 0.031372547, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
