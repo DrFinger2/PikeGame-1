@@ -18,11 +18,11 @@ MonoBehaviour:
     sw: 
     en: 
   npcImage: {fileID: 21300000, guid: 13062ce599809b74db8286a76d7b2edd, type: 3}
-  dialogueText: "Ota t\xE4st\xE4 viikate ja leikkaa nuo huonot varret pois, jotta
-    valo p\xE4\xE4see taas pohjaan asti."
+  dialogueText: "Ota t\xE4st\xE4 sirppi ja leikkaa tuo liiallisesti levinnyt ruovikko
+    pois, jotta valo p\xE4\xE4see taas pohjaan asti."
   dialogueTextLocalized:
-    fi: "Ota t\xE4st\xE4 viikate ja leikkaa nuo huonot varret pois, jotta valo p\xE4\xE4see
-      taas pohjaan asti."
+    fi: "Ota t\xE4st\xE4 sirppi ja leikkaa tuo liiallisesti levinnyt ruovikko pois,
+      jotta valo p\xE4\xE4see taas pohjaan asti."
     sw: "Ta den h\xE4r sk\xE4ran och sk\xE4r bort den f\xF6r utbredda vegetationen,
       s\xE5 att ljuset n\xE5r \xE4nda ner till botten igen."
     en: Take this sickle and cut back the overgrown reeds so that light can reach
