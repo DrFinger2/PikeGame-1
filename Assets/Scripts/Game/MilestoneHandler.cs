@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class MilestoneHandler : MonoBehaviour
 {
     public Button milestoneButton;
@@ -17,6 +18,7 @@ public class MilestoneHandler : MonoBehaviour
 
     [SerializeField] private TMP_Text milestoneInstructionText;
 
+    // Kept for save compatibility, even though Juri's single-click system skips incremental progress
     public int milestone1Progress;
     public int milestone2Progress;
     public int milestone3Progress;
@@ -35,12 +37,11 @@ public class MilestoneHandler : MonoBehaviour
     [SerializeField] private Sprite milestoneTwoAvailable;
     [SerializeField] private Sprite milestoneThreeAvailable;
 
-    // NEW POPUP REFERENCES
+    // JURI: NEW POPUP REFERENCES
     public GameObject milestone1Popup;
     public GameObject milestone2Popup;
     public GameObject milestone3Popup;
 
-    // kept because you said not to remove mechanics
     private bool milestone1reward = false;
     [SerializeField] private GameObject cowCollection;
 
@@ -51,6 +52,9 @@ public class MilestoneHandler : MonoBehaviour
     [SerializeField] private bool recalculateBiodiversityContinuously = false;
     [SerializeField] private float biodiversityRecalculateInterval = 0.25f;
     [SerializeField] private float biodiversitySmoothingPerSecond = 12f;
+
+    // SELMA: Kept for force unlock functionality
+    public int forcedBiodiversityMinimum = 0;
 
     private bool biodiversityUiRefreshScheduled;
     private float biodiversityRecalculateTimer;
@@ -163,12 +167,17 @@ public class MilestoneHandler : MonoBehaviour
         }
     }
 
+    // SELMA: Kept original logic for actual cow spawning
     private void SpawnMilestoneReward(int turnNum)
     {
-        milestone1reward = false;
+        if (milestone1reward)
+        {
+            milestone1reward = false;
+            cowCollection.SetActive(true);
+        }
     }
 
-    // POPUP HELPER
+    // JURI: POPUP HELPER
     private void ShowMilestonePopup(GameObject popup)
     {
         if (popup != null)
@@ -176,13 +185,12 @@ public class MilestoneHandler : MonoBehaviour
             MilestonePopupHandler popupHandler = FindObjectOfType<MilestonePopupHandler>();
             if (popupHandler != null)
                 popupHandler.OpenMilestonePopup(popup);
-
             else
                 popup.SetActive(true);
         }
     }
 
-    // NEW: SINGLE CLICK MILESTONE LOGIC
+    // MERGED: Juri's Single-Click Logic + Selma's Events
     public void ProgressMilestone(int milestone)
     {
         switch (milestone)
@@ -195,6 +203,9 @@ public class MilestoneHandler : MonoBehaviour
 
                     TurnManager.Instance.gameState.currentActionPoints += 10;
                     ShowMilestonePopup(milestone1Popup);
+                    
+                    RandomEventSystem.instance.ForceNextEvent("kosteikolle_saapuu");
+                    milestone1reward = true;
                 }
                 break;
 
@@ -206,6 +217,8 @@ public class MilestoneHandler : MonoBehaviour
 
                     TurnManager.Instance.gameState.currentActionPoints += 15;
                     ShowMilestonePopup(milestone2Popup);
+                    
+                    RandomEventSystem.instance.ForceNextEvent("vesilinnut_saapuvat");
                 }
                 break;
 
@@ -219,6 +232,7 @@ public class MilestoneHandler : MonoBehaviour
                     ShowMilestonePopup(milestone3Popup);
 
                     StartEndSequence();
+                    Debug.Log("you're winner");
                 }
                 break;
         }
@@ -383,6 +397,9 @@ public class MilestoneHandler : MonoBehaviour
 
         int previousTarget = targetBiodiversity;
         targetBiodiversity = Mathf.Clamp(Mathf.RoundToInt(target01 * maxBiodiversity), 0, maxBiodiversity);
+        
+        // SELMA: Maintain the forced minimum for restored saves or debug features
+        targetBiodiversity = Mathf.Max(targetBiodiversity, forcedBiodiversityMinimum);
 
         currentBiodiversityVisual = Mathf.Clamp(currentBiodiversityVisual, 0f, maxBiodiversity);
 
@@ -397,6 +414,47 @@ public class MilestoneHandler : MonoBehaviour
         return Biodiversity01();
     }
 
+    // MERGED: Selma's ForceUnlock adjusted for Juri's single-click system
+    public void ForceUnlockMilestone(int level, float progress = 1f)
+    {
+        int bioFloor = 0;
+        bool needsUnlock = false;
+
+        switch (level)
+        {
+            case 1:
+                bioFloor = GetThreshold1();
+                needsUnlock = !milestone1.isOn;
+                break;
+            case 2:
+                bioFloor = GetThreshold2();
+                needsUnlock = !milestone2.isOn;
+                break;
+            case 3:
+                bioFloor = GetThreshold3();
+                needsUnlock = !milestone3.isOn;
+                break;
+        }
+
+        forcedBiodiversityMinimum = Mathf.Max(forcedBiodiversityMinimum, bioFloor);
+        currentBiodiversity = forcedBiodiversityMinimum;
+        targetBiodiversity = forcedBiodiversityMinimum;
+        currentBiodiversityVisual = forcedBiodiversityMinimum;
+
+        // The AP Trick: Simulate a single-click without allowing the progress method 
+        // to permanently add redundant Action Points from a loaded save game
+        if (needsUnlock && progress >= 1f)
+        {
+            int realAP = TurnManager.Instance.gameState.currentActionPoints;
+            ProgressMilestone(level);
+            TurnManager.Instance.gameState.currentActionPoints = realAP;
+            TurnManager.Instance.onActionPointsChanged.Invoke(realAP);
+        }
+
+        RefreshBiodiversityNow();
+    }
+
+    // JURI: Instruction changes
     private void UpdateMilestoneInstruction()
     {
         if (milestoneInstructionText == null)
@@ -438,6 +496,7 @@ public class MilestoneHandler : MonoBehaviour
         SetMilestoneButtonText(milestone3Button, milestone3.isOn, threshold3);
     }
 
+    // JURI: Simplified UI text parameters
     private static void SetMilestoneButtonText(Button button, bool completed, int threshold)
     {
         if (button == null)
