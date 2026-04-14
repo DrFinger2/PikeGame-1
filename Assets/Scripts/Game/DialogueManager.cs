@@ -22,6 +22,7 @@ public class DialogueManager : MonoBehaviour
 
         // REPLACED indices with the explicit hard-reference
         public TutorialDialogue currentActiveNode;
+        public float activeBackgroundOpacity;
     }
 
     public static DialogueManager instance;
@@ -77,11 +78,12 @@ public class DialogueManager : MonoBehaviour
 
     // --- NEW EXPLICIT TUTORIAL PIPELINE ---
     // DayXTasks calls this directly with the hard-referenced TutorialDialogue asset
-    public void PlayTutorialNode(TutorialDialogue node, Action finished = null)
+    public void PlayTutorialNode(TutorialDialogue node, Action finished = null, bool animatePopup = false, float bgOpacity = 0f)
     {
         state.tutorialActive = true;
         state.currentActiveNode = node;
         state.onSequenceFinishedCallback = finished;
+        state.activeBackgroundOpacity = bgOpacity;
 
         if (node == null)
         {
@@ -90,7 +92,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
         
-        dialogueUI.ShowDialogue(node, true);
+        dialogueUI.ShowDialogue(node, true, animatePopup, bgOpacity);
 
         if (!string.IsNullOrEmpty(node.taskDescription))
         {
@@ -208,7 +210,7 @@ public class DialogueManager : MonoBehaviour
         {
             if (state.currentActiveNode.nextDialogue != null)
             {
-                PlayTutorialNode(state.currentActiveNode.nextDialogue, state.onSequenceFinishedCallback);
+                PlayTutorialNode(state.currentActiveNode.nextDialogue, state.onSequenceFinishedCallback, false, state.activeBackgroundOpacity);
                 return;
             }
             else

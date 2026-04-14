@@ -11,6 +11,7 @@ public class Day1Tasks : DayTaskBase
     [Header("UI Elements")]
     [SerializeField] private ActionButtonsUI actionButtons;
     [SerializeField] private Button nextDayButton;
+    [SerializeField] private GameObject coinDisplay;
 
     [Header("Dialogue References")]
     [SerializeField] private TutorialDialogue day1StartDialogue;
@@ -29,7 +30,8 @@ public class Day1Tasks : DayTaskBase
 
         DialogueManager dialogue = DialogueManager.instance;
         actionButtons.LockAll();
-
+        coinDisplay.gameObject.SetActive(false);
+        
         // Kicks off Chain 1: 01 -> 02 -> 03 -> 04 -> 05 -> 06
         dialogue.PlayTutorialNode(day1StartDialogue, () =>
         {

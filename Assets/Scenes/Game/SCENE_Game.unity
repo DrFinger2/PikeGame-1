@@ -6213,6 +6213,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 119159621726904655, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 149417573653849808, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6671,7 +6675,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3050897033742178904, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -13.0401
+      value: -13.040161
       objectReference: {fileID: 0}
     - target: {fileID: 3167156279088661692, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6695,10 +6699,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3552204417022185750, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_Interactable
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3586749824239455531, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3672842772212027753, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
@@ -7921,7 +7921,7 @@ PrefabInstance:
     - target: {fileID: 582234907369902583, guid: e0f1964e9d6f2964998b9e2b73b9fe12, type: 3}
       propertyPath: gameState
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2069077863}
     - target: {fileID: 582234907369902583, guid: e0f1964e9d6f2964998b9e2b73b9fe12, type: 3}
       propertyPath: endTurnButton
       value: 
@@ -7933,7 +7933,7 @@ PrefabInstance:
     - target: {fileID: 582234907369902583, guid: e0f1964e9d6f2964998b9e2b73b9fe12, type: 3}
       propertyPath: milestoneHandler
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1206503449}
     - target: {fileID: 582234907369902583, guid: e0f1964e9d6f2964998b9e2b73b9fe12, type: 3}
       propertyPath: onTurnChanged.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -10075,6 +10075,7 @@ MonoBehaviour:
   milestoneHandler: {fileID: 1206503449}
   actionButtons: {fileID: 1160520427}
   nextDayButton: {fileID: 777801969}
+  coinDisplay: {fileID: 1630832936}
   day1StartDialogue: {fileID: 11400000, guid: 10983ff78611e6c469d558fb646783e9, type: 2}
   day1ReedsClearedDialogue: {fileID: 11400000, guid: 8ec325df4bf81c0499bd4c2b59981145, type: 2}
   day1ReedsPlantedDialogue: {fileID: 11400000, guid: a6293d8a75b79574e8b36b87e69b0c10, type: 2}
@@ -13308,6 +13309,17 @@ MonoBehaviour:
   - {fileID: 1211095178}
   - {fileID: 1211095177}
   - {fileID: 1211095176}
+--- !u!114 &2069077863 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 709843759464663865, guid: e0f1964e9d6f2964998b9e2b73b9fe12, type: 3}
+  m_PrefabInstance: {fileID: 1206503448}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206503450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d73d1b2fa97e804e937dcf0fceb7d91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2093402898 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a2456e55ee59c4d4ea5b82a6c4ba0487, type: 3}

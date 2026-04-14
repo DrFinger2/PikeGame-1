@@ -3,6 +3,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class DialogueUI : MonoBehaviour
 {
@@ -11,12 +12,17 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] private TMP_Text speakerNameText;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private Image speakerImage;
+    [SerializeField] private Image dialogueBackground;
     [SerializeField] private GameObject continueButton;
 
     [Header("Task UI References")]
     [SerializeField] private GameObject taskPanel;
     [SerializeField] private TMP_Text taskDescriptionText;
     [SerializeField] private Image taskImage;
+
+    [Header("Raycast Blocking")]
+    [SerializeField] private CanvasGroup parentCanvasGroup;
+    [SerializeField] private CanvasGroup dialogueCanvasGroup;
 
     [Header("Typewriter Effect")]
     [SerializeField] private bool useEffect = true;
@@ -28,10 +34,36 @@ public class DialogueUI : MonoBehaviour
     public bool IsDialogueActive => dialoguePanel.activeInHierarchy;
     public bool IsTyping => typeWriterEffectCoroutine != null;
 
-    public void ShowDialogue(DialogueBase dialogue, bool showContinue = true)
+    public void ShowDialogue(DialogueBase dialogue, bool showContinue = true, bool animate = false, float bgOpacity = 0)
     {
+        // Block background UI, keep Dialogue UI interactive
+        if (parentCanvasGroup != null && dialogueCanvasGroup != null)
+        {
+            parentCanvasGroup.blocksRaycasts = false;
+            dialogueCanvasGroup.ignoreParentGroups = true;
+            dialogueCanvasGroup.blocksRaycasts = true;
+        }
+
+        dialogueBackground.gameObject.SetActive(true);
         dialoguePanel.SetActive(true);
         continueButton.SetActive(showContinue);
+        dialoguePanel.transform.DOKill();
+
+        Color color = dialogueBackground.color;
+        color.a = Mathf.Clamp01(bgOpacity);
+        dialogueBackground.color = color;
+
+        if (animate)
+        {
+            dialoguePanel.transform.localScale = Vector3.zero;
+            dialoguePanel.transform.DOScale(Vector3.one, 0.6f).SetEase(Ease.OutBack);
+        }
+        else
+        {
+            dialoguePanel.transform.localScale = Vector3.one;
+        }
+
+
 
         string finalName = !string.IsNullOrEmpty(dialogue.npcNameLocalized?.GetText())
             ? dialogue.npcNameLocalized.GetText()
@@ -111,18 +143,38 @@ public class DialogueUI : MonoBehaviour
             typeWriterEffectCoroutine = null;
         }
     }
-    
 
-    public void HideDialogue()
+
+    public void HideDialogue(bool animate = false)
     {
         if (typeWriterEffectCoroutine != null)
         {
             StopCoroutine(typeWriterEffectCoroutine);
             typeWriterEffectCoroutine = null;
         }
-        dialoguePanel.SetActive(false);
-        
+
+        dialoguePanel.transform.DOKill(); 
+        if (animate)
+        {
+            dialoguePanel.transform.DOScale(Vector3.zero, 0.35f).SetEase(Ease.InBack).OnComplete(CompleteHide);
+        }
+        else
+        {
+            CompleteHide();
+        }
+
     }
+  
+    private void CompleteHide()
+    {
+        dialogueBackground.gameObject.SetActive(false);
+        dialoguePanel.SetActive(false);
+        if (parentCanvasGroup != null)
+        {
+            parentCanvasGroup.blocksRaycasts = true;
+        }
+    }
+
 
     public void ShowTask(string taskDescription, Sprite icon = null)
     {

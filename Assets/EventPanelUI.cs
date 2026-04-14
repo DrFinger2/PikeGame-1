@@ -12,8 +12,14 @@ public class EventPanelUI : MonoBehaviour
     public UnityEvent onPanelOpened; // Triggered when panel starts opening
     public UnityEvent onPanelClosed; // Triggered when outcome is closed
 
+    
+
 
     public static event Action<AnswerCategory> OnQuestionAnswered;
+
+    [Header("Raycast Blocking")]
+    [SerializeField] private CanvasGroup parentCanvasGroup;
+    [SerializeField] private CanvasGroup eventPanelCanvasGroup;
 
     [Header("Panels")]
     [SerializeField] private GameObject eventPopupPanel;
@@ -78,6 +84,15 @@ public class EventPanelUI : MonoBehaviour
     public void OpenPanel(bool loadNewEvent)
     {
         onPanelOpened?.Invoke(); // Trigger opened event
+
+        if (parentCanvasGroup != null && eventPanelCanvasGroup != null)
+        {
+            parentCanvasGroup.blocksRaycasts = false;
+            eventPanelCanvasGroup.ignoreParentGroups = true;
+            eventPanelCanvasGroup.blocksRaycasts = true;
+        }
+
+
         gameObject.SetActive(true);
 
         if (loadNewEvent || currentEvent == null)
@@ -214,6 +229,8 @@ public class EventPanelUI : MonoBehaviour
             {
                 outcomePopupPanel.SetActive(false);
                 onPanelClosed?.Invoke(); // Trigger closed event after animation
+                 if (parentCanvasGroup != null)
+                    parentCanvasGroup.blocksRaycasts = true;
             });
 
         //turnManager.ToggleEndTurnButton(true);

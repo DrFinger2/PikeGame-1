@@ -47,14 +47,22 @@ public class Day5Tasks : DayTaskBase
     public void OnBookOpened()
     {
 
+        NotebookPageHandler.OnBookClosed.AddListener(OnBookClosed);
         NotebookPageHandler.OnBookOpened.RemoveListener(OnBookOpened);
         DialogueManager dialogue = DialogueManager.instance;
 
         dialogue.PlayTutorialNode(day5NotebookDialogue, () =>
         {
+
             dialogue.CompleteTask("E14");
-            PlayPikeSequence();
-        });
+
+        }, false, 0.6f);
+    }
+
+    public void OnBookClosed()
+    {
+        NotebookPageHandler.OnBookClosed.RemoveListener(OnBookClosed);
+        Invoke(nameof(PlayPikeSequence), 0.5f); // delay the next sequence by couple seconds so that the book closing animation has time to play..
     }
 
     public override void EndDay()
@@ -65,6 +73,7 @@ public class Day5Tasks : DayTaskBase
 
     private void PlayPikeSequence()
     {
+        
         DialogueManager dialogue = DialogueManager.instance;
         pikeRelease.ReleasePike();
 
@@ -72,7 +81,7 @@ public class Day5Tasks : DayTaskBase
         {
             dialogue.CompleteTask("E15");
             PlayConclusionSequence();
-        });
+        }, animatePopup: true );
     }
 
 
