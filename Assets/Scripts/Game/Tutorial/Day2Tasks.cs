@@ -4,6 +4,9 @@ using UnityEngine.UI;
 
 public class Day2Tasks : DayTaskBase
 {
+    [Header("Managers & Systems")]
+    [SerializeField] private MilestoneHandler milestoneHandler;
+
     [Header("UI Elements")]
      [SerializeField] private ActionButtonsUI actionButtons;
     [SerializeField] private Button shopButton;
@@ -100,12 +103,13 @@ public class Day2Tasks : DayTaskBase
         if (grassPlantsPlantedCount >= grassPlantsRequired)
         {
             PlantEvents.OnPlantPlaced -= OnGrassPlantPlanted;
-
+            milestoneHandler.ForceUnlockMilestone(level: 1, progress: 1.0f);
+            DialogueManager.instance.CompleteTask("E4");
+             
             actionButtons.ShowButtons.Hide();
             SetInteractable(false, actionButtons.OpenPlants.Button);
             SetInteractable(false, actionButtons.PlantRantakukka.Button);
-
-            DialogueManager.instance.CompleteTask("E4");
+     
             DialogueManager.instance.PlayTutorialNode(
                 node: day2GrassPlantedDialogue,
                 onDialogueFinished: () =>

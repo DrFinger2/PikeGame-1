@@ -1087,6 +1087,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!23 &116554692 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 809672769544733644, guid: fcd9b14280ad7ea48aa5486e5322a374, type: 3}
+  m_PrefabInstance: {fileID: 1449190335}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &117083793 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a2456e55ee59c4d4ea5b82a6c4ba0487, type: 3}
@@ -1715,6 +1720,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a2456e55ee59c4d4ea5b82a6c4ba0487, type: 3}
   m_PrefabInstance: {fileID: 205487028}
   m_PrefabAsset: {fileID: 0}
+--- !u!23 &209412823 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6279929212637709683, guid: fcd9b14280ad7ea48aa5486e5322a374, type: 3}
+  m_PrefabInstance: {fileID: 1449190335}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &213352665 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a2456e55ee59c4d4ea5b82a6c4ba0487, type: 3}
@@ -1909,8 +1919,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac727f9cbdd9cbc4a8085a45e7a518c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waterMaterial: {fileID: 2100000, guid: 7ec2a4a7599436a4c8cba18227a46f34, type: 2}
-  underWaterMaterial: {fileID: 2100000, guid: 3263997ffb15f0f449142d448f0afa6e, type: 2}
+  waterRenderer: {fileID: 116554692}
+  underWaterRenderers:
+  - {fileID: 209412823}
+  - {fileID: 877266996}
 --- !u!1001 &313112159
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4738,6 +4750,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   extraPointsPerDay: 1
+  milestoneHandler: {fileID: 1206503449}
   actionButtons: {fileID: 1160520427}
   shopButton: {fileID: 1208568882}
   nextDayButton: {fileID: 777801969}
@@ -5142,6 +5155,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2456e55ee59c4d4ea5b82a6c4ba0487, type: 3}
+--- !u!23 &877266996 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 295325113317206359, guid: fcd9b14280ad7ea48aa5486e5322a374, type: 3}
+  m_PrefabInstance: {fileID: 1449190335}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &885527178
 GameObject:
   m_ObjectHideFlags: 0
@@ -7170,7 +7188,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.028821243
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMin.y
@@ -7469,6 +7487,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   extraPointsPerDay: 0
+  milestoneHandler: {fileID: 1206503449}
   actionButtons: {fileID: 1160520427}
   nextDayButton: {fileID: 777801969}
   shopButton: {fileID: 1208568882}
@@ -9962,6 +9981,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   extraPointsPerDay: 0
+  milestoneHandler: {fileID: 1206503449}
   actionButtons: {fileID: 1160520427}
   nextDayButton: {fileID: 777801969}
   day1StartDialogue: {fileID: 11400000, guid: 10983ff78611e6c469d558fb646783e9, type: 2}
@@ -13389,6 +13409,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   extraPointsPerDay: 0
+  milestoneHandler: {fileID: 1206503449}
   actionButtons: {fileID: 1160520427}
   eventPanel: {fileID: 567694490}
   questionsButton: {fileID: 391022948}

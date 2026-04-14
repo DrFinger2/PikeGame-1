@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class MilestoneHandler : MonoBehaviour
 {
     public Button milestoneButton;
@@ -10,16 +11,16 @@ public class MilestoneHandler : MonoBehaviour
     public Toggle milestone1;
     public Toggle milestone2;
     public Toggle milestone3;
-    
+
     public Button milestone1Button;
     public Button milestone2Button;
     public Button milestone3Button;
     [SerializeField] private TMP_Text milestoneInstructionText;
-    
+
     public int milestone1Progress;
     public int milestone2Progress;
     public int milestone3Progress;
-    
+
     public int totalMilestoneProgress;
     public int highestMilestoneReached;
 
@@ -41,6 +42,9 @@ public class MilestoneHandler : MonoBehaviour
     [SerializeField] private bool recalculateBiodiversityContinuously = false;
     [SerializeField] private float biodiversityRecalculateInterval = 0.25f;
     [SerializeField] private float biodiversitySmoothingPerSecond = 12f;
+    [SerializeField] private int requiredApPerMilestone = 3;
+
+    public int forcedBiodiversityMinimum = 0;
     private bool biodiversityUiRefreshScheduled;
     private float biodiversityRecalculateTimer;
     private bool isRecalculatingFromScene;
@@ -49,8 +53,9 @@ public class MilestoneHandler : MonoBehaviour
 
     private WetlandProgressionManager wetlandProgressionManager;
     private bool simulationBound;
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+
+
     void Start()
     {
         // Keep milestone progression on the legacy biodiversity flow unless explicitly re-integrated.
@@ -117,7 +122,7 @@ public class MilestoneHandler : MonoBehaviour
             UpdateSlider();
         }
     }
-    
+
     // Update is called once per frame
     void Update()
     {
@@ -155,7 +160,7 @@ public class MilestoneHandler : MonoBehaviour
     }
     private void SpawnMilestoneReward(int turnNum)
     {
-        if(milestone1reward)
+        if (milestone1reward)
         {
             milestone1reward = false;
             cowCollection.SetActive(true);
@@ -176,80 +181,80 @@ public class MilestoneHandler : MonoBehaviour
     }
 
     public void ProgressMilestone(int milestone)
-    {   
-        
-            switch (milestone)
-            {
-                case 1:
-                    if (milestone1Progress < 3 && milestone1.isOn == false && IsMilestone1Available())
-                    {
-                        if (TurnManager.Instance.gameState.currentActionPoints >= 1)
-                        {
-                            TurnManager.Instance.gameState.currentActionPoints -= 1;
-                            milestone1Progress++;
-                            milestone1Button.GetComponentInChildren<TextMeshProUGUI>().text = milestone1Progress + "/3 (AP)";
-                            if (milestone1Progress >= 3)
-                            {
-                                milestone1.isOn = true;
-                                milestone1Button.interactable = false;
-                                //milestone1Button.gameObject.SetActive(false);
-                                RandomEventSystem.instance.ForceNextEvent("kosteikolle_saapuu");
-                                milestone1reward = true;
-                                
-                            }
-                        }
-                    }
-                    
-                    break;
-                case 2:
-                    if (milestone2Progress < 3 && milestone2.isOn == false && IsMilestone2Available())
-                    {
-                        if (TurnManager.Instance.gameState.currentActionPoints >= 1)
-                        {
-                            TurnManager.Instance.gameState.currentActionPoints -= 1;
-                            milestone2Progress++;
-                            milestone2Button.GetComponentInChildren<TextMeshProUGUI>().text = milestone2Progress + "/3 (AP)";
-                            if (milestone2Progress >= 3)
-                            {
-                                milestone2.isOn = true;
-                                milestone2Button.interactable = false;
-                                //milestone2Button.gameObject.SetActive(false);
-                                RandomEventSystem.instance.ForceNextEvent("vesilinnut_saapuvat");
-                                
-                            }
-                        }
+    {
 
-                        
-                    }
-                    break;
-                case 3:
-                    if (milestone3Progress < 3 && milestone3.isOn == false && IsMilestone3Available())
+        switch (milestone)
+        {
+            case 1:
+                if (milestone1Progress < requiredApPerMilestone && milestone1.isOn == false && IsMilestone1Available())
+                {
+                    if (TurnManager.Instance.gameState.currentActionPoints >= 1)
                     {
-                        if (TurnManager.Instance.gameState.currentActionPoints >= 1)
+                        TurnManager.Instance.gameState.currentActionPoints -= 1;
+                        milestone1Progress++;
+                        milestone1Button.GetComponentInChildren<TextMeshProUGUI>().text = milestone1Progress + "/" + requiredApPerMilestone + " (AP)";
+                        if (milestone1Progress >= requiredApPerMilestone)
                         {
-                            TurnManager.Instance.gameState.currentActionPoints -= 1;
-                            milestone3Progress++;
-                            milestone3Button.GetComponentInChildren<TextMeshProUGUI>().text = milestone3Progress + "/3 (AP)";
-                            if (milestone3Progress >= 3)
-                            {
-                                milestone3.isOn = true;
-                                milestone3Button.interactable = false;
-                                //milestone3Button.gameObject.SetActive(false);
-                                StartEndSequence();
-                                Debug.Log("you're winner");
-                            }
-                        }
+                            milestone1.isOn = true;
+                            milestone1Button.interactable = false;
+                            //milestone1Button.gameObject.SetActive(false);
+                            RandomEventSystem.instance.ForceNextEvent("kosteikolle_saapuu");
+                            milestone1reward = true;
 
-                        
+                        }
                     }
-                    break;
-            }
-            TurnManager.Instance.onActionPointsChanged.Invoke(TurnManager.Instance.gameState.currentActionPoints);
-            //totalMilestoneProgress += 1;
-            UpdateSlider();
-            
-        
-        
+                }
+
+                break;
+            case 2:
+                if (milestone2Progress < requiredApPerMilestone && milestone2.isOn == false && IsMilestone2Available())
+                {
+                    if (TurnManager.Instance.gameState.currentActionPoints >= 1)
+                    {
+                        TurnManager.Instance.gameState.currentActionPoints -= 1;
+                        milestone2Progress++;
+                        milestone2Button.GetComponentInChildren<TextMeshProUGUI>().text = milestone2Progress + "/" + requiredApPerMilestone + " (AP)";
+                        if (milestone2Progress >= requiredApPerMilestone)
+                        {
+                            milestone2.isOn = true;
+                            milestone2Button.interactable = false;
+                            //milestone2Button.gameObject.SetActive(false);
+                            RandomEventSystem.instance.ForceNextEvent("vesilinnut_saapuvat");
+
+                        }
+                    }
+
+
+                }
+                break;
+            case 3:
+                if (milestone3Progress < requiredApPerMilestone && milestone3.isOn == false && IsMilestone3Available())
+                {
+                    if (TurnManager.Instance.gameState.currentActionPoints >= 1)
+                    {
+                        TurnManager.Instance.gameState.currentActionPoints -= 1;
+                        milestone3Progress++;
+                        milestone3Button.GetComponentInChildren<TextMeshProUGUI>().text = milestone3Progress + "/" + requiredApPerMilestone + " (AP)";
+                        if (milestone3Progress >= requiredApPerMilestone)
+                        {
+                            milestone3.isOn = true;
+                            milestone3Button.interactable = false;
+                            //milestone3Button.gameObject.SetActive(false);
+                            StartEndSequence();
+                            Debug.Log("you're winner");
+                        }
+                    }
+
+
+                }
+                break;
+        }
+        TurnManager.Instance.onActionPointsChanged.Invoke(TurnManager.Instance.gameState.currentActionPoints);
+        //totalMilestoneProgress += 1;
+        UpdateSlider();
+
+
+
     }
 
 
@@ -411,8 +416,9 @@ public class MilestoneHandler : MonoBehaviour
         float invasivePressure = validTileCount > 0 ? (float)invasiveTileCount / validTileCount : 0f;
         float target01 = Mathf.Clamp01((plantCoverage * 1.20f) - (invasivePressure * 0.60f));
         int previousTarget = targetBiodiversity;
-        targetBiodiversity = Mathf.Clamp(Mathf.RoundToInt(target01 * maxBiodiversity), 0, maxBiodiversity);
 
+        targetBiodiversity = Mathf.Clamp(Mathf.RoundToInt(target01 * maxBiodiversity), 0, maxBiodiversity);
+        targetBiodiversity = Mathf.Max(targetBiodiversity, forcedBiodiversityMinimum);
         // Keep visual tracker in sync whenever target is recalculated.
         currentBiodiversityVisual = Mathf.Clamp(currentBiodiversityVisual, 0f, maxBiodiversity);
 
@@ -461,6 +467,57 @@ public class MilestoneHandler : MonoBehaviour
         milestoneInstructionText.text = "All milestones completed.";
     }
 
+    public void ForceUnlockMilestone(int level, float progress = 1f)
+    {
+        int targetSteps = Mathf.Clamp(Mathf.RoundToInt(progress * requiredApPerMilestone), 0, requiredApPerMilestone);
+
+        // 2. Grab the threshold and current progress for the requested milestone
+        int bioFloor = 0;
+        int currentSteps = 0;
+
+        switch (level)
+        {
+            case 1:
+                bioFloor = GetThreshold1();
+                currentSteps = milestone1Progress;
+                break;
+            case 2:
+                bioFloor = GetThreshold2();
+                currentSteps = milestone2Progress;
+                break;
+            case 3:
+                bioFloor = GetThreshold3();
+                currentSteps = milestone3Progress;
+                break;
+        }
+
+        // 3. Set the floors and visual trackers so the water cleans up
+        forcedBiodiversityMinimum = Mathf.Max(forcedBiodiversityMinimum, bioFloor);
+        currentBiodiversity = forcedBiodiversityMinimum;
+        targetBiodiversity = forcedBiodiversityMinimum;
+        currentBiodiversityVisual = forcedBiodiversityMinimum;
+
+        // 4. Check how many times we need to simulate a "click" to reach the target
+        int stepsToTake = targetSteps - currentSteps;
+
+        // 5. The AP Trick (only run if we actually need to advance progress)
+        if (stepsToTake > 0)
+        {
+            int realAP = TurnManager.Instance.gameState.currentActionPoints;
+            TurnManager.Instance.gameState.currentActionPoints += stepsToTake;
+
+            for (int i = 0; i < stepsToTake; i++)
+                ProgressMilestone(level);
+
+            TurnManager.Instance.gameState.currentActionPoints = realAP;
+        }
+
+        // 6. Force UI and Metrics to update immediately
+        RefreshBiodiversityNow();
+    }
+    
+
+
     private void UpdateMilestoneButtonLabels()
     {
         int threshold1 = GetThreshold1();
@@ -472,7 +529,7 @@ public class MilestoneHandler : MonoBehaviour
         SetMilestoneButtonText(milestone3Button, milestone3.isOn, milestone3Progress, threshold3);
     }
 
-    private static void SetMilestoneButtonText(Button button, bool completed, int progress, int threshold)
+    private void SetMilestoneButtonText(Button button, bool completed, int progress, int threshold)
     {
         if (button == null)
         {
@@ -491,7 +548,7 @@ public class MilestoneHandler : MonoBehaviour
             return;
         }
 
-        text.text = $"{progress}/3 (AP)\nBio {threshold}+";
+        text.text = $"{progress}/{requiredApPerMilestone} (AP)\nBio {threshold}+";
     }
 
     private void UpdateMilestoneAvailability()
@@ -611,5 +668,5 @@ public class MilestoneHandler : MonoBehaviour
         }
     }
 
- 
+
 }
