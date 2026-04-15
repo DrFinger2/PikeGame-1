@@ -14,7 +14,7 @@ public class FocusUI : MonoBehaviour
 
     [Header("Settings")]
     public float edgePadding = 50f;
-    public Vector3 offset = new Vector3(100f, 100f, 0f);
+    public Vector3 pointerOffset = new Vector3(100f, 100f, 0f);
 
     private Camera mainCamera;
     private Transform pointerTarget;
@@ -53,7 +53,7 @@ public class FocusUI : MonoBehaviour
             clampedPos.y = Mathf.Clamp(clampedPos.y, edgePadding, Screen.height - edgePadding);
             clampedPos.z = 0;
 
-            Vector3 finalPosition = clampedPos + offset;
+            Vector3 finalPosition = clampedPos + pointerOffset;
             pointerUI.position = finalPosition;
             Vector3 dirToTarget = targetScreenPos - finalPosition;
 
