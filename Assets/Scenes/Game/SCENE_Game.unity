@@ -2522,6 +2522,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RaccoonManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3901570170406920470, guid: f35590a16c8645348b4c7779afb29495, type: 3}
+      propertyPath: spawnCooldown
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 6903147196777280689, guid: f35590a16c8645348b4c7779afb29495, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1
@@ -5556,6 +5560,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1055806737 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3901570170406920470, guid: f35590a16c8645348b4c7779afb29495, type: 3}
+  m_PrefabInstance: {fileID: 445996805}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e45b686705479499faeee82a000ea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1076656394 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a2456e55ee59c4d4ea5b82a6c4ba0487, type: 3}
@@ -7159,7 +7174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.9492441
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMax.y
@@ -7167,11 +7182,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.05075594
+      value: 0.028821243
       objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.049065422
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7594832027408045432, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -7527,6 +7542,7 @@ MonoBehaviour:
         m_Calls: []
   extraPointsPerDay: 0
   milestoneHandler: {fileID: 1206503449}
+  raccoonManager: {fileID: 1055806737}
   actionButtons: {fileID: 1160520427}
   nextDayButton: {fileID: 777801969}
   shopButton: {fileID: 1208568882}
@@ -7535,6 +7551,7 @@ MonoBehaviour:
   day3EndOfDayDialogue: {fileID: 11400000, guid: a23f10b0248208a41b424fd9cf9d9bfa, type: 2}
   floatingPlantsRequired: 3
   requiredRaccoonsChased: 1
+  raccoonPosition: {fileID: 1332105296}
 --- !u!4 &1170164423
 Transform:
   m_ObjectHideFlags: 0
@@ -9392,6 +9409,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2456e55ee59c4d4ea5b82a6c4ba0487, type: 3}
+--- !u!1 &1332105295
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1332105296}
+  m_Layer: 0
+  m_Name: RaccoonPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1332105296
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332105295}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 12.8, y: 0.33, z: 2.95}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1338654778 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a2456e55ee59c4d4ea5b82a6c4ba0487, type: 3}
@@ -14904,6 +14952,7 @@ SceneRoots:
   - {fileID: 1206503448}
   - {fileID: 1245191891}
   - {fileID: 504904275}
+  - {fileID: 1332105296}
   - {fileID: 410442859}
   - {fileID: 1160520424}
   - {fileID: 9042933001486602490}

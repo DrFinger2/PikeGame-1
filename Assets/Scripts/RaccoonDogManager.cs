@@ -6,7 +6,8 @@ public class RaccoonDogManager : MonoBehaviour
     [SerializeField] GameObject raccoonDog;
     [SerializeField] Vector3[] spawnPositions = new Vector3[4];
     public bool spawn;
-    [SerializeField] float spawnCooldown = 60;
+    public bool isSpawning = false;
+    [SerializeField] float spawnCooldown = 80;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,13 +18,17 @@ public class RaccoonDogManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(spawn == true)
+        if (isSpawning)
         {
-            spawn = false;
-            SpawnRacs();
-        }
+            if (spawn == true)
+            {
+                spawn = false;
+                SpawnRacs();
+            }
 
-        CoonCooldown();
+            CoonCooldown();
+        }
+        
     }
 
 
@@ -51,9 +56,15 @@ public class RaccoonDogManager : MonoBehaviour
         }
         else
         {
-            spawnCooldown = 60;
+            spawnCooldown = 80;
             SpawnRacs();
         }
+    }
+
+
+    public void SpawnRaccoonInLocation(Transform pos)
+    {
+        Instantiate(raccoonDog, pos.position, raccoonDog.transform.rotation);
     }
 
 
