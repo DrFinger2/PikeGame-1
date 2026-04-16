@@ -1,5 +1,153 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &170238093072545865
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8144284171981343787}
+  - component: {fileID: 4036651299712430529}
+  - component: {fileID: 1316494219672952691}
+  - component: {fileID: 1793660072188101361}
+  - component: {fileID: 2443343703266135790}
+  m_Layer: 5
+  m_Name: Image (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8144284171981343787
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170238093072545865}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9042706467450016692}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 256, y: 47}
+  m_SizeDelta: {x: 146.749, y: 128.0012}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &4036651299712430529
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170238093072545865}
+  m_CullTransparentMesh: 1
+--- !u!114 &1316494219672952691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170238093072545865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 3a27ef824812b9a47a4d1724133a813a, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1793660072188101361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170238093072545865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1316494219672952691}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2443343703266135790}
+        m_TargetAssemblyTypeName: ImageZoom, Assembly-CSharp
+        m_MethodName: ToggleZoom
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2443343703266135790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170238093072545865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5771649d179024b46bdefbadc9558edf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  imageRect: {fileID: 8144284171981343787}
+  overlay: {fileID: 4944966479381980750}
+  targetPanel: {fileID: 198611585753717450}
 --- !u!1 &1680277126811690134
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,6 +482,7 @@ RectTransform:
   - {fileID: 1993131683718603575}
   - {fileID: 4463716189223608589}
   - {fileID: 8917685424953469543}
+  - {fileID: 9042706467450016692}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -410,10 +559,10 @@ MonoBehaviour:
   m_text: "<align=center><b>KELLUSLEHTISET KASVIT</b></align>\n\nKelluslehtiset kasvit
     kelluvat veden pinnalla ja pit\xE4v\xE4t kosteikon tasapainossa. Ne varjostavat
     vett\xE4, v\xE4hent\xE4v\xE4t levien kasvua ja tarjoavat suojaa el\xE4imille
-    ja joillekin my\xF6s ravintoa.\n\r\n\u200BLumme\n\nLumpeella on suuret kelluvat
-    lehdet ja valkoiset kukat. Se kasvaa suojaisissa ja pehme\xE4pohjaisissa vesiss\xE4.
-    Kasvi on myrkyllinen, mutta sen l\xE4sn\xE4olo kertoo monipuolisesta ja elinvoimaisesta
-    kosteikosta."
+    ja joillekin my\xF6s ravintoa.\n\n\n\n\n\r\n\u200BLumme\n\nLumpeella on suuret
+    kelluvat lehdet ja valkoiset kukat. Se kasvaa suojaisissa ja pehme\xE4pohjaisissa
+    vesiss\xE4. Kasvi on myrkyllinen, mutta sen l\xE4sn\xE4olo kertoo monipuolisesta
+    ja elinvoimaisesta kosteikosta."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
   m_sharedMaterial: {fileID: 6471187536760470386, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
@@ -501,24 +650,24 @@ MonoBehaviour:
     fi: "<align=center><b>KELLUSLEHTISET KASVIT</b></align>\n\nKelluslehtiset kasvit
       kelluvat veden pinnalla ja pit\xE4v\xE4t kosteikon tasapainossa. Ne varjostavat
       vett\xE4, v\xE4hent\xE4v\xE4t levien kasvua ja tarjoavat suojaa el\xE4imille
-      ja joillekin my\xF6s ravintoa.\n\n\n\n\u200B\n\u200BLumme\n\nLumpeella on suuret
-      kelluvat lehdet ja valkoiset kukat. Se kasvaa suojaisissa ja pehme\xE4pohjaisissa
+      ja joillekin my\xF6s ravintoa.\n\n\n\n\n\u200B\n\u200BLumme\n\nLumpeella on
+      suuret kelluvat lehdet ja valkoiset kukat. Se kasvaa suojaisissa ja pehme\xE4pohjaisissa
       vesiss\xE4. Kasvi on myrkyllinen, mutta sen l\xE4sn\xE4olo kertoo monipuolisesta
       ja elinvoimaisesta kosteikosta."
     sw: "<align=center><b>V\xC4XTER MED FLYKTIGA BLAD</b></align>\n\nV\xE4xter med
       flyktiga blad flyter p\xE5 vattenytan och bidrar till att uppr\xE4tth\xE5lla
       balansen i v\xE5tmarken. De skuggar vattnet, minskar algtillv\xE4xten och erbjuder
-      skydd \xE5t djur och, f\xF6r vissa, \xE4ven f\xF6da.\r\n\n\n\n\nVit n\xE4ckrose\n\nVit
+      skydd \xE5t djur och, f\xF6r vissa, \xE4ven f\xF6da.\r\n\n\n\n\n\nVit n\xE4ckrose\n\nVit
       n\xE4ckrosen har stora flytande blad och vita blommor. Den v\xE4xer i skyddade
       vatten med mjuk botten. V\xE4xten \xE4r giftig, men dess f\xF6rekomst \xE4r
       ett tecken p\xE5 ett m\xE5ngsidigt och livskraftigt v\xE5tmarksomr\xE5de."
     en: "<align=center><b>FLOATING-LEAVED PLANTS</b></align>\n\nFloating-leaved plants
       float on the water's surface and help maintain the balance of the wetland.
       They shade the water, reduce algae growth, and provide shelter for animals\u2014and,
-      for some, food as well.\r\n\u200B\n\n\n\nWhite water-lily\n\nThe white water-lily
-      has large floating leaves and white flowers. It grows in sheltered waters with
-      soft bottoms. The plant is poisonous, but its presence indicates a diverse
-      and thriving wetland."
+      for some, food as well.\r\n\u200B\n\n\n\n\n\nWhite water-lily\n\nThe white
+      water-lily has large floating leaves and white flowers. It grows in sheltered
+      waters with soft bottoms. The plant is poisonous, but its presence indicates
+      a diverse and thriving wetland."
 --- !u!1 &3754958998092947573
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,3 +805,126 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1001 &5696426249999131427
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1528673805664511592}
+    m_Modifications:
+    - target: {fileID: 2289472534821609352, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2289472534821609352, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2289472534821609352, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2289472534821609352, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.999362
+      objectReference: {fileID: 0}
+    - target: {fileID: 2289472534821609352, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.035715126
+      objectReference: {fileID: 0}
+    - target: {fileID: 2289472534821609352, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -254
+      objectReference: {fileID: 0}
+    - target: {fileID: 2289472534821609352, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2289472534821609352, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 4.094
+      objectReference: {fileID: 0}
+    - target: {fileID: 2289472534821609352, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635496582802370711, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635496582802370711, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635496582802370711, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635496582802370711, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635496582802370711, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635496582802370711, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635496582802370711, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635496582802370711, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635496582802370711, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635496582802370711, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4796007631816132332, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c8e9a052284ad944c860348eea1c8e16, type: 3}
+    - target: {fileID: 5605953840752376297, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605953840752376297, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5753929014468566905, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_Name
+      value: ImageHolder
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3635496582802370711, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8144284171981343787}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+--- !u!224 &198611585753717450 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5605953840752376297, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+  m_PrefabInstance: {fileID: 5696426249999131427}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4944966479381980750 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 841550456389780845, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+  m_PrefabInstance: {fileID: 5696426249999131427}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &9042706467450016692 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3635496582802370711, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+  m_PrefabInstance: {fileID: 5696426249999131427}
+  m_PrefabAsset: {fileID: 0}

@@ -66,10 +66,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\nVaalealahnaruoho\n\nVaalealahnanruoho muistuttaa tummalahnanruohoa,
-    mutta sen lehdet ovat vaaleammat. Se kasvaa matalammissa ja suojaisissa vesiss\xE4.\n\n\n\n\n\nNuottaruoho\n\nNuottaruoho
+  m_text: "<align=center><b>UPOSLEHTISET KASVIT</b></align>\n\nUposlehtiset kasvit
+    kasvavat veden alla. Ne tuottavat happea, sitovat ravinteita, pit\xE4v\xE4t veden
+    kirkkaana ja tarjoavat suojaa kaloille ja pieneli\xF6ille.\n\n\u200B\nNuottaruoho\n\nNuottaruoho
     kasvaa enimm\xE4kseen veden alla, mutta sen kukinto nousee pinnalle. Se viihtyy
-    kirkkaissa ja v\xE4h\xE4ravinteisissa j\xE4rviss\xE4.\r\n"
+    kirkkaissa ja v\xE4h\xE4ravinteisissa j\xE4rviss\xE4."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
   m_sharedMaterial: {fileID: 6471187536760470386, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
@@ -154,34 +155,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonText:
-    fi: "\nVaalealahnaruoho\n\nVaalealahnanruoho muistuttaa tummalahnanruohoa, mutta
-      sen lehdet ovat vaaleammat. Se kasvaa matalammissa ja suojaisissa vesiss\xE4.\n\n\n\n\n\nNuottaruoho\n\nNuottaruoho
+    fi: "<align=center><b>UPOSLEHTISET KASVIT</b></align>\n\nUposlehtiset kasvit
+      kasvavat veden alla. Ne tuottavat happea, sitovat ravinteita, pit\xE4v\xE4t
+      veden kirkkaana ja tarjoavat suojaa kaloille ja pieneli\xF6ille.\n\u200B\nNuottaruoho\n\nNuottaruoho
       kasvaa enimm\xE4kseen veden alla, mutta sen kukinto nousee pinnalle. Se viihtyy
-      kirkkaissa ja v\xE4h\xE4ravinteisissa j\xE4rviss\xE4.\n"
-    sw: "\nVekt braxengr\xE4s\n\nVekt braxengr\xE4s liknar styvt braxengr\xE4s men
-      dess blad \xE4r ljusare. Den v\xE4xer i grundare och skyddade vatten.\n\n\n\n\n\n\nNotblomster\n\nNotblomster
+      kirkkaissa ja v\xE4h\xE4ravinteisissa j\xE4rviss\xE4."
+    sw: "<align=center><b>VATTENV\xC4XTER</b></align>\n\nVattenv\xE4xter v\xE4xer
+      under vattenytan. De producerar syre, binder n\xE4rings\xE4mnen, h\xE5ller
+      vattnet klart och erbjuder skydd \xE5t fiskar och mikroorganismer.\n\u200B\nNotblomster\n\nNotblomster
       v\xE4xer mestadels under vattenytan, men dess blomst\xE4llning str\xE4cker
       sig upp till ytan. Den trivs i klara sj\xF6ar med l\xE5g n\xE4ringshalt."
-    en: '
-
-      Spring quillwort
-
-
-      The spring quillwort resembles the lake
-      quillwort, but its leaves are paler. It grows in shallower, sheltered waters.
-
-
-
-
-
-
-
-      Water
-      lobelia
-
-
-      The water lobelia grows mostly underwater, but its inflorescence
-      rises to the surface. It thrives in clear, nutrient-poor lakes.'
+    en: "<align=center><b>SUBMERGED PLANTS</b></align>\n\nSubmerged plants grow underwater.
+      They produce oxygen, absorb nutrients, keep the water clear, and provide shelter
+      for fish and microorganisms.\n\u200B\nWater lobelia\n\nThe water lobelia grows
+      mostly underwater, but its inflorescence rises to the surface. It thrives in
+      clear, nutrient-poor lakes."
 --- !u!1 &1967441730839845199
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,6 +339,7 @@ RectTransform:
   - {fileID: 1993131683718603575}
   - {fileID: 4463716189223608589}
   - {fileID: 8917685424953469543}
+  - {fileID: 1798987462944677825}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -358,6 +347,154 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2505039141162205688
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 680182287254357607}
+  - component: {fileID: 93901913649674522}
+  - component: {fileID: 8420290847158873387}
+  - component: {fileID: 6889073557913357478}
+  - component: {fileID: 684588618756315222}
+  m_Layer: 5
+  m_Name: Image (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &680182287254357607
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2505039141162205688}
+  m_LocalRotation: {x: -0, y: -0, z: -0.022111058, w: 0.99975556}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1798987462944677825}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -2.534}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -438.9, y: 154}
+  m_SizeDelta: {x: 146.749, y: 128.0012}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &93901913649674522
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2505039141162205688}
+  m_CullTransparentMesh: 1
+--- !u!114 &8420290847158873387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2505039141162205688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: f5f93b785de2dc9499142600a4dedbaf, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6889073557913357478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2505039141162205688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 8420290847158873387}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 684588618756315222}
+        m_TargetAssemblyTypeName: ImageZoom, Assembly-CSharp
+        m_MethodName: ToggleZoom
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &684588618756315222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2505039141162205688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5771649d179024b46bdefbadc9558edf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  imageRect: {fileID: 680182287254357607}
+  overlay: {fileID: 2389547591974545979}
+  targetPanel: {fileID: 7442462406697948863}
 --- !u!1 &3752300061302600148
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,11 +561,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<align=center><b>VIERASLAJIT</b></align>\n\nVieraslajit levi\xE4v\xE4t
-    ihmisen mukana ja voivat syrj\xE4ytt\xE4\xE4 alkuper\xE4isi\xE4 lajeja. Ne heikent\xE4v\xE4t
-    kosteikon monimuotoisuutta ja muuttavat elinymp\xE4rist\xF6j\xE4.\n\n\nJ\xE4ttipalsami\n\nJ\xE4ttipalsami
-    on nopeasti kasvava kasvi, jolla on vaaleanpunaiset kukat. Se levi\xE4\xE4 tehokkaasti
-    siemenist\xE4 kosteilla paikoilla."
+  m_text: "\nVaalealahnaruoho\n\nVaalealahnanruoho muistuttaa tummalahnanruohoa,
+    mutta sen lehdet ovat vaaleammat. Se kasvaa matalammissa ja suojaisissa vesiss\xE4.\n\nTummalahnanruoho\n\nTummalahnanruoho
+    kasvaa pohjassa melko syv\xE4ss\xE4 vedess\xE4. Sill\xE4 on tummanvihre\xE4t
+    lehdet, jotka muodostavat tihe\xE4n ruusukkeen."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
   m_sharedMaterial: {fileID: 6471187536760470386, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
@@ -494,7 +630,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -43.0346, y: -15.602308, z: -55.36551, w: -276.5441}
+  m_margin: {x: -43.0346, y: 1.5565662, z: -82.227325, w: -299.1712}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -513,31 +649,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonText:
-    fi: "<align=center><b>VIERASLAJIT</b></align>\n\nVieraslajit levi\xE4v\xE4t ihmisen
-      mukana ja voivat syrj\xE4ytt\xE4\xE4 alkuper\xE4isi\xE4 lajeja. Ne heikent\xE4v\xE4t
-      kosteikon monimuotoisuutta ja muuttavat elinymp\xE4rist\xF6j\xE4.\n\n\nJ\xE4ttipalsami\n\nJ\xE4ttipalsami
-      on nopeasti kasvava kasvi, jolla on vaaleanpunaiset kukat. Se levi\xE4\xE4
-      tehokkaasti siemenist\xE4 kosteilla paikoilla."
-    sw: "<align=center><b>INVASIVA ARTER</b></align>\n\nInvasiva arter sprids med
-      hj\xE4lp av m\xE4nniskan och kan tr\xE4nga undan de inhemska arterna. De f\xF6rs\xE4mrar
-      v\xE5tmarkernas biologiska m\xE5ngfald och f\xF6r\xE4ndrar livsmilj\xF6erna.\n\n\nJ\xE4ttebalsamin\n\nJ\xE4ttebalsamin
-      \xE4r en snabbv\xE4xande v\xE4xt med ljusrosa blommor. Den sprider sig snabbt
-      fr\xE5n fr\xF6n p\xE5 fuktiga platser."
-    en: '<align=center><b>INVASIVE WEEDS</b></align>
+    fi: "\nVaalealahnaruoho\n\nVaalealahnanruoho muistuttaa tummalahnanruohoa, mutta
+      sen lehdet ovat vaaleammat. Se kasvaa matalammissa ja suojaisissa vesiss\xE4.\n\n\n\n\n\nTummalahnaruoho\n\nTummalahnanruoho
+      kasvaa pohjassa melko syv\xE4ss\xE4 vedess\xE4. Sill\xE4 on tummanvihre\xE4t
+      lehdet, jotka muodostavat tihe\xE4n ruusukkeen."
+    sw: "\nVekt braxengr\xE4s\n\nVekt braxengr\xE4s liknar styvt braxengr\xE4s men
+      dess blad \xE4r ljusare. Den v\xE4xer i grundare och skyddade vatten.\n\n\n\n\n\n\nStyvt
+      braxengr\xE4s\n\nSvytt braxengr\xE4s v\xE4xer p\xE5 botten i ganska djupt vatten.
+      Den har m\xF6rkgr\xF6na blad som bildar en t\xE4t rosett."
+    en: '
+
+      Spring quillwort
 
 
-      The invasive species
-      spread through human activity and can displace native species. They reduce
-      wetland biodiversity and alter habitats.
+      The spring quillwort resembles the lake
+      quillwort, but its leaves are paler. It grows in shallower, sheltered waters.
 
 
 
-      Himalayan balsam
 
 
-      The
-      himalayan balsam is a fast-growing plant with pink flowers. It spreads rapidly
-      from seed in moist areas.'
+
+
+      Lake
+      quillwort
+
+
+      The lake quillwort grows on the bottom in fairly deep water.
+      It has dark green leaves that form a dense rosette.'
 --- !u!1 &3754958998092947573
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,3 +814,118 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1001 &3063759951666491222
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1528673805664511592}
+    m_Modifications:
+    - target: {fileID: 2289472534821609352, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2289472534821609352, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2289472534821609352, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2289472534821609352, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9999957
+      objectReference: {fileID: 0}
+    - target: {fileID: 2289472534821609352, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.002951323
+      objectReference: {fileID: 0}
+    - target: {fileID: 2289472534821609352, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2289472534821609352, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 147
+      objectReference: {fileID: 0}
+    - target: {fileID: 2289472534821609352, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -0.338
+      objectReference: {fileID: 0}
+    - target: {fileID: 2289472534821609352, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635496582802370711, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 237
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635496582802370711, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -259
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635496582802370711, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635496582802370711, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635496582802370711, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635496582802370711, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635496582802370711, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635496582802370711, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635496582802370711, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635496582802370711, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4796007631816132332, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9c533ea693825784cbf1859e0bb26290, type: 3}
+    - target: {fileID: 5753929014468566905, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: m_Name
+      value: ImageHolder
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3635496582802370711, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 680182287254357607}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+--- !u!4 &1798987462944677825 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3635496582802370711, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+  m_PrefabInstance: {fileID: 3063759951666491222}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2389547591974545979 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 841550456389780845, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+  m_PrefabInstance: {fileID: 3063759951666491222}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &7442462406697948863 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5605953840752376297, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+  m_PrefabInstance: {fileID: 3063759951666491222}
+  m_PrefabAsset: {fileID: 0}

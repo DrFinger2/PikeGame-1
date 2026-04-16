@@ -5,6 +5,7 @@ public class ImageZoom : MonoBehaviour
 {
     public RectTransform imageRect;
     public GameObject overlay;
+    public RectTransform targetPanel;
 
     private Vector2 originalPosition;
     private Vector2 originalAnchorMin;
@@ -30,14 +31,20 @@ public class ImageZoom : MonoBehaviour
 
         if (zoomed)
         {
+            overlay.SetActive(true);
             // Move to center
-            imageRect.anchorMin = new Vector2(0.5f, 0.5f);
+            /*imageRect.anchorMin = new Vector2(0.5f, 0.5f);
             imageRect.anchorMax = new Vector2(0.5f, 0.5f);
             imageRect.pivot = new Vector2(0.5f, 0.5f);
-            imageRect.anchoredPosition = Vector2.zero;
+            imageRect.anchoredPosition = Vector2.zero;*/
+            // Match the layout of the target panel
+            imageRect.anchorMin = targetPanel.anchorMin;
+            imageRect.anchorMax = targetPanel.anchorMax;
+            imageRect.pivot = targetPanel.pivot;
+            imageRect.anchoredPosition = targetPanel.anchoredPosition;
 
             imageRect.localScale = originalScale * 3f;
-            overlay.SetActive(true);
+            imageRect.SetAsLastSibling();
         }
         else
         {

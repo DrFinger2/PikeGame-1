@@ -35,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 345.4, y: 57.2}
+  m_AnchoredPosition: {x: 234.1, y: -19}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7051497070063856543
@@ -94,8 +94,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
   m_wordSpacing: 0
-  m_lineSpacing: -52.6
+  m_lineSpacing: -20
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -43.0346, y: 1.5565662, z: 136.25912, w: -79.34064}
+  m_margin: {x: -108.68975, y: 1.5565662, z: -23.943878, w: -101.375244}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -685,9 +685,7 @@ MonoBehaviour:
     sw: "V\xE5tmarker \xE4r en av de mest artrika livsmilj\xF6erna.\nV\xE5tmarker
       skapar en milj\xF6 d\xE4r b\xE5de vattenlevande och landlevande arter trivs,
       eftersom v\xE5tmarker kombinerar b\xE5de vatten och land.\nI v\xE5tmarksmilj\xF6n
-      lever ocks\xE5 vissa arter som har specialiserat sig p\xE5 att leva i v\xE5tmarker.\nBoth
-      translations maintain a similar length and structure as your original Finnish
-      text, making them suitable for your game localization."
+      lever ocks\xE5 vissa arter som har specialiserat sig p\xE5 att leva i v\xE5tmarker."
     en: 'Wetlands are one of the most diverse habitats.
 
       Wetlands create an

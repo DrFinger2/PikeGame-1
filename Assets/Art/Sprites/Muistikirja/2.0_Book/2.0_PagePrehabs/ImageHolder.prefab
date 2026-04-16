@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -33.24048, y: -3.2902694}
+  m_AnchoredPosition: {x: -12, y: 0}
   m_SizeDelta: {x: 2729.88, y: 1791.587}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6905292227625206246
@@ -222,6 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   imageRect: {fileID: 2289472534821609352}
   overlay: {fileID: 841550456389780845}
+  targetPanel: {fileID: 5605953840752376297}
 --- !u!1 &5753929014468566905
 GameObject:
   m_ObjectHideFlags: 0
