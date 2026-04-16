@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Cow: \n2 energy"
+  m_text: "Cow: \n2 Coins"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
   m_sharedMaterial: {fileID: 6471187536760470386, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}

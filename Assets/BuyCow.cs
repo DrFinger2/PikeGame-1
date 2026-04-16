@@ -22,7 +22,7 @@ public class BuyCowButton : MonoBehaviour
 
         if (gameState.currentActionPoints < cost)
         {
-            Debug.Log("Not enough energy!");
+            Debug.Log("Not enough Coins!");
             return;
         }
 

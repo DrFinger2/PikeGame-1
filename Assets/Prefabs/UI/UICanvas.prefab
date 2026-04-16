@@ -10392,7 +10392,7 @@ MonoBehaviour:
   pointerUI: {fileID: 529850777761286700}
   touchUI: {fileID: 7585438360849579088}
   edgePadding: 50
-  offset: {x: 100, y: 100, z: 0}
+  pointerOffset: {x: 100, y: 100, z: 0}
 --- !u!1 &4374155036711832350
 GameObject:
   m_ObjectHideFlags: 0
@@ -11620,7 +11620,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Energia:'
+  m_text: 'Coins:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
   m_sharedMaterial: {fileID: 6471187536760470386, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
@@ -13422,8 +13422,8 @@ RectTransform:
   - {fileID: 35828131120751752}
   m_Father: {fileID: 108753401000868855}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.05075594, y: 0.049065422}
-  m_AnchorMax: {x: 0.9492441, y: 1}
+  m_AnchorMin: {x: 0.03461249, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -15917,7 +15917,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Not enough AP!
+  m_text: Not enough coins!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -17242,7 +17242,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 9000047798404075889}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.17061645
+  m_Size: 0.17061643
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
