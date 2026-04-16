@@ -108,6 +108,11 @@ public class RaccoonDogMovement : MonoBehaviour
         {
             scared = true;
             OnRaccoonChased?.Invoke();
+
+            // Add 1 coin every time the raccon dog is chased
+            TurnManager turn = TurnManager.Instance;
+            GameState state = turn.gameState;
+            state.AddPoints(1);
             
             transform.rotation = Quaternion.Euler(roteuler.x, roteuler.y + 180, roteuler.z);
             Debug.Log(Quaternion.Euler(roteuler.x, roteuler.y + 180, roteuler.z));
