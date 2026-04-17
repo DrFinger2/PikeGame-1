@@ -7,12 +7,22 @@ public class EventPanelButtonHolder : MonoBehaviour
     public EventPanelUI eventPanelUI;
     public Button openButton;
 
-    [Header("TutorialSettings")]
-    public bool IsInTutorialMode = true;
 
     private int openCount = 0;
     private int maxOpens = 3;
     private bool isPanelOpen = false;
+    private bool isInTutoriaMode = false;
+    
+    public void EnterTutorialMode()
+    {
+        isInTutoriaMode = true;
+    }
+    
+    public void ExitTutorialMode()
+    {
+        isInTutoriaMode = false;   
+    }
+
 
     private void Start()
     {
@@ -24,7 +34,7 @@ public class EventPanelButtonHolder : MonoBehaviour
 
     private void OnTurnChanged(int turn)
     {
-        if (!IsInTutorialMode)
+        if (!isInTutoriaMode)
         {
             ResetDailyLimit();
         }

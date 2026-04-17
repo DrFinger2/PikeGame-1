@@ -3,12 +3,15 @@ using UnityEngine.UI;
 
 public class Day5Tasks : DayTaskBase
 {
+
     [Header("UI Elements")]
+    [SerializeField] private EventPanelButtonHolder eventPanelButtons;
     [SerializeField] private ActionButtonsUI actionButtons;
     [SerializeField] private Button questionButton;
     [SerializeField] private Button nextDayButton;
     [SerializeField] private Button shopButton;
     [SerializeField] private Button npcButton;
+
 
     [Header("Dialogue References")]
     [SerializeField] private TutorialDialogue day5IntroDialogue;      // E13
@@ -97,6 +100,7 @@ public class Day5Tasks : DayTaskBase
             shopButton.interactable = true;
             npcButton.interactable = true;
             actionButtons.UnlockAll();
+            eventPanelButtons.ExitTutorialMode();
             CompleteDay();
         });
     }

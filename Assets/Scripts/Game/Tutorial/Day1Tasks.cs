@@ -7,6 +7,7 @@ public class Day1Tasks : DayTaskBase
 {
     [Header("Managers & Systems")]
     [SerializeField] private MilestoneHandler milestoneHandler;
+    [SerializeField] private EventPanelButtonHolder eventPanelButtons;
 
     [Header("UI Elements")]
     [SerializeField] private ActionButtonsUI actionButtons;
@@ -24,11 +25,12 @@ public class Day1Tasks : DayTaskBase
 
     public override void StartDay()
     {
-
+        
         Events.OnDayStarted.Invoke();
         this.enabled = true;
 
         DialogueManager dialogue = DialogueManager.instance;
+        eventPanelButtons.EnterTutorialMode();
         actionButtons.LockAll();
         coinDisplay.gameObject.SetActive(false);
         

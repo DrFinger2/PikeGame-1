@@ -2039,6 +2039,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &391022950 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 206678268568752052, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+  m_PrefabInstance: {fileID: 1160520424}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55695b5ee9839c54bb9575313fe2ee3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &399995550
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5167,6 +5178,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   extraPointsPerDay: 0
+  eventPanelButtons: {fileID: 391022950}
   actionButtons: {fileID: 1160520427}
   questionButton: {fileID: 391022948}
   nextDayButton: {fileID: 777801969}
@@ -10278,6 +10290,7 @@ MonoBehaviour:
         m_Calls: []
   extraPointsPerDay: 0
   milestoneHandler: {fileID: 1206503449}
+  eventPanelButtons: {fileID: 391022950}
   actionButtons: {fileID: 1160520427}
   nextDayButton: {fileID: 777801969}
   coinDisplay: {fileID: 1630832936}
