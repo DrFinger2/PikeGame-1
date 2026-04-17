@@ -9,7 +9,7 @@ public class MilestonePopupHandler : MonoBehaviour
     {
         if (popup == null)
         {
-            Transform firstChild = this.transform.GetChild(0);
+            Transform firstChild = this.transform.GetChild(0); // Just to avoid the case if the popup is unassigned
             if (firstChild != null) popup = firstChild.gameObject;
         }
     }
