@@ -2372,6 +2372,7 @@ GameObject:
   - component: {fileID: 4413401103982694347}
   - component: {fileID: 2746763411905054709}
   - component: {fileID: 7619403230659550965}
+  - component: {fileID: 8327170312760318023}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2498,6 +2499,23 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8327170312760318023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851879706012238242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4cfa9e0f01e4e04495b51933228e27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedTextUI
+  textComponent: {fileID: 7619403230659550965}
+  localizedText:
+    fi: Seuraava
+    sw: "N\xE4sta"
+    en: Next
 --- !u!1 &876648687585215685
 GameObject:
   m_ObjectHideFlags: 0
@@ -16961,7 +16979,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 9000047798404075889}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.17061643
+  m_Size: 0.17061645
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -19942,7 +19960,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventPanelUI: {fileID: 222166964287693015}
   openButton: {fileID: 3383046664822905595}
-  IsInTutorialMode: 1
 --- !u!1 &8448624574453041973
 GameObject:
   m_ObjectHideFlags: 0
