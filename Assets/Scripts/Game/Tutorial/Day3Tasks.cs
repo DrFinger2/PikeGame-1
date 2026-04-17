@@ -65,7 +65,6 @@ public class Day3Tasks : DayTaskBase
         {
             RaccoonDogMovement.OnRaccoonChased -= OnRaccoonDogChased;
             DialogueManager dialogue = DialogueManager.instance;
-            raccoonManager.isSpawning = true;
 
             milestoneHandler.ForceUnlockMilestone(level: 2, progress: 0.66f);
             dialogue.CompleteTask("E7");

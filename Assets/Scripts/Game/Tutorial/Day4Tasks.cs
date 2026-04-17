@@ -5,6 +5,7 @@ public class Day4Tasks : DayTaskBase
 {
     [Header("Managers & Systems")]
     [SerializeField] private MilestoneHandler milestoneHandler;
+    [SerializeField] private RaccoonDogManager raccoonManager; 
 
     [Header("UI Elements")]
     [SerializeField] private ActionButtonsUI actionButtons;
@@ -35,8 +36,10 @@ public class Day4Tasks : DayTaskBase
         TurnManager turn = TurnManager.Instance;
         GameState state = turn.gameState;
 
-        state.AddPoints(extraPointsPerDay);
 
+        state.AddPoints(extraPointsPerDay);
+        
+        raccoonManager.isSpawning = true;
         invasivePlantsCleared = 0;
         questionAnswered = false;
 

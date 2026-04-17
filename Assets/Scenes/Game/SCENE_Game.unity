@@ -2567,6 +2567,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f35590a16c8645348b4c7779afb29495, type: 3}
+--- !u!114 &445996806 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3901570170406920470, guid: f35590a16c8645348b4c7779afb29495, type: 3}
+  m_PrefabInstance: {fileID: 445996805}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e45b686705479499faeee82a000ea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &449339199
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6351,7 +6362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 924908557817245895, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -5.200012
+      value: -5.2000427
       objectReference: {fileID: 0}
     - target: {fileID: 981973497601456178, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_IsActive
@@ -6497,6 +6508,14 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: -17
       objectReference: {fileID: 0}
+    - target: {fileID: 2271035193871557603, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_Name
+      value: TestTouchGesture
+      objectReference: {fileID: 0}
+    - target: {fileID: 2271035193871557603, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2334802274888207011, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -6641,6 +6660,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ProgressMilestone
       objectReference: {fileID: 0}
+    - target: {fileID: 2723817389009154538, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1216033390}
     - target: {fileID: 2729972931263631985, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_SizeDelta.x
       value: 40
@@ -6679,7 +6702,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3050897033742178904, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -13.040161
+      value: -13.040192
       objectReference: {fileID: 0}
     - target: {fileID: 3167156279088661692, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -7167,7 +7190,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.03461249
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMin.y
@@ -7527,6 +7550,7 @@ MonoBehaviour:
         m_Calls: []
   extraPointsPerDay: 0
   milestoneHandler: {fileID: 1206503449}
+  raccoonManager: {fileID: 445996806}
   actionButtons: {fileID: 1160520427}
   nextDayButton: {fileID: 777801969}
   shopButton: {fileID: 1208568882}
@@ -7535,6 +7559,7 @@ MonoBehaviour:
   day3EndOfDayDialogue: {fileID: 11400000, guid: a23f10b0248208a41b424fd9cf9d9bfa, type: 2}
   floatingPlantsRequired: 3
   requiredRaccoonsChased: 1
+  raccoonPosition: {fileID: 1486687753}
 --- !u!4 &1170164423
 Transform:
   m_ObjectHideFlags: 0
@@ -8323,6 +8348,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1216033390 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8510218830521944904, guid: b93f32f2f2034fc49a2ca0f4716dcaff, type: 3}
+  m_PrefabInstance: {fileID: 1211095174}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1219453050 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a2456e55ee59c4d4ea5b82a6c4ba0487, type: 3}
@@ -9926,6 +9956,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a2456e55ee59c4d4ea5b82a6c4ba0487, type: 3}
   m_PrefabInstance: {fileID: 201771450}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1486687752
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1486687753}
+  m_Layer: 0
+  m_Name: RaccoonSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1486687753
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486687752}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.8, y: 0.33, z: 2.95}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1493007063
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13521,6 +13582,7 @@ MonoBehaviour:
         m_Calls: []
   extraPointsPerDay: 0
   milestoneHandler: {fileID: 1206503449}
+  raccoonManager: {fileID: 445996806}
   actionButtons: {fileID: 1160520427}
   eventPanel: {fileID: 567694490}
   questionsButton: {fileID: 391022948}
@@ -14947,3 +15009,4 @@ SceneRoots:
   - {fileID: 1449190335}
   - {fileID: 203400825}
   - {fileID: 445996805}
+  - {fileID: 1486687753}
