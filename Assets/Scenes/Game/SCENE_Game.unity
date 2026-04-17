@@ -6395,7 +6395,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 924908557817245895, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -5.2000275
+      value: -5.200012
       objectReference: {fileID: 0}
     - target: {fileID: 981973497601456178, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_IsActive
@@ -6545,10 +6545,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestTouchGesture
       objectReference: {fileID: 0}
-    - target: {fileID: 2271035193871557603, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2334802274888207011, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -6670,6 +6666,10 @@ PrefabInstance:
       value: 10.2
       objectReference: {fileID: 0}
     - target: {fileID: 2709561838635764584, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 238.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2709561838635764584, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.42
       objectReference: {fileID: 0}
@@ -6680,6 +6680,14 @@ PrefabInstance:
     - target: {fileID: 2709561838635764584, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 2709561838635764584, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2709561838635764584, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -31.9
       objectReference: {fileID: 0}
     - target: {fileID: 2709561838635764584, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -6713,6 +6721,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 130.38
       objectReference: {fileID: 0}
+    - target: {fileID: 2862346764986858470, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862346764986858470, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3008808956075161332, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_Color.b
       value: 0.6084906
@@ -6735,7 +6751,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3050897033742178904, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -13.040237
+      value: -13.040222
       objectReference: {fileID: 0}
     - target: {fileID: 3167156279088661692, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -7213,6 +7229,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ProgressMilestone
       objectReference: {fileID: 0}
+    - target: {fileID: 7298816274090850499, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7298816274090850499, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7298816274090850499, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -7375,7 +7403,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8441353040253332890, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_fontSize
-      value: 45
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8441353040253332890, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_margin.z
@@ -7387,7 +7415,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
     - target: {fileID: 8441353040253332890, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_fontSizeBase
-      value: 45
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8441353040253332890, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_sharedMaterial

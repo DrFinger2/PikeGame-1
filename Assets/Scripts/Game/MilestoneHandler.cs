@@ -36,7 +36,7 @@ public class MilestoneHandler : MonoBehaviour
     public int maxBiodiversity;
     [SerializeField] private int tileCount;
     // SELMA: Kept for force unlock functionality
-    public int forcedBiodiversityMinimum = 0;
+    public int baselineBiodiversity = 0;
 
     [Space]
     [Header("Milestone Sprites")]
@@ -384,14 +384,15 @@ public class MilestoneHandler : MonoBehaviour
         float plantCoverage = validTileCount > 0 ? (float)plantedTileCount / validTileCount : 0f;
         float invasivePressure = validTileCount > 0 ? (float)invasiveTileCount / validTileCount : 0f;
 
-        // Calculate how much the actual tiles are contributing
-        float target01 = Mathf.Clamp01((plantCoverage * 1.20f) - (invasivePressure * 0.60f));
+        // REMOVED Mathf.Clamp01!
+        // By allowing this to go negative, weeds can now drag the score DOWN below the baseline.
+        float target01 = (plantCoverage * 1.20f) - (invasivePressure * 0.60f);
+        
         int sceneContribution = Mathf.RoundToInt(target01 * maxBiodiversity);
-
         int previousTarget = targetBiodiversity;
 
-        // Add the scene's active contribution ON TOP of the forced minimum base level
-        targetBiodiversity = Mathf.Clamp(forcedBiodiversityMinimum + sceneContribution, 0, maxBiodiversity);
+        // Add the scene's active contribution (which can now be negative) to the tutorial baseline
+        targetBiodiversity = Mathf.Clamp(baselineBiodiversity + sceneContribution, 0, maxBiodiversity);
 
         currentBiodiversityVisual = Mathf.Clamp(currentBiodiversityVisual, 0f, maxBiodiversity);
 
@@ -399,6 +400,7 @@ public class MilestoneHandler : MonoBehaviour
             UpdateSlider();
 
         isRecalculatingFromScene = false;
+        
     }
 
 
@@ -431,10 +433,10 @@ public class MilestoneHandler : MonoBehaviour
                 break;
         }
 
-        forcedBiodiversityMinimum = Mathf.Max(forcedBiodiversityMinimum, bioFloor);
-        currentBiodiversity = forcedBiodiversityMinimum;
-        targetBiodiversity = forcedBiodiversityMinimum;
-        currentBiodiversityVisual = forcedBiodiversityMinimum;
+        baselineBiodiversity = Mathf.Max(baselineBiodiversity, bioFloor);
+        currentBiodiversity = baselineBiodiversity;
+        targetBiodiversity = baselineBiodiversity;
+        currentBiodiversityVisual = baselineBiodiversity;
 
         RefreshBiodiversityNow();
     }
