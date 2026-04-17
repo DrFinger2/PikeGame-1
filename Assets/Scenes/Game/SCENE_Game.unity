@@ -10293,6 +10293,7 @@ MonoBehaviour:
   eventPanelButtons: {fileID: 391022950}
   actionButtons: {fileID: 1160520427}
   nextDayButton: {fileID: 777801969}
+  questionsButton: {fileID: 391022948}
   coinDisplay: {fileID: 1630832936}
   day1StartDialogue: {fileID: 11400000, guid: 10983ff78611e6c469d558fb646783e9, type: 2}
   day1ReedsClearedDialogue: {fileID: 11400000, guid: 8ec325df4bf81c0499bd4c2b59981145, type: 2}

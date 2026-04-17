@@ -12,6 +12,7 @@ public class Day1Tasks : DayTaskBase
     [Header("UI Elements")]
     [SerializeField] private ActionButtonsUI actionButtons;
     [SerializeField] private Button nextDayButton;
+    [SerializeField] private Button questionsButton; 
     [SerializeField] private GameObject coinDisplay;
 
     [Header("Dialogue References")]
@@ -30,6 +31,8 @@ public class Day1Tasks : DayTaskBase
         this.enabled = true;
 
         DialogueManager dialogue = DialogueManager.instance;
+        
+        questionsButton.interactable = false;
         eventPanelButtons.EnterTutorialMode();
         actionButtons.LockAll();
         coinDisplay.gameObject.SetActive(false);
