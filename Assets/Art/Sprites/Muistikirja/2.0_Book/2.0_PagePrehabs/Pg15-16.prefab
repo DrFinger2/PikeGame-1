@@ -805,13 +805,13 @@ MonoBehaviour:
   buttonText:
     fi: "<align=center><b>RUOHOT</b></align>\n\nRuohokasvit auttavat vahvistamaan
       kosteikon rantoja ja est\xE4v\xE4t eroosiota. Ne tarjoavat elinymp\xE4rist\xF6j\xE4
-      monille hy\xF6nteisille.\n\n\n\n\n\n\nJouhivihvil\xE4\n\nJouhivihvil\xE4ll\xE4
+      monille hy\xF6nteisille.\n\n\n\n\n\n\n\nJouhivihvil\xE4\n\nJouhivihvil\xE4ll\xE4
       on pitk\xE4 vaakasuora juurakko ja ohuita, millimetrin paksuisia varsia. Sen
       tihe\xE4 kukinto nousee usein puoliv\xE4liin vartta, ja kasvi viihtyy paljaalla
       kostealla maalla.\n"
     sw: "<align=center><b>GR\xC4SARTER</b></align>\n\nGr\xE4sarter hj\xE4lper till
       att st\xE4rka v\xE5tmarkens str\xE4nder och f\xF6rebygga erosion. De ger ocks\xE5
-      livsmilj\xF6er f\xF6r m\xE5nga insekter.\n\n\n\n\n\n\n\nTr\xE5dt\xE5g\n\nTr\xE5dt\xE5g
+      livsmilj\xF6er f\xF6r m\xE5nga insekter.\n\n\n\n\n\n\n\n\nTr\xE5dt\xE5g\n\nTr\xE5dt\xE5g
       har en l\xE5ng, horisontell rotstock och tunna stj\xE4lkar som \xE4r bara n\xE5gra
       millimeter tjocka. Dess t\xE4ta blomstand n\xE5r ofta upp till mitten av stj\xE4lken,
       och v\xE4xten trivs p\xE5 bar, fuktig mark."
@@ -820,6 +820,7 @@ MonoBehaviour:
 
       Grasses help stabilize wetland
       banks and prevent erosion. They provide habitats for many insects.
+
 
 
 

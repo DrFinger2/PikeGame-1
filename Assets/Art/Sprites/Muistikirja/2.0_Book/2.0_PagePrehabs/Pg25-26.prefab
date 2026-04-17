@@ -300,15 +300,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonText:
-    fi: "\nIsorsimo\n\nIsosorsimo on korkea \nhein\xE4kasvi, joka \nkasvaa matalassa
-      \nvedess\xE4 ja rannoilla. \nSe muodostaa tiheit\xE4 \nkasvustoja ja levi\xE4\xE4
-      \ntehokkaasti juurakon avulla."
-    sw: "\nJ\xE4ttegr\xF6e\n\nJ\xE4ttegr\xF6e \xE4r en h\xF6g \nv\xE4xt som v\xE4xer
-      i grunt \nvatten och l\xE4ngs \nstr\xE4nderna. Den bildar \nt\xE4ta best\xE5nd
-      och \nsprider sig effektivt \nvia sina rotstockar."
-    en: "\nReed-grass\n\nThe reed-grass is a \ntall plant that grows \nin shallow
-      water and \nalong shorelines. It \nforms dense stands \nand spreads rapidly
-      \nthrough its rhizomes."
+    fi: "Lammikki\n\nLammikki on keltakukkainen vesikasvi, jonka lehdet kelluvat
+      pinnalla. Se levi\xE4\xE4 nopeasti ja voi peitt\xE4\xE4 vedenpintaa."
+    sw: "Sj\xF6gull\n\nSj\xF6gull \xE4r en gulblommig vattenv\xE4xt vars blad flyter
+      p\xE5 ytan. Den sprider sig snabbt och kan t\xE4cka vattenytan."
+    en: 'Fringed water-lily
+
+
+      The fringed water-lily is a yellow-flowered aquatic
+      plant whose leaves float on the surface. It spreads quickly and can cover the
+      water''s surface.'
 --- !u!1 &1680277126811690134
 GameObject:
   m_ObjectHideFlags: 0
