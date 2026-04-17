@@ -7057,7 +7057,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6323121439438422871, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: onToggleOn.m_PersistentCalls.m_Calls.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6323121439438422871, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: onToggleOff.m_PersistentCalls.m_Calls.Array.size
@@ -7065,7 +7065,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6323121439438422871, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: onToggleOn.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6323121439438422871, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: onToggleOn.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
@@ -7078,7 +7078,7 @@ PrefabInstance:
     - target: {fileID: 6323121439438422871, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: onToggleOn.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 1160520431}
+      objectReference: {fileID: 2069077860}
     - target: {fileID: 6323121439438422871, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: onToggleOn.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
@@ -7101,7 +7101,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6323121439438422871, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: onToggleOn.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: set_ignoreParentGroups
+      value: InteractWithNPC
       objectReference: {fileID: 0}
     - target: {fileID: 6323121439438422871, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: onToggleOn.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
@@ -7113,7 +7113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6323121439438422871, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: onToggleOn.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: UnityEngine.CanvasGroup, UnityEngine
+      value: DialogueManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6323121439438422871, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: onToggleOn.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
@@ -7582,11 +7582,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf4d1f9c99aa0ba418fe552acd54be71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MilestonePopupHandler
---- !u!225 &1160520431 stripped
-CanvasGroup:
-  m_CorrespondingSourceObject: {fileID: 749244075451798187, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
-  m_PrefabInstance: {fileID: 1160520424}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1164452289 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a2456e55ee59c4d4ea5b82a6c4ba0487, type: 3}
