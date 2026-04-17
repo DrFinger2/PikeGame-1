@@ -7114,7 +7114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.028821243
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMin.y
@@ -13411,7 +13411,7 @@ MonoBehaviour:
         m_Calls: []
   extraPointsPerDay: 0
   milestoneHandler: {fileID: 1206503449}
-  raccoonManager: {fileID: 0}
+  raccoonManager: {fileID: 445996806}
   actionButtons: {fileID: 1160520427}
   eventPanel: {fileID: 567694490}
   questionsButton: {fileID: 391022948}
