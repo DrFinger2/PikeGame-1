@@ -34,6 +34,13 @@ public class DialogueUI : MonoBehaviour
     public bool IsDialogueActive => dialoguePanel.activeInHierarchy;
     public bool IsTyping => typeWriterEffectCoroutine != null;
 
+    public void Awake()
+    {
+        dialogueBackground.gameObject.SetActive(false);
+        dialoguePanel.gameObject.SetActive(false);
+    }
+
+
     public void ShowDialogue(DialogueBase dialogue, bool showContinue = true, bool animate = false, float bgOpacity = 0, bool isBgEnabled = true)
     {
         dialogueBackground.gameObject.SetActive(true);
@@ -41,16 +48,18 @@ public class DialogueUI : MonoBehaviour
         continueButton.SetActive(showContinue);
         dialoguePanel.transform.DOKill();
 
-        if (isBgEnabled) {
+        if (isBgEnabled)
+        {
             dialogueBackground.gameObject.SetActive(true);
             Color color = dialogueBackground.color;
             color.a = Mathf.Clamp01(bgOpacity);
             dialogueBackground.color = color;
         }
-        else {
+        else
+        {
             dialogueBackground.gameObject.SetActive(false);
         }
-        
+
 
         if (animate)
         {

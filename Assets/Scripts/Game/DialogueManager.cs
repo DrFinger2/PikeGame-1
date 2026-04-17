@@ -49,6 +49,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (instance == null) instance = this;
         else Destroy(gameObject);
+        dialogueUI.gameObject.SetActive(true);
     }
 
     private void Start()
