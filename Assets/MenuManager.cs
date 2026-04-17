@@ -9,19 +9,29 @@ public class MenuManager : MonoBehaviour
 {
     [SerializeField] private CanvasGroup fadeCG;
     [SerializeField] private float fadeDuration;
+
+    // fields to drag buttons in
     [SerializeField] private Button[] menuButtons;
+
+    // fields for the tmp text part of the buttons? is this what connects the language change to buttons?
     [SerializeField] private TMP_Text startGame;
     [SerializeField] private TMP_Text quitGame;
     [SerializeField] private TMP_Text credits;
     [SerializeField] private TMP_Text language;
     [SerializeField] private TMP_Text back;
+
+    // input fields for button texts (3 languages?)
     [SerializeField] private LocalizedText startGameText;
     [SerializeField] private LocalizedText quitGameText;
     [SerializeField] private LocalizedText creditsText;
     [SerializeField] private LocalizedText languageText;
     [SerializeField] private LocalizedText backText;
+
+    // manager field for menu and credits
     [SerializeField] private GameObject mainPanel;
     [SerializeField] private GameObject creditsPanel;
+
+    // credits scroll related
     [SerializeField] private RectTransform creditsScroll;
     [SerializeField] private float creditsTopPos;
     [SerializeField] private float scrollSpeed;
@@ -70,6 +80,7 @@ public class MenuManager : MonoBehaviour
     }
 
     // so this is supposed to scroll the credists until the set "top position" is reached? and then enable main menu automatically?
+    // works!!
     private IEnumerator ScrollCredits()
     {
         while (creditsScroll.localPosition.y < creditsTopPos)
@@ -82,7 +93,7 @@ public class MenuManager : MonoBehaviour
     }
 
 
-
+// um yea
     private void UpdateText()
     {
         startGame.text = startGameText.GetText();

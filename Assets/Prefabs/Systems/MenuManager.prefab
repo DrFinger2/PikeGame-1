@@ -53,6 +53,8 @@ MonoBehaviour:
   startGame: {fileID: 0}
   quitGame: {fileID: 0}
   credits: {fileID: 0}
+  language: {fileID: 0}
+  back: {fileID: 0}
   startGameText:
     fi: Aloita Peli
     sw: Starta Spelet
@@ -65,3 +67,16 @@ MonoBehaviour:
     fi: Kreditit
     sw: Krediter
     en: Credits
+  languageText:
+    fi: Kieli
+    sw: "Sp\xE5rk"
+    en: Language
+  backText:
+    fi: Takaisin
+    sw: Tillbaka
+    en: Back
+  mainPanel: {fileID: 0}
+  creditsPanel: {fileID: 0}
+  creditsScroll: {fileID: 0}
+  creditsTopPos: 0
+  scrollSpeed: 0
