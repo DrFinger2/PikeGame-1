@@ -5,7 +5,15 @@ public class MilestonePopupHandler : MonoBehaviour
     public GameObject popup;
     private bool isPopupOpen = false;
 
-    // Open a milestone popup
+    public void Awake()
+    {
+        if (popup == null)
+        {
+            Transform firstChild = this.transform.GetChild(0);
+            if (firstChild != null) popup = firstChild.gameObject;
+        }
+    }
+    
     public void OpenMilestonePopup()
     {
         if (isPopupOpen)
@@ -15,7 +23,6 @@ public class MilestonePopupHandler : MonoBehaviour
         popup.SetActive(true);
     }
 
-    // Close a milestone popup
     public void CloseMilestonePopup()
     {
         popup.SetActive(false);
