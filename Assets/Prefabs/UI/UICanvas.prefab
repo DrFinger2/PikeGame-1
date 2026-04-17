@@ -4498,8 +4498,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2286100197509377810}
   - {fileID: 7278883573966447331}
+  - {fileID: 2286100197509377810}
   m_Father: {fileID: 3643371768836362425}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -9249,8 +9249,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1206118097248992119}
   - {fileID: 7858581877194856844}
+  - {fileID: 1206118097248992119}
   - {fileID: 2709392050058222118}
   - {fileID: 5998913789129182522}
   - {fileID: 1278711152655197265}
@@ -11365,7 +11365,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -90, y: -74}
+  m_AnchoredPosition: {x: -184, y: -67}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6553644406211568033
@@ -11385,7 +11385,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 2
   m_Spacing: 15
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -13257,8 +13257,8 @@ RectTransform:
   - {fileID: 35828131120751752}
   m_Father: {fileID: 108753401000868855}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.05075594, y: 0.049065422}
-  m_AnchorMax: {x: 0.9492441, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -15698,8 +15698,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8917532778183712751}
   - {fileID: 953799177597794659}
+  - {fileID: 8917532778183712751}
   - {fileID: 8626183532882187104}
   - {fileID: 1017989704911636007}
   - {fileID: 6063225653191130458}
@@ -19120,7 +19120,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4564397536380353399
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19133,8 +19133,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 709576293834533937}
   - {fileID: 6873916192471619210}
+  - {fileID: 709576293834533937}
   - {fileID: 360020458505257905}
   - {fileID: 5830105230276569579}
   - {fileID: 9071410454273407119}
