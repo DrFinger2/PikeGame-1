@@ -179,8 +179,10 @@ public class MilestoneHandler : MonoBehaviour
 
     private void ShowMilestonePopup(MilestonePopupHandler popup)
     {
+        popup.gameObject.SetActive(true);
         popup.OpenMilestonePopup();
     }
+
 
     public void ProgressMilestone(int milestone)
     {
