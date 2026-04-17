@@ -172,6 +172,81 @@ MonoBehaviour:
       include, for example, roach fry and young perch. They feed on plankton and
       small invertebrates and serve as food for larger fish. For example, pike prey
       on small fish, which helps keep fish populations in balance.'
+--- !u!1 &1886668551214949667
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 944015618297552135}
+  - component: {fileID: 7714956745290170484}
+  - component: {fileID: 528532636167024553}
+  m_Layer: 5
+  m_Name: Teippi (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &944015618297552135
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886668551214949667}
+  m_LocalRotation: {x: -0, y: -0, z: -0.62324375, w: 0.7820276}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.4, y: 2.4, z: 2.4}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 426614371201421579}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -77.107}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 201, y: -61}
+  m_SizeDelta: {x: 146.749, y: 128.0012}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &7714956745290170484
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886668551214949667}
+  m_CullTransparentMesh: 1
+--- !u!114 &528532636167024553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886668551214949667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 642d3d90b409c4f4c8cad38a8418cd03, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &1967441730839845199
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,6 +882,7 @@ MonoBehaviour:
   imageRect: {fileID: 3872145757713662630}
   overlay: {fileID: 4338526432036857073}
   targetPanel: {fileID: 8814699176124569717}
+  teippi: {fileID: 3492370774818249728}
 --- !u!1 &5048702536988985705
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,6 +1031,7 @@ MonoBehaviour:
   imageRect: {fileID: 992184357762110139}
   overlay: {fileID: 4338526432036857073}
   targetPanel: {fileID: 8814699176124569717}
+  teippi: {fileID: 944015618297552135}
 --- !u!1 &5412482327268132706
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,6 +1180,232 @@ MonoBehaviour:
   imageRect: {fileID: 3502718672280398974}
   overlay: {fileID: 4338526432036857073}
   targetPanel: {fileID: 8814699176124569717}
+  teippi: {fileID: 9178064147283986047}
+--- !u!1 &5554214879795202274
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3337616888065610053}
+  - component: {fileID: 4092372291753078729}
+  - component: {fileID: 6927655406377429083}
+  m_Layer: 5
+  m_Name: Teippi (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3337616888065610053
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5554214879795202274}
+  m_LocalRotation: {x: -0, y: -0, z: -0.09631897, w: 0.9953505}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.7, y: 1.7, z: 1.7}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 426614371201421579}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -11.054}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -114, y: -83}
+  m_SizeDelta: {x: 146.749, y: 128.0012}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &4092372291753078729
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5554214879795202274}
+  m_CullTransparentMesh: 1
+--- !u!114 &6927655406377429083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5554214879795202274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 642d3d90b409c4f4c8cad38a8418cd03, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!1 &7284083112552462252
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3492370774818249728}
+  - component: {fileID: 3974966921449523972}
+  - component: {fileID: 6428007977289094984}
+  m_Layer: 5
+  m_Name: Teippi (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3492370774818249728
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7284083112552462252}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.7, y: 1.7, z: 1.7}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 426614371201421579}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -241, y: -44}
+  m_SizeDelta: {x: 146.749, y: 128.0012}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &3974966921449523972
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7284083112552462252}
+  m_CullTransparentMesh: 1
+--- !u!114 &6428007977289094984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7284083112552462252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 642d3d90b409c4f4c8cad38a8418cd03, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!1 &8695966392975497734
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9178064147283986047}
+  - component: {fileID: 7062322166824469755}
+  - component: {fileID: 5579185518258169799}
+  m_Layer: 5
+  m_Name: Teippi
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &9178064147283986047
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8695966392975497734}
+  m_LocalRotation: {x: -0, y: -0, z: 0.30913717, w: 0.95101744}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.7, y: 1.7, z: 1.7}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 426614371201421579}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 36.014}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -354, y: -110}
+  m_SizeDelta: {x: 146.749, y: 128.0012}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &7062322166824469755
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8695966392975497734}
+  m_CullTransparentMesh: 1
+--- !u!114 &5579185518258169799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8695966392975497734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 642d3d90b409c4f4c8cad38a8418cd03, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1001 &4006025964308750748
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1191,6 +1494,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 07cb30b59bd6eda40b23a30ae8865098, type: 3}
+    - target: {fileID: 5035389149461876205, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: teippi
+      value: 
+      objectReference: {fileID: 3337616888065610053}
     - target: {fileID: 5605953840752376297, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -12
@@ -1204,7 +1511,8 @@ PrefabInstance:
       value: ImageHolder
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2961786542536810443, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3635496582802370711, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
       insertIndex: -1
@@ -1215,6 +1523,18 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3635496582802370711, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3872145757713662630}
+    - targetCorrespondingSourceObject: {fileID: 3635496582802370711, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9178064147283986047}
+    - targetCorrespondingSourceObject: {fileID: 3635496582802370711, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3492370774818249728}
+    - targetCorrespondingSourceObject: {fileID: 3635496582802370711, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3337616888065610053}
+    - targetCorrespondingSourceObject: {fileID: 3635496582802370711, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 944015618297552135}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
 --- !u!4 &426614371201421579 stripped

@@ -148,6 +148,7 @@ MonoBehaviour:
   imageRect: {fileID: 5436611837021752001}
   overlay: {fileID: 1203038474499686132}
   targetPanel: {fileID: 6256517898102637168}
+  teippi: {fileID: 9030399552518714859}
 --- !u!1 &1680277126811690134
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,6 +648,7 @@ MonoBehaviour:
   imageRect: {fileID: 9074219127455625931}
   overlay: {fileID: 1203038474499686132}
   targetPanel: {fileID: 6256517898102637168}
+  teippi: {fileID: 356777705658979498}
 --- !u!1 &3752300061302600148
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,7 +717,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "<align=center><b>RUOHOT</b></align>\n\nRuohokasvit auttavat vahvistamaan
     kosteikon rantoja ja est\xE4v\xE4t eroosiota. Ne tarjoavat elinymp\xE4rist\xF6j\xE4
-    monille hy\xF6nteisille.\r\n\n\n\n\n\n\n\nJouhivihvil\xE4\n\nJouhivihvil\xE4ll\xE4
+    monille hy\xF6nteisille.\r\n\n\n\n\n\n\n\n\nJouhivihvil\xE4\n\nJouhivihvil\xE4ll\xE4
     on pitk\xE4 vaakasuora juurakko ja ohuita, millimetrin paksuisia varsia. Sen
     tihe\xE4 kukinto nousee usein puoliv\xE4liin vartta, ja kasvi viihtyy paljaalla
     kostealla maalla.\r\n"
@@ -805,13 +807,13 @@ MonoBehaviour:
   buttonText:
     fi: "<align=center><b>RUOHOT</b></align>\n\nRuohokasvit auttavat vahvistamaan
       kosteikon rantoja ja est\xE4v\xE4t eroosiota. Ne tarjoavat elinymp\xE4rist\xF6j\xE4
-      monille hy\xF6nteisille.\n\n\n\n\n\n\n\nJouhivihvil\xE4\n\nJouhivihvil\xE4ll\xE4
+      monille hy\xF6nteisille.\n\n\n\n\n\n\n\n\nJouhivihvil\xE4\n\nJouhivihvil\xE4ll\xE4
       on pitk\xE4 vaakasuora juurakko ja ohuita, millimetrin paksuisia varsia. Sen
       tihe\xE4 kukinto nousee usein puoliv\xE4liin vartta, ja kasvi viihtyy paljaalla
       kostealla maalla.\n"
     sw: "<align=center><b>GR\xC4SARTER</b></align>\n\nGr\xE4sarter hj\xE4lper till
       att st\xE4rka v\xE5tmarkens str\xE4nder och f\xF6rebygga erosion. De ger ocks\xE5
-      livsmilj\xF6er f\xF6r m\xE5nga insekter.\n\n\n\n\n\n\n\n\nTr\xE5dt\xE5g\n\nTr\xE5dt\xE5g
+      livsmilj\xF6er f\xF6r m\xE5nga insekter.\n\n\n\n\n\n\n\n\n\nTr\xE5dt\xE5g\n\nTr\xE5dt\xE5g
       har en l\xE5ng, horisontell rotstock och tunna stj\xE4lkar som \xE4r bara n\xE5gra
       millimeter tjocka. Dess t\xE4ta blomstand n\xE5r ofta upp till mitten av stj\xE4lken,
       och v\xE4xten trivs p\xE5 bar, fuktig mark."
@@ -820,6 +822,7 @@ MonoBehaviour:
 
       Grasses help stabilize wetland
       banks and prevent erosion. They provide habitats for many insects.
+
 
 
 
@@ -974,6 +977,231 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &7038259792831601184
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9030399552518714859}
+  - component: {fileID: 4993521541642693297}
+  - component: {fileID: 5586579317298144828}
+  m_Layer: 5
+  m_Name: Teippi (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &9030399552518714859
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7038259792831601184}
+  m_LocalRotation: {x: -0, y: -0, z: 0.9775592, w: 0.2106609}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 2984800584794950414}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 155.678}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -101, y: 124}
+  m_SizeDelta: {x: 146.749, y: 128.0012}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &4993521541642693297
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7038259792831601184}
+  m_CullTransparentMesh: 1
+--- !u!114 &5586579317298144828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7038259792831601184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 642d3d90b409c4f4c8cad38a8418cd03, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!1 &7157921561451021024
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3093453648856514374}
+  - component: {fileID: 9143040302957606216}
+  - component: {fileID: 7770529463790007571}
+  m_Layer: 5
+  m_Name: Teippi
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3093453648856514374
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7157921561451021024}
+  m_LocalRotation: {x: -0, y: -0, z: 0.58020985, w: 0.814467}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.2, y: 2.2, z: 2.2}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 2984800584794950414}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 70.931}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 270, y: 45}
+  m_SizeDelta: {x: 146.749, y: 128.0012}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &9143040302957606216
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7157921561451021024}
+  m_CullTransparentMesh: 1
+--- !u!114 &7770529463790007571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7157921561451021024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 642d3d90b409c4f4c8cad38a8418cd03, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!1 &8553457816188883787
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 356777705658979498}
+  - component: {fileID: 3470908019252185457}
+  - component: {fileID: 3982575264671826204}
+  m_Layer: 5
+  m_Name: Teippi (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &356777705658979498
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8553457816188883787}
+  m_LocalRotation: {x: -0, y: -0, z: 0.604432, w: 0.7966568}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 2984800584794950414}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 74.376}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -97, y: -90}
+  m_SizeDelta: {x: 146.749, y: 128.0012}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &3470908019252185457
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8553457816188883787}
+  m_CullTransparentMesh: 1
+--- !u!114 &3982575264671826204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8553457816188883787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 642d3d90b409c4f4c8cad38a8418cd03, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1001 &1954497024401357721
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1004,11 +1232,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2289472534821609352, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 318
+      value: 270
       objectReference: {fileID: 0}
     - target: {fileID: 2289472534821609352, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 53
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 2289472534821609352, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -1062,6 +1290,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 3bbd4e99bbea43a47a11d96311216788, type: 3}
+    - target: {fileID: 5035389149461876205, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      propertyPath: teippi
+      value: 
+      objectReference: {fileID: 3093453648856514374}
     - target: {fileID: 5605953840752376297, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -12
@@ -1075,7 +1307,8 @@ PrefabInstance:
       value: ImageHolder
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2961786542536810443, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3635496582802370711, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
       insertIndex: -1
@@ -1083,6 +1316,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3635496582802370711, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5436611837021752001}
+    - targetCorrespondingSourceObject: {fileID: 3635496582802370711, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3093453648856514374}
+    - targetCorrespondingSourceObject: {fileID: 3635496582802370711, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 356777705658979498}
+    - targetCorrespondingSourceObject: {fileID: 3635496582802370711, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9030399552518714859}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e24428eb7f710d5458b88c9b8500d19b, type: 3}
 --- !u!1 &1203038474499686132 stripped

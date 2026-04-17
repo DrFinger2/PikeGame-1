@@ -6,6 +6,7 @@ public class ImageZoom : MonoBehaviour
     public RectTransform imageRect;
     public GameObject overlay;
     public RectTransform targetPanel;
+    public RectTransform teippi;
 
     private Vector2 originalPosition;
     private Vector2 originalAnchorMin;
@@ -45,6 +46,7 @@ public class ImageZoom : MonoBehaviour
 
             imageRect.localScale = originalScale * 3f;
             imageRect.SetAsLastSibling();
+            teippi.SetActive(false);
         }
         else
         {
@@ -56,6 +58,8 @@ public class ImageZoom : MonoBehaviour
 
             imageRect.localScale = originalScale;
             overlay.SetActive(false);
+            teippi.SetActive(true);
+            teippi.SetAsLastSibling();
         }
     }
 }
