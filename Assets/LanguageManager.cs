@@ -8,9 +8,22 @@ public class LanguageManager : MonoBehaviour
     public UnityEvent onLanguageChanged;
     [SerializeField] private DialogueDatabase[] dialogueDatabases;
 
+
+    private Language previousLanguage = Language.FI;
+
+    private void OnValidate()
+    {
+        if (currentLanguage != previousLanguage)
+        {
+            onLanguageChanged?.Invoke();
+            previousLanguage = currentLanguage;
+        }
+    }
+
+
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
         }
@@ -20,11 +33,12 @@ public class LanguageManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
+        previousLanguage = currentLanguage;
         DontDestroyOnLoad(gameObject);
     }
     public void SwitchLanguage(string language)
     {
-
         switch (language)
         {
             case "fi":

@@ -929,6 +929,39 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2456e55ee59c4d4ea5b82a6c4ba0487, type: 3}
+--- !u!1 &80820279 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6765276269601402387, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+  m_PrefabInstance: {fileID: 1160520424}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &80820281 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3983656598058175848, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+  m_PrefabInstance: {fileID: 1160520424}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80820279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &80820283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80820279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4cfa9e0f01e4e04495b51933228e27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedTextUI
+  textComponent: {fileID: 80820281}
+  localizedText:
+    fi: 123
+    sw: 456
+    en: 789
 --- !u!1001 &85412467
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6362,7 +6395,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 924908557817245895, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -5.2000427
+      value: -5.2000275
       objectReference: {fileID: 0}
     - target: {fileID: 981973497601456178, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_IsActive
@@ -6702,7 +6735,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3050897033742178904, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -13.040192
+      value: -13.040237
       objectReference: {fileID: 0}
     - target: {fileID: 3167156279088661692, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -7437,6 +7470,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3298393729304987464, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 407258255}
+    - targetCorrespondingSourceObject: {fileID: 6765276269601402387, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 80820283}
   m_SourcePrefab: {fileID: 100100000, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
 --- !u!114 &1160520425 stripped
 MonoBehaviour:
