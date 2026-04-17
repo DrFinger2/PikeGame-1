@@ -5,6 +5,7 @@ public class Day3Tasks : DayTaskBase
 {
     [Header("Managers & Systems")]
     [SerializeField] private MilestoneHandler milestoneHandler;
+    [SerializeField] private RaccoonDogManager raccoonManager;
 
     [Header("UI Elements")]
     [SerializeField] private ActionButtonsUI actionButtons;
@@ -19,6 +20,7 @@ public class Day3Tasks : DayTaskBase
     [Header("Settings")]
     [SerializeField] private int floatingPlantsRequired = 3;
     [SerializeField] private int requiredRaccoonsChased = 1;
+    [SerializeField] private Transform raccoonPosition;
 
     private int floatingPlantsPlantedCount;
     private int raccoonChaseCount;
@@ -28,6 +30,7 @@ public class Day3Tasks : DayTaskBase
 
         Events.OnDayStarted.Invoke();
         this.enabled = true;
+        raccoonManager.SpawnRaccoonInLocation(raccoonPosition);
 
         DialogueManager dialogue = DialogueManager.instance;
         TurnManager turn = TurnManager.Instance;
@@ -62,6 +65,7 @@ public class Day3Tasks : DayTaskBase
         {
             RaccoonDogMovement.OnRaccoonChased -= OnRaccoonDogChased;
             DialogueManager dialogue = DialogueManager.instance;
+            raccoonManager.isSpawning = true;
 
             milestoneHandler.ForceUnlockMilestone(level: 2, progress: 0.66f);
             dialogue.CompleteTask("E7");
