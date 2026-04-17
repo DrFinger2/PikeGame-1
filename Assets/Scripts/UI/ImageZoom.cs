@@ -46,7 +46,7 @@ public class ImageZoom : MonoBehaviour
 
             imageRect.localScale = originalScale * 3f;
             imageRect.SetAsLastSibling();
-            teippi.SetActive(false);
+            teippi.gameObject.SetActive(false);
         }
         else
         {
@@ -58,7 +58,7 @@ public class ImageZoom : MonoBehaviour
 
             imageRect.localScale = originalScale;
             overlay.SetActive(false);
-            teippi.SetActive(true);
+            teippi.gameObject.SetActive(true);
             teippi.SetAsLastSibling();
         }
     }
