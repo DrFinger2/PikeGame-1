@@ -34,24 +34,23 @@ public class DialogueUI : MonoBehaviour
     public bool IsDialogueActive => dialoguePanel.activeInHierarchy;
     public bool IsTyping => typeWriterEffectCoroutine != null;
 
-    public void ShowDialogue(DialogueBase dialogue, bool showContinue = true, bool animate = false, float bgOpacity = 0)
+    public void ShowDialogue(DialogueBase dialogue, bool showContinue = true, bool animate = false, float bgOpacity = 0, bool isBgEnabled = true)
     {
-        // Block background UI, keep Dialogue UI interactive
-        if (parentCanvasGroup != null && dialogueCanvasGroup != null)
-        {
-            parentCanvasGroup.blocksRaycasts = false;
-            dialogueCanvasGroup.ignoreParentGroups = true;
-            dialogueCanvasGroup.blocksRaycasts = true;
-        }
-
         dialogueBackground.gameObject.SetActive(true);
         dialoguePanel.SetActive(true);
         continueButton.SetActive(showContinue);
         dialoguePanel.transform.DOKill();
 
-        Color color = dialogueBackground.color;
-        color.a = Mathf.Clamp01(bgOpacity);
-        dialogueBackground.color = color;
+        if (isBgEnabled) {
+            dialogueBackground.gameObject.SetActive(true);
+            Color color = dialogueBackground.color;
+            color.a = Mathf.Clamp01(bgOpacity);
+            dialogueBackground.color = color;
+        }
+        else {
+            dialogueBackground.gameObject.SetActive(false);
+        }
+        
 
         if (animate)
         {
@@ -169,10 +168,6 @@ public class DialogueUI : MonoBehaviour
     {
         dialogueBackground.gameObject.SetActive(false);
         dialoguePanel.SetActive(false);
-        if (parentCanvasGroup != null)
-        {
-            parentCanvasGroup.blocksRaycasts = true;
-        }
     }
 
 

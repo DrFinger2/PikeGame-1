@@ -149,7 +149,7 @@ public class DialogueManager : MonoBehaviour
             EventHintDialogue hint = dialogueDB.GetHintForEvent(nextEvent);
             if (hint != null)
             {
-                dialogueUI.ShowDialogue(hint, false);
+                dialogueUI.ShowDialogue(hint, showContinue: false, isBgEnabled: false);
                 state.hasGivenHintThisTurn = true;
                 RandomDialogueSoundEffectPlayer();
             }
@@ -163,7 +163,7 @@ public class DialogueManager : MonoBehaviour
         {
             if (randomDialogue.isJoke) SoundManager.Instance.PlayGameSound("joke01");
             else RandomDialogueSoundEffectPlayer();
-            dialogueUI.ShowDialogue(randomDialogue, false);
+            dialogueUI.ShowDialogue(randomDialogue, showContinue: false, isBgEnabled: false);
         }
     }
 
