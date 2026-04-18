@@ -6194,15 +6194,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 750093296828907320, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 750093296828907320, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 750093296828907320, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 761363421814170243, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_Color.b
@@ -7084,6 +7084,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: SimpleToggle, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 6026229657911694963, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: bookPages.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026229657911694963, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: 'bookPages.Array.data[10]'
+      value: 
+      objectReference: {fileID: 2050093594306525704, guid: caf55d8f962711a44987ca62cd94baa9, type: 3}
+    - target: {fileID: 6026229657911694963, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: 'bookPages.Array.data[11]'
+      value: 
+      objectReference: {fileID: 2050093594306525704, guid: 327430179bca0384a8e60b799557373c, type: 3}
+    - target: {fileID: 6026229657911694963, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: 'bookPages.Array.data[12]'
+      value: 
+      objectReference: {fileID: 2050093594306525704, guid: 6da5faeac125c994786ecab25d0846e7, type: 3}
     - target: {fileID: 6169746486294883166, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -7334,19 +7350,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.9384089
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.9990741
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.061591104
+      value: 0.028821243
       objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.055555556
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7496837668612912551, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -13904,9 +13920,9 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 108f5977fe6b1614f89e82f7e4f558d5, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

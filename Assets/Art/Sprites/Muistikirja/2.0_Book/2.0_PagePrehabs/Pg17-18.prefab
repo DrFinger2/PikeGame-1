@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 256, y: 47}
+  m_AnchoredPosition: {x: 256, y: 37}
   m_SizeDelta: {x: 146.749, y: 128.0012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4036651299712430529
@@ -560,8 +560,8 @@ MonoBehaviour:
   m_text: "<align=center><b>KELLUSLEHTISET KASVIT</b></align>\n\nKelluslehtiset kasvit
     kelluvat veden pinnalla ja pit\xE4v\xE4t kosteikon tasapainossa. Ne varjostavat
     vett\xE4, v\xE4hent\xE4v\xE4t levien kasvua ja tarjoavat suojaa el\xE4imille
-    ja joillekin my\xF6s ravintoa.\n\n\n\n\n\r\n\u200BLumme\n\nLumpeella on suuret
-    kelluvat lehdet ja valkoiset kukat. Se kasvaa suojaisissa ja pehme\xE4pohjaisissa
+    ja joillekin my\xF6s ravintoa.\n\n\n\n\n\n\n\n\r\n\u200BLumme\n\nLumpeella on
+    suuret kelluvat lehdet ja valkoiset kukat. Se kasvaa suojaisissa ja pehme\xE4pohjaisissa
     vesiss\xE4. Kasvi on myrkyllinen, mutta sen l\xE4sn\xE4olo kertoo monipuolisesta
     ja elinvoimaisesta kosteikosta."
   m_isRightToLeft: 0
@@ -629,7 +629,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -43.0346, y: 1.5565662, z: -82.227325, w: -299.1712}
+  m_margin: {x: -43.0346, y: 1.5565662, z: -128.79251, w: -299.1712}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -651,22 +651,22 @@ MonoBehaviour:
     fi: "<align=center><b>KELLUSLEHTISET KASVIT</b></align>\n\nKelluslehtiset kasvit
       kelluvat veden pinnalla ja pit\xE4v\xE4t kosteikon tasapainossa. Ne varjostavat
       vett\xE4, v\xE4hent\xE4v\xE4t levien kasvua ja tarjoavat suojaa el\xE4imille
-      ja joillekin my\xF6s ravintoa.\n\n\n\n\n\u200B\n\u200BLumme\n\nLumpeella on
-      suuret kelluvat lehdet ja valkoiset kukat. Se kasvaa suojaisissa ja pehme\xE4pohjaisissa
+      ja joillekin my\xF6s ravintoa.\n\n\n\n\n\n\n\n\u200B\n\u200BLumme\n\nLumpeella
+      on suuret kelluvat lehdet ja valkoiset kukat. Se kasvaa suojaisissa ja pehme\xE4pohjaisissa
       vesiss\xE4. Kasvi on myrkyllinen, mutta sen l\xE4sn\xE4olo kertoo monipuolisesta
       ja elinvoimaisesta kosteikosta."
     sw: "<align=center><b>V\xC4XTER MED FLYKTIGA BLAD</b></align>\n\nV\xE4xter med
       flyktiga blad flyter p\xE5 vattenytan och bidrar till att uppr\xE4tth\xE5lla
       balansen i v\xE5tmarken. De skuggar vattnet, minskar algtillv\xE4xten och erbjuder
-      skydd \xE5t djur och, f\xF6r vissa, \xE4ven f\xF6da.\r\n\n\n\n\n\nVit n\xE4ckrose\n\nVit
-      n\xE4ckrosen har stora flytande blad och vita blommor. Den v\xE4xer i skyddade
-      vatten med mjuk botten. V\xE4xten \xE4r giftig, men dess f\xF6rekomst \xE4r
-      ett tecken p\xE5 ett m\xE5ngsidigt och livskraftigt v\xE5tmarksomr\xE5de."
+      skydd \xE5t djur och, f\xF6r vissa, \xE4ven f\xF6da.\r\n\n\n\n\n\n\n\n\nVit
+      n\xE4ckrose\n\nVit n\xE4ckrosen har stora flytande blad och vita blommor. Den
+      v\xE4xer i skyddade vatten med mjuk botten. V\xE4xten \xE4r giftig, men dess
+      f\xF6rekomst \xE4r ett tecken p\xE5 ett m\xE5ngsidigt och livskraftigt v\xE5tmarksomr\xE5de."
     en: "<align=center><b>FLOATING-LEAVED PLANTS</b></align>\n\nFloating-leaved plants
       float on the water's surface and help maintain the balance of the wetland.
       They shade the water, reduce algae growth, and provide shelter for animals\u2014and,
-      for some, food as well.\r\n\u200B\n\n\n\n\n\nWhite water-lily\n\nThe white
-      water-lily has large floating leaves and white flowers. It grows in sheltered
+      for some, food as well.\r\n\u200B\n\n\n\n\n\n\n\n\nWhite water-lily\n\nThe
+      white water-lily has large floating leaves and white flowers. It grows in sheltered
       waters with soft bottoms. The plant is poisonous, but its presence indicates
       a diverse and thriving wetland."
 --- !u!1 &3754958998092947573
@@ -831,16 +831,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4206387413865176283}
-  m_LocalRotation: {x: -0, y: -0, z: -0.81066364, w: 0.5855122}
+  m_LocalRotation: {x: -0, y: -0, z: 0.19583303, w: 0.98063725}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.3, y: 2.3, z: 2.3}
+  m_LocalScale: {x: 2.1, y: 2.1, z: 2.1}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 4572644929977533750}
   m_Father: {fileID: 9042706467450016692}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -108.322}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 22.587}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -253, y: 16}
+  m_AnchoredPosition: {x: -313.2, y: 70.9}
   m_SizeDelta: {x: 146.749, y: 128.0012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6866335173620579584
@@ -871,7 +872,82 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 642d3d90b409c4f4c8cad38a8418cd03, type: 3}
+  m_Sprite: {fileID: -1158492340, guid: 642d3d90b409c4f4c8cad38a8418cd03, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!1 &6850825594322770323
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4572644929977533750}
+  - component: {fileID: 8698096773342628266}
+  - component: {fileID: 6344986526979223907}
+  m_Layer: 5
+  m_Name: Teippi (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4572644929977533750
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6850825594322770323}
+  m_LocalRotation: {x: -0, y: -0, z: 0.15344876, w: 0.9881567}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.92380965, y: 0.92380965, z: 0.9238095}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 3364239460083975245}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 40.24}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 30.265762, y: -73.2939}
+  m_SizeDelta: {x: 146.749, y: 128.0012}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &8698096773342628266
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6850825594322770323}
+  m_CullTransparentMesh: 1
+--- !u!114 &6344986526979223907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6850825594322770323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -1693018851, guid: 642d3d90b409c4f4c8cad38a8418cd03, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -906,16 +982,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7424615203033675423}
-  m_LocalRotation: {x: -0, y: -0, z: -0.6347254, w: 0.77273786}
+  m_LocalRotation: {x: -0, y: -0, z: 0.090282254, w: 0.99591625}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
+  m_LocalScale: {x: 1.7, y: 1.7, z: 1.7}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 9042706467450016692}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -78.799}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 10.36}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 256, y: 47}
+  m_AnchoredPosition: {x: 241.6, y: 87.9}
   m_SizeDelta: {x: 146.749, y: 128.0012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4832638553995087962
@@ -946,7 +1022,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 642d3d90b409c4f4c8cad38a8418cd03, type: 3}
+  m_Sprite: {fileID: -1158492340, guid: 642d3d90b409c4f4c8cad38a8418cd03, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
