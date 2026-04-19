@@ -51,8 +51,7 @@ public class MilestoneHandler : MonoBehaviour
     public MilestonePopupHandler milestone1Popup;
     public MilestonePopupHandler milestone2Popup;
     public MilestonePopupHandler milestone3Popup;
-    [SerializeField] private GameObject fadeObject;
-    [SerializeField] private GameObject endScreen;
+    [SerializeField] private EndGameController endGameController;
     private bool milestone1reward = false;
     //[SerializeField] private GameObject cowCollection;
 
@@ -223,8 +222,7 @@ public class MilestoneHandler : MonoBehaviour
 
                     TurnManager.Instance.gameState.currentActionPoints += 20;
                     ShowMilestonePopup(milestone3Popup);
-
-                    StartEndSequence();
+                    endGameController.TriggerWinSequence();
                     Debug.Log("you're winner");
                 }
                 break;
@@ -274,15 +272,6 @@ public class MilestoneHandler : MonoBehaviour
         Invoke("UpdateSlider", 0.6f);
     }
 
-    private void StartEndSequence()
-    {
-        fadeObject.GetComponent<Fader>().FadeScreen();
-    }
-
-    public void EnableEndScreen()
-    {
-        endScreen.SetActive(true);
-    }
 
     public void Quit()
     {
@@ -336,6 +325,7 @@ public class MilestoneHandler : MonoBehaviour
         UpdateSlider();
     }
 
+
     private void PublishMetricsFromBiodiversity()
     {
         TurnManager manager = TurnManager.Instance;
@@ -364,6 +354,7 @@ public class MilestoneHandler : MonoBehaviour
         int validTileCount = 0;
         int plantedTileCount = 0;
         int invasiveTileCount = 0;
+        int totalOvergrowth = 0;
 
         foreach (gameTile tile in tileObjects)
         {
@@ -376,8 +367,13 @@ public class MilestoneHandler : MonoBehaviour
                 plantedTileCount++;
 
             tileWeedsGrowth weeds = tile.GetComponent<tileWeedsGrowth>();
-            if (weeds != null && weeds.growStage >= 3)
-                invasiveTileCount++;
+            if (weeds != null)
+            {
+                totalOvergrowth += weeds.growStage;
+                if (weeds.growStage >= 3)
+                    invasiveTileCount++;
+            }
+
         }
 
         tileCount = validTileCount;
@@ -386,23 +382,27 @@ public class MilestoneHandler : MonoBehaviour
         float plantCoverage = validTileCount > 0 ? (float)plantedTileCount / validTileCount : 0f;
         float invasivePressure = validTileCount > 0 ? (float)invasiveTileCount / validTileCount : 0f;
 
-        // REMOVED Mathf.Clamp01!
-        // By allowing this to go negative, weeds can now drag the score DOWN below the baseline.
-        float target01 = (plantCoverage * 1.20f) - (invasivePressure * 0.60f);
         
+        float target01 = (plantCoverage * 1.20f) - (invasivePressure * 0.60f);
         int sceneContribution = Mathf.RoundToInt(target01 * maxBiodiversity);
         int previousTarget = targetBiodiversity;
 
-        // Add the scene's active contribution (which can now be negative) to the tutorial baseline
         targetBiodiversity = Mathf.Clamp(baselineBiodiversity + sceneContribution, 0, maxBiodiversity);
 
         currentBiodiversityVisual = Mathf.Clamp(currentBiodiversityVisual, 0f, maxBiodiversity);
 
+
         if (forceUpdate || targetBiodiversity != previousTarget)
             UpdateSlider();
-
+            
         isRecalculatingFromScene = false;
         
+        int mapOvergrowthState = (validTileCount > 0 ? Mathf.Clamp(Mathf.RoundToInt((float)totalOvergrowth / validTileCount), 1, 3) : 1);
+        if (mapOvergrowthState == 3)
+        {
+            endGameController.TriggerLossSequence();
+        }
+
     }
 
 

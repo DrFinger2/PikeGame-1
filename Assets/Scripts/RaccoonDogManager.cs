@@ -62,9 +62,9 @@ public class RaccoonDogManager : MonoBehaviour
     }
 
 
-    public void SpawnRaccoonInLocation(Transform pos)
+    public GameObject SpawnRaccoonInLocation(Transform pos)
     {
-        Instantiate(raccoonDog, pos.position, raccoonDog.transform.rotation);
+        return Instantiate(raccoonDog, pos.position, raccoonDog.transform.rotation);
     }
 
 

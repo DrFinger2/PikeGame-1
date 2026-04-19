@@ -25,6 +25,8 @@ public class FocusUI : MonoBehaviour
         {
             Instance = this;
         }
+        pointerUI.gameObject.SetActive(false);
+        touchUI.gameObject.SetActive(false);
     }
 
     void Start()
