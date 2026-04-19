@@ -39,10 +39,13 @@ public class BuyCowButton : MonoBehaviour
         // Choose spawn position
         Vector3 spawnPos = spawnPositions[currentSpawnIndex];
 
-        // Spawn cow
-        Instantiate(cowPrefab, spawnPos, Quaternion.identity);
 
-        
+
+        // Spawn cow
+        GameObject cowHolder = Instantiate(cowPrefab, new(10f, 0, 0), Quaternion.identity);
+        cowHolder.transform.GetChild(1).transform.position = spawnPos;
+
+        //16, 0, 5
         currentSpawnIndex = (currentSpawnIndex + 1) % spawnPositions.Count;
     }
 }

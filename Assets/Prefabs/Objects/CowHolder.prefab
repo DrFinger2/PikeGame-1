@@ -171,12 +171,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47d61c6ac6b3d9d429a16503189e5f56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 1.25
   rotationSpeed: 2
-  minIdle: 6
-  maxIdle: 12
-  minWalk: 1
-  maxWalk: 8
+  minIdle: 5
+  maxIdle: 6
+  minWalk: 4
+  maxWalk: 9
   boundary: {fileID: 7307783475958806310}
   walkAnimation: Walk
   idleAnimation: Idle

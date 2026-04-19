@@ -7889,7 +7889,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.05087719
       objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMin.y
@@ -8387,6 +8387,7 @@ MonoBehaviour:
   floatingPlantsRequired: 3
   requiredRaccoonsChased: 1
   raccoonPosition: {fileID: 1486687753}
+  fih: {fileID: 1369825422}
 --- !u!4 &1170164423
 Transform:
   m_ObjectHideFlags: 0
@@ -10143,6 +10144,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a2456e55ee59c4d4ea5b82a6c4ba0487, type: 3}
   m_PrefabInstance: {fileID: 621932712}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1369825422 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5143425289994666731, guid: fcd9b14280ad7ea48aa5486e5322a374, type: 3}
+  m_PrefabInstance: {fileID: 1449190335}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1373158624 stripped
 Transform:
