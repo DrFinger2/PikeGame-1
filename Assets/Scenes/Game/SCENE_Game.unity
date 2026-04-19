@@ -6248,6 +6248,14 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 760139371073168989, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 760139371073168989, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 994542a523124984785a6e14d261bfa9, type: 3}
     - target: {fileID: 761363421814170243, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_Color.b
       value: 0
@@ -6256,6 +6264,10 @@ PrefabInstance:
       propertyPath: m_Color.g
       value: 0.8509804
       objectReference: {fileID: 0}
+    - target: {fileID: 771755572667896829, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: popup
+      value: 
+      objectReference: {fileID: 2123055200}
     - target: {fileID: 900227364153719795, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_Name
       value: WinScreen
@@ -6424,6 +6436,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1833885451950193147, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1833885451950193147, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 994542a523124984785a6e14d261bfa9, type: 3}
     - target: {fileID: 1842182139831893248, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -6436,6 +6456,21 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2069077860}
+    - target: {fileID: 1970555787380371071, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: localizedText.en
+      value: Good start. Your wetland management is moving in the right direction.
+        You receive additional funding to continue your work.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1970555787380371071, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: localizedText.fi
+      value: "Hyv\xE4 alku. Kosteikon hoito on l\xE4htenyt oikeaan suuntaan. Saat
+        lis\xE4rahoitusta ty\xF6n jatkamiseen."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1970555787380371071, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: localizedText.sw
+      value: "Bra b\xF6rjan. Sk\xF6tseln av v\xE5tmarken g\xE5r i r\xE4tt riktning.
+        Du f\xE5r extra finansiering f\xF6r att forts\xE4tta arbetet."
+      objectReference: {fileID: 0}
     - target: {fileID: 1981024063226365185, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -6463,6 +6498,23 @@ PrefabInstance:
     - target: {fileID: 2120276053565293678, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_SizeDelta.x
       value: -17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2230016278890076269, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: localizedText.en
+      value: Clear progress is visible. The wetland is beginning to find its balance.
+        Continue your careful work and you will receive additional support to strengthen
+        it.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2230016278890076269, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: localizedText.fi
+      value: "Edistyst\xE4 on selv\xE4sti n\xE4ht\xE4viss\xE4. Kosteikko alkaa l\xF6yt\xE4\xE4
+        tasapainonsa. Jatka huolellista ty\xF6t\xE4si niin saat lis\xE4\xE4 tukea
+        sen vahvistamiseen."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2230016278890076269, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: localizedText.sw
+      value: "Tydliga framsteg syns. V\xE5tmarken b\xF6rjar hitta sin balans. Forts\xE4tt
+        ditt noggranna arbete s\xE5 f\xE5r du mer st\xF6d f\xF6r att st\xE4rka den."
       objectReference: {fileID: 0}
     - target: {fileID: 2271035193871557603, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_Name
@@ -6639,6 +6691,12 @@ PrefabInstance:
     - target: {fileID: 2709561838635764584, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2715474137390663121, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_text
+      value: "Edistyst\xE4 on selv\xE4sti n\xE4ht\xE4viss\xE4. Kosteikko alkaa l\xF6yt\xE4\xE4
+        tasapainonsa. Jatka huolellista ty\xF6t\xE4si niin saat lis\xE4\xE4 tukea
+        sen vahvistamiseen."
       objectReference: {fileID: 0}
     - target: {fileID: 2722949007267431890, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -7200,6 +7258,34 @@ PrefabInstance:
       propertyPath: 'bookPages.Array.data[12]'
       value: 
       objectReference: {fileID: 2050093594306525704, guid: 6da5faeac125c994786ecab25d0846e7, type: 3}
+    - target: {fileID: 6063225653191130458, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 36.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063225653191130458, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 36.734
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063225653191130458, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 8.5655
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063225653191130458, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8.5655
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063225653191130458, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 8.5655
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063225653191130458, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1252
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063225653191130458, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 69
+      objectReference: {fileID: 0}
     - target: {fileID: 6110636444209172592, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.0224049
@@ -7372,6 +7458,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6773762543316000855, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6777158801042843149, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -7379,6 +7469,22 @@ PrefabInstance:
     - target: {fileID: 6814359666206583396, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6859998901249311527, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: localizedText.en
+      value: You have managed the wetland wisely. It is now thriving and in balance.
+        This additional funding is well deserved! Use it wisely.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6859998901249311527, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: localizedText.fi
+      value: "Olet hoitanut kosteikkoa viisaasti. Se on nyt elinvoimainen ja tasapainoinen.
+        T\xE4m\xE4 lis\xE4rahoitus on ansaittu! K\xE4yt\xE4 sit\xE4 viisaasti."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6859998901249311527, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: localizedText.sw
+      value: "Du har sk\xF6tt v\xE5tmarken med visdom. Den \xE4r nu livskraftig och
+        i balans. Denna extra finansiering \xE4r v\xE4lf\xF6rtj\xE4nt! Anv\xE4nd
+        den klokt."
       objectReference: {fileID: 0}
     - target: {fileID: 6895569000007635291, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMax.y
@@ -7407,6 +7513,14 @@ PrefabInstance:
     - target: {fileID: 7132457948539272382, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7149615372913274151, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1160520430}
+    - target: {fileID: 7149615372913274151, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseMilestonePopup
       objectReference: {fileID: 0}
     - target: {fileID: 7194148234296003952, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_Color.a
@@ -7474,7 +7588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0.9443128
       objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMax.y
@@ -7482,11 +7596,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.055687204
       objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.053846154
       objectReference: {fileID: 0}
     - target: {fileID: 7496837668612912551, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -7576,6 +7690,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -57.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8068302657325572882, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8124756439221058621, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -7604,6 +7722,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2032861148}
+    - target: {fileID: 8165108733747630791, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_text
+      value: "Olet hoitanut kosteikkoa viisaasti. Se on nyt elinvoimainen ja tasapainoinen.
+        T\xE4m\xE4 lis\xE4rahoitus on ansaittu! K\xE4yt\xE4 sit\xE4 viisaasti."
+      objectReference: {fileID: 0}
     - target: {fileID: 8225602777805327366, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -7736,6 +7859,15 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8841401401009637143, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8874337081981745040, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_text
+      value: "Hyv\xE4 alku. Kosteikon hoito on l\xE4htenyt oikeaan suuntaan. Saat
+        lis\xE4rahoitusta ty\xF6n jatkamiseen."
+      objectReference: {fileID: 0}
     - target: {fileID: 8916683534888691808, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -7760,13 +7892,43 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9071410454273407119, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 49.499
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071410454273407119, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 52.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071410454273407119, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5.9304004
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071410454273407119, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5.9304004
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071410454273407119, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5.9304004
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071410454273407119, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1275
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071410454273407119, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 93.23901
+      objectReference: {fileID: 0}
     - target: {fileID: 9161918873932349445, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 9063781659310578566, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+    - {fileID: 5277451506399508827, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5192217853942710172, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
@@ -13886,6 +14048,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2456e55ee59c4d4ea5b82a6c4ba0487, type: 3}
+--- !u!1 &2123055200 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6773762543316000855, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+  m_PrefabInstance: {fileID: 1160520424}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2123701100
 PrefabInstance:
   m_ObjectHideFlags: 0
