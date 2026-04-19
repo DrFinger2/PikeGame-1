@@ -5038,6 +5038,39 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a2456e55ee59c4d4ea5b82a6c4ba0487, type: 3}
   m_PrefabInstance: {fileID: 1331141608}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &935089040 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8719744960752722355, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+  m_PrefabInstance: {fileID: 1160520424}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &935089042 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5922667273916350191, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+  m_PrefabInstance: {fileID: 1160520424}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935089040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &935089044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935089040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4cfa9e0f01e4e04495b51933228e27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedTextUI
+  textComponent: {fileID: 935089042}
+  localizedText:
+    fi: "T\xE4ss\xE4 on jo kasvi!"
+    sw: "Redan planterat d\xE4r!"
+    en: Already plant there!
 --- !u!1001 &938905132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6560,6 +6593,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestTouchGesture
       objectReference: {fileID: 0}
+    - target: {fileID: 2281121443457766502, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_text
+      value: Ei tarpeeksi kolikkoja!
+      objectReference: {fileID: 0}
     - target: {fileID: 2323701721438654585, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
@@ -7278,6 +7315,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 5922667273916350191, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_text
+      value: "T\xE4ss\xE4 on jo kasvi!"
+      objectReference: {fileID: 0}
     - target: {fileID: 5966884694574163590, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -7692,7 +7733,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0.9443128
       objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMax.y
@@ -7700,11 +7741,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.05087719
+      value: 0.055687204
       objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.053846154
       objectReference: {fileID: 0}
     - target: {fileID: 7496837668612912551, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -8058,6 +8099,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3298393729304987464, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 407258255}
+    - targetCorrespondingSourceObject: {fileID: 6991969987529418869, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1679006930}
+    - targetCorrespondingSourceObject: {fileID: 8719744960752722355, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 935089044}
     - targetCorrespondingSourceObject: {fileID: 6765276269601402387, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 80820283}
@@ -11718,6 +11765,39 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 712175fcf0837a3409c593dd9cd6abe6, type: 3}
+--- !u!1 &1679006926 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6991969987529418869, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+  m_PrefabInstance: {fileID: 1160520424}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1679006928 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2281121443457766502, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+  m_PrefabInstance: {fileID: 1160520424}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679006926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1679006930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679006926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4cfa9e0f01e4e04495b51933228e27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedTextUI
+  textComponent: {fileID: 1679006928}
+  localizedText:
+    fi: Ei tarpeeksi kolikkoja!
+    sw: "Inte tillr\xE4ckligt med mynt!"
+    en: Not enough coins!
 --- !u!4 &1697432314 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a2456e55ee59c4d4ea5b82a6c4ba0487, type: 3}
