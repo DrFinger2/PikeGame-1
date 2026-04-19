@@ -1951,6 +1951,39 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a2456e55ee59c4d4ea5b82a6c4ba0487, type: 3}
   m_PrefabInstance: {fileID: 199352779}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &369579842 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6991969987529418869, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+  m_PrefabInstance: {fileID: 1160520424}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &369579844 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2281121443457766502, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+  m_PrefabInstance: {fileID: 1160520424}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369579842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &369579846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369579842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4cfa9e0f01e4e04495b51933228e27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedTextUI
+  textComponent: {fileID: 369579844}
+  localizedText:
+    fi: Ei tarpeeksi kolikkoja!
+    sw: "Inte tillr\xE4ckligt med mynt!"
+    en: Not enough coins!
 --- !u!1001 &374227151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6624,6 +6657,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestTouchGesture
       objectReference: {fileID: 0}
+    - target: {fileID: 2281121443457766502, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_text
+      value: Ei tarpeeksi kolikkoja!
+      objectReference: {fileID: 0}
+    - target: {fileID: 2281121443457766502, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2281121443457766502, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2281121443457766502, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_margin.x
+      value: -31.257118
+      objectReference: {fileID: 0}
+    - target: {fileID: 2281121443457766502, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_margin.z
+      value: -15.626755
+      objectReference: {fileID: 0}
+    - target: {fileID: 2281121443457766502, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
+    - target: {fileID: 2281121443457766502, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2281121443457766502, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 6471187536760470386, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
+    - target: {fileID: 2281121443457766502, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2323701721438654585, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
@@ -7194,6 +7263,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5114752757149297339, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: WarningAP
+      value: 
+      objectReference: {fileID: 369579842}
     - target: {fileID: 5144566946135416417, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -7341,6 +7414,30 @@ PrefabInstance:
     - target: {fileID: 5810782229875902451, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5922667273916350191, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_text
+      value: "T\xE4ss\xE4 on jo kasvi!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5922667273916350191, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5922667273916350191, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
+    - target: {fileID: 5922667273916350191, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5922667273916350191, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 6471187536760470386, guid: 32d633b021bddaa4785f5f8115e93e16, type: 2}
+    - target: {fileID: 5922667273916350191, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5966884694574163590, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -7638,6 +7735,10 @@ PrefabInstance:
       propertyPath: playLightRayAnimationOnUnlock
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6991969987529418869, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7050109912706807008, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: onFaded.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -7756,7 +7857,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.9492441
+      value: 0.9443128
       objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMax.y
@@ -7764,11 +7865,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.05075594
+      value: 0.055687204
       objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.049065422
+      value: 0.053846154
       objectReference: {fileID: 0}
     - target: {fileID: 7496837668612912551, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -7999,6 +8100,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8719744960752722355, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8786732039040983246, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -8125,6 +8230,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3298393729304987464, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 407258255}
+    - targetCorrespondingSourceObject: {fileID: 6991969987529418869, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 369579846}
+    - targetCorrespondingSourceObject: {fileID: 8719744960752722355, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1993259543}
     - targetCorrespondingSourceObject: {fileID: 6765276269601402387, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 80820283}
@@ -13594,6 +13705,39 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a2456e55ee59c4d4ea5b82a6c4ba0487, type: 3}
   m_PrefabInstance: {fileID: 224516989}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1993259539 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8719744960752722355, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+  m_PrefabInstance: {fileID: 1160520424}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1993259541 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5922667273916350191, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+  m_PrefabInstance: {fileID: 1160520424}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993259539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1993259543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993259539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4cfa9e0f01e4e04495b51933228e27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedTextUI
+  textComponent: {fileID: 1993259541}
+  localizedText:
+    fi: "T\xE4ss\xE4 on jo kasvi!"
+    sw: "Redan planterat d\xE4r!"
+    en: Already plant there!
 --- !u!1001 &2006417143
 PrefabInstance:
   m_ObjectHideFlags: 0
