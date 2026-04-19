@@ -10,7 +10,7 @@ public class MilestoneHandler : MonoBehaviour
     [Header("Settings")]
     [SerializeField] int firstMilestoneCoins = 5;
     [SerializeField] int secondMilestoneCoins = 7;
-    
+
 
     [Header("Main UI")]
     public Button milestoneButton;
@@ -570,17 +570,11 @@ public class MilestoneHandler : MonoBehaviour
 
     private bool IsMilestone2Available()
     {
-        if (!milestone1.isOn)
-            return false;
-
         return currentBiodiversity >= GetThreshold2();
     }
 
     private bool IsMilestone3Available()
     {
-        if (!milestone2.isOn)
-            return false;
-
         return currentBiodiversity >= GetThreshold3();
     }
 

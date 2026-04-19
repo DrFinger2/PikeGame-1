@@ -41,8 +41,16 @@ public class DialogueUI : MonoBehaviour
     }
 
 
+
     public void ShowDialogue(DialogueBase dialogue, bool showContinue = true, bool animate = false, float bgOpacity = 0, bool isBgEnabled = true)
     {
+        if (parentCanvasGroup != null && dialogueCanvasGroup != null)
+        {
+            parentCanvasGroup.enabled = true;
+            parentCanvasGroup.blocksRaycasts = false;
+            dialogueCanvasGroup.ignoreParentGroups = true;
+        }
+
         dialogueBackground.gameObject.SetActive(true);
         dialoguePanel.SetActive(true);
         continueButton.SetActive(showContinue);
@@ -155,6 +163,13 @@ public class DialogueUI : MonoBehaviour
 
     public void HideDialogue(bool animate = false)
     {
+        if (parentCanvasGroup != null && dialogueCanvasGroup != null)
+        {
+            parentCanvasGroup.enabled = false;
+            dialogueCanvasGroup.ignoreParentGroups = false;
+        }
+
+
         if (typeWriterEffectCoroutine != null)
         {
             StopCoroutine(typeWriterEffectCoroutine);

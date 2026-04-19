@@ -229,7 +229,7 @@ public class CameraZoom : MonoBehaviour
     {
         if (Keyboard.current == null) return;
 
-        if (tileManager.Instance.toolBeingUsed == false)
+        if (tileManager.Instance?.toolBeingUsed == false)
         {
             float x = (Keyboard.current.dKey.isPressed ? 1 : 0) - (Keyboard.current.aKey.isPressed ? 1 : 0);
             float z = (Keyboard.current.wKey.isPressed ? 1 : 0) - (Keyboard.current.sKey.isPressed ? 1 : 0);

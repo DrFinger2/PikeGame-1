@@ -6525,10 +6525,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    - target: {fileID: 1680248274689936258, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1698029664882255236, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -7231,6 +7227,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4843385898728558756, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4851507686685119851, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -7661,7 +7661,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6323121439438422871, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: onToggleOn.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: InteractWithNPC
+      value: StartNPCInteraction
       objectReference: {fileID: 0}
     - target: {fileID: 6323121439438422871, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: onToggleOn.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
@@ -7669,7 +7669,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6323121439438422871, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: onToggleOff.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: InteractWithNPC
+      value: EndNPCInteraction
       objectReference: {fileID: 0}
     - target: {fileID: 6323121439438422871, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: onToggleOn.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
@@ -7889,7 +7889,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.05087719
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7488762960849704884, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_AnchorMin.y
@@ -8126,6 +8126,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8719744960752722355, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8744736951146403875, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8786732039040983246, guid: 5bcb08f2b1df83442898c8bffcc2816a, type: 3}

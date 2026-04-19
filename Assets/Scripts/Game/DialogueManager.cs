@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -43,7 +43,7 @@ public class DialogueManager : MonoBehaviour
     public bool IsDialogueActive => dialogueUI.IsDialogueActive;
 
 
-    
+
 
     private void Awake()
     {
@@ -92,7 +92,7 @@ public class DialogueManager : MonoBehaviour
             dialogueUI.HideTask();
             return;
         }
-        
+
         dialogueUI.ShowDialogue(node, true, animatePopup, bgOpacity);
 
         if (!string.IsNullOrEmpty(node.taskDescription))
@@ -188,11 +188,30 @@ public class DialogueManager : MonoBehaviour
             }
             return;
         }
-        
+
         else if (!state.hasGivenHintThisTurn)
             GiveHintForNextEvent();
         else
             ShowRandomDialogue();
+    }
+
+    public void StartNPCInteraction()
+    {
+        if (dialogueUI.IsDialogueActive) 
+            return;
+
+        if (!state.hasGivenHintThisTurn)
+            GiveHintForNextEvent();
+        else
+            ShowRandomDialogue();
+    }
+
+    public void EndNPCInteraction()
+    {
+        if (!dialogueUI.IsDialogueActive)
+            return;
+            
+        FinishCurrentSequence();
     }
 
     public void NextDialogue()
