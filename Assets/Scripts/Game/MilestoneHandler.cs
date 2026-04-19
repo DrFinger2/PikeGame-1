@@ -221,7 +221,7 @@ public class MilestoneHandler : MonoBehaviour
                     milestone1.isOn = true;
                     milestone1Button.interactable = false;
 
-                    TurnManager.Instance.gameState.currentActionPoints += 10;
+                    TurnManager.Instance.gameState.currentActionPoints += 5;
                     ShowMilestonePopup(milestone1Popup);
 
                     RandomEventSystem.instance.ForceNextEvent("kosteikolle_saapuu");
@@ -235,7 +235,7 @@ public class MilestoneHandler : MonoBehaviour
                     milestone2.isOn = true;
                     milestone2Button.interactable = false;
 
-                    TurnManager.Instance.gameState.currentActionPoints += 15;
+                    TurnManager.Instance.gameState.currentActionPoints += 7;
                     ShowMilestonePopup(milestone2Popup);
 
                     RandomEventSystem.instance.ForceNextEvent("vesilinnut_saapuvat");
