@@ -22,6 +22,9 @@ public class Day3Tasks : DayTaskBase
     [SerializeField] private int requiredRaccoonsChased = 1;
     [SerializeField] private Transform raccoonPosition;
 
+    [Header("Fih")]
+    [SerializeField] private GameObject fih;
+
     private int floatingPlantsPlantedCount;
     private int raccoonChaseCount;
 
@@ -30,6 +33,7 @@ public class Day3Tasks : DayTaskBase
 
         Events.OnDayStarted.Invoke();
         this.enabled = true;
+        fih.SetActive(true);
         raccoonManager.SpawnRaccoonInLocation(raccoonPosition);
 
         DialogueManager dialogue = DialogueManager.instance;
