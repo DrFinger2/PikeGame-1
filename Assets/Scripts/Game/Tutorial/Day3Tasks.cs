@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,7 @@ public class Day3Tasks : DayTaskBase
 
     [Header("UI Elements")]
     [SerializeField] private ActionButtonsUI actionButtons;
+    [SerializeField] private FocusUI focusUI;
     [SerializeField] private Button nextDayButton;
     [SerializeField] private Button shopButton;
 
@@ -30,26 +32,30 @@ public class Day3Tasks : DayTaskBase
 
         Events.OnDayStarted.Invoke();
         this.enabled = true;
-        raccoonManager.SpawnRaccoonInLocation(raccoonPosition);
-
+        
         DialogueManager dialogue = DialogueManager.instance;
         TurnManager turn = TurnManager.Instance;
         GameState state = turn.gameState;
+        GameObject raccoon = raccoonManager.SpawnRaccoonInLocation(raccoonPosition);
 
+        
         state.AddPoints(extraPointsPerDay);
         milestoneHandler.ForceUnlockMilestone(level: 2, progress: 0.33f);
         floatingPlantsPlantedCount = 0;
         raccoonChaseCount = 0;
-
+        
         nextDayButton.interactable = false;
         shopButton.interactable = false;
         actionButtons.LockAll();
 
         // Kicks off E7 Chain: Intro -> Milestone -> Invasive Species Warning
         dialogue.PlayTutorialNode(day3IntroDialogue, () => {
-                RaccoonDogMovement.OnRaccoonChased += OnRaccoonDogChased;
+            focusUI.gameObject.SetActive(true);
+            focusUI.ShowTouchGesture(raccoon);
+            RaccoonDogMovement.OnRaccoonChased += OnRaccoonDogChased;
         });
     }
+
 
     public override void EndDay()
     {
@@ -63,6 +69,7 @@ public class Day3Tasks : DayTaskBase
         raccoonChaseCount += 1;
         if (raccoonChaseCount >= requiredRaccoonsChased)
         {
+            focusUI.HideTouchGesture();
             RaccoonDogMovement.OnRaccoonChased -= OnRaccoonDogChased;
             DialogueManager dialogue = DialogueManager.instance;
 
