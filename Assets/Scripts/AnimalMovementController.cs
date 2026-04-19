@@ -60,14 +60,23 @@ public class AnimalMovementController : MonoBehaviour
     {
         currentState = State.Idle;
         stateTime = Random.Range(minIdle, maxIdle);
-        anim.SetTrigger(idleAnimation);
+        if (gameObject.name != "smallFish")
+        {
+            anim.SetTrigger(idleAnimation);
+        }
+            
     }
     private void EnterWalk()
     {
         currentState = State.Walking;
         stateTime = Random.Range(minWalk, maxWalk);
         targetPos = GetRandomPointInBoundary();
-        anim.SetTrigger(walkAnimation);
+
+        if(gameObject.name != "smallFish")
+        {
+            anim.SetTrigger(walkAnimation);
+        }
+        
     }
     private Vector3 GetRandomPointInBoundary()
     {
