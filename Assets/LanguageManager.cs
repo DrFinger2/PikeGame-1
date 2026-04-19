@@ -11,6 +11,7 @@ public class LanguageManager : MonoBehaviour
 
     private Language previousLanguage = Language.FI;
 
+
     private void OnValidate()
     {
         if (currentLanguage != previousLanguage)
@@ -29,14 +30,18 @@ public class LanguageManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("duplicate languagemanager");
             Destroy(gameObject);
             return;
         }
 
         previousLanguage = currentLanguage;
+
+        transform.SetParent(null);  // Force the object to the root of the hierarchy so DontDestroyOnLoad works
         DontDestroyOnLoad(gameObject);
     }
+    
+    
+    
     public void SwitchLanguage(string language)
     {
         switch (language)
@@ -60,3 +65,4 @@ public enum Language
     SW,
     EN,
 }
+
