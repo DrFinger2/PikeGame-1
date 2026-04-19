@@ -154,7 +154,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8c93364a29bda3d42bb7c7eb42628cd3, type: 3}
       propertyPath: m_Name
-      value: "S\xE4rkiOnKala.fbx_Collection"
+      value: SmallFish
       objectReference: {fileID: 0}
     - target: {fileID: 2669374333529034657, guid: 8c93364a29bda3d42bb7c7eb42628cd3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
