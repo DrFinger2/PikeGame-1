@@ -216,7 +216,7 @@ public class EventPanelUI : MonoBehaviour
         }
 
         if (bonusAPIndicatorText != null)
-            bonusAPIndicatorText.text = $"+{bonusAP} AP";
+            bonusAPIndicatorText.text = $"+{bonusAP}";
 
         outcomePopupPanel.transform.DOScale(Vector3.one, 0.4f).SetUpdate(true);
     }
