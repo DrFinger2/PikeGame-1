@@ -39,9 +39,9 @@ public class LanguageManager : MonoBehaviour
         transform.SetParent(null);  // Force the object to the root of the hierarchy so DontDestroyOnLoad works
         DontDestroyOnLoad(gameObject);
     }
-    
-    
-    
+
+
+
     public void SwitchLanguage(string language)
     {
         switch (language)
@@ -58,7 +58,15 @@ public class LanguageManager : MonoBehaviour
         }
         onLanguageChanged?.Invoke();
     }
+
+    public void SwitchLanguage(Language language)
+    {
+
+        currentLanguage = language;
+        onLanguageChanged?.Invoke();
+    }
 }
+
 public enum Language
 {
     FI,
