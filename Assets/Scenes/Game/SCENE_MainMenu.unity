@@ -2597,6 +2597,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1228770747}
   - component: {fileID: 1228770748}
+  - component: {fileID: 1228770749}
   m_Layer: 5
   m_Name: LanguageButtons
   m_TagString: Untagged
@@ -2653,6 +2654,21 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1228770749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228770746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8231beb37d0dcb4aa29b92a800b318f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LanguageButtons
+  finnishButton: {fileID: 4759448819099437928}
+  swedishButton: {fileID: 5034218515454549070}
+  englishButton: {fileID: 2878560282134274101}
 --- !u!4 &1278553050 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2685936646601341336, guid: f022ce325532f7f40883165475d4af56, type: 3}
@@ -3475,7 +3491,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &1962386766
 AudioListener:
   m_ObjectHideFlags: 0
