@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class EndGameController : MonoBehaviour
 {
@@ -9,11 +11,27 @@ public class EndGameController : MonoBehaviour
 
     [Header("Win Screen")]
     [SerializeField] private GameObject winScreenObject;
+    [SerializeField] private Button closeWinButton;
     [SerializeField] private CanvasGroup winScreenGroup;
 
     [Header("Loss Screen")]
     [SerializeField] private GameObject lossScreenObject;
+    [SerializeField] private Button closeLossButton;
     [SerializeField] private CanvasGroup lossScreenGroup;
+
+    public void Awake()
+    {
+        closeWinButton.onClick.RemoveAllListeners();
+        closeLossButton.onClick.RemoveAllListeners();
+        closeLossButton.onClick.AddListener(LoadMainMenuScene);
+        closeWinButton.onClick.AddListener(LoadMainMenuScene);
+    }
+
+
+    public void LoadMainMenuScene()
+    {
+        SceneManager.LoadScene(0);
+    }
 
     public void TriggerWinSequence()
     {
@@ -60,7 +78,7 @@ public class EndGameController : MonoBehaviour
     {
         if (lossScreenObject != null) lossScreenObject.SetActive(true);
         if (parentCanvasGroup != null) parentCanvasGroup.interactable = false;
-        
+
         if (lossScreenGroup != null)
         {
             lossScreenGroup.ignoreParentGroups = true;
