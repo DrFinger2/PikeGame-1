@@ -7,6 +7,10 @@ public class MilestoneHandler : MonoBehaviour
     // Define the struct to hold our scene data
     public struct ScenePlantCounts { public int validTileCount, plantedTileCount, invasiveTileCount, totalOvergrowth; }
     public static MilestoneHandler Instance { get; private set; }
+    [Header("Settings")]
+    [SerializeField] int firstMilestoneCoins = 5;
+    [SerializeField] int secondMilestoneCoins = 7;
+    
 
     [Header("Main UI")]
     public Button milestoneButton;
@@ -221,7 +225,7 @@ public class MilestoneHandler : MonoBehaviour
                     milestone1.isOn = true;
                     milestone1Button.interactable = false;
 
-                    TurnManager.Instance.gameState.currentActionPoints += 5;
+                    TurnManager.Instance.gameState.currentActionPoints += firstMilestoneCoins;
                     ShowMilestonePopup(milestone1Popup);
 
                     RandomEventSystem.instance.ForceNextEvent("kosteikolle_saapuu");
@@ -235,7 +239,7 @@ public class MilestoneHandler : MonoBehaviour
                     milestone2.isOn = true;
                     milestone2Button.interactable = false;
 
-                    TurnManager.Instance.gameState.currentActionPoints += 7;
+                    TurnManager.Instance.gameState.currentActionPoints += secondMilestoneCoins;
                     ShowMilestonePopup(milestone2Popup);
 
                     RandomEventSystem.instance.ForceNextEvent("vesilinnut_saapuvat");
