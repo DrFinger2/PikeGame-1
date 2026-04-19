@@ -29,8 +29,11 @@ public class Day1Tasks : DayTaskBase
         
         Events.OnDayStarted.Invoke();
         this.enabled = true;
-
+        MilestoneHandler milestone = MilestoneHandler.Instance;
         DialogueManager dialogue = DialogueManager.instance;
+
+        milestone?.EnterTutorialMode();
+        milestone?.ForceUnlockMilestone(1, 0.0f);
         
         questionsButton.interactable = false;
         eventPanelButtons.EnterTutorialMode();

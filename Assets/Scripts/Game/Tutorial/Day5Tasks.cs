@@ -27,6 +27,7 @@ public class Day5Tasks : DayTaskBase
         Events.OnDayStarted.Invoke();
         this.enabled = true;
 
+        
         DialogueManager dialogue = DialogueManager.instance;
         TurnManager turn = TurnManager.Instance;
         GameState state = turn.gameState;
@@ -91,6 +92,7 @@ public class Day5Tasks : DayTaskBase
     private void PlayConclusionSequence()
     {
         DialogueManager dialogue = DialogueManager.instance;
+        MilestoneHandler milestone = MilestoneHandler.Instance;
 
         dialogue.PlayTutorialNode(day5ConclusionDialogue, () =>
         {
@@ -101,6 +103,7 @@ public class Day5Tasks : DayTaskBase
             npcButton.interactable = true;
             actionButtons.UnlockAll();
             eventPanelButtons.ExitTutorialMode();
+            milestone.ExitTutorialMode();
             CompleteDay();
         });
     }

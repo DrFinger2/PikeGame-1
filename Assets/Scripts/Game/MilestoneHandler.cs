@@ -4,6 +4,10 @@ using UnityEngine.UI;
 
 public class MilestoneHandler : MonoBehaviour
 {
+    // Define the struct to hold our scene data
+    public struct ScenePlantCounts { public int validTileCount, plantedTileCount, invasiveTileCount, totalOvergrowth; }
+    public static MilestoneHandler Instance { get; private set; }
+
     [Header("Main UI")]
     public Button milestoneButton;
     public Slider milestoneSlider;
@@ -53,7 +57,10 @@ public class MilestoneHandler : MonoBehaviour
     public MilestonePopupHandler milestone3Popup;
     [SerializeField] private EndGameController endGameController;
     private bool milestone1reward = false;
-    //[SerializeField] private GameObject cowCollection;
+
+    private ScenePlantCounts preTutorialCounts;
+    private int tutorialPlantedOffset = 0;
+    private int tutorialInvasiveOffset = 0;
 
     [Space]
     [Header("Recalculation Settings")]
@@ -72,7 +79,28 @@ public class MilestoneHandler : MonoBehaviour
     private float currentBiodiversityVisual;
     private WetlandProgressionManager wetlandProgressionManager;
     private bool simulationBound;
+    private bool tutorialMode = false;
+    
+    public void EnterTutorialMode()
+    {
+        tutorialMode = true;
+        preTutorialCounts = GetCurrentSceneCounts();
+    }
 
+    public void ExitTutorialMode()
+    {
+        tutorialMode = false;
+
+        ScenePlantCounts postTutorialCounts = GetCurrentSceneCounts();
+        tutorialPlantedOffset += (postTutorialCounts.plantedTileCount - preTutorialCounts.plantedTileCount);
+        tutorialInvasiveOffset += (postTutorialCounts.invasiveTileCount - preTutorialCounts.invasiveTileCount);
+        RefreshBiodiversityNow();
+    }
+
+    void Awake()
+    {
+        Instance = this;
+    }
 
     void Start()
     {
@@ -302,6 +330,7 @@ public class MilestoneHandler : MonoBehaviour
         RecalculateBiodiversityFromScene(forceUpdate: true);
     }
 
+
     private float Biodiversity01()
     {
         if (maxBiodiversity <= 0)
@@ -348,63 +377,66 @@ public class MilestoneHandler : MonoBehaviour
         if (isRecalculatingFromScene)
             return;
 
-        isRecalculatingFromScene = true;
+        if (tutorialMode)
+            return;
 
+        isRecalculatingFromScene = true;
+        ScenePlantCounts currentCounts = GetCurrentSceneCounts();
+
+        int plantedTileCount = Mathf.Max(0, currentCounts.plantedTileCount - tutorialPlantedOffset);
+        int invasiveTileCount = Mathf.Max(0, currentCounts.invasiveTileCount - tutorialInvasiveOffset);
+
+        tileCount = currentCounts.validTileCount;
+        maxBiodiversity = 100;
+
+        float plantCoverage = tileCount > 0 ? (float)plantedTileCount / tileCount : 0f;
+        float invasivePressure = tileCount > 0 ? (float)invasiveTileCount / tileCount : 0f;
+
+        float target01 = (plantCoverage * 1.20f) - (invasivePressure * 0.60f);
+        int sceneContribution = Mathf.RoundToInt(target01 * maxBiodiversity);
+        int previousTarget = targetBiodiversity;
+
+        targetBiodiversity = Mathf.Clamp(baselineBiodiversity + sceneContribution, 0, maxBiodiversity);
+        currentBiodiversityVisual = Mathf.Clamp(currentBiodiversityVisual, 0f, maxBiodiversity);
+
+        if (forceUpdate || targetBiodiversity != previousTarget)
+            UpdateSlider();
+
+        isRecalculatingFromScene = false;
+
+        int mapOvergrowthState = (tileCount > 0 ? Mathf.Clamp(Mathf.RoundToInt((float)currentCounts.totalOvergrowth / tileCount), 1, 3) : 1);
+        if (mapOvergrowthState == 3)
+        {
+            endGameController.TriggerLossSequence();
+        }
+    }
+
+    private ScenePlantCounts GetCurrentSceneCounts()
+    {
+        ScenePlantCounts counts = new ScenePlantCounts();
         gameTile[] tileObjects = FindObjectsOfType<gameTile>();
-        int validTileCount = 0;
-        int plantedTileCount = 0;
-        int invasiveTileCount = 0;
-        int totalOvergrowth = 0;
 
         foreach (gameTile tile in tileObjects)
         {
             if (tile == null || tile.tileType == tileManager.TileType.Forest)
                 continue;
 
-            validTileCount++;
+            counts.validTileCount++;
 
             if (tile.grownPlant != null)
-                plantedTileCount++;
+                counts.plantedTileCount++;
 
             tileWeedsGrowth weeds = tile.GetComponent<tileWeedsGrowth>();
             if (weeds != null)
             {
-                totalOvergrowth += weeds.growStage;
+                counts.totalOvergrowth += weeds.growStage;
                 if (weeds.growStage >= 3)
-                    invasiveTileCount++;
+                    counts.invasiveTileCount++;
             }
-
         }
 
-        tileCount = validTileCount;
-        maxBiodiversity = 100;
-
-        float plantCoverage = validTileCount > 0 ? (float)plantedTileCount / validTileCount : 0f;
-        float invasivePressure = validTileCount > 0 ? (float)invasiveTileCount / validTileCount : 0f;
-
-        
-        float target01 = (plantCoverage * 1.20f) - (invasivePressure * 0.60f);
-        int sceneContribution = Mathf.RoundToInt(target01 * maxBiodiversity);
-        int previousTarget = targetBiodiversity;
-
-        targetBiodiversity = Mathf.Clamp(baselineBiodiversity + sceneContribution, 0, maxBiodiversity);
-
-        currentBiodiversityVisual = Mathf.Clamp(currentBiodiversityVisual, 0f, maxBiodiversity);
-
-
-        if (forceUpdate || targetBiodiversity != previousTarget)
-            UpdateSlider();
-            
-        isRecalculatingFromScene = false;
-        
-        int mapOvergrowthState = (validTileCount > 0 ? Mathf.Clamp(Mathf.RoundToInt((float)totalOvergrowth / validTileCount), 1, 3) : 1);
-        if (mapOvergrowthState == 3)
-        {
-            endGameController.TriggerLossSequence();
-        }
-
+        return counts;
     }
-
 
 
     public float GetBiodiversity01()
@@ -440,7 +472,7 @@ public class MilestoneHandler : MonoBehaviour
         targetBiodiversity = baselineBiodiversity;
         currentBiodiversityVisual = baselineBiodiversity;
 
-        RefreshBiodiversityNow();
+        UpdateSlider();
     }
 
     private void UpdateMilestoneInstruction()
