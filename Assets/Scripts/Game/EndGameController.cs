@@ -23,14 +23,20 @@ public class EndGameController : MonoBehaviour
     {
         closeWinButton.onClick.RemoveAllListeners();
         closeLossButton.onClick.RemoveAllListeners();
-        closeLossButton.onClick.AddListener(LoadMainMenuScene);
-        closeWinButton.onClick.AddListener(LoadMainMenuScene);
+        closeLossButton.onClick.AddListener(QuitGame);
+        closeWinButton.onClick.AddListener(QuitGame);
     }
 
 
     public void LoadMainMenuScene()
     {
         SceneManager.LoadScene(0);
+    }
+
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
     public void TriggerWinSequence()
@@ -89,8 +95,5 @@ public class EndGameController : MonoBehaviour
         if (fader != null) fader.onFaded.RemoveListener(ShowLossScreen);
     }
 
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
+ 
 }

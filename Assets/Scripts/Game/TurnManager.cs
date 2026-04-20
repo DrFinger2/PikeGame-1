@@ -54,6 +54,7 @@ public class TurnManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(DelayedInitialize());
+        
     }
 
     private IEnumerator DelayedInitialize()
@@ -64,6 +65,7 @@ public class TurnManager : MonoBehaviour
 
     private void Initialize()
     {
+        TurnManager.Instance.gameState.currentActionPoints = 4;
         onTurnChanged?.Invoke(currentTurn);
         onActionPointsChanged?.Invoke(gameState.currentActionPoints);
         onMetricsUpdated?.Invoke(gameState.metrics);

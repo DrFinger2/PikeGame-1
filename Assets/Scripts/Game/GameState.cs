@@ -8,7 +8,7 @@ using NUnit.Framework.Constraints;
 
 public class GameState : MonoBehaviour
 {
-    public int currentActionPoints = 10;
+    public int currentActionPoints = 4;
     private int currentTurnBonusPoints;
     public Dictionary<MetricType, float> metrics;
     public List<OngoingEffect> activeEffects;
@@ -25,6 +25,30 @@ public class GameState : MonoBehaviour
     {
         InitializeStats();
         randomEventSystem = RandomEventSystem.instance;
+        ResetGame();
+    }
+
+
+    public void ResetGame()
+    {
+        // 1. Reset Action Points to your default starting value
+        currentActionPoints = 4;
+        currentTurnBonusPoints = 0;
+
+        // 2. Clear out any lingering effects from the failed game
+        activeEffects.Clear();
+        pendingEffects.Clear();
+
+        // 3. Reset the core metrics back to default
+        metrics[MetricType.WaterQuality] = MetricDefaults.WaterQuality;
+        metrics[MetricType.BiodiversityLevel] = MetricDefaults.Biodiversity;
+        metrics[MetricType.PollutionLevel] = MetricDefaults.Pollution;
+
+        // 4. CRITICAL: Tell the UI and Action Buttons to unlock/update!
+        if (TurnManager.Instance != null && TurnManager.Instance.onActionPointsChanged != null)
+        {
+            TurnManager.Instance.onActionPointsChanged.Invoke(currentActionPoints);
+        }
     }
     //create list and assign level start metrics
     private void InitializeStats()

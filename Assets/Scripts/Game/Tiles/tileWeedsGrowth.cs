@@ -13,13 +13,14 @@ public class tileWeedsGrowth : MonoBehaviour
     public GameObject growStage3;
 
     private TurnManager tm;
-    
-    
+
+
     void Start()
     {
         tm = TurnManager.Instance;
         tm.onTurnChanged.AddListener(SpreadPlants);
         tile = transform.GetComponent<gameTile>();
+
         growStage = 1;
         UpdateWeedObject();
 
@@ -28,6 +29,7 @@ public class tileWeedsGrowth : MonoBehaviour
             this.enabled = false;
         }
     }
+    
     
     private void GrowWeeds(int random)
     {

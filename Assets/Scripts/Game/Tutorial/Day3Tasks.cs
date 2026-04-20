@@ -40,9 +40,11 @@ public class Day3Tasks : DayTaskBase
         DialogueManager dialogue = DialogueManager.instance;
         TurnManager turn = TurnManager.Instance;
         GameState state = turn.gameState;
+        tileManager tile = tileManager.Instance;
+
         GameObject raccoon = raccoonManager.SpawnRaccoonInLocation(raccoonPosition);
 
-        
+        tile?.OverwriteAllWeeds(1);
         state.AddPoints(extraPointsPerDay);
         milestoneHandler.ForceUnlockMilestone(level: 2, progress: 0.33f);
         floatingPlantsPlantedCount = 0;

@@ -34,8 +34,10 @@ public class Day2Tasks : DayTaskBase
         TurnManager turn = TurnManager.Instance;
         DialogueManager dialogue = DialogueManager.instance;
         GameState state = turn.gameState;
+        tileManager tile = tileManager.Instance;
         
         state.AddPoints(extraPointsPerDay);
+        tile?.OverwriteAllWeeds(1);
         
         shopVisited = false;
         grassPlantsPlantedCount = 0;

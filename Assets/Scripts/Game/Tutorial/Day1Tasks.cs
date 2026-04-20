@@ -22,7 +22,15 @@ public class Day1Tasks : DayTaskBase
 
     [Header("Settings")]
     [SerializeField] private float requiredPlantAmount = 2f;
+    [SerializeField] private int RequiredPlantsRemoved = 2;
     int plantsPlaced = 0;
+    int plantsRemoved = 0;
+
+    private void OnDestroy()
+    {
+        PlantEvents.OnPlantRemoved -= OnPlantRemoved;
+        PlantEvents.OnPlantPlaced -= OnPlantPlaced;
+    }
 
     public override void StartDay()
     {
@@ -31,10 +39,15 @@ public class Day1Tasks : DayTaskBase
         this.enabled = true;
         MilestoneHandler milestone = MilestoneHandler.Instance;
         DialogueManager dialogue = DialogueManager.instance;
+        tileManager tile = tileManager.Instance;
+
 
         milestone?.EnterTutorialMode();
         milestone?.ForceUnlockMilestone(1, 0.0f);
-        
+
+        tile?.OverwriteAllWeeds(1);
+        tile?.SpawnWeeds((int)RequiredPlantsRemoved, 3);
+
         questionsButton.interactable = false;
         eventPanelButtons.EnterTutorialMode();
         actionButtons.LockAll();
@@ -86,10 +99,21 @@ public class Day1Tasks : DayTaskBase
         });
     }
 
+
     public void OnPlantRemoved(bool wasInvasive)
     {
-        OnReedsClearedClicked();
-        PlantEvents.OnPlantRemoved -= OnPlantRemoved;
+        plantsRemoved++;
+
+        if (plantsRemoved >= RequiredPlantsRemoved)
+        {
+            OnReedsClearedClicked();
+            PlantEvents.OnPlantRemoved -= OnPlantRemoved;
+        }
+        else
+        {
+            actionButtons.CutPlants.ReHighlight();
+        }
+        
     }
 
     public void OnPlantPlaced(WetlandPlantType plantType, string plantName)

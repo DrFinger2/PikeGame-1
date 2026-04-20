@@ -13,6 +13,7 @@ public class Day4Tasks : DayTaskBase
     [SerializeField] private Button questionsButton; // Dedicated quiz button
     [SerializeField] private Button shopButton;
     [SerializeField] private Button nextDayButton;
+    
 
     [Header("Dialogue References")]
     [SerializeField] private TutorialDialogue day4IntroDialogue;           // E10
@@ -31,12 +32,14 @@ public class Day4Tasks : DayTaskBase
         Events.OnDayStarted.Invoke();
         this.enabled = true;
 
-
+        
         DialogueManager dialogue = DialogueManager.instance;
         TurnManager turn = TurnManager.Instance;
         GameState state = turn.gameState;
+        tileManager tile = tileManager.Instance;
 
-
+        tile?.OverwriteAllWeeds(1);
+        tile?.SpawnWeeds(invasivePlantsRequired, 3);
         state.AddPoints(extraPointsPerDay);
         
         raccoonManager.isSpawning = true;

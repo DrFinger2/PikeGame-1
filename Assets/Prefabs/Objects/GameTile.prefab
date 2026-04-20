@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6016300912242618106}
   - component: {fileID: 4744797421175471916}
-  m_Layer: 2
+  m_Layer: 6
   m_Name: tileBounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 957869917931837165}
   - component: {fileID: 5108884777957231549}
   - component: {fileID: 3156860402440810118}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameTile
   m_TagString: Tile
   m_Icon: {fileID: 0}
@@ -121,6 +121,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -142,9 +144,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!64 &6685583255970762595
 MeshCollider:
@@ -188,6 +192,8 @@ MonoBehaviour:
   isNextToLand: 0
   overgrownState: 0
   grownPlant: {fileID: 0}
+  plantPrefab: {fileID: 0}
+  plantGrowStage: 0
 --- !u!114 &957869917931837165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,6 +236,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2970912a77ee5224d8d39466c1698dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile: {fileID: 0}
+  tileWeeds: {fileID: 0}
+  tileBiodiversity: 0
 --- !u!1 &7482573436330669625
 GameObject:
   m_ObjectHideFlags: 0
@@ -5046,7 +5055,7 @@ ParticleSystem:
     vectorLabel1_3: W
 --- !u!199 &9164471784887963094
 ParticleSystemRenderer:
-  serializedVersion: 6
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5065,6 +5074,8 @@ ParticleSystemRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -5087,9 +5098,11 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -5121,4 +5134,3 @@ ParticleSystemRenderer:
   m_MeshWeighting1: 1
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
-  m_MaskInteraction: 0

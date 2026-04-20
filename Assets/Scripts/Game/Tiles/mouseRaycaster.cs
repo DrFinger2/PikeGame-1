@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class mouseRaycaster : MonoBehaviour
 {
 
+    [SerializeField] private LayerMask tileLayerMask;
     [SerializeField] private Vector2 mousePos;
     public Vector3 worldPos;
     [SerializeField] private Vector3 projectedPos;
@@ -128,6 +129,7 @@ public class mouseRaycaster : MonoBehaviour
         
         if (Physics.Raycast(ray, out hit))
         {
+            
             if (hit.collider != null && hit.collider.CompareTag("NPC"))
             {
                 DialogueManager.instance.InteractWithNPC();
@@ -144,16 +146,20 @@ public class mouseRaycaster : MonoBehaviour
     public GameObject CheckTileHitting()
     {
         RaycastHit hit;
-        
-        Physics.Raycast(new Vector3(projectedPos.x, projectedPos.y+1, projectedPos.z), new Vector3(0, projectedPos.y-1, 0).normalized, out hit); //fire ray directly above tilemap
-        UnityEngine.Debug.DrawLine(new Vector3(projectedPos.x, projectedPos.y + 1, projectedPos.z), worldPos);
-        
-        if (hit.collider != null && hit.collider.CompareTag("Tile")) //check if ray hits a tile
-        {   
+
+        Vector3 startPos = new Vector3(projectedPos.x, projectedPos.y + 1, projectedPos.z);
+        Vector3 direction = Vector3.down;
+
+
+        if (Physics.Raycast(startPos, direction, out hit, 100f, tileLayerMask))
+        {
             return hit.collider.gameObject;
         }
+
         return selectedTile;
     }
+    
+    
 
     void OnDrawGizmos()
     {
